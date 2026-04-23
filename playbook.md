@@ -1,127 +1,126 @@
 # Personal Workspace — Playbook
 
-Personal Workspace is KRING's standardised AI-native work environment: a shared tech stack, four AI layers, and a personal OpenClaw agent per user. This is the operating manual.
+Personal Workspace is KRING's shared way of working: a standard set of tools, four AI helpers, and a personal AI assistant for every person.
 
-*DRI: August. Version: beta (2026-04-23).*
+This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
+
+*Owner: August. Version: beta (2026-04-23).*
 
 ---
 
 ## Principles
 
-- **Standardised stack, personal layer.** Everyone runs the same tools and AI layers. Your OpenClaw agent is the personal layer on top.
-- **AI-native by default.** If an AI layer can do it, delegate to it. Humans approve irreversible or externally-visible actions.
-- **Written down, or it doesn't exist.** Handbook, Notion, and GitHub are source of truth. Tribal knowledge is a bug.
-- **Push as you go.** Uncommitted work is not saved. Agent and human push every meaningful change same-session.
-- **Named concepts, shared vocabulary.** Use the exact terms (Speedblock, Personal Workspace, OpenClaw, Cosmo). See Glossary.
+- **Same tools for everyone.** We all run on the same stack. Your personal AI assistant is the one layer that's specific to you.
+- **AI first.** If an AI helper can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
+- **Write it down.** If it's not in the handbook, Notion, or GitHub, it doesn't exist.
+- **Don't mix up the AI helpers.** Each one has a specific job. Using the wrong one in the wrong place creates friction.
 
 ---
 
-## The stack
+## The tools we use
 
-Locked. No substitutions without an explicit scope change.
+Every KRING user runs on these. We don't mix and match.
 
-| Purpose | Tool |
+| For | We use |
 |---|---|
-| Documents, files, mail, calendar, meetings | **Google Workspace** (Drive, Docs, Gmail, Calendar, Meet) |
-| Personal AI agent | **OpenClaw on Telegram** |
-| Shared org AI agent | **Cosmo on Slack** |
-| In-app AI | **Gemini** (inside Google) and **Claude** (standalone) |
-| Project management | **Notion** (KRING Ventures workspace) |
-| Code and agent files | **GitHub** (`KRING-Ventures/` + each user's private personal-layer repo) |
+| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) |
+| Your personal AI assistant | **Telegram** — you chat with your assistant there |
+| KRING's shared AI (Cosmo) | **Slack** — Cosmo lives in the KRING channels |
+| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. |
+| General-purpose AI | **Claude** — the chat you use for one-off thinking work |
+| Project and task management | **Notion** — the KRING Ventures workspace |
 | Team chat | **Slack** |
 
 ---
 
-## The four AI layers
+## The four AI helpers
 
-Distinct jobs. Don't conflate them.
+Each does a different job. Pick the right one for what you're doing.
 
-| Layer | Surface | Job |
+| AI | Where you find it | What it's for |
 |---|---|---|
-| **Gemini** | Inside Google apps | In-app summaries and drafting. Stays where it lives. |
-| **Claude** | claude.ai, API | General reasoning, writing, coding help. No memory between sessions. |
-| **OpenClaw** (personal) | Telegram, 1:1 | Your personal agent. Memory, tool reach, briefs, drafts, automations. Work-scoped. |
-| **Cosmo** (shared) | Slack, KRING channels | Shared org agent. Speedblock work, cross-user coordination. |
+| **Gemini** | Inside Google apps | In-app help: summarising a doc, drafting a reply inside Gmail. Stays where it lives. |
+| **Claude** | claude.ai | General thinking, writing, coding help. Doesn't remember between chats. |
+| **Your OpenClaw assistant** | Telegram | Your personal assistant. Remembers you. Uses your tools. Drafts, briefs, and runs work on your behalf. |
+| **Cosmo** | Slack | KRING's shared assistant. Knows the company. Helps with company-wide or cross-team work. |
 
-Use the lowest-friction layer for the job: Gemini inside a Doc, Claude for a one-off, OpenClaw for anything personal with memory, Cosmo for anything org-shared.
+Rule of thumb:
+
+- Inside a Google Doc or Gmail? Use **Gemini**.
+- One-off thinking or writing, not tied to anyone? Use **Claude**.
+- Anything personal to you that needs memory or your inbox/calendar/etc? Use **your OpenClaw assistant**.
+- Anything about KRING as a company, or across several people? Use **Cosmo**.
 
 ---
 
-## OpenClaw — your personal agent
+## Your personal AI assistant (OpenClaw)
 
-One instance per user. Your partner for work.
+Every KRING user gets their own AI assistant — a personal OpenClaw agent. You chat with it on Telegram. It's your partner for work.
 
-### What it does
+### What it does for you
 
-- **Memory.** Daily logs in `memory/YYYY-MM-DD.md`. Curated long-term `MEMORY.md`. Context persists across sessions.
-- **Briefs.** Morning (calendar, priorities, urgent items). Weekly (open commitments, waiting-on, patterns).
-- **Drafts.** Emails, messages, documents. Always drafts; never sends without approval.
-- **Tool reach.** Google Workspace, Slack, Notion, GitHub, Telegram.
-- **Operations.** Tracks open commitments and follow-ups. Preps non-trivial meetings. Surfaces only what needs attention.
-- **Automations.** Builds recurring workflows on request.
+- **Remembers.** Keeps context about you — your role, projects, the people you work with, how you like things done. Memory carries between conversations.
+- **Briefs you.** Each morning: your calendar, priorities, anything urgent. Each week: open commitments, things you're waiting on, patterns worth noticing.
+- **Drafts for you.** Emails, messages, documents. Always drafts first — never sends without your OK.
+- **Uses your tools.** Reads your Gmail, Calendar, Drive, Slack, Notion, GitHub.
+- **Tracks commitments.** Notices when you've said you'll do something or are waiting on a reply.
+- **Preps meetings.** For meetings that matter, pulls together who's there, what's relevant, and what you want to get out of it.
+- **Builds automations.** If you want it to handle recurring work, you can ask it to set that up.
 
-### Permission model
+### What it asks you before doing
 
-| Action | Permission |
+Your assistant drafts and researches freely. But it always asks first before anything leaves your account or changes things for other people.
+
+| The assistant... | Asks first? |
 |---|---|
-| Read, search, draft, research | None |
-| Send email, post in Slack, reply to messages | **Ask first** |
-| Accept or decline calendar invites | **Ask first** |
-| Write to another person's Notion page | **Ask first (per-action)** |
-| Any irreversible or externally-visible action | **Ask first** |
+| Reads, searches, drafts, or researches | No |
+| Sends an email, posts in Slack, or replies to a message | **Yes** |
+| Accepts or declines a calendar invite | **Yes** |
+| Writes to someone else's Notion page | **Yes (every time)** |
+| Does anything irreversible or visible to others | **Yes** |
 
-Full rules in `agent-files/AGENTS.md`.
+### Day one vs. later
 
-### Day one vs over time
-
-- **Day one (after BOOTSTRAP):** knows your name, role, top projects, key contacts, meeting cadence — pulled from your tools during onboarding, not typed by you. Tools wired. Can draft and remember.
-- **Over time:** learns preferences, decision patterns, recurring workflows. Memory compounds. Automations get built.
+- **Day one** (after your first setup conversation with the assistant): it already knows your name, role, top projects, the people you work with, and your meeting patterns — pulled from your tools, not typed by you. Your tools are connected. It can draft, remember, and help.
+- **Later**: it learns how you think and work — your preferences, your communication style, the things you want it to push back on.
 
 ---
 
 ## Working rhythm
 
-- **Daily.** Morning brief from OpenClaw → drafting, research, recall throughout the day → end-of-day memory log.
-- **Weekly.** Friday EOD or Monday AM weekly review (open commitments, waiting-on, calendar, patterns).
-- **Per-session.** Agent pulls from GitHub at start, pushes after every meaningful change. Uncommitted state is not a save.
+- **Each day.** Morning brief from your assistant → use it throughout the day for drafting, research, and recall → it writes a short memory log at end of day.
+- **Each week.** Friday evening or Monday morning: a weekly review — open commitments, things you're waiting on, calendar overview, patterns.
 
 ---
 
-## Onboarding
+## Getting set up
 
 Two halves:
 
-1. **Human setup** — provision Google / Slack / Notion / GitHub / Telegram, create the user's private personal-layer repo, deploy the OpenClaw instance on Telegram.
-2. **Agent-led BOOTSTRAP** — OpenClaw runs the first-session conversation: intro → wire tools one at a time → pull user context from the connected tools → validate and fill the gaps.
+1. **Setup.** Someone on the team provisions your accounts (Google, Slack, Notion, GitHub, Telegram), creates a private space for your personal assistant's settings, and starts the assistant on Telegram.
+2. **First conversation with your assistant.** You open Telegram and send the first message. The assistant runs a guided setup: introduces itself, connects to your tools one at a time (Gmail → Calendar → Drive → Slack → Notion → GitHub), reads what it can from them, then asks you a few questions to fill in the things tools can't tell it.
 
-Full flow in `onboarding.md`. Script in `agent-files/onboarding/BOOTSTRAP.md`.
+Full step-by-step in `onboarding.md`.
 
 ---
 
-## Two agent layers — don't mix
+## Don't mix up OpenClaw and Cosmo
 
-- **OpenClaw (personal)** is yours. Telegram. Knows you. Work-scoped. One per user.
-- **Cosmo (shared)** is KRING's. Slack. Knows the org. Shared across the company.
+- **Your OpenClaw assistant** is yours. On Telegram. Knows you. One per person.
+- **Cosmo** is KRING's. On Slack. Knows the company. Shared across everyone.
 
-Don't ask OpenClaw to take org-wide actions. Don't ask Cosmo to hold personal context. Different memory, different surface, different purpose.
+Don't ask your OpenClaw assistant to do things for the whole company. Don't ask Cosmo to remember things that are personal to you. Different tools, different jobs.
 
 ---
 
 ## Glossary
 
-- **Personal Workspace** — the standardised AI-native environment every KRING user runs.
-- **OpenClaw** — the agent framework. Personal OpenClaw = your instance; Cosmo = the shared KRING instance.
-- **Speedblock** — KRING's delivery unit for a bounded project (Scope → Research → Solution → Build).
-- **BOOTSTRAP** — the agent-led first-session script that onboards a user into their OpenClaw agent.
-- **Heartbeat** — periodic background poll by the agent; silent unless something needs attention.
-- **Shared framework** — `personal-workspace-speedblock/agent-files/`, the living source of truth for every agent.
-- **Personal layer** — each user's private repo with IDENTITY, USER, TOOLS, automations, and memory.
+- **Personal Workspace** — the standard way every KRING user works.
+- **OpenClaw** — the AI assistant system. *Your* OpenClaw is your personal assistant; *Cosmo* is the shared, company-wide OpenClaw.
+- **Cosmo** — KRING's shared AI in Slack.
+- **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
+- **Brief** — the daily or weekly summary your assistant sends you.
 
 ---
 
-## Meta
-
-- **DRI:** August.
-- **Edit:** PR against `main` in `KRING-Ventures/personal-workspace-speedblock`. Conciseness is a hard constraint — if a change doesn't alter how someone acts, don't add it.
-- **Version:** beta (2026-04-23). Next: 1.0.
-- **Changelog:** `CHANGELOG.md`.
+*August owns this document. Anything unclear, off, or missing — tell him.*
