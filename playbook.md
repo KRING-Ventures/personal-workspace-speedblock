@@ -8,6 +8,18 @@ This document explains what's in it and how to use it. Read it once top to botto
 
 ---
 
+## What's in this version (beta)
+
+- **Personal OpenClaw assistant on Telegram** — with memory.
+- **Daily brief** (morning) and **weekly brief** (Friday EOD).
+- **Heartbeats** — proactive background check-ins.
+- **Tool reach** — Gmail, Calendar, Drive, Slack, Notion, GitHub.
+- **Drafting** (your approval to send) and **automations** (on request).
+
+Each new version updates this list. Full history in `CHANGELOG.md`.
+
+---
+
 ## Principles
 
 - **Same tools for everyone.** We all run on the same stack. Your personal AI assistant is the one layer that's specific to you.

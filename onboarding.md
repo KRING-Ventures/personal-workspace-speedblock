@@ -9,6 +9,22 @@ The flow has two halves:
 
 ---
 
+## What beta ships
+
+This is what a new user is getting onboarded *to*. Call it out explicitly in Phase 1 so they know what they're working with.
+
+- **Personal OpenClaw assistant on Telegram** — memory across sessions, scoped to work.
+- **Daily brief** (morning) — calendar, top priorities, anything urgent.
+- **Weekly brief** (Friday EOD) — open commitments, things they're waiting on, patterns.
+- **Heartbeats** — periodic background check-ins; surfaces things only when they need attention.
+- **Tool reach** — Gmail, Calendar, Drive, Slack, Notion, GitHub.
+- **Drafting** — emails, messages, docs. Never sent without the user's OK.
+- **Automations** — built on request.
+
+Each future version updates this block with what's new. Source of truth: `CHANGELOG.md`.
+
+---
+
 ## Part 1 — Setup (human-led, one-time)
 
 Done once per new user, before they talk to their agent.
