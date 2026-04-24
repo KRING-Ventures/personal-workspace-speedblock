@@ -67,8 +67,6 @@
 
 - **Stalling triggers:** {{FROM_BOOTSTRAP}}
 - **Rushing triggers:** {{FROM_BOOTSTRAP}}
-- **Blind spots:** {{FROM_BOOTSTRAP}} — what people close to them wish they'd do differently
-- **Gap between self-image and others' experience:** {{FROM_BOOTSTRAP}}
 - **Currently avoiding:** {{FROM_BOOTSTRAP}}
 
 ## What they want from {{AGENT_NAME}}
@@ -85,12 +83,6 @@
 - **Weekly anchors:** {{FROM_BOOTSTRAP}}
 - **Good work week looks like:** {{FROM_BOOTSTRAP}}
 - **Bad work week looks like:** {{FROM_BOOTSTRAP}}
-
-## Tools and systems
-
-- **Daily tools (Basis + anything else):** {{FROM_BOOTSTRAP}}
-- **Organisation system:** {{FROM_BOOTSTRAP}}
-- **Tools they wish they used better:** {{FROM_BOOTSTRAP}}
 
 ---
 
