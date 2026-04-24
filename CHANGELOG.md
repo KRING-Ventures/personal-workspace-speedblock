@@ -8,6 +8,22 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.2.0] — 2026-04-24
+
+Repackage the repo as a Speedblock in the new two-layer shape: a **skill layer** (agent-loadable) and a **human layer** (deliverables read or operated by people). No changes to `agent-files/` content or per-user state shape — existing users pull and continue, no migration.
+
+### Added
+- `SKILL.md` — skill entry point at repo root. Describes the skill's job (provisioning a new user on Personal Workspace), when to use and not use it, the handoff to agent-led BOOTSTRAP, and what `agent-files/` ships as the payload.
+- `human-roles.md` — names the four active human roles this Speedblock assumes (account provisioner, runtime operator, framework maintainer, user) and the handoffs between them.
+
+### Changed
+- `README.md` — restructured to present the repo as a Speedblock with explicit skill layer and human layer sections.
+
+### Migrations
+- None. `agent-files/` is unchanged — same paths, same content, same per-user state shape. The repo is now skill-shaped *around* the same payload.
+
+---
+
 ## [0.1.2] — 2026-04-24
 
 Correct the shipped tool-reach set: the agent is not wired to Slack or GitHub in 0.1.x. Wire-up covers Telegram (pre-wired), Gmail, Calendar, Drive, Notion, plus any user-specific tools.
