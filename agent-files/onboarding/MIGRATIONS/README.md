@@ -2,7 +2,7 @@
 
 *Per-version migration notes. One file per version that requires per-pilot state changes when an OpenClaw agent catches up.*
 
-**File name:** `<version>-<short-slug>.md` — e.g. `beta-2026-04-30-pa-hardcode.md`.
+**File name:** `<from>-to-<to>.md` — e.g. `0.1.0-to-0.2.0.md`.
 
 **Contents:** explicit instructions an OpenClaw agent can follow at session boot to bring its per-pilot state up to current — what to add, remove, rename, or restructure. Plain language, one action per bullet.
 
@@ -10,4 +10,4 @@
 
 ---
 
-*[No migrations yet — pre-beta scaffolding.]*
+*[No migrations yet — `0.1.0` is the first shipped version.]*

@@ -25,9 +25,8 @@ USER.md                # user profile, filled during BOOTSTRAP  (per-user)
 TOOLS.md               # what's actually wired up  (per-user)
 onboarding/
 ├── BOOTSTRAP.md       # first-session dialogue (zeroth migration)
-├── CHANGELOG.md       # one entry per version ship
 ├── STATE_VERSION      # current framework version
-└── MIGRATIONS/        # per-version per-user cleanup notes
+└── MIGRATIONS/        # per-version per-user cleanup notes (empty unless a version changes per-user state)
 memory/
 └── 2026-04-22.md      # example daily log
 templates/
@@ -70,7 +69,7 @@ At OpenClaw runtime, both layers are assembled:
 1. Clone the `personal-workspace-speedblock` repo and read from `agent-files/` — all framework + blueprint files.
 2. Clone the user's own private repo — personal files (already seeded with `{{FROM_BOOTSTRAP}}` markers).
 3. **First live session:** the OpenClaw agent runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. The agent fills its own `USER.md`, confirms its `IDENTITY.md` (agent name / vibe / emoji), and wires `TOOLS.md`. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
-4. **Subsequent sessions:** the agent runs the onboarding catch-up loop in `AGENTS.md` — pulling framework + each subscribed Speedblock, comparing STATE_VERSION values, and running any MIGRATIONS for versions it's behind. BOOTSTRAP is the zeroth migration; CHANGELOG/MIGRATIONS handle every version after.
+4. **Subsequent sessions:** the agent runs the onboarding catch-up loop in `AGENTS.md` — pulling framework + each subscribed Speedblock, comparing STATE_VERSION values, and running any MIGRATIONS for versions it's behind. BOOTSTRAP is the zeroth migration; the top-level `CHANGELOG.md` + `onboarding/MIGRATIONS/` handle every version after.
 
 Placeholders (`{{AGENT_NAME}}`, `{{USER_FIRST_NAME}}`, etc.) use double curly braces. `{{FROM_BOOTSTRAP}}` markers are filled **by the OpenClaw agent, during its own first session** — never by a central operator.
 

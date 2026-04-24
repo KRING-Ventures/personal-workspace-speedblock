@@ -1,27 +1,32 @@
 # CHANGELOG
 
-Versioned deliverables for the Personal Workspace Speedblock.
+All notable changes to the Personal Workspace framework are recorded here, newest first. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version numbers follow [semver](https://semver.org/) (`MAJOR.MINOR.PATCH`, pre-`1.0.0` is beta).
 
-Each release is a milestone snapshot under `releases/<version>/`. The root directory is always the living latest state.
+Each entry lists what changed, and — when a version changes the shape of per-user state — points at the `agent-files/onboarding/MIGRATIONS/<from>-to-<to>.md` file an OpenClaw agent runs to catch up.
+
+The current framework version lives in `agent-files/onboarding/STATE_VERSION`. Each OpenClaw agent's repo records its last-synced version in its own `STATE_VERSION` file at the repo root. The session-boot rule in `agent-files/AGENTS.md` describes how the comparison and catch-up runs.
 
 ---
 
-## v0.1-beta  ·  shipped 2026-04-23
+## [0.1.0] — 2026-04-23
 
-First packaged release. Deliverables: playbook, onboarding, and the shared OpenClaw agent file set.
+First shipped version of the Personal Workspace framework.
 
-**What shipped**
-- `playbook.md` — the Personal Workspace operating manual: locked tech stack (Google Workspace, Telegram, Notion, GitHub, Claude, Slack), four AI layers (Gemini / Claude / OpenClaw / Cosmo), OpenClaw purpose and capabilities, working rhythm.
+### Added
+- `playbook.md` — Personal Workspace operating manual: locked tech stack (Google Workspace, Telegram, Notion, GitHub, Claude, Slack), four AI layers (Gemini / Claude / OpenClaw / Cosmo), OpenClaw purpose and capabilities, working rhythm.
 - `onboarding.md` — human setup (Google/Slack/Notion/GitHub accounts, user's private personal-layer repo, OpenClaw runtime deployment) + agent-led BOOTSTRAP conversation.
-- `agent-files/` — shared OpenClaw framework: SOUL, AGENTS, KRING, HEARTBEAT, IDENTITY/USER/TOOLS per-user blueprints, MEMORY templates, working templates (daily/weekly/email-draft), BOOTSTRAP script, CHANGELOG, STATE_VERSION.
+- `agent-files/` — shared OpenClaw framework: `SOUL`, `AGENTS`, `KRING`, `HEARTBEAT`, `IDENTITY`/`USER`/`TOOLS`/`MEMORY` per-user blueprints, `templates/` (daily / weekly / email-draft), `automations/AUTOMATIONS.md`, `onboarding/BOOTSTRAP.md`, `onboarding/STATE_VERSION`, `onboarding/MIGRATIONS/`.
+- Tools-first BOOTSTRAP ordering (wire tools → pull drafts from real data → validate with user → fill human gaps → close).
 
-**Frozen snapshot**
-- `releases/beta/` — frozen copy of the above, cut at ship.
-
-**Product rename**
-- This version reflects the rename from "Workspace Beta" to "Personal Workspace" (2026-04-23).
+### Changed
+- Product renamed from "Workspace Beta" to "Personal Workspace".
 - Shared framework moved from `workspace-beta-agent-files` (deleted) to `personal-workspace-speedblock/agent-files/`.
-- KRING-managed per-pilot repos (`op-august`, `op-jesper`, `op-johan`) deleted. Each user now creates their own private personal-layer repo with a name of their choice.
 
-**Pilots shipped to**
+### Removed
+- KRING-managed per-pilot repos (`op-august`, `op-jesper`, `op-johan`). Each user now creates their own private personal-layer repo; name is the user's choice.
+
+### Migrations
+- None. First shipped version.
+
+### Pilots shipped to
 - August Kring, Jesper Kring, Johan Rishede Duus.

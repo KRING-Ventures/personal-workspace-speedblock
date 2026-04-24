@@ -2,7 +2,7 @@
 
 Deliverables for the **Personal Workspace** Speedblock — the standardised AI-native work environment for KRING Ventures and the companies KRING builds.
 
-This repo is the source of truth for every Personal Workspace deliverable: playbook, onboarding, and the shared OpenClaw agent file set. Versioned as a living root with frozen release snapshots.
+This repo is the source of truth for every Personal Workspace deliverable: playbook, onboarding, and the shared OpenClaw agent file set.
 
 ## What's here
 
@@ -10,29 +10,30 @@ This repo is the source of truth for every Personal Workspace deliverable: playb
 |---|---|
 | [`playbook.md`](./playbook.md) | The operating manual — what Personal Workspace is, the tech stack, the four AI layers, OpenClaw purpose & capabilities, working rhythm. |
 | [`onboarding.md`](./onboarding.md) | How a new user gets onboarded — human setup + agent-led BOOTSTRAP conversation. |
-| [`agent-files/`](./agent-files) | Shared OpenClaw framework file set (SOUL, AGENTS, KRING, HEARTBEAT, templates, BOOTSTRAP). The **living** version — evolves continuously. |
-| [`releases/`](./releases) | Frozen snapshots of prior releases. Archive only — not active deployment targets. |
-| [`CHANGELOG.md`](./CHANGELOG.md) | What changed per release. |
+| [`agent-files/`](./agent-files) | Shared OpenClaw framework file set (SOUL, AGENTS, KRING, HEARTBEAT, templates, BOOTSTRAP). |
+| [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
 
-## Versioning model
+## Versioning
 
-**Living root + frozen release snapshots.**
+Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
-- Root = the one living source of truth. We evolve it continuously. New users always onboard from root (latest).
-- `releases/<version>/` = immutable snapshots cut at release milestones. Historical record, not deployment targets.
-- Git tags (`v0.1-beta`, `v1.0`, …) back the snapshots so the history is clean.
+- `main` is the single source of truth. All changes land here.
+- Each shipped version is a git tag (`v0.1.0`, `v0.2.0`, …). GitHub's Releases page lists them.
+- `CHANGELOG.md` records one entry per version (Keep-a-Changelog format).
+- `agent-files/onboarding/STATE_VERSION` records the framework's current version. Each pilot agent keeps its own `STATE_VERSION` at the root of their private repo and catches up when behind.
+- `agent-files/onboarding/MIGRATIONS/<from>-to-<to>.md` — written only when a version changes the shape of per-user state. Pure framework updates (new wording, new templates, new capabilities) don't need a migration.
 
-When we cut the next version, we copy the current root state into `releases/<version>/` and tag it.
+**Shipping a new version:** update `CHANGELOG.md`, bump `STATE_VERSION`, `git tag v<x.y.z>`, push tag. That's it — no folder copies.
 
 ## Current version
 
-**beta** (shipped 2026-04-23). Frozen snapshot in [`releases/beta/`](./releases/beta). See [`CHANGELOG.md`](./CHANGELOG.md) for what's in it.
+**`0.1.0`** — shipped 2026-04-23. See [`CHANGELOG.md`](./CHANGELOG.md).
 
-**Next:** 1.0.
+**Next:** `1.0.0` — target is the framework being stable enough to recommend beyond KRING.
 
 ## Repos involved
 
-- **This repo** (`personal-workspace-speedblock`, public) — playbook, onboarding, shared agent-file framework, release snapshots.
+- **This repo** (`personal-workspace-speedblock`, public) — playbook, onboarding, shared agent-file framework.
 - **Shared skills** (`claw-shared`, private) — OpenClaw skill library loaded on demand.
 - **Per-user personal layers** (private, one per user) — each user creates their own private repo for their personal OpenClaw agent's IDENTITY, USER, TOOLS, automations, and memory. Repo name is up to the user.
 

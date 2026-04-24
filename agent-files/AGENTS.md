@@ -25,8 +25,8 @@ The framework and any Speedblocks you're subscribed to may have shipped changes 
 
 ### Where onboarding lives
 
-- **Framework:** `onboarding/CHANGELOG.md` + `onboarding/STATE_VERSION` + `onboarding/MIGRATIONS/` inside `personal-workspace-speedblock/agent-files/`. Plus `onboarding/BOOTSTRAP.md` for first-session use.
-- **Speedblocks:** the same shape — `onboarding/CHANGELOG.md` / `STATE_VERSION` / `MIGRATIONS/` — inside each Speedblock's repo.
+- **Framework:** `CHANGELOG.md` at the root of `personal-workspace-speedblock/` + `agent-files/onboarding/STATE_VERSION` + `agent-files/onboarding/MIGRATIONS/`. Plus `agent-files/onboarding/BOOTSTRAP.md` for first-session use.
+- **Speedblocks:** same shape — root `CHANGELOG.md` / `onboarding/STATE_VERSION` / `onboarding/MIGRATIONS/` — inside each Speedblock's repo.
 - **Your version cursors:**
   - `STATE_VERSION` at the root of your own repo — the framework version you last synced with.
   - `SPEEDBLOCKS.md` at the root of your own repo — one row per subscribed Speedblock, each with a `Last synced` value.
@@ -35,14 +35,14 @@ The framework and any Speedblocks you're subscribed to may have shipped changes 
 
 After pulling latest:
 
-1. **Framework check.** Read framework `onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
-   - Read `onboarding/CHANGELOG.md` entries from your version onwards.
-   - Run any `onboarding/MIGRATIONS/*.md` files for those versions, in order. Each migration file contains explicit instructions — apply them to your personal-layer files.
+1. **Framework check.** Read framework `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
+   - Read the framework's root `CHANGELOG.md` entries from your version onwards.
+   - Run any `agent-files/onboarding/MIGRATIONS/*.md` files for those versions, in order. Each migration file contains explicit instructions — apply them to your personal-layer files.
    - Update your own `STATE_VERSION` to the framework's current value.
    - Commit + push.
 2. **Speedblock check.** For each row in your `SPEEDBLOCKS.md`:
    - Pull that Speedblock's repo.
-   - Read its `onboarding/STATE_VERSION`. If ahead of your `Last synced` value: read its CHANGELOG entries since, run any MIGRATIONS in order, update your `Last synced`, commit + push.
+   - Read its `onboarding/STATE_VERSION`. If ahead of your `Last synced` value: read its root `CHANGELOG.md` entries since, run any `onboarding/MIGRATIONS/` in order, update your `Last synced`, commit + push.
 3. **Log it.** In today's daily memory log, note which versions you onboarded to and what changed.
 
 ### First-session BOOTSTRAP
