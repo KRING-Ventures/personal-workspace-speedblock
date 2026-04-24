@@ -9,7 +9,7 @@ The flow has two halves:
 
 ---
 
-## What beta ships
+## What 0.1.0 ships
 
 - **Personal OpenClaw assistant on Telegram** — memory across sessions, scoped to work.
 - **Daily brief** (morning) — calendar, top priorities, anything urgent.
@@ -75,4 +75,4 @@ Full script: `agent-files/onboarding/BOOTSTRAP.md`.
 
 ---
 
-*Current version: beta (shipped 2026-04-23).*
+*Current version: 0.1.0 (shipped 2026-04-23).*

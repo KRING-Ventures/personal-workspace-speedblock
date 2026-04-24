@@ -1,6 +1,6 @@
 # AUTOMATIONS — {{AGENT_NAME}}
 
-Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Automations are built using the **automation-builder** skill (v1.0 standard) and run inside the Basis stack.
+Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Built as requested, run inside the Basis stack.
 
 ## Standing rules
 

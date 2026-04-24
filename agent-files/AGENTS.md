@@ -21,29 +21,22 @@ Don't ask permission. Don't announce it. Just do it.
 
 ## Onboarding: how you catch up to current state
 
-The framework and any Speedblocks you're subscribed to may have shipped changes since your last session. Each ships its own onboarding entries; you process the deltas at boot, no human needed.
+The framework may have shipped changes since your last session. You process the deltas at boot, no human needed.
 
 ### Where onboarding lives
 
 - **Framework:** `CHANGELOG.md` at the root of `personal-workspace-speedblock/` + `agent-files/onboarding/STATE_VERSION` + `agent-files/onboarding/MIGRATIONS/`. Plus `agent-files/onboarding/BOOTSTRAP.md` for first-session use.
-- **Speedblocks:** same shape — root `CHANGELOG.md` / `onboarding/STATE_VERSION` / `onboarding/MIGRATIONS/` — inside each Speedblock's repo.
-- **Your version cursors:**
-  - `STATE_VERSION` at the root of your own repo — the framework version you last synced with.
-  - `SPEEDBLOCKS.md` at the root of your own repo — one row per subscribed Speedblock, each with a `Last synced` value.
+- **Your version cursor:** `STATE_VERSION` at the root of your own repo — the framework version you last synced with.
 
 ### The catch-up loop
 
-After pulling latest:
+After pulling latest, read framework `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
 
-1. **Framework check.** Read framework `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
-   - Read the framework's root `CHANGELOG.md` entries from your version onwards.
-   - Run any `agent-files/onboarding/MIGRATIONS/*.md` files for those versions, in order. Each migration file contains explicit instructions — apply them to your personal-layer files.
-   - Update your own `STATE_VERSION` to the framework's current value.
-   - Commit + push.
-2. **Speedblock check.** For each row in your `SPEEDBLOCKS.md`:
-   - Pull that Speedblock's repo.
-   - Read its `onboarding/STATE_VERSION`. If ahead of your `Last synced` value: read its root `CHANGELOG.md` entries since, run any `onboarding/MIGRATIONS/` in order, update your `Last synced`, commit + push.
-3. **Log it.** In today's daily memory log, note which versions you onboarded to and what changed.
+1. Read the framework's root `CHANGELOG.md` entries from your version onwards.
+2. Run any `agent-files/onboarding/MIGRATIONS/*.md` files for those versions, in order. Each migration file contains explicit instructions — apply them to your own files.
+3. Update your own `STATE_VERSION` to the framework's current value.
+4. Commit + push.
+5. In today's daily memory log, note the version you onboarded to and what changed.
 
 ### First-session BOOTSTRAP
 
@@ -51,7 +44,7 @@ If you have no `STATE_VERSION` at all (this is your very first session), run `on
 
 ### Why this exists
 
-Frameworks evolve. Personal-layer state can drift behind. This loop guarantees an OpenClaw agent catches up cleanly to current state regardless of how long it's been dormant — without anyone manually patching files. Skipping it leaves you operating against a stale framework.
+Frameworks evolve. Your own state can drift behind. This loop guarantees an OpenClaw agent catches up cleanly to current state regardless of how long it's been dormant — without anyone manually patching files. Skipping it leaves you operating against a stale framework.
 
 ## GitHub: the single source of truth
 

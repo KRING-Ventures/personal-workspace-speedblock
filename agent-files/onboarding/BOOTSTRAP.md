@@ -10,7 +10,7 @@ The reason for tools-first ordering: most of `USER.md` (name, role signals, curr
 
 ## Before you start
 
-1. Read every framework `.md` file (`SOUL`, `AGENTS`, `KRING`, `HEARTBEAT`, plus the `templates/`) and every per-pilot `.md` file in this OpenClaw agent's own repo (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`).
+1. Read every framework `.md` file (`SOUL`, `AGENTS`, `KRING`, `HEARTBEAT`, plus the `templates/`) and every per-user `.md` file in this OpenClaw agent's own repo (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`).
 2. Note what's already filled in vs. what's empty or `{{FROM_BOOTSTRAP}}`.
 3. Don't rush. This session can take as long as it needs to.
 
@@ -209,7 +209,7 @@ These are the things that don't show up in any tool. Run as a natural dialogue, 
 Before ending the conversation:
 
 1. **Recap the final `USER.md`.** Play it back in summary form: "Here's what I've got on you now — anything still off?"
-2. **Automation invitation.** "You can ask me to automate things anytime — I have a skill that helps build new automations. Anything repetitive in your week we could automate as a starting point?" Offer one or two concrete examples relevant to {{USER_FIRST_NAME}}'s workflow. If yes, run the **automation-builder** skill from `claw-shared`.
+2. **Automation invitation.** "You can ask me to automate things anytime. Anything repetitive in your week we could automate as a starting point?" Offer one or two concrete examples relevant to {{USER_FIRST_NAME}}'s workflow. If yes, work with them to set it up.
 3. **Open invitation.** "Anything else you want to ask me right now about what I can do?"
 4. **Set expectations for next steps.** Tell {{USER_FIRST_NAME}} that from here on:
    - You'll send a daily brief at the start of their working day (calendar block depends on Calendar being wired).

@@ -4,7 +4,7 @@ Personal Workspace is KRING's shared way of working: a standard set of tools, fo
 
 This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
 
-*Owner: August Kring. Version: beta (2026-04-23).*
+*Owner: August Kring.*
 
 ---
 
@@ -17,7 +17,7 @@ This document explains what's in it and how to use it. Read it once top to botto
 
 ---
 
-## The Tool Stack (beta)
+## The Tool Stack
 
 Every KRING user runs on these. We don't mix and match.
 

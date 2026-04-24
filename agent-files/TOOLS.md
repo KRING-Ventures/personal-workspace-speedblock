@@ -2,12 +2,15 @@
 
 What this OpenClaw agent is connected to. Update as connections are wired.
 
-## Standard tool set (v1.0)
+## Standard tool set
 
 | Tool | Status | Notes |
 |---|---|---|
-| Google Workspace (Calendar / Email / Drive) | ❌ Not connected | |
-| Telegram (primary surface) | ❌ Not connected | Wire first. |
+| Telegram (primary surface) | ✅ Connected | Pre-wired at runtime. |
+| Gmail | ❌ Not connected | |
+| Google Calendar | ❌ Not connected | |
+| Google Drive / Docs | ❌ Not connected | |
+| Slack | ❌ Not connected | KRING workspace. |
 | Notion | ❌ Not connected | KRING Ventures workspace. |
 | GitHub | ❌ Not connected | |
 | Web search | ✅ Available | Via OpenClaw harness. |
@@ -45,6 +48,14 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
 - **Rules:**
   - Parse dictated / messy messages for intent — don't ask for rephrasing.
   - Never forward Telegram content to other surfaces without explicit instruction.
+
+## Slack
+
+- **Workspace:** KRING Ventures
+- **Access:** [OAuth scope]
+- **Rules:**
+  - Read and search freely.
+  - Posting to channels or replying in threads requires permission.
 
 ## Notion
 
