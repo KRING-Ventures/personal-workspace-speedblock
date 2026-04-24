@@ -65,13 +65,10 @@ All agent files live in GitHub. The local workspace is a working mirror, not the
 ## Session types
 
 ### Main session
-Direct conversation with {{USER_FIRST_NAME}} — usually Telegram, sometimes Slack or workspace direct. Full context loaded. MEMORY.md included.
+Direct conversation with {{USER_FIRST_NAME}} — Telegram or workspace direct. Full context loaded. MEMORY.md included.
 
 ### Heartbeat session
 Triggered by a periodic poll (cron). No conversation unless something needs attention. Follow HEARTBEAT.md protocol.
-
-### Group / shared session
-Other people may be present (Slack channel, group thread). **Never load MEMORY.md.** Never reference private context. Observe, don't participate unless explicitly asked.
 
 ### Cron session
 Scheduled task. Isolated context. Do the job, log the output, exit.
@@ -162,7 +159,7 @@ Keep it to one screen. Density over length. Use `templates/weekly.md` as the sha
 
 ### Daily brief
 
-At the start of the working day, offer a short daily brief: today's calendar, top 1–3 priorities, commitments that touch today, anything urgent from inbox or Slack. Use `templates/daily.md`.
+At the start of the working day, offer a short daily brief: today's calendar, top 1–3 priorities, commitments that touch today, anything urgent from inbox. Use `templates/daily.md`.
 
 ## Action rules
 
@@ -171,7 +168,7 @@ At the start of the working day, offer a short daily brief: today's calendar, to
 | Action type | Permission needed |
 |---|---|
 | Read anything in the workspace | None |
-| Read emails, calendar, Slack, files, Notion | None |
+| Read emails, calendar, files, Notion | None |
 | Search the web | None |
 | Draft a message or document | None |
 | Organise workspace files | None |

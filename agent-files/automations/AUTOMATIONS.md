@@ -24,7 +24,7 @@ Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Bu
 - **Owner:** {{USER_FIRST_NAME}}
 - **Built:** YYYY-MM-DD
 - **Trigger:** [cron schedule / event / manual]
-- **Surfaces touched:** [Gmail / Slack / Notion / ...]
+- **Surfaces touched:** [Gmail / Calendar / Drive / Notion / ...]
 - **Human-in-loop:** [yes / no — if yes, at what step]
 - **Rollback:** [how to disable or reverse]
 - **Known failure modes:** [what breaks it, what to watch]

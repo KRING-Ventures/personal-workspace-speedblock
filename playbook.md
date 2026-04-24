@@ -62,7 +62,7 @@ Every KRING user gets their own AI assistant — a personal OpenClaw agent. You 
 - **Remembers.** Keeps context about you — your role, projects, the people you work with, how you like things done. Memory carries between conversations.
 - **Briefs you.** Each morning: your calendar, priorities, anything urgent. Each week: open commitments, things you're waiting on, patterns worth noticing.
 - **Drafts for you.** Emails, messages, documents. Always drafts first — never sends without your OK.
-- **Uses your tools.** Reads your Gmail, Calendar, Drive, Slack, Notion, GitHub.
+- **Uses your tools.** Reads your Gmail, Calendar, Drive, Notion — plus any other tools you wire it to during onboarding.
 - **Tracks commitments.** Notices when you've said you'll do something or are waiting on a reply.
 - **Preps meetings.** For meetings that matter, pulls together who's there, what's relevant, and what you want to get out of it.
 - **Builds automations.** If you want it to handle recurring work, you can ask it to set that up.
@@ -74,7 +74,7 @@ Your assistant drafts and researches freely. But it always asks first before any
 | The assistant... | Asks first? |
 |---|---|
 | Reads, searches, drafts, or researches | No |
-| Sends an email, posts in Slack, or replies to a message | **Yes** |
+| Sends an email or replies to a message | **Yes** |
 | Accepts or declines a calendar invite | **Yes** |
 | Writes to someone else's Notion page | **Yes (every time)** |
 | Does anything irreversible or visible to others | **Yes** |
@@ -98,7 +98,7 @@ Your assistant drafts and researches freely. But it always asks first before any
 Two halves:
 
 1. **Setup.** Someone on the team provisions your accounts (Google, Slack, Notion, GitHub, Telegram), creates a private space for your personal assistant's settings, and starts the assistant on Telegram.
-2. **First conversation with your assistant.** You open Telegram and send the first message. The assistant runs a guided setup: introduces itself, connects to your tools one at a time (Gmail → Calendar → Drive → Slack → Notion → GitHub), reads what it can from them, then asks you a few questions to fill in the things tools can't tell it.
+2. **First conversation with your assistant.** You open Telegram and send the first message. The assistant runs a guided setup: introduces itself, connects to your tools one at a time (Gmail → Calendar → Drive → Notion, plus any other tools you use), reads what it can from them, then asks you a few questions to fill in the things tools can't tell it.
 
 Full step-by-step in `onboarding.md`.
 

@@ -8,6 +8,27 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.1.2] — 2026-04-24
+
+Correct the shipped tool-reach set: the agent is not wired to Slack or GitHub in 0.1.x. Wire-up covers Telegram (pre-wired), Gmail, Calendar, Drive, Notion, plus any user-specific tools.
+
+### Changed
+- `TOOLS.md` — removed Slack and GitHub rows + sections; added a "User-specific tools" table so additional tools can be wired during onboarding.
+- `BOOTSTRAP.md` — removed Slack + GitHub from Phase 1 tool list, Phase 2 wire-up priority order, and Phase 3 auto-pull sections; added a step for user-specific tools after the standard set.
+- `AGENTS.md` — removed "Group / shared session" type (not applicable without Slack); dropped Slack mentions from daily brief cue and permission table.
+- `IDENTITY.md` — removed Slack from the Surface line.
+- `playbook.md` — updated "Uses your tools" and Phase 2 wire-up flow to reflect the actual tool set.
+- `onboarding.md` — tool-reach line updated; version block updated.
+- `AUTOMATIONS.md` — surfaces-touched example no longer lists Slack.
+
+### Removed
+- Agent-side Slack and GitHub wire-up (not supported in 0.1.x). Slack remains part of the human tool stack for team chat and Cosmo; GitHub remains the source-of-truth repo layer handled by the runtime.
+
+### Migrations
+- None. Users who already onboarded against 0.1.1 can simply pull the framework — no per-user state shape changes.
+
+---
+
 ## [0.1.1] — 2026-04-24
 
 Cleanup pass: strip dead references, orphan placeholders, and schema drift. No per-user state changes.

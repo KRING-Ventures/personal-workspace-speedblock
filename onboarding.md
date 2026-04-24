@@ -9,13 +9,13 @@ The flow has two halves:
 
 ---
 
-## What 0.1.0 ships
+## What 0.1.2 ships
 
 - **Personal OpenClaw assistant on Telegram** — memory across sessions, scoped to work.
 - **Daily brief** (morning) — calendar, top priorities, anything urgent.
 - **Weekly brief** (Friday EOD) — open commitments, things they're waiting on, patterns.
 - **Heartbeats** — periodic background check-ins; surfaces things only when they need attention.
-- **Tool reach** — Gmail, Calendar, Drive, Slack, Notion, GitHub.
+- **Tool reach** — Gmail, Calendar, Drive, Notion, plus any user-specific tools wired during onboarding.
 - **Drafting** — emails, messages, docs. Never sent without the user's OK.
 - **Automations** — built on request.
 
@@ -75,4 +75,4 @@ Full script: `agent-files/onboarding/BOOTSTRAP.md`.
 
 ---
 
-*Current version: 0.1.0 (shipped 2026-04-23).*
+*Current version: 0.1.2 (shipped 2026-04-24).*

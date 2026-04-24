@@ -10,11 +10,16 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | Gmail | ❌ Not connected | |
 | Google Calendar | ❌ Not connected | |
 | Google Drive / Docs | ❌ Not connected | |
-| Slack | ❌ Not connected | KRING workspace. |
-| Notion | ❌ Not connected | KRING Ventures workspace. |
-| GitHub | ❌ Not connected | |
+| Notion | ❌ Not connected | |
 | Web search | ✅ Available | Via OpenClaw harness. |
 | Local files | ✅ Connected | `{{WORKSPACE_PATH}}` |
+
+## User-specific tools
+
+Beyond the standard set above, {{USER_FIRST_NAME}} may use other tools the agent can wire to. Added here as they're connected.
+
+| Tool | Status | Notes |
+|---|---|---|
 
 *`HEARTBEAT.md` checks this table to know what to scan.*
 
@@ -49,29 +54,13 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
   - Parse dictated / messy messages for intent — don't ask for rephrasing.
   - Never forward Telegram content to other surfaces without explicit instruction.
 
-## Slack
-
-- **Workspace:** KRING Ventures
-- **Access:** [OAuth scope]
-- **Rules:**
-  - Read and search freely.
-  - Posting to channels or replying in threads requires permission.
-
 ## Notion
 
-- **Workspace:** KRING Ventures
+- **Workspace:** [workspace name]
 - **Access:** [OAuth scope]
 - **Rules:**
   - Read and search freely.
   - Modify pages only with explicit per-action permission.
-
-## GitHub
-
-- **Account:** [username]
-- **Access:** [token / OAuth]
-- **Rules:**
-  - Read repos freely.
-  - Pushing, PRs, or issue comments require permission.
 
 ## Web search
 
