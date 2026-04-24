@@ -8,6 +8,29 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.1.1] — 2026-04-24
+
+Cleanup pass: strip dead references, orphan placeholders, and schema drift. No per-user state changes.
+
+### Changed
+- `IDENTITY.md` — hardcoded vibe and emoji (🚀); removed unused `{{ORG}}` and `{{AGENT_AVATAR_PATH_OR_TBD}}` placeholders.
+- `USER.md` — cut "Blind spots" + "Gap between self-image and others' experience" (personality-leaning, not work-PA scope); cut "Tools and systems" section (overlaps with `TOOLS.md` and BOOTSTRAP Phase 3 auto-pull).
+- `TOOLS.md` — split Google Workspace row into Gmail / Calendar / Drive to match BOOTSTRAP Phase 2 wire-up flow; Telegram flipped to `✅ Connected` (pre-wired at runtime); added missing Slack row + section.
+- `BOOTSTRAP.md` — softened automation invitation (no longer references a specific skill).
+- `AGENTS.md` — catch-up loop simplified to framework-only.
+- `AUTOMATIONS.md` — removed reference to the automation-builder skill.
+- Version-string cleanup across `playbook.md`, `onboarding.md`, `TOOLS.md`, `AUTOMATIONS.md`, example daily log.
+- "per-pilot" → "per-user" wording throughout.
+
+### Removed
+- `SPEEDBLOCKS.md` references (multi-Speedblock subscription machinery) — not needed with a single shipped Speedblock.
+- `automation-builder` skill references — skill doesn't exist in `claw-shared`.
+
+### Migrations
+- None. Pure framework cleanup.
+
+---
+
 ## [0.1.0] — 2026-04-23
 
 First shipped version of the Personal Workspace framework.
