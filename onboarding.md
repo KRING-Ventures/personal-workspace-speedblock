@@ -68,38 +68,10 @@ From there, the rest is yours.
 Now you roll the assistants out to your team. For each user:
 
 - Give them their assistant's Telegram handle.
-- Send them the message below so they know exactly what to do.
+- Point them at the playbook so they know what they're getting.
+- Tell them to send the first message — their assistant takes it from there.
 
-### Hand-off message (paste-ready)
-
-Copy and send this to each user (in Slack, email, or however you communicate with your team — just fill in their name, the handle, and the link):
-
-```
-Hi [name] — your AI assistant is ready.
-
-It's on Telegram at @<handle>. Send it any message to get started.
-
-Your assistant will introduce itself and walk you through connecting your
-tools (Gmail, Calendar, Drive, Notion, GitHub) — one at a time, with
-permission for each — then ask you a few questions tools can't tell it
-(how you make decisions, what you want it to push back on, how you
-communicate). Block 30–45 minutes when you're ready; it's a real
-conversation, not a form.
-
-For context on what Personal Workspace is, read the playbook:
-<link to your shared playbook copy, or to the public repo>
-```
-
-### What happens in the user's first conversation
-
-For your reference, so you can field questions:
-
-- The assistant introduces itself.
-- Walks the user through connecting their tools one at a time (Gmail → Calendar → Drive → Notion → GitHub, plus any other tools they use).
-- Reads what it can from each.
-- Asks a few questions to fill in the parts tools can't tell it (how they make decisions, what they want their assistant to push back on, how they communicate, etc.).
-
-This is a real conversation, not a form. The user takes their time. You coordinate the rollout — who goes first, fielding questions — but the first conversation itself is between each user and their assistant.
+You coordinate the rollout — who goes first, fielding questions — but the first conversation itself is between each user and their assistant. It's a structured ~30–45 minute walkthrough where the assistant introduces itself, wires up the user's tools (Gmail, Calendar, Drive, Notion, GitHub) one at a time, and asks the few questions tools can't answer (how they make decisions, what they want pushback on, how they communicate). Real conversation, not a form.
 
 ---
 
