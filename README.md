@@ -41,7 +41,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 **`0.2.0`** — shipped 2026-04-24. See [`CHANGELOG.md`](./CHANGELOG.md).
 
-**Next:** `1.0.0` — target is the framework being stable enough to recommend beyond KRING.
+**Next:** `1.0.0` — target is the framework being stable enough to recommend for general venture deployments without KRING hand-holding.
 
 ## Repos involved
 
@@ -49,9 +49,9 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 - **Shared skills** (`claw-shared`, private) — other OpenClaw skills loaded on demand.
 - **Per-user personal layers** (private, one per user) — each user creates their own private repo for their personal OpenClaw agent's IDENTITY, USER, TOOLS, automations, and memory. Repo name is up to the user.
 
-## Two agent layers at KRING
+## Agent layers
 
-- **Cosmo** — the shared KRING-org OpenClaw agent. Slack surface. One instance for the organisation.
-- **Personal OpenClaw agent** — one per user. Telegram surface. Built from this repo's `agent-files/` + the user's own personal repo.
+- **Personal OpenClaw agent** — one per user. Telegram surface. Built from this repo's `agent-files/` + the user's own personal repo. Applies to KRING-internal users *and* venture deployments alike.
+- **Cosmo** — the shared KRING-org OpenClaw agent. Slack surface. One instance for KRING the organisation. KRING-internal only — ventures don't get Cosmo.
 
 See `playbook.md` § *The four AI helpers* for the full picture (Gemini / Claude / OpenClaw / Cosmo).

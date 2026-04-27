@@ -1,20 +1,20 @@
 # Human roles in Personal Workspace
 
-The active human layer this Speedblock assumes. Each role has a narrow responsibility and a clean handoff — none of them overlap with the agent's job.
+The active human layer this Speedblock assumes — same shape whether the user is KRING-internal or being onboarded inside a venture. Each role has a narrow responsibility and a clean handoff — none of them overlap with the agent's job.
 
 ## Roles
 
 ### 1. Account provisioner
 
-- **Who:** KRING ops / admin (currently August or whoever holds tenant admin).
-- **Does:** Creates the user's accounts inside KRING's shared tenants — Google Workspace, Slack, Notion, GitHub org (if role-relevant). Issues invites, not credentials.
-- **Hand-off:** Tells the runtime operator (below) once the accounts exist and the user can log in.
+- **Who:** Whoever owns the user's tenants. For KRING-internal users, KRING ops/admin. For venture deployments, the venture itself (their ops/admin) — KRING does not provision into a venture's accounts.
+- **Does:** Ensures all required user accounts exist *before* runtime wire-up — Google Workspace (or equivalent), Slack, Notion, GitHub (if role-relevant), plus any venture-specific tools the agent will need to reach. Issues invites, not credentials.
+- **Hand-off:** Confirms to the runtime operator that the tenants and accounts are ready. If anything is missing, runtime wire-up doesn't start — it bounces back to this role until the environment is in place.
 
 ### 2. Runtime operator
 
-- **Who:** Corey.
+- **Who:** Corey (KRING side, supports both KRING-internal and venture deployments today).
 - **Does:** Deploys the OpenClaw runtime instance for each new user. Wires Telegram (bot token, chat binding). Points the runtime at both file layers — the shared framework (this repo's `agent-files/`) and the user's own private personal-layer repo. Confirms the agent is running and reachable on Telegram before handoff.
-- **Does not:** Pre-fill `USER.md`. Choose the agent's name or vibe. Wire any tools beyond Telegram. Those all belong to the agent's first session with the user.
+- **Does not:** Start wire-up before the account provisioner has confirmed accounts are ready. Pre-fill `USER.md`. Choose the agent's name or vibe. Wire any tools beyond Telegram. Those all belong to the agent's first session with the user.
 - **Hand-off:** Tells the user the Telegram handle and that they can send the first message whenever they're ready.
 
 ### 3. Framework maintainer

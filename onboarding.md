@@ -27,13 +27,25 @@ Each future version updates this block. Source of truth: `CHANGELOG.md`.
 
 Done once per new user, before they talk to their agent.
 
-### 1. Provision the user's KRING Workspace accounts
+### Prerequisites — the venture's environment must already exist
 
-- **Google Workspace** account (`@kringventures.com` or the relevant domain).
-- **Slack** invite to the KRING workspace.
-- **Notion** invite to the KRING Ventures workspace.
-- **GitHub** invite to the `KRING-Ventures` org (if relevant to their role).
+Before any of the steps below run, the user's tenants must already be set up. The account provisioner (see `human-roles.md`) owns this:
+
+- For **KRING-internal users**, KRING ops/admin handles it against KRING's tenants.
+- For **venture deployments**, the *venture itself* is responsible. They must already have Google Workspace (or equivalent), Slack, Notion, GitHub, and any venture-specific tools the agent will need to reach — KRING does not provision into a venture's accounts.
+
+If any of those tenants are missing, runtime wire-up doesn't start. It bounces back to the venture (or KRING ops) until the environment is in place.
+
+### 1. Provision the user's workspace accounts
+
+Issued by the account provisioner against the relevant tenants:
+
+- **Google Workspace** account on the venture's domain (e.g. `@kringventures.com` for KRING-internal users; the venture's own domain otherwise).
+- **Slack** invite to the relevant Slack workspace (KRING's, or the venture's).
+- **Notion** invite to the relevant Notion workspace.
+- **GitHub** invite to the relevant org (if relevant to their role).
 - **Telegram** — they use their existing personal Telegram; they'll authorise the OpenClaw bot during wire-up.
+- Any **venture-specific tools** the user needs day-to-day that the agent should be able to reach.
 
 ### 2. Create the user's private personal-layer repo
 

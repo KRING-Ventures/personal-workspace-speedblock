@@ -1,27 +1,29 @@
 ---
 name: personal-workspace-setup
 description: >
-  Stand up a new KRING user on Personal Workspace — provision their accounts,
-  create their private personal-layer repo, seed it from the shared agent-file
-  blueprints, deploy their personal OpenClaw agent on Telegram, and hand off to
-  the agent's own first-session BOOTSTRAP dialogue. Use when a new KRING user
-  joins and needs their full work environment (Google Workspace, Slack, Notion,
-  GitHub, Telegram) plus their personal OpenClaw agent stood up. Reads
-  `onboarding.md` for the human-led setup sequence and ships `agent-files/` as
-  the payload deployed into the user's runtime. Does **not** handle ongoing
-  operation or framework-version catch-ups — those are owned by each deployed
-  agent's session-boot loop in `agent-files/AGENTS.md`. Does **not** run the
-  user's first-session onboarding — that's a dialogue between the deployed
-  agent and its user, scripted in `agent-files/onboarding/BOOTSTRAP.md`.
+  Stand up a new Personal Workspace user — KRING-internal or venture
+  deployment — by provisioning their accounts, creating their private
+  personal-layer repo, seeding it from the shared agent-file blueprints,
+  deploying their personal OpenClaw agent on Telegram, and handing off to the
+  agent's own first-session BOOTSTRAP dialogue. Use when a new user joins (KRING
+  team or a venture) and needs their full work environment (Google Workspace,
+  Slack, Notion, GitHub, Telegram) plus their personal OpenClaw agent stood up.
+  Reads `onboarding.md` for the human-led setup sequence and ships
+  `agent-files/` as the payload deployed into the user's runtime. Does **not**
+  handle ongoing operation or framework-version catch-ups — those are owned by
+  each deployed agent's session-boot loop in `agent-files/AGENTS.md`. Does
+  **not** run the user's first-session onboarding — that's a dialogue between
+  the deployed agent and its user, scripted in
+  `agent-files/onboarding/BOOTSTRAP.md`.
 ---
 
 # Personal Workspace Setup
 
-Use this skill to set up a new KRING user on Personal Workspace.
+Use this skill to set up a new Personal Workspace user — KRING-internal or venture deployment.
 
 ## When to use
 
-- A new KRING user (team, portfolio company, partner) is joining and needs their full work environment + personal OpenClaw agent.
+- A new user (KRING team, portfolio company, partner, or external venture) is joining and needs their full work environment + personal OpenClaw agent.
 - An existing user needs a fresh agent instance (e.g. after losing access to their previous one).
 
 ## When NOT to use
@@ -34,7 +36,7 @@ Use this skill to set up a new KRING user on Personal Workspace.
 
 Deliver the two layers a new user needs, then get out of the way:
 
-1. **The user's environment** — Google Workspace, Slack, Notion, GitHub, Telegram accounts wired against KRING's shared tenants.
+1. **The user's environment** — Google Workspace, Slack, Notion, GitHub, Telegram accounts wired against the relevant tenants. For KRING-internal users that's KRING's tenants; for venture deployments it's the venture's own tenants, which the venture must already have in place. KRING does not provision into a venture's accounts.
 2. **The user's personal OpenClaw agent** — a deployed runtime on Telegram, pointed at the shared framework (this repo's `agent-files/`) and at the user's own private personal-layer repo (seeded from the per-user blueprints in `agent-files/`).
 
 Once the agent sends its first Telegram message to the user, this skill's work is done. The agent owns the conversation from there.
@@ -43,7 +45,7 @@ Once the agent sends its first Telegram message to the user, this skill's work i
 
 Follow `onboarding.md` end-to-end. It carries the canonical setup sequence:
 
-1. **Provision the user's KRING Workspace accounts** — Google Workspace, Slack, Notion, GitHub (if relevant), Telegram (user's existing).
+1. **Provision the user's workspace accounts** — Google Workspace, Slack, Notion, GitHub (if relevant), Telegram (user's existing). Issued by the account provisioner against the relevant tenants (KRING's, or the venture's). Prerequisite: the tenants themselves already exist — see `onboarding.md` § *Prerequisites*.
 2. **Create the user's private personal-layer repo** — seed from this repo's `agent-files/` per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, empty `STATE_VERSION`). Leave `{{FROM_BOOTSTRAP}}` markers in place — the agent fills them during its first session.
 3. **Wire the OpenClaw runtime** — deploy a new OpenClaw instance for this user, pointed at both file layers (shared framework + user's private repo), with Telegram connected.
 4. **Hand off to the agent** — send the user the Telegram handle. The agent runs `agent-files/onboarding/BOOTSTRAP.md` as a dialogue with its user.

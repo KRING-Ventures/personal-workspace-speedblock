@@ -1,6 +1,6 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace is KRING's shared way of working: a standard set of tools, four AI helpers, and a personal AI assistant for every person.
+Personal Workspace is the shared way of working we use across KRING and the ventures KRING builds: a standard set of tools, four AI helpers, and a personal AI assistant for every person.
 
 This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
 
@@ -19,16 +19,16 @@ This document explains what's in it and how to use it. Read it once top to botto
 
 ## The Tool Stack
 
-Every KRING user runs on these. We don't mix and match.
+Every Personal Workspace user runs on these. We don't mix and match.
 
 | For | We use |
 |---|---|
 | Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) |
 | Your personal AI assistant | **Telegram** — you chat with your assistant there |
-| KRING's shared AI (Cosmo) | **Slack** — Cosmo lives in the KRING channels |
+| KRING's shared AI (Cosmo) | **Slack** — Cosmo lives in the KRING channels *(KRING-internal only; ventures don't get Cosmo)* |
 | Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. |
 | General-purpose AI | **Claude** — used for coding and individual projects |
-| Project and task management | **Notion** — the KRING Ventures workspace |
+| Project and task management | **Notion** — your venture's Notion workspace |
 | Team chat | **Slack** |
 
 ---
@@ -55,7 +55,7 @@ Rule of thumb:
 
 ## Your personal AI assistant (OpenClaw)
 
-Every KRING user gets their own AI assistant — a personal OpenClaw agent. You chat with it on Telegram. It's your partner for work.
+Every Personal Workspace user gets their own AI assistant — a personal OpenClaw agent. You chat with it on Telegram. It's your partner for work.
 
 ### What it does for you
 
@@ -115,7 +115,7 @@ Don't ask your OpenClaw assistant to do things for the whole company. Don't ask 
 
 ## Glossary
 
-- **Personal Workspace** — the standard way every KRING user works.
+- **Personal Workspace** — the shared way of working across KRING and the ventures KRING builds.
 - **OpenClaw** — the AI assistant system. *Your* OpenClaw is your personal assistant; *Cosmo* is the shared, company-wide OpenClaw.
 - **Cosmo** — KRING's shared AI in Slack.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).

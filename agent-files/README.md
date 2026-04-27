@@ -1,6 +1,6 @@
 # Personal Workspace — OpenClaw Agent File Set (shared layer)
 
-The **shared framework layer** for every KRING personal OpenClaw agent. Lives at `personal-workspace-speedblock/agent-files/` (this directory).
+The **shared framework layer** for every personal OpenClaw agent — KRING-internal users and venture deployments alike. Lives at `personal-workspace-speedblock/agent-files/` (this directory).
 
 ## What this is
 
@@ -43,10 +43,10 @@ Each user's **personal layer** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `automa
 
 Personal context never sits alongside shared framework content.
 
-## Two agent layers at KRING
+## Agent layers
 
-- **Cosmo** — the shared KRING-org OpenClaw agent. One instance for the organisation. Runs in `/root/clawd/`. Not this file set.
-- **Personal OpenClaw agent** — one per user. Built on this framework + the user's private repo.
+- **Personal OpenClaw agent** — one per user. Built on this framework + the user's private repo. Applies to KRING-internal users and venture deployments alike.
+- **Cosmo** — the shared KRING-org OpenClaw agent. One instance for KRING the organisation. Runs in `/root/clawd/`. Not this file set. KRING-internal only — ventures don't get Cosmo.
 
 ## Skills
 
