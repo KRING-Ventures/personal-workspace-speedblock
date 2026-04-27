@@ -41,7 +41,7 @@ For each user:
 - Their Telegram handle (e.g. `@maria`). They need Telegram installed on a device they use day-to-day.
 - The name they want for their assistant (e.g. `Ida`, `Kerstin`). One assistant per user. Vibe and personality come out of the first conversation; only the name is decided up front.
 
-We don't start until the intake is complete. If anything's missing, we'll let you know.
+**How to send it.** Email or message the intake to your KRING contact (the person you've been coordinating with). One document or message with one section per user works fine. We don't start until the intake is complete — if anything's missing, we'll let you know what's still needed.
 
 *Tools beyond the standard stack* — anything venture-specific (e.g. Linear, Figma) — get wired by the user with their assistant after deployment, not at intake.
 
@@ -57,7 +57,7 @@ We take your intake and deploy one assistant per user. For each:
 - Wire Telegram.
 - Confirm the assistant is reachable.
 
-When all the assistants are live, we send you a list of Telegram handles — one per user.
+When all the assistants are live, we send you a list of Telegram handles — one per user — back through the same channel you used for the intake.
 
 From there, the rest is yours.
 
@@ -68,13 +68,34 @@ From there, the rest is yours.
 Now you roll the assistants out to your team. For each user:
 
 - Give them their assistant's Telegram handle.
-- Point them at the playbook so they know what they're getting.
-- Tell them to send the first message — their assistant takes it from there.
+- Send them the message below so they know exactly what to do.
 
-When a user sends the first message, their assistant runs a structured first conversation:
+### Hand-off message (paste-ready)
 
-- Introduces itself.
-- Walks them through connecting their tools one at a time (Gmail → Calendar → Drive → Notion → GitHub, plus any other tools they use).
+Copy and send this to each user (in Slack, email, or however you communicate with your team — just fill in their name, the handle, and the link):
+
+```
+Hi [name] — your AI assistant is ready.
+
+It's on Telegram at @<handle>. Send it any message to get started.
+
+Your assistant will introduce itself and walk you through connecting your
+tools (Gmail, Calendar, Drive, Notion, GitHub) — one at a time, with
+permission for each — then ask you a few questions tools can't tell it
+(how you make decisions, what you want it to push back on, how you
+communicate). Block 30–45 minutes when you're ready; it's a real
+conversation, not a form.
+
+For context on what Personal Workspace is, read the playbook:
+<link to your shared playbook copy, or to the public repo>
+```
+
+### What happens in the user's first conversation
+
+For your reference, so you can field questions:
+
+- The assistant introduces itself.
+- Walks the user through connecting their tools one at a time (Gmail → Calendar → Drive → Notion → GitHub, plus any other tools they use).
 - Reads what it can from each.
 - Asks a few questions to fill in the parts tools can't tell it (how they make decisions, what they want their assistant to push back on, how they communicate, etc.).
 
