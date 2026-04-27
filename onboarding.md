@@ -65,13 +65,13 @@ From there, the rest is yours.
 
 ## Step 3 — Finish onboarding
 
-Now you roll the assistants out to your team. For each user:
+You roll the assistants out to your team, one user at a time. For each user:
 
-- Give them their assistant's Telegram handle.
-- Point them at the playbook so they know what they're getting.
-- Tell them to send the first message — their assistant takes it from there.
+1. **Send them their assistant's Telegram handle** (e.g. `@ida_kring`). Use Slack, email, or whatever channel you normally use with your team — we don't prescribe a format.
+2. **Share `playbook.md` with them** so they know what Personal Workspace is before they start. Send the link from this repo, or a copy your team mirrors internally.
+3. **Tell them to open Telegram, find the assistant by the handle, and send any message to start.** Their assistant introduces itself and runs the first conversation from there — about 30–45 minutes, real conversation, not a form. The assistant walks them through wiring up their tools (Gmail, Calendar, Drive, Notion, GitHub) one at a time, and asks the few questions tools can't answer (how they make decisions, what to push back on, how they communicate).
 
-You coordinate the rollout — who goes first, fielding questions — but the first conversation itself is between each user and their assistant. It's a structured ~30–45 minute walkthrough where the assistant introduces itself, wires up the user's tools (Gmail, Calendar, Drive, Notion, GitHub) one at a time, and asks the few questions tools can't answer (how they make decisions, what they want pushback on, how they communicate). Real conversation, not a form.
+That's your part. The first conversation runs between the user and their assistant directly — you're not in it. You coordinate the rollout (who goes first, field questions on the side) but the conversation itself is between the two of them.
 
 ---
 
