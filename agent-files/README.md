@@ -29,7 +29,7 @@ onboarding/
 └── MIGRATIONS/        # per-version per-user cleanup notes (empty unless a version changes per-user state)
 templates/
 ├── daily.md           # morning brief
-├── weekly.md          # Friday EOD brief
+├── weekly.md          # Monday morning brief
 ├── email-draft.md     # email drafting structure
 └── example-daily.md   # example shape for a memory/YYYY-MM-DD.md daily log
 automations/

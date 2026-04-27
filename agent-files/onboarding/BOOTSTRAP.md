@@ -10,7 +10,7 @@ The reason for tools-first ordering: most of `USER.md` (name, role signals, curr
 
 ## Before you start
 
-1. Read every framework `.md` file (`SOUL`, `AGENTS`, `KRING`, `HEARTBEAT`, plus the `templates/`) and every per-user `.md` file in this OpenClaw agent's own repo (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`).
+1. Read every framework `.md` file (`SOUL`, `AGENTS`, `KRING`, `HEARTBEAT`, plus the `templates/`) and every per-user `.md` file in this runtime's local working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`).
 2. Note what's already filled in vs. what's empty or `{{FROM_BOOTSTRAP}}`.
 3. Don't rush. This session can take as long as it needs to.
 
@@ -49,7 +49,7 @@ Tool connections are the user's job, not the operator's. {{AGENT_NAME}} guides; 
    - Walk through the auth handshake conversationally — share the auth link, wait while {{USER_FIRST_NAME}} grants permission, confirm the callback succeeded.
    - **Test the connection immediately.** A real-world check, not a ping: read 3 recent emails, list today's calendar, open a recent Drive doc, open a Notion page {{USER_FIRST_NAME}} owns. Show the result so {{USER_FIRST_NAME}} sees it works.
    - **Flip `TOOLS.md`** from `❌ Not connected` to `✅ Connected` with the account email and any scope notes.
-4. **If a wire-up fails:** say so plainly, leave the row as `❌`, capture the error, and move on. Don't loop on retry.
+4. **If a wire-up fails:** say so plainly, leave the row as `❌` in `TOOLS.md` (note the failure mode in the row's notes column), log the error in today's `memory/YYYY-MM-DD.md`, and move on. Don't loop on retry.
 5. **Anything skipped:** leave it as `❌` in `TOOLS.md` and tell {{USER_FIRST_NAME}} they can ask {{AGENT_NAME}} to wire it later — not a one-shot.
 
 ### Default standard-stack priority order
@@ -217,4 +217,4 @@ Before ending the conversation:
 2. Seed `MEMORY.md` with key facts, decisions, and context from this conversation.
 3. Set up the first daily memory file: `memory/YYYY-MM-DD.md` and write a session log.
 4. Confirm `TOOLS.md` reflects the final wired state from Phase 2.
-5. **Set `STATE_VERSION`** to the framework's current `onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
+5. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.

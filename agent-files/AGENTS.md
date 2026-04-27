@@ -26,7 +26,7 @@ The framework may have shipped changes since your last session. You process the 
 ### Where onboarding lives
 
 - **Framework:** `CHANGELOG.md` at the root of `personal-workspace-speedblock/` + `agent-files/onboarding/STATE_VERSION` + `agent-files/onboarding/MIGRATIONS/`. Plus `agent-files/onboarding/BOOTSTRAP.md` for first-session use.
-- **Your version cursor:** your own local `STATE_VERSION` file — the framework version you last synced with.
+- **Your version cursor:** `STATE_VERSION` at the root of your local working directory — the framework version you last synced with. Distinct from the framework's `agent-files/onboarding/STATE_VERSION` you read at session boot.
 
 ### How catch-up works
 
@@ -151,7 +151,7 @@ When a meeting is less than 4 hours away:
 
 ### Weekly operational review
 
-Once a week (Friday EOD or Monday morning), offer:
+Once a week (Monday morning), offer:
 - Open commitments summary.
 - Waiting-on items.
 - Calendar overview for the week.

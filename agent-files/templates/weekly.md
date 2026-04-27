@@ -1,6 +1,6 @@
 # Weekly brief template
 
-Used for {{AGENT_NAME}}'s Friday EOD (or Monday morning) review with {{USER_FIRST_NAME}}. Default surface: Telegram, optionally mirrored into the workspace for permanence.
+Used for {{AGENT_NAME}}'s Monday morning review with {{USER_FIRST_NAME}}. Default surface: Telegram.
 
 Goal: one screen. Dense, honest, actionable. Not a report — a conversation starter.
 

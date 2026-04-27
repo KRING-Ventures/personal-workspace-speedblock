@@ -24,7 +24,7 @@ Use this skill to deploy the assistants for a venture that's activating Personal
 
 ## When to use
 
-- A venture has activated the Speedblock and submitted its intake — accounts confirmed, per-user details (name, email, Telegram handle, assistant name) provided.
+- A venture has activated the Speedblock and submitted its intake — venture-level confirmation that tenants are in place, plus per-user details (name, email, accounts confirmed, Telegram handle, assistant name).
 - An existing user needs a fresh assistant instance (e.g. after losing access to their previous one).
 
 ## When NOT to use
@@ -51,7 +51,7 @@ Once the assistants are reachable on Telegram, hand the assistant Telegram handl
 Don't start until both of these are in place:
 
 - **The venture's tenants exist.** Google Workspace, Slack, Notion, GitHub — the fixed beta tech stack every Personal Workspace deployment runs on. Without these, there's nothing for the assistants to wire against. KRING does not provision into a venture's tenants.
-- **The intake is complete.** Per-venture confirmation + per-user details (full name, primary email, accounts ready, Telegram handle, assistant name). See `onboarding.md` § *Step 1 — Activate the Speedblock*.
+- **The intake is complete.** Per-venture confirmation + per-user details (full name, primary email, accounts ready, Telegram handle, assistant name). See `onboarding.md` § *Step 1 — Activate*.
 
 ## How to run it
 
