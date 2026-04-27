@@ -2,7 +2,7 @@
 
 *Curated knowledge that persists across sessions. Load in main sessions only — never in shared or group contexts.*
 
-*Last maintained: {{TODAY}}*
+*Last maintained: {{FROM_BOOTSTRAP}}*
 
 ## People
 

@@ -1,6 +1,6 @@
 # AUTOMATIONS — {{AGENT_NAME}}
 
-Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Built as requested, run inside the Basis stack.
+Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Built as requested by {{USER_FIRST_NAME}}, running on the standard Personal Workspace tool stack.
 
 ## Standing rules
 

@@ -52,7 +52,7 @@ Tool connections are the user's job, not the operator's. {{AGENT_NAME}} guides; 
 4. **If a wire-up fails:** say so plainly, leave the row as `❌`, capture the error, and move on. Don't loop on retry.
 5. **Anything skipped:** leave it as `❌` in `TOOLS.md` and tell {{USER_FIRST_NAME}} they can ask {{AGENT_NAME}} to wire it later — not a one-shot.
 
-### Default Basis priority order
+### Default standard-stack priority order
 
 If {{USER_FIRST_NAME}} has no preference, suggest this order — most-informative-for-Phase-3 first:
 
@@ -108,7 +108,7 @@ Only pull from tools that wired successfully in Phase 2. Skip anything that's st
 
 **From the framework / KRING context (already known, not pulled):**
 - KRING team list from kring.com (pre-loaded into `USER.md` template).
-- Basis stack expectations.
+- Standard-stack expectations (Google Workspace, Slack, Notion, GitHub, Telegram).
 - KRING entity overview, ventures.
 
 ### How to write the draft
