@@ -7,8 +7,8 @@ The active human layer this Speedblock assumes. Each role has a narrow responsib
 ### 1. The venture
 
 - **Who:** The venture activating Personal Workspace for its users.
-- **Does:** Owns its own tenants — Google Workspace, Slack, Notion, GitHub. Provisions user accounts inside those tenants. Submits the intake to KRING (per-venture confirmation + per-user details: name, email, accounts ready, Telegram handle, assistant name). After deployment, runs the rollout — distributes the assistant Telegram handles to its users, points them at the playbook, and supports them through their first conversation.
-- **Does not:** Wire OpenClaw runtimes (that's KRING). Run anyone's first conversation for them (that's between each user and their assistant).
+- **Does:** Owns its own tenants — Google Workspace, Slack, Notion, GitHub. Provisions user accounts inside those tenants. Submits the intake to KRING (per-venture confirmation + per-user details: name, email, accounts ready, Telegram handle, assistant name). After deployment, runs the rollout — distributes each assistant's Telegram handle to the corresponding user, points each user at the playbook, and supports each user through the first conversation.
+- **Does not:** Wire OpenClaw runtimes (that's KRING). Run anyone's first conversation (that's between each user and the user's assistant).
 - **Hand-offs:** Submits the intake to KRING. Receives deployed assistant handles from KRING. Hands each assistant handle to the user it belongs to.
 
 ### 2. KRING
@@ -21,8 +21,8 @@ The active human layer this Speedblock assumes. Each role has a narrow responsib
 ### 3. The user
 
 - **Who:** Each person being onboarded by the venture.
-- **Does:** When their venture asks, provides the bits they own — confirming Telegram is installed on a device they use day-to-day, sharing their Telegram handle, and choosing a name for their assistant. After deployment, sends the first message to their assistant on Telegram and runs through the first conversation — connecting their tools, validating what their assistant pulled from those tools, and filling the gaps tools can't tell it (how they make decisions, what they want their assistant to push back on, etc.). Also wires any tools beyond the standard stack (e.g. Linear, Figma) with their assistant in conversation, post-deployment.
-- **Does not:** Need to know anything about the framework internals beforehand. The first conversation orients them.
+- **Does:** When the venture asks, provides what the user owns — confirming Telegram is installed on a device the user uses day-to-day, sharing a Telegram handle, and choosing a name for the assistant. After deployment, sends the first message to the assistant on Telegram and runs through the first conversation — connecting tools, validating what the assistant pulled from those tools, and filling the gaps tools can't tell it (how the user makes decisions, what the user wants the assistant to push back on, etc.). Also wires any tools beyond the standard stack (e.g. Linear, Figma) with the assistant in conversation, post-deployment.
+- **Does not:** Need to know anything about the framework internals beforehand. The first conversation handles orientation.
 
 ## The active human layer vs. the AI layer
 

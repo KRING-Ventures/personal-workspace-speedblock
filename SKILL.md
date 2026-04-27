@@ -25,7 +25,7 @@ Use this skill to deploy the assistants for a venture that's activating Personal
 ## When to use
 
 - A venture has activated the Speedblock and submitted its intake — venture-level confirmation that tenants are in place, plus per-user details (name, email, accounts confirmed, Telegram handle, assistant name).
-- An existing user needs a fresh assistant instance (e.g. after losing access to their previous one).
+- An existing user needs a fresh assistant instance (e.g. after losing access to the previous one).
 
 ## When NOT to use
 
@@ -67,7 +67,7 @@ Follow `onboarding.md` end-to-end. The canonical sequence:
    - Confirm the assistant is reachable on Telegram.
 3. **Hand back to the venture.** Return a list of assistant Telegram handles, one per user. The venture handles the rest of the rollout.
 
-Any time this skill would otherwise "do something for the user" beyond what's in the intake — wiring their tools, filling their `USER.md`, inventing the assistant's vibe — stop. That's the assistant's job during the first conversation. Pre-filling beyond intake breaks the relationship the first conversation is meant to build.
+Any time this skill would otherwise "do something for the user" beyond what's in the intake — wiring tools, filling `USER.md`, inventing the assistant's vibe — stop. That's the assistant's job during the first conversation. Pre-filling beyond intake breaks the relationship the first conversation is meant to build.
 
 ## Assets
 
@@ -80,7 +80,7 @@ See `agent-files/README.md` for the full layout and the framework-vs-personal sp
 
 ## Human deliverables (read alongside this skill)
 
-- **`playbook.md`** — Personal Workspace operating manual. What users are stepping into: tool stack, what their assistant does, working rhythm. Read by users and by anyone orienting to how Personal Workspace works.
+- **`playbook.md`** — Personal Workspace operating manual. What each user is stepping into: tool stack, what the assistant does, working rhythm. Read by users and by anyone orienting to how Personal Workspace works.
 - **`onboarding.md`** — The three-step flow in detail (Activate → Build & deploy → Finish onboarding). Read by the venture.
 - **`human-roles.md`** — Who does what across the three steps (the venture, KRING, each user).
 
@@ -92,7 +92,7 @@ Current framework version lives in `agent-files/onboarding/STATE_VERSION`. Each 
 
 A clean run leaves the venture with:
 
-- One deployed OpenClaw assistant on Telegram per user in their intake — already pulled the framework, named from the intake, waiting for the first message from its user.
+- One deployed OpenClaw assistant on Telegram per user in the intake — named from the intake, waiting for the first message from the user.
 - The assistant's local working files seeded from the per-user blueprints with `{{FROM_BOOTSTRAP}}` markers in the right places.
 - No pre-filled `USER.md`. No invented vibe. No wired tools beyond Telegram. Each assistant starts the first conversation from a clean state.
 - A list of assistant Telegram handles handed back, one per user, ready for the venture to distribute.
