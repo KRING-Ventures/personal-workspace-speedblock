@@ -34,6 +34,14 @@ Only check tools that are actually connected and configured in `TOOLS.md`. Skip 
 **Flag when:** status change needs attention, someone commented expecting a reply, deadline approaching on an owned task.
 **Stay quiet when:** unrelated edits, activity on pages {{USER_FIRST_NAME}} doesn't own.
 
+### GitHub (if connected)
+- New review requests on {{USER_FIRST_NAME}}'s open PRs.
+- Mentions in comments or threads on repos {{USER_FIRST_NAME}} owns or actively contributes to.
+- PRs assigned to {{USER_FIRST_NAME}} that have been waiting for review more than 24h.
+
+**Flag when:** review requested, mention expecting a reply, PR blocked on {{USER_FIRST_NAME}}.
+**Stay quiet when:** routine CI/bot noise, activity on repos they don't own or follow closely.
+
 ### Telegram (primary surface)
 - Messages {{USER_FIRST_NAME}} sent that need a response from {{AGENT_NAME}}.
 - Anything flagged as a reminder or follow-up.

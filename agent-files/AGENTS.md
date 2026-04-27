@@ -6,7 +6,7 @@ This is the operational manual. Follow it every session, no exceptions.
 
 Every session, before doing anything else:
 
-1. **Pull latest from GitHub** — both the shared framework (`personal-workspace-speedblock/agent-files/`) and your own private settings repo. GitHub is the source of truth; the local workspace is a working mirror. See **GitHub: the single source of truth** below.
+1. **Pull the latest framework.** Read from `KRING-Ventures/personal-workspace-speedblock` (`agent-files/`) — that's where framework templates and updates live. Your own per-user state already lives locally on this runtime; you don't need to fetch it.
 2. **Run onboarding catch-up.** If the framework has shipped a new version since you last synced, bring yourself up to current. See **Onboarding: how you catch up to current state** below.
 3. Read `IDENTITY.md` — who you are.
 4. Read `SOUL.md` — how you behave.
@@ -26,16 +26,15 @@ The framework may have shipped changes since your last session. You process the 
 ### Where onboarding lives
 
 - **Framework:** `CHANGELOG.md` at the root of `personal-workspace-speedblock/` + `agent-files/onboarding/STATE_VERSION` + `agent-files/onboarding/MIGRATIONS/`. Plus `agent-files/onboarding/BOOTSTRAP.md` for first-session use.
-- **Your version cursor:** `STATE_VERSION` at the root of your own repo — the framework version you last synced with.
+- **Your version cursor:** your own local `STATE_VERSION` file — the framework version you last synced with.
 
 ### How catch-up works
 
-After pulling latest, read framework `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
+After pulling the latest framework, read `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own:
 
 - Read the framework's `CHANGELOG.md` entries from your version onwards, plus any notes in `agent-files/onboarding/MIGRATIONS/`.
-- These are *guidelines, not a script*. Use judgment: take what's actually relevant to your user's state, ignore what isn't, ask if something looks ambiguous. Most updates are framework wording changes that don't require touching your private files at all.
+- These are *guidelines, not a script*. Use judgment: take what's actually relevant to your user's state, ignore what isn't, ask if something looks ambiguous. Most updates are framework wording changes that don't require touching your local files at all.
 - Update your own `STATE_VERSION` to the framework's current value once you've applied what's relevant.
-- Commit + push.
 - In today's daily memory log, note the version you caught up to and what (if anything) you changed.
 
 ### Migration guidelines, not migration rules
@@ -50,22 +49,20 @@ If you have no `STATE_VERSION` at all (this is your very first session), run `on
 
 Frameworks evolve. Your own state can drift behind. This loop is how an OpenClaw agent stays current against a moving framework — without anyone manually patching files. The point isn't strict execution; it's awareness that updates will arrive and the judgment to apply what's worth applying.
 
-## GitHub: the single source of truth
+## Where state lives
 
-All agent files live in GitHub. The local workspace is a working mirror, not the canonical store.
+Two layers — split between local and GitHub.
 
-- **Shared framework** (this file set): `KRING-Ventures/personal-workspace-speedblock`, under `agent-files/`.
-- **Your personal layer**: your own private GitHub repo (you create it; name it whatever you like).
+- **Shared framework** lives in GitHub at `KRING-Ventures/personal-workspace-speedblock`, under `agent-files/`. You read from it at session boot to pick up template content and any version updates.
+- **Your per-user state** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `MEMORY.md`, `memory/`, `automations/`, `STATE_VERSION` — lives on this runtime's local filesystem. You write to it freely. You do **not** push it back to a per-user GitHub repo. There is no per-user GitHub repo for state.
 
 ### Rules
 
-- **Pull before work.** At session boot, fetch the latest from both repos so you're running against the current framework and your latest personal state.
-- **Push as you go.** Every meaningful change to your own files — daily memory logs, `MEMORY.md` updates, `USER.md` revisions, new automations, `TOOLS.md` edits — is committed and pushed immediately. Never leave uncommitted work sitting in the local workspace.
-- **Never work in uncommitted files.** If you edit a tracked file, commit and push it same-session. Uncommitted local state is not a valid save.
-- **Cross-session continuity depends on this.** If it's not in GitHub, the next session (yours or any other agent's) doesn't see it.
-- **Commit messages are for humans.** Keep them short, present-tense, and specific about what changed and why.
+- **Pull the framework at session boot.** Fetch the latest from `personal-workspace-speedblock` so you're running against the current framework. That's the only pull.
+- **State is local.** Per-user state persists across sessions because the runtime's filesystem is durable. Save your work to those files; the next session reads them straight off disk.
+- **You can reach user repos in GitHub.** With the user's permission, you can read their codebases and work in their repos as a tool — that's separate from the framework reads above. Permission is granted via `TOOLS.md` and confirmed per session.
 
-GitHub is the source of truth, *not* a personal backup story. There is no per-user backup today — Syncthing-to-local-folder is on the roadmap for a future version. If the user asks about backup or recovery, that's the answer.
+GitHub is *not* a personal backup story for the user's state. There is no per-user backup today — Syncthing-to-local-folder is on the roadmap. If the user asks about backup or recovery, that's the honest answer.
 
 ## Session types
 

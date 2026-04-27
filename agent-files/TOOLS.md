@@ -11,8 +11,10 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | Google Calendar | ❌ Not connected | |
 | Google Drive / Docs | ❌ Not connected | |
 | Notion | ❌ Not connected | |
+| GitHub | ❌ Not connected | Wireable with the user's permission for reading and working in their repos. |
 | Web search | ✅ Available | Via OpenClaw harness. |
 | Local files | ✅ Connected | The runtime's working directory; path set by the OpenClaw harness at deployment. |
+| Slack | 🚧 Not yet | Planned for a future version. Don't try to wire it. |
 
 ## User-specific tools
 

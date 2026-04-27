@@ -6,13 +6,13 @@ The **shared framework layer** for every personal OpenClaw assistant. Lives at `
 
 The **shared** file set that ships identically with every personal OpenClaw agent — framework content (KRING context, SOUL, AGENTS, BOOTSTRAP, HEARTBEAT, memory templates, working templates) plus the per-user blueprint files (IDENTITY, USER, TOOLS, automations/) used when a new agent is instantiated.
 
-**Personal context does not live here.** Each user's personal layer lives in their own private settings repo. The OpenClaw runtime assembles both layers — shared + personal — at session boot.
+**Personal context does not live here.** Each user's personal layer lives on their own runtime's local filesystem — not in a separate GitHub repo. The OpenClaw runtime assembles both layers — shared (this set, read from GitHub) + personal (local files) — at session boot.
 
 This is not the agent runtime. The runtime is OpenClaw; this is the file layer OpenClaw reads.
 
 ## Layout
 
-One flat set of canonical templates. Files marked **(per-user)** are blueprints cloned into the user's private repo and personalised; everything else ships identically.
+One flat set of canonical templates. Files marked **(per-user)** are blueprints seeded into each runtime's local working directory at deployment and filled by the assistant during the first conversation; everything else ships identically.
 
 ```
 SOUL.md                # character, boundaries, voice
@@ -36,39 +36,40 @@ automations/
 └── AUTOMATIONS.md     # index of built automations  (per-user)
 ```
 
-## Private settings repos
+## Where state lives
 
-Each user's **personal layer** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/`, their own `MEMORY.md` + `memory/` — lives in an independent **private settings repo**, one per user. Name it whatever makes sense; the OpenClaw runtime reads both layers regardless of repo name.
+- **Shared framework** — this directory, in GitHub at `KRING-Ventures/personal-workspace-speedblock`. The agent reads from it at session boot to pick up template content and version updates.
+- **Per-user state** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/`, the user's own `MEMORY.md` and `memory/` — lives on the OpenClaw runtime's local filesystem, seeded from the per-user blueprints in this set at deployment. The agent writes there freely; it does **not** push back to a per-user GitHub repo.
+
+There is no per-user GitHub repo for state. Cross-session continuity is handled by the runtime's durable filesystem.
 
 Personal context never sits alongside shared framework content.
 
 ## Agent layers
 
-- **Personal OpenClaw assistant** — one per user. Built on this framework + the user's own private settings repo.
-- **Cosmo** — the shared KRING-org OpenClaw agent. One instance for KRING the organisation. Not this file set; not part of a venture deployment.
+- **Personal OpenClaw assistant** — one per user. Built on this framework + the runtime's local per-user state.
 
 ## Skills
 
-Not in this repo. Skills live in the shared KRING claw repo at https://github.com/KRING-Ventures/claw-shared (private). Each agent loads skills on demand; non-default scopes are recorded in that user's private `TOOLS.md`.
+Not in this repo. Skills live in the shared KRING claw repo at https://github.com/KRING-Ventures/claw-shared (private). Each agent loads skills on demand; non-default scopes are recorded in that user's local `TOOLS.md`.
 
-## GitHub is the source of truth
+## GitHub access
 
-Both layers — shared framework and each user's private settings repo — live in GitHub. Local filesystem state is a working mirror, not canonical.
+The agent reaches GitHub for two distinct things:
 
-- Agents **pull at session start** so they're running against the latest framework and latest personal state.
-- Agents **push after every meaningful change** — memory logs, `MEMORY.md`, `USER.md`, `TOOLS.md`, automations. Never leave uncommitted work.
-- GitHub is each agent's **cross-session continuity** mechanism — if it isn't pushed, the next session doesn't see it. *Not* a per-user backup story; Syncthing-to-local is on the roadmap for that.
+- **Reading the framework** at `KRING-Ventures/personal-workspace-speedblock` — for templates and version catch-up. This is read-only.
+- **Reading and working in the user's own code repos** — with the user's permission, the agent can act as a tool surface here (open PRs, read code, draft changes). Granted via `TOOLS.md`.
 
-See `AGENTS.md` for the operational rules.
+The agent does *not* push per-user state to GitHub. State is local. See `AGENTS.md` § *Where state lives* for the operational rules.
 
 ## Instantiation flow (per agent)
 
-At OpenClaw runtime, both layers are assembled:
+At deployment:
 
-1. Clone the `personal-workspace-speedblock` repo and read from `agent-files/` — all framework + blueprint files.
-2. Clone the user's own private repo — personal files (already seeded with `{{FROM_BOOTSTRAP}}` markers).
-3. **First live session:** the OpenClaw agent runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. The agent fills its own `USER.md`, confirms its `IDENTITY.md` (agent name / vibe / emoji), and wires `TOOLS.md`. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
-4. **Subsequent sessions:** the agent runs the onboarding catch-up loop in `AGENTS.md` — pulling the framework, comparing `STATE_VERSION` values, and reading any `MIGRATIONS/` notes for versions it's behind. BOOTSTRAP is the zeroth migration; the top-level `CHANGELOG.md` + `onboarding/MIGRATIONS/` cover every version after.
+1. The OpenClaw runtime reads the shared framework from `personal-workspace-speedblock/agent-files/`.
+2. The runtime seeds its local working directory with the per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, `STATE_VERSION`). Blueprints carry `{{FROM_BOOTSTRAP}}` markers — the assistant fills those during the first conversation.
+3. **First live session:** the assistant runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. The assistant fills its own `USER.md`, confirms its `IDENTITY.md` (agent name / vibe / emoji), and wires `TOOLS.md`. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
+4. **Subsequent sessions:** the assistant runs the onboarding catch-up loop in `AGENTS.md` — reading the framework, comparing `STATE_VERSION` values, and reading any `MIGRATIONS/` notes for versions it's behind. BOOTSTRAP is the zeroth migration; the top-level `CHANGELOG.md` + `onboarding/MIGRATIONS/` cover every version after.
 
 **Placeholders.** Two kinds, both written as double curly braces:
 

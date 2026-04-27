@@ -60,8 +60,9 @@ If {{USER_FIRST_NAME}} has no preference, suggest this order — most-informativ
 2. **Google Calendar** — unlocks meeting cadence, recurring events, who they meet with most, work-hour patterns.
 3. **Google Drive / Docs** — unlocks current projects, recent docs, shared folders.
 4. **Notion** — unlocks PM Tasks visibility, owned pages, current workstream context.
+5. **GitHub** — unlocks code repos {{USER_FIRST_NAME}} wants the agent to read or work in. Optional; only wire if {{USER_FIRST_NAME}} actively codes or owns repos that matter to their work.
 
-Telegram is already wired (it's the surface we're talking on right now).
+Telegram is already wired (it's the surface we're talking on right now). Slack agent wire-up isn't supported in this version — flag that if {{USER_FIRST_NAME}} asks.
 
 After the standard set, ask {{USER_FIRST_NAME}} what else they use daily — any tool beyond the standard set the agent should connect to. Add new rows to `TOOLS.md` under "User-specific tools" and wire each one the same way (auth → live test → flip to ✅).
 
@@ -69,7 +70,7 @@ After the standard set, ask {{USER_FIRST_NAME}} what else they use daily — any
 
 Before moving to Phase 3, walk through `TOOLS.md` and confirm what's wired:
 
-> "Here's what we wired: Gmail ✅, Calendar ✅, Drive ✅, Notion ✅. Now I'll pull what I can from those and we'll validate together."
+> "Here's what we wired: Gmail ✅, Calendar ✅, Drive ✅, Notion ✅, GitHub ✅. Now I'll pull what I can from those and we'll validate together."
 
 ## Phase 3 — Auto-pull: build the draft USER.md from real data
 
@@ -108,7 +109,7 @@ Only pull from tools that wired successfully in Phase 2. Skip anything that's st
 
 **From the framework / KRING context (already known, not pulled):**
 - KRING team list from kring.com (pre-loaded into `USER.md` template).
-- Standard tool stack — humans use Google Workspace, Slack, Notion, GitHub, Telegram. Agent reaches Google Workspace + Notion + Telegram; Slack and GitHub are humans-only in this version.
+- Standard tool stack — humans use Google Workspace, Slack, Notion, GitHub, Telegram. Agent reaches Google Workspace + Notion + GitHub + Telegram; Slack agent wire-up is planned for a future version.
 - KRING entity overview, ventures.
 
 ### How to write the draft

@@ -47,11 +47,8 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 - **This repo** (`personal-workspace-speedblock`, public) — skill + human deliverables for Personal Workspace.
 - **Shared skills** (`claw-shared`, private) — other OpenClaw skills loaded on demand.
-- **Per-user private settings repos** (private, one per user) — each user gets a private repo for their assistant's IDENTITY, USER, TOOLS, automations, and memory. Created and seeded by KRING during deployment. Repo name is up to the user.
+- **Per-user state** — each assistant's `IDENTITY`, `USER`, `TOOLS`, `automations/`, `MEMORY`, `memory/`, `STATE_VERSION` live on the runtime's local filesystem, seeded from the per-user blueprints in this repo at deployment. There is no per-user GitHub repo for state; the assistant doesn't push state back to GitHub.
 
-## Agent layers
+## Agent layer
 
-- **Personal OpenClaw assistant** — one per user. Telegram surface. Built from this repo's `agent-files/` + each user's own private settings repo.
-- **Cosmo** — the shared KRING-org OpenClaw agent. Slack surface. One instance for KRING the organisation; not part of a venture deployment.
-
-See `playbook.md` § *The four AI helpers* for the full picture (Gemini / Claude / OpenClaw / Cosmo).
+**Personal OpenClaw assistant** — one per user. Telegram surface. Built from this repo's `agent-files/` + the runtime's local per-user state.
