@@ -14,7 +14,7 @@ The active human layer this Speedblock assumes. Each role has a narrow responsib
 ### 2. KRING
 
 - **Who:** KRING — the deploying party for Personal Workspace.
-- **Does:** Receives the venture's intake. Deploys one OpenClaw runtime per user (one assistant per user). Seeds each runtime's local working files from the framework's per-user blueprints and points the runtime at the shared framework for catch-up reads. Sets each assistant's name from the intake. Wires Telegram. Confirms each assistant is reachable before handing back. Owns and maintains the framework itself — ships versions, updates `CHANGELOG.md`, bumps `STATE_VERSION`, authors migration guidance when a version changes per-user file shapes.
+- **Does:** Receives the venture's intake. Deploys one OpenClaw runtime per user (one assistant per user). Loads the framework's onboarding templates so each assistant knows how to run the first conversation. Sets each assistant's name from the intake. Wires Telegram. Confirms each assistant is reachable before handing back. Owns and maintains the framework itself — ships versions, updates `CHANGELOG.md`, bumps `STATE_VERSION`, authors migration guidance when a version changes file shapes.
 - **Does not:** Provision into a venture's tenants. Pre-fill any per-user file beyond what comes from the intake (no operator-imposed `USER.md` content, no operator-invented vibe). Wire any tools beyond Telegram — that happens in each user's first conversation.
 - **Hand-off:** Returns the deployed assistant Telegram handles to the venture.
 

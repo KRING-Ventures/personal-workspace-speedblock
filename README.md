@@ -20,7 +20,7 @@ Both layers live in this repo.
 
 | File | What it is |
 |---|---|
-| [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, four AI helpers, what the OpenClaw agent does, working rhythm. |
+| [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your assistant does, working rhythm. |
 | [`onboarding.md`](./onboarding.md) | Setup flow — three steps (venture activates → KRING deploys → venture finishes onboarding). |
 | [`human-roles.md`](./human-roles.md) | Who does what — the venture, KRING, the user. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
@@ -32,7 +32,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 - `main` is the single source of truth. All changes land here.
 - Each shipped version is a git tag (`v0.1.0`, `v0.2.0`, …). GitHub's Releases page lists them.
 - `CHANGELOG.md` records one entry per version (Keep-a-Changelog format).
-- `agent-files/onboarding/STATE_VERSION` records the framework's current version. Each user's OpenClaw agent keeps its own `STATE_VERSION` at the root of their private repo and catches up when behind.
+- `agent-files/onboarding/STATE_VERSION` records the framework's current version. Each user's assistant keeps its own `STATE_VERSION` and catches up when behind.
 - `agent-files/onboarding/MIGRATIONS/<from>-to-<to>.md` — written only when a version changes the shape of per-user state. Pure framework updates (new wording, new templates, new capabilities) don't need a migration.
 
 **Shipping a new version:** update `CHANGELOG.md`, bump `STATE_VERSION`, `git tag v<x.y.z>`, push tag. That's it — no folder copies.

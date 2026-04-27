@@ -26,14 +26,14 @@ Every Personal Workspace user runs on these. We don't mix and match.
 | Project and task management | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
 | Code & engineering | **GitHub** | ✅ Yes — your assistant can read and work in your repos with your permission |
 | Team chat | **Slack** | ❌ Not yet — planned for a future version |
-| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — separate AI helper |
-| General-purpose AI | **Claude** — used for coding and individual projects | n/a — separate AI helper |
+| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — you use this directly |
+| General-purpose AI | **Claude** — for coding and individual projects | n/a — you use this directly |
 
 ---
 
-## Your personal AI assistant (OpenClaw)
+## Your personal AI assistant
 
-Every Personal Workspace user gets their own AI assistant — a personal OpenClaw agent. You chat with it on Telegram. It's your partner for work.
+You get your own AI assistant — powered by OpenClaw, running on Telegram. It's your partner for work.
 
 ### What it does for you
 
@@ -63,20 +63,14 @@ Your assistant drafts and researches freely. But it always asks first before any
 ## Working rhythm
 
 - **Each day.** Morning brief from your assistant → use it throughout the day for drafting, research, and recall → it writes a short memory log at end of day.
-- **Each week.** Monday morning: a weekly review — open commitments, things you're waiting on, calendar overview, patterns.
-
----
-
-## Getting set up
-
-Activation, deployment, and your first conversation are covered end-to-end in `onboarding.md`.
+- **Each week.** Monday morning: a weekly review — open commitments, things you're waiting on, calendar overview, patterns worth noticing.
 
 ---
 
 ## Glossary
 
 - **Personal Workspace** — the shared way of working across KRING and the ventures KRING builds.
-- **OpenClaw** — the AI assistant system. Your OpenClaw is your personal assistant.
+- **OpenClaw** — the AI assistant system that powers your personal assistant.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
 - **Brief** — the daily or weekly summary your assistant sends you.
 

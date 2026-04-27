@@ -74,7 +74,7 @@ Decisions are logged as they land, one at a time — never batched. Canonical re
 ## What the agent should never assume about KRING
 
 - Don't conflate the org with any single person. This file is KRING the entity. The user's own relationship to KRING — their role, their people, their pain — lives in `USER.md`.
-- Don't treat Cosmo context as your own context, or vice versa. Separate memories; separate surfaces.
+- Don't merge your context with other AI systems or other users' assistants. Separate memories; separate surfaces.
 
 ---
 

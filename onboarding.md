@@ -1,19 +1,14 @@
 # Personal Workspace — Onboarding
 
-How a venture activates Personal Workspace and gets running.
+How you activate Personal Workspace and get your team running.
 
-This document is read by two people:
+Three steps:
 
-- **The venture** activating the Speedblock — for *what to send us in the intake* (Step 1) and *how to roll out* (Step 3).
-- **The user** being onboarded — for *what to expect when your assistant says hello* (Step 3).
+1. **Activate** — you send us the intake.
+2. **Build & deploy** — we deploy one assistant per user.
+3. **Finish onboarding** — you roll out to your users, each one runs their first conversation.
 
-The flow has three steps:
-
-1. **Activate the Speedblock** *(you, the venture)* — send us the intake.
-2. **Build & deploy** *(KRING)* — we deploy one assistant per user.
-3. **Finish onboarding** *(you, the venture, with each of your users)* — roll out and let each user's first conversation happen.
-
-When Step 3 wraps, you have a fully functioning Personal Workspace.
+When Step 3 is done, you have a fully functioning Personal Workspace.
 
 ---
 
@@ -31,61 +26,59 @@ Source of truth for what's in each version: `CHANGELOG.md`.
 
 ---
 
-## Step 1 — Activate the Speedblock (you, the venture)
+## Step 1 — Activate
 
-To activate, send us one intake with everything we need to deploy.
+Send us one intake with everything we need to deploy.
 
 Once for your venture as a whole:
 
-- Confirm your tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the fixed beta tech stack: every Personal Workspace deployment runs on these. We don't provision into your tenants; that's on you.
+- Confirm your tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the fixed beta tech stack. We don't provision into your tenants; that's on you.
 
-For each user you're onboarding, send us:
+For each user:
 
 - Their full name and primary email.
-- Confirmation their accounts are live in your tenants (Google Workspace, Slack, Notion, GitHub if it's relevant to their role).
-- Their Telegram handle (e.g. `@august`). They need to have Telegram installed on a device they use day-to-day.
-- The name they want for their assistant (e.g. `Ida`, `Kerstin`). One assistant per user. Vibe and personality come out of their first conversation; only the name is decided up front.
+- Confirmation their accounts are live in your tenants (Google Workspace, Slack, Notion, GitHub if relevant to their role).
+- Their Telegram handle (e.g. `@maria`). They need Telegram installed on a device they use day-to-day.
+- The name they want for their assistant (e.g. `Ida`, `Kerstin`). One assistant per user. Vibe and personality come out of the first conversation; only the name is decided up front.
 
-We don't start deployment until the intake is complete. If anything's missing, we'll bounce it back.
+We don't start until the intake is complete. If anything's missing, we'll let you know.
 
-*Tools beyond the standard stack* — anything venture-specific a user wants their assistant to reach (e.g. Linear, Figma) — get wired by the user with their assistant after deployment, not at intake.
+*Tools beyond the standard stack* — anything venture-specific (e.g. Linear, Figma) — get wired by the user with their assistant after deployment, not at intake.
 
 ---
 
 ## Step 2 — Build & deploy (KRING)
 
-We use your intake to deploy one assistant per user. For each:
+We take your intake and deploy one assistant per user. For each:
 
-- Spin up an OpenClaw runtime instance.
-- Set up the assistant's local working files from the framework's per-user blueprints (`IDENTITY`, `USER`, `TOOLS`, `automations/`, empty `MEMORY`, empty `memory/`, `STATE_VERSION`). The blueprints carry `{{FROM_BOOTSTRAP}}` markers — the assistant fills those in during the first conversation.
+- Spin up an OpenClaw runtime.
+- Load the framework's onboarding templates so the assistant knows how to run the first conversation.
 - Set the assistant's name from your intake.
-- Wire Telegram (bot binding).
-- Confirm the assistant is reachable on Telegram.
+- Wire Telegram.
+- Confirm the assistant is reachable.
 
-When all the assistants are live, we hand you back a list of assistant Telegram handles — one per user.
+When all the assistants are live, we send you a list of Telegram handles — one per user.
 
 From there, the rest is yours.
 
 ---
 
-## Step 3 — Finish onboarding (you, the venture, with each of your users)
+## Step 3 — Finish onboarding
 
-Now you roll the assistants out to your users. For each one:
+Now you roll the assistants out to your team. For each user:
 
-- Hand them their assistant's Telegram handle.
+- Give them their assistant's Telegram handle.
 - Point them at the playbook so they know what they're getting.
-- Tell them to send the first message — their assistant will guide them through the rest.
+- Tell them to send the first message — their assistant takes it from there.
 
 When a user sends the first message, their assistant runs a structured first conversation:
 
 - Introduces itself.
-- Walks the user through connecting their tools one at a time (Gmail → Calendar → Drive → Notion → GitHub, plus any other tools they use).
+- Walks them through connecting their tools one at a time (Gmail → Calendar → Drive → Notion → GitHub, plus any other tools they use).
 - Reads what it can from each.
-- Asks a few questions to fill in the parts tools can't tell it (how the user makes decisions, what they want their assistant to push back on, how they communicate, etc.).
+- Asks a few questions to fill in the parts tools can't tell it (how they make decisions, what they want their assistant to push back on, how they communicate, etc.).
 
-This is a real conversation, not a form. The user takes their time. You support the rollout — coordinating who goes first, fielding questions — but you don't run the first conversation yourself; that's between each user and their assistant.
-
-The full script the assistant follows: `agent-files/onboarding/BOOTSTRAP.md`.
+This is a real conversation, not a form. The user takes their time. You coordinate the rollout — who goes first, fielding questions — but the first conversation itself is between each user and their assistant.
 
 ---
 
