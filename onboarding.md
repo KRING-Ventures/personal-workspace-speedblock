@@ -1,109 +1,121 @@
 # Personal Workspace — Onboarding
 
-How a new user gets onboarded onto Personal Workspace.
+How a new user gets set up on Personal Workspace.
 
-**Who reads this:** the **user** (Step 0 — what they do before anything else), the **runtime operator** (Part 1 — setup), and anyone orienting to how Personal Workspace gets stood up. Part 2 is for reference — that's a conversation between the deployed agent and its user.
+This document is read by two people:
 
-The flow has three phases:
+- **The user joining** — for "what you do first" (Step 0) and what to expect when your assistant says hello (Part 2).
+- **The runtime operator** (Corey, today) — for the technical setup (Part 1).
 
-0. **Step 0 — what the user does first.** Install Telegram, decide how many agents and what to name them, send the package to the runtime operator.
-1. **Setup** — the runtime operator wires the environment and spins up the OpenClaw agent.
-2. **Agent-led onboarding** — the OpenClaw agent itself runs the first-session conversation with the user (via `agent-files/onboarding/BOOTSTRAP.md`).
+The flow goes in three phases:
+
+0. **What you do first** *(you, the user)* — install Telegram, pick a name for your assistant, send the details to Corey.
+1. **Setup** *(Corey)* — provision your accounts, create your private space, deploy your assistant on Telegram.
+2. **First conversation** *(your assistant + you)* — your assistant introduces itself on Telegram and walks you through connecting your tools.
 
 ---
 
-## What 0.1.2 ships
+## What this version ships
 
-- **Personal OpenClaw assistant on Telegram** — memory across sessions, scoped to work.
+- **Your own AI assistant on Telegram** — remembers you across conversations, scoped to your work.
 - **Daily brief** (morning) — calendar, top priorities, anything urgent.
-- **Weekly brief** (Friday EOD) — open commitments, things they're waiting on, patterns.
-- **Heartbeats** — periodic background check-ins; surfaces things only when they need attention.
-- **Tool reach** — Gmail, Calendar, Drive, Notion, plus any user-specific tools wired during onboarding.
-- **Drafting** — emails, messages, docs. Never sent without the user's OK.
+- **Weekly brief** (Friday) — open commitments, things you're waiting on, patterns worth noticing.
+- **Heartbeats** — periodic background check-ins; only surfaces things when they actually need your attention.
+- **Tool reach** — Gmail, Calendar, Drive, Notion, plus any other tools you wire during onboarding.
+- **Drafting** — emails, messages, documents. Always drafts first; never sends without your OK.
 - **Automations** — built on request.
 
-Each future version updates this block. Source of truth: `CHANGELOG.md`.
+Source of truth for what's in each version: `CHANGELOG.md`.
 
 ---
 
-## Step 0 — what the user does first (user-led)
+## Step 0 — what you do first (you, the user)
 
-Before the runtime operator can do anything, the user does this themselves. Without it, runtime wire-up stalls.
+Before anything else can happen, there are a few things only you can do. Without these, your assistant can't be set up.
 
-1. **Install Telegram** on at least one device they use day-to-day, and confirm they can receive messages on it.
-2. **Decide how many OpenClaw agents are needed** — usually one per person. Some users may want more (e.g. one for KRING work, one for a venture role they hold separately). Default: one.
-3. **Pick the name for each agent** — what they want to call it (e.g. `Ida`, `Kerstin`). This becomes the agent's `{{AGENT_NAME}}` everywhere in their personal-layer repo and the agent's self-reference. *Vibe and personality* are still set during BOOTSTRAP — only the name is decided here.
-4. **Send Corey** (the runtime operator):
-   - Their Telegram handle (e.g. `@august`).
-   - The number of OpenClaw agents they need.
-   - The chosen name for each agent.
+1. **Install Telegram** on your phone or laptop, and make sure you can receive messages on it.
+2. **Decide how many assistants you want.** Default is **one**. Some people want more — for example, one for your KRING work and a separate one for a venture role you hold. Most people only need one.
+3. **Pick a name** for each assistant. Whatever you'd like to call it (e.g. `Ida`, `Kerstin`). The vibe and personality come later in your first conversation — only the *name* is decided up front.
+4. **Send Corey** (the person who deploys your assistant) three things:
+   - Your Telegram handle, e.g. `@august`.
+   - How many assistants you want.
+   - The name(s) you've chosen.
 
-Once Corey has that — and the account provisioner has confirmed the tenants are ready (see Prerequisites below) — runtime wire-up can start.
+Once Corey has that — and your accounts are ready (see *Accounts must already exist* below) — they'll set up the rest.
 
 ---
 
-## Part 1 — Setup (operator-led, one-time)
+## Accounts must already exist
 
-Done once per new user, before they talk to their agent.
+Before Corey can set anything up, your accounts have to be in place: Google Workspace (or whatever email/calendar your venture uses), Slack, Notion, GitHub, plus any venture-specific tools your assistant should be able to reach.
 
-### Prerequisites — the venture's environment must already exist
+Who handles this depends on which side you're on:
 
-Before any of the steps below run, the user's tenants must already be set up. The account provisioner (see `human-roles.md`) owns this:
+- **If you're a KRING-internal user**, KRING ops/admin sets up your accounts in KRING's tenants.
+- **If you're being onboarded inside a venture**, the venture itself sets up your accounts in its own tenants. KRING does not create accounts inside a venture's systems.
 
-- For **KRING-internal users**, KRING ops/admin handles it against KRING's tenants.
-- For **venture deployments**, the *venture itself* is responsible. They must already have Google Workspace (or equivalent), Slack, Notion, GitHub, and any venture-specific tools the agent will need to reach — KRING does not provision into a venture's accounts.
+If any of those accounts aren't ready, setup waits until they are.
 
-If any of those tenants are missing, runtime wire-up doesn't start. It bounces back to the venture (or KRING ops) until the environment is in place.
+---
 
-### 1. Provision the user's workspace accounts
+## Part 1 — Setup (Corey, one-time)
 
-Issued by the account provisioner against the relevant tenants:
+Done once per new user, before they talk to their assistant.
 
-- **Google Workspace** account on the venture's domain (e.g. `@kringventures.com` for KRING-internal users; the venture's own domain otherwise).
-- **Slack** invite to the relevant Slack workspace (KRING's, or the venture's).
-- **Notion** invite to the relevant Notion workspace.
-- **GitHub** invite to the relevant org (if relevant to their role).
-- **Telegram** — they use their existing personal Telegram; they'll authorise the OpenClaw bot during wire-up.
-- Any **venture-specific tools** the user needs day-to-day that the agent should be able to reach.
+### 1. Provision the user's accounts
 
-### 2. Create the user's private personal-layer repo
+Issued by the account provisioner against the relevant tenants (KRING's, or the venture's):
 
-Each user has their own **private GitHub repo** for their personal OpenClaw agent layer (IDENTITY, USER, TOOLS, automations, memory).
+- **Google Workspace** account on the relevant domain (e.g. `@kringventures.com` for KRING-internal users; the venture's own domain otherwise).
+- **Slack** invite to the relevant workspace.
+- **Notion** invite to the relevant workspace.
+- **GitHub** invite to the relevant org (if it's relevant to the user's role).
+- **Telegram** — the user has already installed this in Step 0; they'll authorise the assistant's bot during wire-up.
+- Any **venture-specific tools** the user needs day-to-day that the assistant should be able to reach.
+
+### 2. Create the user's private settings repo
+
+Each user has their own **private GitHub repo** holding the personal layer of their assistant (IDENTITY, USER, TOOLS, automations, memory). It's separate from the shared framework — only the user's own settings live here.
 
 - The user (or Corey) creates the repo. Name it whatever makes sense — no mandated convention.
-- Seed it from `personal-workspace-speedblock/agent-files/` — copy the per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, empty `STATE_VERSION`). Leave `{{FROM_BOOTSTRAP}}` markers in place — the agent fills them in.
+- Seed it from this repo's `agent-files/` per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, empty `STATE_VERSION`). Leave `{{FROM_BOOTSTRAP}}` markers in place — the assistant fills these in during the first conversation.
 
-### 3. Wire the OpenClaw runtime
+### 3. Deploy the OpenClaw runtime on Telegram
 
-Per-user deployment of the OpenClaw agent on Telegram. Owned by Corey.
+One runtime per assistant the user requested in Step 0. For each:
 
 - Deploy a new OpenClaw instance scoped to this user.
-- Point it at both file-layer sources: the shared framework (`KRING-Ventures/personal-workspace-speedblock/agent-files/`) and the user's private repo.
+- Set the assistant's name from the user's Step 0 choice (e.g. `Ida`).
+- Point it at both file-layer sources: the shared framework (`KRING-Ventures/personal-workspace-speedblock/agent-files/`) and the user's private settings repo.
 - Connect Telegram (bot token, chat binding).
+- Confirm the assistant is reachable on Telegram before handing off.
 
-### 4. Hand off to the agent
+### 4. Hand off to the user
 
-Send the user the Telegram handle and tell them: **start the first conversation**. The agent runs the rest.
+Send the user the assistant's Telegram handle and tell them: **start the first conversation**. The assistant takes it from here.
 
 ---
 
-## Part 2 — Agent-led onboarding
+## Part 2 — First conversation with your assistant
 
-The user sends a first message. The OpenClaw agent runs `agent-files/onboarding/BOOTSTRAP.md` — a structured conversation where it introduces itself, walks the user through wiring up tools one at a time, pulls everything it can from those tools into `USER.md`, and fills the human gaps in conversation.
+You open Telegram, find your assistant by the handle Corey sent you, and send the first message.
 
-**The agent runs this. No human intermediary.** Don't pre-fill `USER.md`, don't wire tools on the user's behalf, don't run BOOTSTRAP "for" them — it's a conversation between the agent and its user. That's where the relationship starts.
+Your assistant runs a structured first session — it introduces itself, walks you through connecting your tools one at a time (Gmail → Calendar → Drive → Notion, plus any other tools you use), reads what it can from each, and asks you a few questions to fill in the parts tools can't tell it (how you make decisions, what you want it to push back on, how you communicate, etc.).
 
-Full script: `agent-files/onboarding/BOOTSTRAP.md`.
+This is a real conversation, not a form. Take your time.
+
+The full script your assistant follows: `agent-files/onboarding/BOOTSTRAP.md`.
 
 ---
 
 ## References
 
-- `agent-files/onboarding/BOOTSTRAP.md` — full agent-led script.
-- `agent-files/AGENTS.md` — session boot + operational rules.
-- `agent-files/TOOLS.md` — per-user tool table filled during BOOTSTRAP.
-- `playbook.md` — what Personal Workspace is.
+- `playbook.md` — what Personal Workspace is and how it works day-to-day. Read this if you're new.
+- `human-roles.md` — who's responsible for what in the setup.
+- `agent-files/onboarding/BOOTSTRAP.md` — the full script your assistant follows in your first conversation.
+- `agent-files/AGENTS.md` — session boot and operational rules (assistant-side; read if you're curious how it works under the hood).
+- `agent-files/TOOLS.md` — per-user tool table; filled in during your first conversation.
 
 ---
 
-*Current version: 0.1.2 (shipped 2026-04-24).*
+*Current framework version is in `agent-files/onboarding/STATE_VERSION`. Per-version history is in `CHANGELOG.md`.*
