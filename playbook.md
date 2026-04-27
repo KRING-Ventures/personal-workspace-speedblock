@@ -68,7 +68,7 @@ Your assistant drafts and researches freely. But it always asks first before any
 | Reads, searches, drafts, or researches | No |
 | Sends an email or replies to a message | **Yes** |
 | Accepts or declines a calendar invite | **Yes** |
-| Writes to someone else's Notion page | **Yes (every time)** |
+| Writes to someone else's Notion page | **Yes** |
 | Does anything irreversible or visible to others | **Yes** |
 
 ---
