@@ -47,7 +47,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 - **This repo** (`personal-workspace-speedblock`, public) — skill + human deliverables for Personal Workspace.
 - **Shared skills** (`claw-shared`, private) — other OpenClaw skills loaded on demand.
-- **Per-user personal layers** (private, one per user) — each user gets a private repo for their assistant's IDENTITY, USER, TOOLS, automations, and memory. Created and seeded by KRING during deployment. Repo name is up to the user.
+- **Per-user private settings repos** (private, one per user) — each user gets a private repo for their assistant's IDENTITY, USER, TOOLS, automations, and memory. Created and seeded by KRING during deployment. Repo name is up to the user.
 
 ## Agent layers
 

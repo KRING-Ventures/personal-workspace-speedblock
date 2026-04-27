@@ -7,7 +7,7 @@ The active human layer this Speedblock assumes. Each role has a narrow responsib
 ### 1. The venture
 
 - **Who:** The venture activating Personal Workspace for its users.
-- **Does:** Owns its own tenants — Google Workspace (or equivalent), Slack, Notion, GitHub. Provisions user accounts inside those tenants. Submits the intake to KRING (per-venture confirmation + per-user details: name, email, accounts ready, Telegram handle, assistant name). After deployment, runs the rollout — distributes the assistant Telegram handles to its users, points them at the playbook, and supports them through their first conversation.
+- **Does:** Owns its own tenants — Google Workspace, Slack, Notion, GitHub. Provisions user accounts inside those tenants. Submits the intake to KRING (per-venture confirmation + per-user details: name, email, accounts ready, Telegram handle, assistant name). After deployment, runs the rollout — distributes the assistant Telegram handles to its users, points them at the playbook, and supports them through their first conversation.
 - **Does not:** Wire OpenClaw runtimes (that's KRING). Run anyone's first conversation for them (that's between each user and their assistant).
 - **Hand-offs:** Submits the intake to KRING. Receives deployed assistant handles from KRING. Hands each assistant handle to the user it belongs to.
 
@@ -37,4 +37,4 @@ Everything else — memory, drafting, briefing, tool reach, commitment tracking,
 
 ## Future consolidation
 
-When parts of the venture or KRING side of the flow are replaced by automation (e.g. SSO-driven provisioning, self-service runtime deployment, intake submitted directly through Cosmica), update this file to reflect what's actually still human. Don't leave stale role assignments here — they misrepresent who to go to when something breaks.
+When parts of the venture or KRING side of the flow are replaced by automation (e.g. SSO-driven provisioning, self-service runtime deployment, self-service intake), update this file to reflect what's actually still human. Don't leave stale role assignments here — they misrepresent who to go to when something breaks.

@@ -52,7 +52,7 @@
 
 - **[Name]** — [role, relationship, key context]
 
-*Note: if any person holds dual context (e.g. family + business), name it here. Dual-context relationships change how hard conversations land at work.*
+*Note: if any person holds dual context at work (e.g. co-founder + close friend, manager + mentor), name it here. Dual-context relationships change how hard conversations land at work.*
 
 ## How they think and decide
 

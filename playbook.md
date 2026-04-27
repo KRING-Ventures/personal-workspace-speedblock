@@ -10,10 +10,8 @@ This document explains what's in it and how to use it. Read it once top to botto
 
 ## Principles
 
-- **Same tools for everyone.** We all run on the same stack. Your personal AI assistant is the one layer that's specific to you.
 - **AI first.** If an AI helper can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
-- **Write it down.** If it's not in the handbook, Notion, or GitHub, it doesn't exist.
-- **Don't mix up the AI helpers.** Each one has a specific job. Using the wrong one in the wrong place creates friction.
+- **Write it down.** If it's not in Notion or GitHub, it doesn't exist.
 
 ---
 
@@ -45,13 +43,6 @@ Each does a different job. Pick the right one for what you're doing.
 | **Your OpenClaw assistant** | Telegram | Your personal assistant. Remembers you. Uses your tools. Drafts, briefs, and runs work on your behalf. |
 | **Cosmo** | Slack | KRING's shared assistant. Knows the company. Helps with company-wide or cross-team work. *KRING-internal only — if you're at a venture, you don't have Cosmo.* |
 
-Rule of thumb:
-
-- Inside a Google Doc or Gmail? Use **Gemini**.
-- One-off thinking or writing, not tied to anyone? Use **Claude**.
-- Anything personal to you that needs memory or your inbox/calendar/etc? Use **your OpenClaw assistant**.
-- Anything about KRING as a company, or across several people? Use **Cosmo**.
-
 ---
 
 ## Your personal AI assistant (OpenClaw)
@@ -80,11 +71,6 @@ Your assistant drafts and researches freely. But it always asks first before any
 | Writes to someone else's Notion page | **Yes (every time)** |
 | Does anything irreversible or visible to others | **Yes** |
 
-### Day one vs. later
-
-- **Day one** (after your first setup conversation with the assistant): it already knows your name, role, top projects, the people you work with, and your meeting patterns — pulled from your tools, not typed by you. Your tools are connected. It can draft, remember, and help.
-- **Later**: it learns how you think and work — your preferences, your communication style, the things you want it to push back on.
-
 ---
 
 ## Working rhythm
@@ -111,9 +97,9 @@ Full step-by-step in `onboarding.md`.
 ## Don't mix up OpenClaw and Cosmo
 
 - **Your OpenClaw assistant** is yours. On Telegram. Knows you. One per person.
-- **Cosmo** is KRING's. On Slack. Knows the company. Shared across everyone.
+- **Cosmo** is KRING's. On Slack. Knows KRING. Shared across the KRING org. *KRING-internal only — venture users don't have Cosmo.*
 
-Don't ask your OpenClaw assistant to do things for the whole company. Don't ask Cosmo to remember things that are personal to you. Different tools, different jobs.
+For KRING-internal users: don't ask your OpenClaw assistant to do things for the whole company. Don't ask Cosmo to remember things that are personal to you. Different tools, different jobs.
 
 ---
 
@@ -121,7 +107,7 @@ Don't ask your OpenClaw assistant to do things for the whole company. Don't ask 
 
 - **Personal Workspace** — the shared way of working across KRING and the ventures KRING builds.
 - **OpenClaw** — the AI assistant system. *Your* OpenClaw is your personal assistant; *Cosmo* is the shared, company-wide OpenClaw.
-- **Cosmo** — KRING's shared AI in Slack.
+- **Cosmo** — KRING's shared AI in Slack. KRING-internal only.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
 - **Brief** — the daily or weekly summary your assistant sends you.
 

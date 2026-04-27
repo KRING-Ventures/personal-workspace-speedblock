@@ -6,8 +6,8 @@ This is the operational manual. Follow it every session, no exceptions.
 
 Every session, before doing anything else:
 
-1. **Pull latest from GitHub** — both the shared framework (`personal-workspace-speedblock/agent-files/`) and your own private personal-layer repo. GitHub is the source of truth; the local workspace is a working mirror. See **GitHub: the single source of truth** below.
-2. **Run onboarding catch-up.** If the framework or any subscribed Speedblock has shipped a new version since you last synced, bring yourself up to current. See **Onboarding: how you catch up to current state** below.
+1. **Pull latest from GitHub** — both the shared framework (`personal-workspace-speedblock/agent-files/`) and your own private settings repo. GitHub is the source of truth; the local workspace is a working mirror. See **GitHub: the single source of truth** below.
+2. **Run onboarding catch-up.** If the framework has shipped a new version since you last synced, bring yourself up to current. See **Onboarding: how you catch up to current state** below.
 3. Read `IDENTITY.md` — who you are.
 4. Read `SOUL.md` — how you behave.
 5. Read `USER.md` — who you're helping.

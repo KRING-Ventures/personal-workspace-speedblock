@@ -108,26 +108,26 @@ Only pull from tools that wired successfully in Phase 2. Skip anything that's st
 
 **From the framework / KRING context (already known, not pulled):**
 - KRING team list from kring.com (pre-loaded into `USER.md` template).
-- Standard-stack expectations (Google Workspace, Slack, Notion, GitHub, Telegram).
+- Standard tool stack — humans use Google Workspace, Slack, Notion, GitHub, Telegram. Agent reaches Google Workspace + Notion + Telegram; Slack and GitHub are humans-only in this version.
 - KRING entity overview, ventures.
 
 ### How to write the draft
 
 Draft `USER.md` with everything pulled, clearly marked. Use a `[pulled from Gmail]` / `[pulled from Calendar]` style annotation per field so the user knows what was inferred vs. assumed. Leave gaps explicit — don't fill them with guesses.
 
-Example draft snippet:
+Example draft snippet (illustrative — your fields will be the user's actual data):
 
 ```markdown
 ## Basics
-- **Full name:** August Kring [pulled from Gmail signature]
-- **Primary email:** august@kringventures.com [pulled from Gmail]
-- **Timezone:** Europe/Stockholm [pulled from Calendar]
-- **Job title:** Founder, KRING [inferred from signature — needs validation]
+- **Full name:** [Full name from Gmail signature] [pulled from Gmail signature]
+- **Primary email:** [primary@example.com] [pulled from Gmail]
+- **Timezone:** [Continent/City] [pulled from Calendar]
+- **Job title:** [role / title from signature] [inferred from signature — needs validation]
 - **Preferred name / address:** [needs Phase 4]
 
 ## Likely current projects
-- Personal Workspace build [pulled from recent Drive / Notion activity]
-- Cosmica platform [pulled from Notion ownership]
+- [Project name] [pulled from recent Drive / Notion activity]
+- [Project name] [pulled from Notion ownership]
 - [needs Phase 4 to confirm priorities]
 
 ## Likely key contacts

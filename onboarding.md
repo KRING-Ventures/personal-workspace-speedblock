@@ -32,7 +32,7 @@ To activate, the venture submits one intake to KRING with everything needed to d
 
 Once for the venture as a whole:
 
-- Confirmation that the venture's tenants are in place — Google Workspace (or equivalent), Slack, Notion, GitHub. These are the fixed beta tech stack: every Personal Workspace deployment runs on these. KRING does not provision into a venture's tenants; that's the venture's responsibility.
+- Confirmation that the venture's tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the fixed beta tech stack: every Personal Workspace deployment runs on these. KRING does not provision into a venture's tenants; that's the venture's responsibility.
 
 For each user being onboarded:
 

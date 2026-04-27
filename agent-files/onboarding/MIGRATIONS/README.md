@@ -2,7 +2,7 @@
 
 *Per-version migration **guidelines**. One file per version where a deployed OpenClaw agent should know about a change in its private files when it catches up. Guidance, not a script.*
 
-**File name:** `<from>-to-<to>.md` — e.g. `0.1.0-to-0.2.0.md`.
+**File name:** `<from>-to-<to>.md` (e.g. for a hypothetical 0.3.0 ship that renames a section in `USER.md`, the file would be `0.2.x-to-0.3.0.md`).
 
 **Contents:** describe *what's changing and why* — fields renamed, sections restructured, files moved — in plain language, like a note from a colleague reviewing a PR. The agent reads it, decides what's relevant to its user's state, and applies only the parts that fit. The agent doesn't execute these mechanically.
 

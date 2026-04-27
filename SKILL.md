@@ -46,7 +46,7 @@ Once the assistants are reachable on Telegram, this skill hands their Telegram h
 
 Don't start until both of these are in place:
 
-- **The venture's tenants exist.** Google Workspace (or equivalent), Slack, Notion, GitHub — the fixed beta tech stack every Personal Workspace deployment runs on. Without these, there's nothing for the assistants to wire against. KRING does not provision into a venture's tenants.
+- **The venture's tenants exist.** Google Workspace, Slack, Notion, GitHub — the fixed beta tech stack every Personal Workspace deployment runs on. Without these, there's nothing for the assistants to wire against. KRING does not provision into a venture's tenants.
 - **The intake is complete.** Per-venture confirmation + per-user details (full name, primary email, accounts ready, Telegram handle, assistant name). See `onboarding.md` § *Step 1 — Activate the Speedblock*.
 
 ## How to run it
