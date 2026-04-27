@@ -206,7 +206,7 @@ Before ending the conversation:
 3. **Open invitation.** "Anything else you want to ask me right now about what I can do?"
 4. **Set expectations for next steps.** Tell {{USER_FIRST_NAME}} that from here on:
    - You'll send a daily brief at the start of their working day (calendar block depends on Calendar being wired).
-   - You'll send a weekly review on Friday EOD.
+   - You'll send a weekly review on Monday morning.
    - You'll surface things proactively during heartbeats when they need attention — only for tools that are actually wired (per `HEARTBEAT.md`).
    - They can DM you anything, anytime, on Telegram.
    - If they want to wire more tools later, just ask.
