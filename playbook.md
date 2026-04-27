@@ -4,7 +4,7 @@ Personal Workspace is the shared way of working we use across KRING and the vent
 
 This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
 
-*Owner: August Kring.*
+*Owned and maintained by KRING.*
 
 ---
 
@@ -95,13 +95,13 @@ Your assistant drafts and researches freely. But it always asks first before any
 
 ## Getting set up
 
-Three phases:
+Three steps, the same for everyone:
 
-0. **What you do first.** Install Telegram on your phone or laptop. Decide how many assistants you want (usually one) and what to call each one. Send your Telegram handle, the count, and the chosen names to Corey (the person who deploys your assistant). That's what unblocks the rest.
-1. **Setup.** Someone on the team provisions your accounts (Google, Slack, Notion, GitHub, Telegram), creates a private space for your assistant's settings, and starts your assistant on Telegram with the name you picked.
-2. **First conversation with your assistant.** You open Telegram and send the first message. Your assistant runs a guided setup: introduces itself, connects to your tools one at a time (Gmail → Calendar → Drive → Notion, plus any others you use), reads what it can from them, and asks a few questions to fill in the things tools can't tell it.
+1. **Your venture activates the Speedblock.** Your venture sends KRING an intake — confirmation your accounts are set up (Google, Slack, Notion, GitHub), your Telegram handle, and the name you'd like for your assistant.
+2. **KRING deploys your assistant.** When it's live, your venture passes you the assistant's Telegram handle.
+3. **Your first conversation.** You open Telegram, find your assistant by the handle, and send the first message. Your assistant introduces itself and walks you through connecting your tools — Gmail, Calendar, Drive, Notion, plus any others you use.
 
-*One per person* is the default. If you need more than one — e.g. one for KRING work and a separate one for a venture role — just ask for that in Step 0. Vibe and personality still come out of your first conversation; only the *name* is decided up front.
+*One assistant per person* is the default. If you want more — e.g. one for one role and a separate one for another — your venture can include that in Step 1. The name is decided in the intake; vibe and personality come out of your first conversation.
 
 Full step-by-step in `onboarding.md`.
 
@@ -126,4 +126,4 @@ Don't ask your OpenClaw assistant to do things for the whole company. Don't ask 
 
 ---
 
-*August owns this document. Anything unclear, off, or missing — tell him.*
+*KRING owns this document. Anything unclear, off, or missing — tell us.*

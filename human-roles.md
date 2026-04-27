@@ -1,46 +1,40 @@
 # Human roles in Personal Workspace
 
-The active human layer this Speedblock assumes — same shape whether the user is KRING-internal or being onboarded inside a venture. Each role has a narrow responsibility and a clean handoff — none of them overlap with the agent's job.
+The active human layer this Speedblock assumes. Each role has a narrow responsibility and a clean handoff to the next — none of them overlap with the agent's job.
 
 ## Roles
 
-### 1. Account provisioner
+### 1. The venture
 
-- **Who:** Whoever owns the user's tenants. For KRING-internal users, KRING ops/admin. For venture deployments, the venture itself (their ops/admin) — KRING does not provision into a venture's accounts.
-- **Does:** Ensures all required user accounts exist *before* runtime wire-up — Google Workspace (or equivalent), Slack, Notion, GitHub (if role-relevant), plus any venture-specific tools the agent will need to reach. Issues invites, not credentials.
-- **Hand-off:** Confirms to the runtime operator that the tenants and accounts are ready. If anything is missing, runtime wire-up doesn't start — it bounces back to this role until the environment is in place.
+- **Who:** The venture activating Personal Workspace for its users.
+- **Does:** Owns its own tenants — Google Workspace (or equivalent), Slack, Notion, GitHub, plus any venture-specific tools the assistants should reach. Provisions user accounts inside those tenants. Submits the intake to KRING (per-venture confirmation + per-user details: name, email, accounts ready, Telegram handle, assistant count, assistant name(s)). After deployment, runs the rollout — distributes the assistant Telegram handles to its users, points them at the playbook, and supports them through their first conversation.
+- **Does not:** Wire OpenClaw runtimes (that's KRING). Run anyone's first conversation for them (that's between each user and their assistant).
+- **Hand-offs:** Submits the intake to KRING. Receives deployed assistant handles from KRING. Hands each assistant handle to the user it belongs to.
 
-### 2. Runtime operator
+### 2. KRING
 
-- **Who:** Corey (KRING side, supports both KRING-internal and venture deployments today).
-- **Does:** Receives the user's Step 0 package (Telegram handle, number of agents, agent name(s)). Deploys the OpenClaw runtime instance(s) for each new user — one per agent the user requested. Sets each agent's `{{AGENT_NAME}}` from the user's chosen name. Wires Telegram (bot token, chat binding). Points each runtime at both file layers — the shared framework (this repo's `agent-files/`) and the user's own private personal-layer repo. Confirms the agent is running and reachable on Telegram before handoff.
-- **Does not:** Start wire-up before the account provisioner has confirmed accounts are ready and the user has sent their Step 0 package. Pre-fill `USER.md`. Choose the agent's name (that comes from the user) or invent its vibe. Wire any tools beyond Telegram. Those all belong to the agent's first session with the user.
-- **Hand-off:** Tells the user the Telegram handle and that they can send the first message whenever they're ready.
+- **Who:** KRING — the deploying party for Personal Workspace.
+- **Does:** Receives the venture's intake. Deploys the OpenClaw runtime for each requested assistant. Creates the user's private settings repo, seeds it from the per-user blueprints, and points the runtime at both file layers (the shared framework + the user's private settings repo). Sets each assistant's name from the intake. Wires Telegram. Confirms each assistant is reachable before handing back. Owns and maintains the framework itself — ships versions, updates `CHANGELOG.md`, bumps `STATE_VERSION`, authors migration guidance when a version changes per-user file shapes.
+- **Does not:** Provision into a venture's tenants. Pre-fill any per-user file beyond what comes from the intake (no operator-imposed `USER.md` content, no operator-invented vibe). Wire any tools beyond Telegram — that happens in each user's first conversation.
+- **Hand-off:** Returns the deployed assistant Telegram handles to the venture.
 
-### 3. Framework maintainer
+### 3. The user
 
-- **Who:** August.
-- **Does:** Owns the framework content — `agent-files/`, `playbook.md`, `onboarding.md`, this file. Ships versions (updates `CHANGELOG.md`, bumps `STATE_VERSION`, tags releases). Authors migrations when a version changes per-user state shape.
-- **Does not:** Own each user's private personal-layer repo — that's the user's.
-
-### 4. User
-
-- **Who:** The person being onboarded.
-- **Does (Step 0, before runtime wire-up):** Installs Telegram, decides how many OpenClaw agents they need (default one), picks the name for each, and sends the package — handle + agent count + name(s) — to the runtime operator. Without this, the operator has nothing to wire against. Full Step 0 detail in `onboarding.md`.
-- **Does (Part 2, after handoff):** Runs their own BOOTSTRAP conversation with their agent on Telegram — wires their tools one at a time, validates the draft `USER.md` the agent pulled from their tools, fills the human gaps (how they think, what they want the agent to push back on, etc.). Owns their private personal-layer repo after handoff.
-- **Does not:** Need to know anything about the framework internals before starting. Step 0 and BOOTSTRAP between them orient the user.
+- **Who:** Each person being onboarded by the venture.
+- **Does:** When their venture asks, provides the bits they own — confirming Telegram is installed on a device they use day-to-day, sharing their Telegram handle, and choosing a name for each assistant. After deployment, sends the first message to their assistant on Telegram and runs through the first conversation — connecting their tools, validating what their assistant pulled from those tools, and filling the gaps tools can't tell it (how they make decisions, what they want their assistant to push back on, etc.).
+- **Does not:** Need to know anything about the framework internals beforehand. The first conversation orients them.
 
 ## The active human layer vs. the AI layer
 
-Personal Workspace isn't fully autonomous — real humans do four things the AI does not:
+Personal Workspace isn't fully autonomous — humans do four things the AI does not:
 
-1. **Provision accounts** inside third-party tenants (Google, Slack, Notion, GitHub).
-2. **Deploy and wire runtimes** for each new agent instance.
-3. **Author the framework** — the shared agent-files, the playbook, the onboarding protocol.
-4. **Show up for the first conversation** — the user, on Telegram, starting BOOTSTRAP.
+1. **Provision accounts** inside the venture's tenants (Google, Slack, Notion, GitHub).
+2. **Deploy and wire runtimes** for each new assistant.
+3. **Author and version the framework** — agent-files, playbook, onboarding, this file.
+4. **Show up for the first conversation** — each user, on Telegram, starting their assistant's first session.
 
-Everything else — memory, drafting, briefing, tool reach, commitment tracking, proactive check-ins, catch-up on new framework versions — the deployed agent handles itself.
+Everything else — memory, drafting, briefing, tool reach, commitment tracking, proactive check-ins, catch-up on new framework versions — the deployed assistant handles itself.
 
 ## Future consolidation
 
-When the account provisioner and runtime operator overlap with automated onboarding (e.g. SSO-driven provisioning, self-service runtime deployment), update this file to reflect what's actually still human. Don't leave stale role assignments here — they misrepresent who to go to when something breaks.
+When parts of the venture or KRING side of the flow are replaced by automation (e.g. SSO-driven provisioning, self-service runtime deployment, intake submitted directly through Cosmica), update this file to reflect what's actually still human. Don't leave stale role assignments here — they misrepresent who to go to when something breaks.

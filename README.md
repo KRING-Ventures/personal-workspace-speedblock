@@ -21,8 +21,8 @@ Both layers live in this repo.
 | File | What it is |
 |---|---|
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, four AI helpers, what the OpenClaw agent does, working rhythm. |
-| [`onboarding.md`](./onboarding.md) | Setup flow — human-led provisioning (accounts, private repo, runtime) + handoff to agent-led BOOTSTRAP. |
-| [`human-roles.md`](./human-roles.md) | Who operates what — account provisioner, runtime operator, framework maintainer, user. |
+| [`onboarding.md`](./onboarding.md) | Setup flow — three steps (venture activates → KRING deploys → venture finishes onboarding). |
+| [`human-roles.md`](./human-roles.md) | Who does what — the venture, KRING, the user. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
 
 ## Versioning
@@ -47,11 +47,11 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 - **This repo** (`personal-workspace-speedblock`, public) — skill + human deliverables for Personal Workspace.
 - **Shared skills** (`claw-shared`, private) — other OpenClaw skills loaded on demand.
-- **Per-user personal layers** (private, one per user) — each user creates their own private repo for their personal OpenClaw agent's IDENTITY, USER, TOOLS, automations, and memory. Repo name is up to the user.
+- **Per-user personal layers** (private, one per user) — each user gets a private repo for their assistant's IDENTITY, USER, TOOLS, automations, and memory. Created and seeded by KRING during deployment. Repo name is up to the user.
 
 ## Agent layers
 
-- **Personal OpenClaw agent** — one per user. Telegram surface. Built from this repo's `agent-files/` + the user's own personal repo. Applies to KRING-internal users *and* venture deployments alike.
-- **Cosmo** — the shared KRING-org OpenClaw agent. Slack surface. One instance for KRING the organisation. KRING-internal only — ventures don't get Cosmo.
+- **Personal OpenClaw assistant** — one per user. Telegram surface. Built from this repo's `agent-files/` + each user's own private settings repo.
+- **Cosmo** — the shared KRING-org OpenClaw agent. Slack surface. One instance for KRING the organisation; not part of a venture deployment.
 
 See `playbook.md` § *The four AI helpers* for the full picture (Gemini / Claude / OpenClaw / Cosmo).
