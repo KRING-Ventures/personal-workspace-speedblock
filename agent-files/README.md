@@ -58,7 +58,7 @@ Both layers — shared framework and each user's personal repo — live in GitHu
 
 - Agents **pull at session start** so they're running against the latest framework and latest personal state.
 - Agents **push after every meaningful change** — memory logs, `MEMORY.md`, `USER.md`, `TOOLS.md`, automations. Never leave uncommitted work.
-- GitHub is also each agent's **backup and cross-session access** mechanism. If it isn't pushed, it doesn't persist.
+- GitHub is each agent's **cross-session continuity** mechanism — if it isn't pushed, the next session doesn't see it. *Not* a per-user backup story; Syncthing-to-local is on the roadmap for that.
 
 See `AGENTS.md` for the operational rules.
 

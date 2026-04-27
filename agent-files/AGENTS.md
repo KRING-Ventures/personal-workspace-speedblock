@@ -28,15 +28,19 @@ The framework may have shipped changes since your last session. You process the 
 - **Framework:** `CHANGELOG.md` at the root of `personal-workspace-speedblock/` + `agent-files/onboarding/STATE_VERSION` + `agent-files/onboarding/MIGRATIONS/`. Plus `agent-files/onboarding/BOOTSTRAP.md` for first-session use.
 - **Your version cursor:** `STATE_VERSION` at the root of your own repo — the framework version you last synced with.
 
-### The catch-up loop
+### How catch-up works
 
 After pulling latest, read framework `agent-files/onboarding/STATE_VERSION`. If it's ahead of your own `STATE_VERSION`:
 
-1. Read the framework's root `CHANGELOG.md` entries from your version onwards.
-2. Run any `agent-files/onboarding/MIGRATIONS/*.md` files for those versions, in order. Each migration file contains explicit instructions — apply them to your own files.
-3. Update your own `STATE_VERSION` to the framework's current value.
-4. Commit + push.
-5. In today's daily memory log, note the version you onboarded to and what changed.
+- Read the framework's `CHANGELOG.md` entries from your version onwards, plus any notes in `agent-files/onboarding/MIGRATIONS/`.
+- These are *guidelines, not a script*. Use judgment: take what's actually relevant to your user's state, ignore what isn't, ask if something looks ambiguous. Most updates are framework wording changes that don't require touching your private files at all.
+- Update your own `STATE_VERSION` to the framework's current value once you've applied what's relevant.
+- Commit + push.
+- In today's daily memory log, note the version you caught up to and what (if anything) you changed.
+
+### Migration guidelines, not migration rules
+
+The migration files describe *intent* — what's changing in the framework and why — not strict mechanical steps. Read them like guidance from a colleague: "this field renamed, this section restructured, here's why". Decide what makes sense for this user. If a guideline doesn't fit cleanly, don't force it — leave a note in the daily log and surface it next time you talk to {{USER_FIRST_NAME}}.
 
 ### First-session BOOTSTRAP
 
@@ -44,7 +48,7 @@ If you have no `STATE_VERSION` at all (this is your very first session), run `on
 
 ### Why this exists
 
-Frameworks evolve. Your own state can drift behind. This loop guarantees an OpenClaw agent catches up cleanly to current state regardless of how long it's been dormant — without anyone manually patching files. Skipping it leaves you operating against a stale framework.
+Frameworks evolve. Your own state can drift behind. This loop is how an OpenClaw agent stays current against a moving framework — without anyone manually patching files. The point isn't strict execution; it's awareness that updates will arrive and the judgment to apply what's worth applying.
 
 ## GitHub: the single source of truth
 
@@ -59,8 +63,9 @@ All agent files live in GitHub. The local workspace is a working mirror, not the
 - **Push as you go.** Every meaningful change to your own files — daily memory logs, `MEMORY.md` updates, `USER.md` revisions, new automations, `TOOLS.md` edits — is committed and pushed immediately. Never leave uncommitted work sitting in the local workspace.
 - **Never work in uncommitted files.** If you edit a tracked file, commit and push it same-session. Uncommitted local state is not a valid save.
 - **Cross-session continuity depends on this.** If it's not in GitHub, the next session (yours or any other agent's) doesn't see it.
-- **GitHub is also your backup.** The repos are durable; local filesystem state is not.
 - **Commit messages are for humans.** Keep them short, present-tense, and specific about what changed and why.
+
+GitHub is the source of truth, *not* a personal backup story. There is no per-user backup today — Syncthing-to-local-folder is on the roadmap for a future version. If the user asks about backup or recovery, that's the answer.
 
 ## Session types
 
