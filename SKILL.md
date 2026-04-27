@@ -43,14 +43,21 @@ Once the agent sends its first Telegram message to the user, this skill's work i
 
 ## How to run it
 
-Follow `onboarding.md` end-to-end. It carries the canonical setup sequence:
+Follow `onboarding.md` end-to-end. It carries the canonical setup sequence.
 
-1. **Provision the user's workspace accounts** — Google Workspace, Slack, Notion, GitHub (if relevant), Telegram (user's existing). Issued by the account provisioner against the relevant tenants (KRING's, or the venture's). Prerequisite: the tenants themselves already exist — see `onboarding.md` § *Prerequisites*.
+**Preconditions (don't start without these):**
+
+- The venture's tenants are in place (Google Workspace, Slack, Notion, GitHub) — owned by the account provisioner. See `onboarding.md` § *Prerequisites*.
+- The user has completed Step 0: sent their Telegram handle, the number of OpenClaw agents they need, and the chosen name for each agent. Without this, the operator has nothing to wire against.
+
+**Operator steps:**
+
+1. **Provision the user's workspace accounts** — Google Workspace, Slack, Notion, GitHub (if relevant), Telegram (user's existing). Issued by the account provisioner against the relevant tenants (KRING's, or the venture's).
 2. **Create the user's private personal-layer repo** — seed from this repo's `agent-files/` per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, empty `STATE_VERSION`). Leave `{{FROM_BOOTSTRAP}}` markers in place — the agent fills them during its first session.
-3. **Wire the OpenClaw runtime** — deploy a new OpenClaw instance for this user, pointed at both file layers (shared framework + user's private repo), with Telegram connected.
+3. **Wire the OpenClaw runtime** — deploy a new OpenClaw instance for each agent the user requested, set its `{{AGENT_NAME}}` to the user's Step 0 choice, point it at both file layers (shared framework + user's private repo), and connect Telegram.
 4. **Hand off to the agent** — send the user the Telegram handle. The agent runs `agent-files/onboarding/BOOTSTRAP.md` as a dialogue with its user.
 
-Any time this skill would otherwise "do something for the user" — wiring their tools, filling their `USER.md`, setting their `IDENTITY.md` name or vibe — stop. That's the agent's job during BOOTSTRAP. Pre-filling breaks the relationship the first session is meant to build.
+Any time this skill would otherwise "do something for the user" beyond the user's Step 0 inputs — wiring their tools, filling their `USER.md`, choosing the agent's vibe — stop. That's the agent's job during BOOTSTRAP. Pre-filling beyond Step 0 breaks the relationship the first session is meant to build.
 
 ## Assets
 
@@ -77,5 +84,5 @@ A clean run leaves the user with:
 
 - All five core accounts (Google Workspace, Slack, Notion, GitHub, Telegram) active.
 - A private personal-layer repo they own, seeded with `{{FROM_BOOTSTRAP}}` markers in the right places.
-- A running OpenClaw agent on Telegram that has already pulled both layers and is waiting for the first message.
-- No pre-filled `USER.md`, no preset agent name, no wired tools other than Telegram. The agent starts BOOTSTRAP from a clean state.
+- A running OpenClaw agent on Telegram (one per agent the user requested in Step 0) that has already pulled both layers and is waiting for the first message.
+- The agent's `{{AGENT_NAME}}` set from the user's Step 0 choice — not invented by the operator. No pre-filled `USER.md`, no operator-imposed vibe, no wired tools other than Telegram. The agent starts BOOTSTRAP from a clean state.

@@ -13,8 +13,8 @@ The active human layer this Speedblock assumes — same shape whether the user i
 ### 2. Runtime operator
 
 - **Who:** Corey (KRING side, supports both KRING-internal and venture deployments today).
-- **Does:** Deploys the OpenClaw runtime instance for each new user. Wires Telegram (bot token, chat binding). Points the runtime at both file layers — the shared framework (this repo's `agent-files/`) and the user's own private personal-layer repo. Confirms the agent is running and reachable on Telegram before handoff.
-- **Does not:** Start wire-up before the account provisioner has confirmed accounts are ready. Pre-fill `USER.md`. Choose the agent's name or vibe. Wire any tools beyond Telegram. Those all belong to the agent's first session with the user.
+- **Does:** Receives the user's Step 0 package (Telegram handle, number of agents, agent name(s)). Deploys the OpenClaw runtime instance(s) for each new user — one per agent the user requested. Sets each agent's `{{AGENT_NAME}}` from the user's chosen name. Wires Telegram (bot token, chat binding). Points each runtime at both file layers — the shared framework (this repo's `agent-files/`) and the user's own private personal-layer repo. Confirms the agent is running and reachable on Telegram before handoff.
+- **Does not:** Start wire-up before the account provisioner has confirmed accounts are ready and the user has sent their Step 0 package. Pre-fill `USER.md`. Choose the agent's name (that comes from the user) or invent its vibe. Wire any tools beyond Telegram. Those all belong to the agent's first session with the user.
 - **Hand-off:** Tells the user the Telegram handle and that they can send the first message whenever they're ready.
 
 ### 3. Framework maintainer
@@ -26,8 +26,9 @@ The active human layer this Speedblock assumes — same shape whether the user i
 ### 4. User
 
 - **Who:** The person being onboarded.
-- **Does:** Runs their own BOOTSTRAP conversation with their agent on Telegram — wires their tools one at a time, validates the draft `USER.md` the agent pulled from their tools, fills the human gaps (how they think, what they want the agent to push back on, etc.). Owns their private personal-layer repo after handoff.
-- **Does not:** Need to know anything about the framework internals before starting. BOOTSTRAP orients them.
+- **Does (Step 0, before runtime wire-up):** Installs Telegram, decides how many OpenClaw agents they need (default one), picks the name for each, and sends the package — handle + agent count + name(s) — to the runtime operator. Without this, the operator has nothing to wire against. Full Step 0 detail in `onboarding.md`.
+- **Does (Part 2, after handoff):** Runs their own BOOTSTRAP conversation with their agent on Telegram — wires their tools one at a time, validates the draft `USER.md` the agent pulled from their tools, fills the human gaps (how they think, what they want the agent to push back on, etc.). Owns their private personal-layer repo after handoff.
+- **Does not:** Need to know anything about the framework internals before starting. Step 0 and BOOTSTRAP between them orient the user.
 
 ## The active human layer vs. the AI layer
 

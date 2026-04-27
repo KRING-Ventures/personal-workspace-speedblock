@@ -2,9 +2,12 @@
 
 How a new user gets onboarded onto Personal Workspace.
 
-The flow has two halves:
+**Who reads this:** the **user** (Step 0 — what they do before anything else), the **runtime operator** (Part 1 — setup), and anyone orienting to how Personal Workspace gets stood up. Part 2 is for reference — that's a conversation between the deployed agent and its user.
 
-1. **Setup** — a human sets up the environment and spins up the OpenClaw agent.
+The flow has three phases:
+
+0. **Step 0 — what the user does first.** Install Telegram, decide how many agents and what to name them, send the package to the runtime operator.
+1. **Setup** — the runtime operator wires the environment and spins up the OpenClaw agent.
 2. **Agent-led onboarding** — the OpenClaw agent itself runs the first-session conversation with the user (via `agent-files/onboarding/BOOTSTRAP.md`).
 
 ---
@@ -23,7 +26,23 @@ Each future version updates this block. Source of truth: `CHANGELOG.md`.
 
 ---
 
-## Part 1 — Setup (human-led, one-time)
+## Step 0 — what the user does first (user-led)
+
+Before the runtime operator can do anything, the user does this themselves. Without it, runtime wire-up stalls.
+
+1. **Install Telegram** on at least one device they use day-to-day, and confirm they can receive messages on it.
+2. **Decide how many OpenClaw agents are needed** — usually one per person. Some users may want more (e.g. one for KRING work, one for a venture role they hold separately). Default: one.
+3. **Pick the name for each agent** — what they want to call it (e.g. `Ida`, `Kerstin`). This becomes the agent's `{{AGENT_NAME}}` everywhere in their personal-layer repo and the agent's self-reference. *Vibe and personality* are still set during BOOTSTRAP — only the name is decided here.
+4. **Send Corey** (the runtime operator):
+   - Their Telegram handle (e.g. `@august`).
+   - The number of OpenClaw agents they need.
+   - The chosen name for each agent.
+
+Once Corey has that — and the account provisioner has confirmed the tenants are ready (see Prerequisites below) — runtime wire-up can start.
+
+---
+
+## Part 1 — Setup (operator-led, one-time)
 
 Done once per new user, before they talk to their agent.
 

@@ -95,10 +95,13 @@ Your assistant drafts and researches freely. But it always asks first before any
 
 ## Getting set up
 
-Two halves:
+Three phases:
 
-1. **Setup.** Someone on the team provisions your accounts (Google, Slack, Notion, GitHub, Telegram), creates a private space for your personal assistant's settings, and starts the assistant on Telegram.
+0. **What you do first.** Install Telegram on your phone or laptop. Decide how many assistants you want (usually one) and what to call each one. Send your Telegram handle, the count, and the chosen names to the runtime operator (Corey, today). That's what unblocks the rest.
+1. **Setup.** Someone on the team provisions your accounts (Google, Slack, Notion, GitHub, Telegram), creates a private space for your personal assistant's settings, and starts the assistant on Telegram with the name you picked.
 2. **First conversation with your assistant.** You open Telegram and send the first message. The assistant runs a guided setup: introduces itself, connects to your tools one at a time (Gmail → Calendar → Drive → Notion, plus any other tools you use), reads what it can from them, then asks you a few questions to fill in the things tools can't tell it.
+
+*One per person* is the default. If you need more than one — e.g. one for KRING work and a separate one for a venture role — just ask for that in Step 0. Vibe and personality still come from your first conversation; only the *name* is decided up front.
 
 Full step-by-step in `onboarding.md`.
 
