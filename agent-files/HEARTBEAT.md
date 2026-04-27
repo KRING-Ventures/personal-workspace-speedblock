@@ -26,18 +26,10 @@ Only check tools that are actually connected and configured in `TOOLS.md`. Skip 
 **Flag when:** conflict, meeting needing prep, full day with no deep work blocks.
 **Stay quiet when:** normal schedule, nothing unusual.
 
-### Slack (if connected)
-- DMs {{USER_FIRST_NAME}} hasn't responded to.
-- Channel mentions requiring action.
-- Threads where a decision needs {{USER_FIRST_NAME}}'s input.
-
-**Flag when:** someone directly waiting on {{USER_FIRST_NAME}}, decision being made without them.
-**Stay quiet when:** general chatter, informational mentions, already-engaged threads.
-
 ### Notion (if connected)
 - Changes on Speedblocks {{USER_FIRST_NAME}} owns.
 - PM Tasks assigned to {{USER_FIRST_NAME}} moving to a status that wants their input.
-- Comments or mentions on KRING pages {{USER_FIRST_NAME}} owns.
+- Comments or mentions on pages {{USER_FIRST_NAME}} owns.
 
 **Flag when:** status change needs attention, someone commented expecting a reply, deadline approaching on an owned task.
 **Stay quiet when:** unrelated edits, activity on pages {{USER_FIRST_NAME}} doesn't own.

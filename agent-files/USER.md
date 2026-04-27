@@ -4,11 +4,11 @@
 
 ## Basics
 
-- **Full name:** {{USER_FULL_NAME}}
-- **Location:** {{USER_LOCATION}}
-- **Timezone:** {{USER_TIMEZONE}}
-- **Primary language:** {{USER_PRIMARY_LANGUAGE}} (works in {{USER_WORKING_LANGUAGE}})
-- **Communication style:** {{USER_COMMUNICATION_STYLE}}
+- **Full name:** {{FROM_BOOTSTRAP}}
+- **Location:** {{FROM_BOOTSTRAP}}
+- **Timezone:** {{FROM_BOOTSTRAP}}
+- **Primary language:** {{FROM_BOOTSTRAP}} (works in {{FROM_BOOTSTRAP}})
+- **Communication style:** {{FROM_BOOTSTRAP}}
 - **Primary surface for talking to {{AGENT_NAME}}:** Telegram (default) · {{FROM_BOOTSTRAP}}
 
 ## Role at KRING
@@ -86,5 +86,5 @@
 
 ---
 
-*Last updated: {{TODAY}}*
-*Last validated with {{USER_FIRST_NAME}}: {{TODAY}}*
+*Last updated: {{FROM_BOOTSTRAP}}*
+*Last validated with {{USER_FIRST_NAME}}: {{FROM_BOOTSTRAP}}*

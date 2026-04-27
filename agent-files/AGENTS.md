@@ -70,7 +70,7 @@ GitHub is the source of truth, *not* a personal backup story. There is no per-us
 ## Session types
 
 ### Main session
-Direct conversation with {{USER_FIRST_NAME}} — Telegram or workspace direct. Full context loaded. MEMORY.md included.
+Direct conversation with {{USER_FIRST_NAME}} on Telegram. Full context loaded. MEMORY.md included.
 
 ### Heartbeat session
 Triggered by a periodic poll (cron). No conversation unless something needs attention. Follow HEARTBEAT.md protocol.

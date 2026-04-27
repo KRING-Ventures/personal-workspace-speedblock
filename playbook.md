@@ -21,15 +21,16 @@ This document explains what's in it and how to use it. Read it once top to botto
 
 Every Personal Workspace user runs on these. We don't mix and match.
 
-| For | We use |
-|---|---|
-| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) |
-| Your personal AI assistant | **Telegram** — you chat with your assistant there |
-| KRING's shared AI (Cosmo) | **Slack** — lives in KRING's Slack channels. *KRING-internal only — if you're at a venture, this row doesn't apply to you.* |
-| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. |
-| General-purpose AI | **Claude** — used for coding and individual projects |
-| Project and task management | **Notion** — your venture's Notion workspace |
-| Team chat | **Slack** |
+| For | We use | Your assistant reaches it? |
+|---|---|---|
+| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired during your first conversation |
+| Your personal AI assistant | **Telegram** — you chat with your assistant there | ✅ Yes — primary surface |
+| Project and task management | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
+| Team chat | **Slack** | ❌ No — humans only, your assistant doesn't read or post here |
+| Code & engineering | **GitHub** | ❌ No — humans only |
+| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — separate AI helper, see below |
+| General-purpose AI | **Claude** — used for coding and individual projects | n/a — separate AI helper, see below |
+| KRING's shared AI (Cosmo) | **Slack** — lives in KRING's Slack channels | n/a — *KRING-internal only; if you're at a venture, you don't have Cosmo* |
 
 ---
 
@@ -42,7 +43,7 @@ Each does a different job. Pick the right one for what you're doing.
 | **Gemini** | Inside Google apps | In-app help: summarising a doc, drafting a reply inside Gmail. Stays where it lives. |
 | **Claude** | claude.ai | General thinking, writing, coding help. Doesn't remember between chats. |
 | **Your OpenClaw assistant** | Telegram | Your personal assistant. Remembers you. Uses your tools. Drafts, briefs, and runs work on your behalf. |
-| **Cosmo** | Slack | KRING's shared assistant. Knows the company. Helps with company-wide or cross-team work. |
+| **Cosmo** | Slack | KRING's shared assistant. Knows the company. Helps with company-wide or cross-team work. *KRING-internal only — if you're at a venture, you don't have Cosmo.* |
 
 Rule of thumb:
 
@@ -99,9 +100,9 @@ Three steps, the same for everyone:
 
 1. **Your venture activates the Speedblock.** Your venture sends KRING an intake — confirmation your accounts are set up (Google, Slack, Notion, GitHub), your Telegram handle, and the name you'd like for your assistant.
 2. **KRING deploys your assistant.** When it's live, your venture passes you the assistant's Telegram handle.
-3. **Your first conversation.** You open Telegram, find your assistant by the handle, and send the first message. Your assistant introduces itself and walks you through connecting your tools — Gmail, Calendar, Drive, Notion, plus any others you use.
+3. **Your first conversation.** You open Telegram, find your assistant by the handle, and send the first message. Your assistant introduces itself and walks you through connecting your tools — Gmail, Calendar, Drive, Notion.
 
-*One assistant per person* is the default. If you want more — e.g. one for one role and a separate one for another — your venture can include that in Step 1. The name is decided in the intake; vibe and personality come out of your first conversation.
+*One assistant per person* — that's the model. The name is decided in the intake; vibe and personality come out of your first conversation. Tools beyond the standard stack (e.g. Linear, Figma) are wired by you with your assistant after deployment.
 
 Full step-by-step in `onboarding.md`.
 

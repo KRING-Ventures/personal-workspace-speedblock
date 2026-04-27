@@ -2,20 +2,20 @@
 name: personal-workspace-setup
 description: >
   Stand up the assistants for a venture activating Personal Workspace —
-  receive the venture's intake, deploy one OpenClaw runtime per requested
-  assistant, create each user's private settings repo and seed it from the
-  per-user blueprints, set each assistant's name from the intake, wire
-  Telegram, confirm the assistants are reachable, and hand the assistant
-  Telegram handles back to the venture for rollout. Use when a venture
-  activates Personal Workspace and needs its assistants deployed. Reads
-  `onboarding.md` for the canonical three-step flow (Activate → Build & deploy
-  → Finish onboarding) and ships `agent-files/` as the payload deployed into
-  each runtime. Does **not** provision into the venture's tenants — the
-  venture owns its own accounts. Does **not** handle ongoing operation or
-  framework-version catch-ups — those are owned by each deployed assistant's
-  session-boot loop in `agent-files/AGENTS.md`. Does **not** run any user's
-  first conversation — that's a dialogue between the deployed assistant and
-  its user, scripted in `agent-files/onboarding/BOOTSTRAP.md`.
+  receive the venture's intake, deploy one OpenClaw runtime per user
+  (one assistant per user), create each user's private settings repo and
+  seed it from the per-user blueprints, set each assistant's name from the
+  intake, wire Telegram, confirm the assistants are reachable, and hand the
+  assistant Telegram handles back to the venture for rollout. Use when a
+  venture activates Personal Workspace and needs its assistants deployed.
+  Reads `onboarding.md` for the canonical three-step flow (Activate →
+  Build & deploy → Finish onboarding) and ships `agent-files/` as the payload
+  deployed into each runtime. Does **not** provision into the venture's
+  tenants — the venture owns its own accounts. Does **not** handle ongoing
+  operation or framework-version catch-ups — those are owned by each deployed
+  assistant's session-boot loop in `agent-files/AGENTS.md`. Does **not** run
+  any user's first conversation — that's a dialogue between the deployed
+  assistant and its user, scripted in `agent-files/onboarding/BOOTSTRAP.md`.
 ---
 
 # Personal Workspace Setup
@@ -24,7 +24,7 @@ Use this skill to deploy the assistants for a venture that's activating Personal
 
 ## When to use
 
-- A venture has activated the Speedblock and submitted its intake — accounts confirmed, per-user details (name, email, Telegram handle, assistant count, assistant name(s)) provided.
+- A venture has activated the Speedblock and submitted its intake — accounts confirmed, per-user details (name, email, Telegram handle, assistant name) provided.
 - An existing user needs a fresh assistant instance (e.g. after losing access to their previous one).
 
 ## When NOT to use
@@ -35,7 +35,7 @@ Use this skill to deploy the assistants for a venture that's activating Personal
 
 ## Core job
 
-Deliver one deployed assistant per item in the venture's intake, then hand back to the venture:
+Deliver one deployed assistant per user in the venture's intake, then hand back to the venture:
 
 1. **The deployed runtime** — an OpenClaw runtime instance on Telegram, pointed at the shared framework (this repo's `agent-files/`) and at the user's own private settings repo, with the assistant's name set from the intake.
 2. **The user's private settings repo** — a private GitHub repo holding the personal layer of this user's assistant, seeded from the per-user blueprints in `agent-files/`. Filled by the assistant itself during the user's first conversation.
@@ -46,17 +46,17 @@ Once the assistants are reachable on Telegram, this skill hands their Telegram h
 
 Don't start until both of these are in place:
 
-- **The venture's tenants exist.** Google Workspace (or equivalent), Slack, Notion, GitHub, plus any venture-specific tools the assistants need to reach. Without these, there's nothing for the assistants to wire against. KRING does not provision into a venture's tenants.
-- **The intake is complete.** Per-venture confirmation + per-user details (full name, primary email, accounts ready, Telegram handle, assistant count, assistant name(s)). See `onboarding.md` § *Step 1 — Activate the Speedblock*.
+- **The venture's tenants exist.** Google Workspace (or equivalent), Slack, Notion, GitHub — the fixed beta tech stack every Personal Workspace deployment runs on. Without these, there's nothing for the assistants to wire against. KRING does not provision into a venture's tenants.
+- **The intake is complete.** Per-venture confirmation + per-user details (full name, primary email, accounts ready, Telegram handle, assistant name). See `onboarding.md` § *Step 1 — Activate the Speedblock*.
 
 ## How to run it
 
 Follow `onboarding.md` end-to-end. The canonical sequence:
 
 1. **Verify the intake.** Confirm everything in the *Preconditions* above is in place. If anything is missing, bounce it back to the venture before starting.
-2. **For each assistant in the intake:**
+2. **For each user in the intake:**
    - Create the user's private settings repo. Seed it from this repo's `agent-files/` per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, empty `STATE_VERSION`). Leave `{{FROM_BOOTSTRAP}}` markers in place — the assistant fills them during the first conversation.
-   - Deploy a new OpenClaw runtime instance for this user.
+   - Deploy an OpenClaw runtime instance for this user.
    - Set the assistant's `{{AGENT_NAME}}` from the intake.
    - Point the runtime at both file layers (shared framework + user's private settings repo).
    - Wire Telegram (bot binding).
@@ -88,7 +88,7 @@ Current framework version lives in `agent-files/onboarding/STATE_VERSION`. Each 
 
 A clean run leaves the venture with:
 
-- One deployed OpenClaw assistant on Telegram per item in their intake — already pulled both layers, named from the intake, waiting for the first message from its user.
+- One deployed OpenClaw assistant on Telegram per user in their intake — already pulled both layers, named from the intake, waiting for the first message from its user.
 - A private settings repo per user, seeded with `{{FROM_BOOTSTRAP}}` markers in the right places — owned by the user from this point on.
 - No pre-filled `USER.md`. No invented vibe. No wired tools beyond Telegram. Each assistant starts the first conversation from a clean state.
 - A list of assistant Telegram handles handed back, one per user, ready for the venture to distribute.

@@ -4,8 +4,12 @@ Used for {{AGENT_NAME}}'s Friday EOD (or Monday morning) review with {{USER_FIRS
 
 Goal: one screen. Dense, honest, actionable. Not a report — a conversation starter.
 
+Placeholders the agent fills when generating each brief:
+
+- `[iso week]` — the current ISO week (e.g. *2026-W17*).
+
 ```
-Week of {{ISO_WEEK}} — review
+Week of [iso week] — review
 
 ✅ Shipped
 - [What closed this week, with outcome if known]

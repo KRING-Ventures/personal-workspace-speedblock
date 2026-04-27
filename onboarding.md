@@ -32,23 +32,24 @@ To activate, the venture submits one intake to KRING with everything needed to d
 
 Once for the venture as a whole:
 
-- Confirmation that the venture's tenants are in place — Google Workspace (or equivalent), Slack, Notion, GitHub, plus any venture-specific tools the assistants should be able to reach. KRING does not provision into a venture's tenants; that's the venture's responsibility.
+- Confirmation that the venture's tenants are in place — Google Workspace (or equivalent), Slack, Notion, GitHub. These are the fixed beta tech stack: every Personal Workspace deployment runs on these. KRING does not provision into a venture's tenants; that's the venture's responsibility.
 
 For each user being onboarded:
 
 - Full name and primary email.
-- Confirmation that the user's accounts are live in the venture's tenants (Google Workspace, Slack, Notion, GitHub if relevant, plus any venture-specific tools the user needs day-to-day).
+- Confirmation that the user's accounts are live in the venture's tenants (Google Workspace, Slack, Notion, GitHub if relevant to their role).
 - The user's Telegram handle (e.g. `@august`). They need to have Telegram installed on a device they use day-to-day.
-- How many assistants this user needs. Default is one. Some users may want more — e.g. one for one role and a separate one for another.
-- The chosen name for each assistant (e.g. `Ida`, `Kerstin`). Vibe and personality come out of each user's first conversation; only the name is decided up front.
+- The chosen name for the user's assistant (e.g. `Ida`, `Kerstin`). One assistant per user. Vibe and personality come out of the first conversation; only the name is decided up front.
 
 KRING doesn't start deployment until the intake is complete. If anything is missing, that's the venture's job to fix before the next step.
+
+*Tools beyond the standard stack* — anything venture-specific that a user wants their assistant to reach (e.g. Linear, Figma) — are wired by the user with their assistant after deployment, not part of the intake.
 
 ---
 
 ## Step 2 — Build & deploy (KRING)
 
-KRING uses the intake to deploy the assistants. For each one:
+KRING uses the intake to deploy one assistant per user. For each:
 
 - Creates the user's private settings repo — a private GitHub repo holding the personal layer of the assistant (`IDENTITY`, `USER`, `TOOLS`, `automations/`, `MEMORY`, `memory/`).
 - Seeds the repo from this Speedblock's `agent-files/` per-user blueprints.

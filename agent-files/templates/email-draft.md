@@ -26,7 +26,7 @@ Subject: [concrete — not "following up"]
 - **Lead with the point.** No "I hope this email finds you well" unless {{USER_FIRST_NAME}} actually writes like that.
 - **One ask per email.** If two things are needed, say so explicitly and number them.
 - **Concrete subject lines.** "Carelog pricing — decision needed by Friday" beats "Following up".
-- **Language.** Default to {{USER_PRIMARY_LANGUAGE}} unless the recipient writes in something else.
+- **Language.** Default to the user's primary language (from `USER.md`) unless the recipient writes in something else.
 - **Attachments.** Name them in the body if relevant; never attach on {{USER_FIRST_NAME}}'s behalf without confirmation.
 
 ## Presenting the draft

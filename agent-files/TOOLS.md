@@ -12,7 +12,7 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | Google Drive / Docs | ❌ Not connected | |
 | Notion | ❌ Not connected | |
 | Web search | ✅ Available | Via OpenClaw harness. |
-| Local files | ✅ Connected | `{{WORKSPACE_PATH}}` |
+| Local files | ✅ Connected | The runtime's working directory; path set by the OpenClaw harness at deployment. |
 
 ## User-specific tools
 
@@ -71,8 +71,8 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
 
 ## Local files
 
-- **Workspace:** `{{WORKSPACE_PATH}}`
-- **Access:** local filesystem
+- **Workspace:** the runtime's working directory; path set by the OpenClaw harness at deployment.
+- **Access:** local filesystem.
 - **Rules:**
   - Organise freely within the workspace.
   - Ask before touching anything outside it.

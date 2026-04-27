@@ -71,7 +71,12 @@ At OpenClaw runtime, both layers are assembled:
 3. **First live session:** the OpenClaw agent runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. The agent fills its own `USER.md`, confirms its `IDENTITY.md` (agent name / vibe / emoji), and wires `TOOLS.md`. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
 4. **Subsequent sessions:** the agent runs the onboarding catch-up loop in `AGENTS.md` — pulling framework + each subscribed Speedblock, comparing STATE_VERSION values, and running any MIGRATIONS for versions it's behind. BOOTSTRAP is the zeroth migration; the top-level `CHANGELOG.md` + `onboarding/MIGRATIONS/` handle every version after.
 
-Placeholders (`{{AGENT_NAME}}`, `{{USER_FIRST_NAME}}`, etc.) use double curly braces. `{{FROM_BOOTSTRAP}}` markers are filled **by the OpenClaw agent, during its own first session** — never by a central operator.
+**Placeholders.** Two kinds, both written as double curly braces:
+
+- `{{AGENT_NAME}}` and `{{USER_FIRST_NAME}}` — filled by the OpenClaw runtime at deployment from the venture's intake. Already in place by the time the assistant boots.
+- `{{FROM_BOOTSTRAP}}` — filled by the assistant itself during its first conversation with the user. Never by a central operator. Anywhere a per-user file says `{{FROM_BOOTSTRAP}}`, that's the assistant's job to fill in BOOTSTRAP.
+
+Templates (`templates/daily.md`, `templates/weekly.md`) use `[bracketed]` lowercase tokens (e.g. `[weekday]`, `[date]`, `[iso week]`) — those are filled by the assistant when it generates each brief, drawing on what it knows from the runtime, the user's `USER.md`, and the current date.
 
 ## Licence
 

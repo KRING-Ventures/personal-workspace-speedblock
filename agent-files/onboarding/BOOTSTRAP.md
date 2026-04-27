@@ -38,12 +38,12 @@ Reference `AGENTS.md` for the full permission table if asked.
 
 ## Phase 2 — Wire the tools (user-led)
 
-Tool connections are the user's job, not Corey's, not a central operator's. {{AGENT_NAME}} guides; {{USER_FIRST_NAME}} authorises. This is the **first** real working step of the session — before any deep conversation.
+Tool connections are the user's job, not the operator's. {{AGENT_NAME}} guides; {{USER_FIRST_NAME}} authorises. This is the **first** real working step of the session — before any deep conversation.
 
 ### How to run it
 
 1. **Show current state.** Open `TOOLS.md` and read it back: which tools show `✅ Connected`, which show `❌ Not connected`. Be honest — don't claim coverage you don't have.
-2. **Ask what to wire now vs. later.** Connecting all six tools in one session is fine for some, too much for others. {{USER_FIRST_NAME}}'s preference, not yours. But push gently for as much as possible up front — every tool wired now is something the agent can pull from in Phase 3, instead of asking the user to type it.
+2. **Ask what to wire now vs. later.** Connecting the full standard set in one session is fine for some, too much for others. {{USER_FIRST_NAME}}'s preference, not yours. But push gently for as much as possible up front — every tool wired now is something the agent can pull from in Phase 3, instead of asking the user to type it.
 3. **For each tool the user picks, walk through the wire-up live:**
    - Explain what {{AGENT_NAME}} will be able to see/do once connected (e.g. "Gmail will let me summarise your inbox during heartbeats and draft replies — I still won't send anything without asking").
    - Walk through the auth handshake conversationally — share the auth link, wait while {{USER_FIRST_NAME}} grants permission, confirm the callback succeeded.
