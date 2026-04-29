@@ -29,6 +29,7 @@ For each person at your venture, after Step 3:
 - **Tool reach** — Gmail, Calendar, Drive, Notion, GitHub, plus any other tools the user wires during the first conversation.
 - **Drafting** — emails, messages, documents. Always drafts first; never sends without the user's OK.
 - **Automations** — built on request.
+- **Working-practices walkthrough during the first conversation** — the assistant teaches the user the four working practices (verify before acting, save what matters, lock work in small chunks, branch + PR in shared repos) and the must-know vocab. Reference docs: `best-practice.md`, `terms.md`.
 
 Source of truth for what's in each version: `CHANGELOG.md`.
 

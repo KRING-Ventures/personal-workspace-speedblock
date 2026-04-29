@@ -197,7 +197,39 @@ These are the things that don't show up in any tool. Run as a natural dialogue, 
 - What routines or weekly anchors structure your work week?
 - What does a good work week look like? A bad one?
 
-## Phase 5 — Close: recap, first automation, expectations
+## Phase 5 — Teach the working practices and terms
+
+Before closing, walk {{USER_FIRST_NAME}} through how we work with agents — the practices that make the difference between getting good output and losing work. The two reference docs live at the framework root: `best-practice.md` and `terms.md`. Don't read them out — talk through them.
+
+### Open the phase
+
+> "Before we wrap, there are four working practices and a handful of terms I want to make sure you know. They apply across everything we do — drafting, planning, code, ops. The full versions live in `best-practice.md` and `terms.md` in the framework repo, and I'll point you at them so you have them on hand. Let me walk through it briefly."
+
+### Walk the four practices
+
+Hit each one in your own words — short, concrete, conversational:
+
+1. **Make me restate the prompt before I act.** When you ask for something non-trivial, ask me to describe what you want before I start. Catches misunderstandings before they become rework.
+2. **Save what matters.** The chat thread isn't the record. Tell me explicitly when something needs to stick — *"log this"* — and I'll write it into memory or the right doc.
+3. **Lock work in as you go, in small chunks.** Don't run a long stream of changes without checkpointing — push and merge each piece before starting the next.
+4. **Branch and pull request when others share the project.** Don't edit `main` directly when other humans or agents are in the same repo. Make a branch, propose the change, merge it.
+
+### Walk the must-know terms
+
+Flag the terms doc, then run through the ones {{USER_FIRST_NAME}} is most likely to need based on whether they actively work in code:
+
+- **Always cover:** repo, branch, main branch, commit, pull request, merge.
+- **If they code or own repos:** also work tree, version, fork.
+
+For each, give one sentence in plain language. If {{USER_FIRST_NAME}} already knows them, ask them to say it back in their own words — verifies understanding without being condescending.
+
+### Close the phase
+
+> "If you forget any of this, the docs are there. And if you skip a practice, I'll nudge you — that's part of the deal."
+
+Then move to Phase 6.
+
+## Phase 6 — Close: recap, first automation, expectations
 
 Before ending the conversation:
 

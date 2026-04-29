@@ -60,6 +60,21 @@ Your assistant drafts and researches freely. But it always asks first before any
 
 ---
 
+## How to work with your assistant
+
+Four practices that apply across everything — drafting, planning, code, ops:
+
+1. **Make it restate the prompt before it acts** on anything non-trivial. Catches misunderstandings before they become rework.
+2. **Save what matters.** The chat thread isn't the record. Tell your assistant *"log this"* when something needs to stick.
+3. **Lock work in as you go**, in small chunks (commit, push, merge) — don't pile up large changes.
+4. **Use branches and pull requests** when others share the project. Don't edit `main` directly.
+
+Full version: [`best-practice.md`](./best-practice.md). Vocabulary (branch, PR, merge, etc.): [`terms.md`](./terms.md).
+
+Your assistant follows these too, and will nudge you when you're skipping one.
+
+---
+
 ## Working rhythm
 
 - **Each day.** Morning brief from your assistant → use it throughout the day for drafting, research, and recall → it writes a short memory log at end of day.

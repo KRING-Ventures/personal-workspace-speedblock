@@ -21,6 +21,8 @@ Both layers live in this repo.
 | File | What it is |
 |---|---|
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your assistant does, working rhythm. |
+| [`best-practice.md`](./best-practice.md) | The four working practices for getting good output from an agent and not losing work. |
+| [`terms.md`](./terms.md) | Must-know vocabulary (branch, pull request, merge, etc.) for working with agents and teammates. |
 | [`onboarding.md`](./onboarding.md) | Setup flow — three steps (venture activates → KRING deploys → venture finishes onboarding). |
 | [`human-roles.md`](./human-roles.md) | Who does what — the venture, KRING, the user. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
@@ -39,7 +41,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 ## Current version
 
-**`0.2.0`** — shipped 2026-04-24. See [`CHANGELOG.md`](./CHANGELOG.md).
+**`0.3.0`** — shipped 2026-04-29. See [`CHANGELOG.md`](./CHANGELOG.md).
 
 **Next:** `1.0.0` — target is the framework being stable enough to recommend for general venture deployments without KRING hand-holding.
 
