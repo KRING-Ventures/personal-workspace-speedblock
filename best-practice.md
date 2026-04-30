@@ -1,56 +1,50 @@
-# Personal Workspace — Best Practice for working with agents
+# The 4 Commandments
 
-How to get good work out of your AI assistant — and not lose it.
+Best practices for working with AI agents.
 
-These four practices apply across everything: drafting, planning, code, ops. Your assistant follows them too, and will nudge you when you're skipping one.
+These four apply across everything: drafting, planning, code, ops. Your assistant follows them too, and will nudge you when you're skipping one.
 
 For the vocabulary used below (branch, pull request, etc.), see [`terms.md`](./terms.md).
 
 ---
 
-## 1. Make the agent restate the prompt before it acts
+## 1. Make the agent repeat back your prompt
 
-When you ask for something non-trivial, ask the agent to describe back what you want before it starts. Read what comes back. If it's wrong, correct it now — not after work has been built on a misunderstanding.
+When you ask for something non-trivial, have the agent restate what you want before it starts. Read what comes back. If it's wrong, correct it now — not after work has been built on a misunderstanding.
 
-> "Before you do this, describe back what I'm asking for so we're aligned."
+> "Explain back to me what I just prompted, so we are aligned."
 
-This is the single biggest output-quality lever. It costs ten seconds and saves an hour of debugging the wrong thing.
-
----
-
-## 2. Save what matters
-
-The chat thread is not the record. It can be lost, scrolled past, or end up in someone else's window.
-
-- Decisions, commitments, and anything load-bearing → write it down where it sticks: your assistant's memory, the project's docs, Notion, the repo.
-- Your assistant logs daily and keeps long-term memory automatically — but tell it explicitly when something matters: *"log this."*
-- If a decision happens in chat with another person, write it down somewhere both of you can find it later.
+This is the single biggest output-quality lever. Ten seconds up front saves an hour of debugging the wrong thing.
 
 ---
 
-## 3. Lock work in as you go, in small chunks
+## 2. Work in small batches — and save as you go
 
-Don't run a long stream of work without checkpointing.
+Don't let work pile up unsaved. Pick the next small thing, do it, lock it in, then move on.
 
-- Pick the next small thing.
-- Work on it.
-- **Push and lock it in.** For code, that's a commit and a pull request merged to `main`. For docs, that's saved and shared. For decisions, that's written down where the team can see.
-- Then move to the next thing.
+> "Save and commit this work."
 
-Skip the lock-in step and work piles up — gets lost, gets overwritten, gets forgotten. Especially when more than one person (or agent) is in the same project.
+For code, that means a commit pushed to a branch. For docs, that means saved and shared where it sticks. For decisions, that means written down where the team can find it later. Skip the lock-in step and work gets lost, gets overwritten, gets forgotten.
 
 ---
 
-## 4. Use branches and pull requests when others share the project
+## 3. KISS — keep it simple and understandable
 
-If you're sharing a project with other humans or agents, never edit directly on `main`.
+Ask for plain, simple work. Tell the agent when you don't want it to over-explain or pad output with filler. The same goes for what you write in chat: less context-stuffing, clearer asks.
 
-- Make a **branch** for the change you're about to do.
-- Push it as a **pull request** — that's the ledger of what you did and why.
-- Get it reviewed (or at least seen) before merging to `main`.
-- After merge, start fresh from updated `main` for the next thing.
+> "Avoid unnecessary words and fillers. Explain in a simple way."
 
-This is true for code in GitHub. The same principle applies anywhere shared: copy, change, propose, merge — don't overwrite live shared state in place.
+Simple beats clever. If you can't follow it on the first read, neither can the next person.
+
+---
+
+## 4. In shared projects: work on a copy, then merge it
+
+If you're sharing a project with other humans or agents, don't edit the live shared state in place. Make a copy, change the copy, propose the merge.
+
+> "Branch off main."
+
+In code, that's a branch + pull request into `main`. The same principle applies anywhere shared: copy, change, propose, merge — never overwrite live shared state without a review step.
 
 ---
 

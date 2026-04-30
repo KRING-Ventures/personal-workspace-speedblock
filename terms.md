@@ -29,12 +29,6 @@ Combining one branch into another. After a PR is merged, the work is locked into
 ## Work tree
 Your local copy of the repo on disk — the actual files you're editing right now. You can have one work tree per branch you're working on. Useful when you want to work on two things in parallel without losing your place.
 
-## Version
-A specific, tagged snapshot of the project — `v0.2.0`, `v1.0.0`, etc. Versions follow semver: bigger numbers mean bigger changes. Tagging a version is how a team says "this exact state is what we shipped."
-
-## Fork
-A full personal copy of someone else's repo, hosted under your own account. Used when you want to make changes you don't have permission to push back directly.
-
 ---
 
 ## Why these matter

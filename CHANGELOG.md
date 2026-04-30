@@ -8,6 +8,28 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.3.1] — 2026-04-30
+
+Align the working-practices layer to the canonical *4 Commandments* one-pager: rebrand, drop one practice, add KISS, and trim the glossary from nine terms to seven.
+
+### Changed
+- `best-practice.md` — title changed to **The 4 Commandments**; subtitle "Best practices for working with AI agents." The four practices are now: (1) Make the agent repeat back your prompt, (2) Work in small batches — and save as you go (consolidates the previous *save what matters* + *lock work in small chunks*), (3) KISS — keep it simple and understandable (new), (4) In shared projects: work on a copy, then merge it. Each practice carries the canonical example prompt verbatim from the one-pager.
+- `terms.md` — trimmed to seven terms: repo, branch, main branch, commit, pull request, merge, work tree.
+- `agent-files/AGENTS.md` — *Working practices* section retitled to *Working practices — The 4 Commandments* and rewritten to match the four canonical practices.
+- `agent-files/onboarding/BOOTSTRAP.md` — Phase 5 retitled to *Teach the 4 Commandments and terms*; walk-through scripts updated to the four canonical practices and the seven-term glossary; the must-know split (always-cover vs. if-they-code) is gone — all seven terms are always covered.
+- `playbook.md` — *How to work with your assistant* section retitled to *The 4 Commandments* with the same content shape.
+- `README.md`, `SKILL.md`, `onboarding.md` — descriptions of `best-practice.md` updated to the new framing.
+
+### Removed
+- *Version* and *Fork* from `terms.md` — superseded by the trimmed seven-term list.
+- The *save what matters* practice as a standalone item — merged into Commandment 2.
+
+### Migrations
+- None — no per-user state shape change. Existing users continue against the same `agent-files/` payload; the catch-up loop in `agent-files/AGENTS.md` will surface the new framing on next session boot.
+- **For existing users:** start using the four Commandments straight away (they are how the agent now operates) and surface `best-practice.md` / `terms.md` naturally next time it's relevant — no forced re-teach.
+
+---
+
 ## [0.3.0] — 2026-04-29
 
 Add the *working-practices* layer: how a person should actually work with their assistant, the must-know vocabulary that makes it possible, and the BOOTSTRAP step that teaches both during a new user's first conversation.

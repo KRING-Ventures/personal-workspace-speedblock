@@ -60,14 +60,14 @@ Your assistant drafts and researches freely. But it always asks first before any
 
 ---
 
-## How to work with your assistant
+## How to work with your assistant — The 4 Commandments
 
 Four practices that apply across everything — drafting, planning, code, ops:
 
-1. **Make it restate the prompt before it acts** on anything non-trivial. Catches misunderstandings before they become rework.
-2. **Save what matters.** The chat thread isn't the record. Tell your assistant *"log this"* when something needs to stick.
-3. **Lock work in as you go**, in small chunks (commit, push, merge) — don't pile up large changes.
-4. **Use branches and pull requests** when others share the project. Don't edit `main` directly.
+1. **Make the agent repeat back your prompt.** *"Explain back to me what I just prompted, so we are aligned."* Catches misunderstandings before they become rework.
+2. **Work in small batches — and save as you go.** *"Save and commit this work."* Lock each piece in before starting the next; don't pile up large unsaved changes.
+3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
+4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
 Full version: [`best-practice.md`](./best-practice.md). Vocabulary (branch, PR, merge, etc.): [`terms.md`](./terms.md).
 
