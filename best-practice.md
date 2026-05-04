@@ -19,7 +19,3 @@ Best practices for working with AI agents. Apply across drafting, planning, code
 - **Pull request (PR)** — proposal to merge one branch into another. Reviewed first, then merged.
 - **Merge** — combining one branch into another. After merge, the work is on `main`.
 - **Work tree** — your local copy of the repo on disk. One per branch you're working on.
-
-Why these matter: you can ask your assistant precisely (*"open a PR"* beats *"send the change"*), and you can talk to your team without translation.
-
-*Owned by KRING.*
