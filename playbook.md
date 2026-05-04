@@ -1,13 +1,12 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace is how KRING and the ventures KRING builds work: a standard set of tools and a personal AI assistant for every person.
+Personal Workspace is how KRING and the ventures work: a standard set of tools and a personal AI assistant for every person.
 
 ---
 
 ## Principles
 
 - **AI first.** If your assistant can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
-- **Write it down.** If it's not in Notion or GitHub, it doesn't exist.
 
 ---
 
@@ -65,9 +64,9 @@ Four practices that apply across everything — drafting, planning, code, ops:
 3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
 4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
-Full version, plus the vocabulary (branch, PR, merge, etc.): [`best-practice.md`](./best-practice.md).
+Full version, plus the vocabulary (branch, PR, merge, etc.): Best Practice guide.
 
-Your assistant follows these too, and will nudge you when you skip one.
+Your assistant follows these too, and will nudge you as you work togehter.
 
 ---
 
@@ -84,7 +83,3 @@ Your assistant follows these too, and will nudge you when you skip one.
 - **OpenClaw** — the AI assistant system that powers your personal assistant.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
 - **Brief** — the daily or weekly summary your assistant sends you.
-
----
-
-*KRING owns this document. Anything unclear, off, or missing — tell us.*
