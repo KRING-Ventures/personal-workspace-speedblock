@@ -69,7 +69,7 @@ Four practices that apply across everything — drafting, planning, code, ops:
 3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
 4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
-Full version: [`best-practice.md`](./best-practice.md). Vocabulary (branch, PR, merge, etc.): [`terms.md`](./terms.md).
+Full version, plus the vocabulary (branch, PR, merge, etc.): [`best-practice.md`](./best-practice.md).
 
 Your assistant follows these too, and will nudge you when you're skipping one.
 

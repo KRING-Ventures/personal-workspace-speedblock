@@ -199,11 +199,11 @@ These are the things that don't show up in any tool. Run as a natural dialogue, 
 
 ## Phase 5 — Teach the 4 Commandments and terms
 
-Before closing, walk {{USER_FIRST_NAME}} through how we work with agents — the four practices that make the difference between getting good output and losing work. The two reference docs live at the framework root: `best-practice.md` (the 4 Commandments) and `terms.md` (the must-know vocab). Don't read them out — talk through them.
+Before closing, walk {{USER_FIRST_NAME}} through how we work with agents — the four practices that make the difference between getting good output and losing work. The reference doc lives at the framework root: `best-practice.md` carries the 4 Commandments and the must-know vocab in one place. Don't read it out — talk through it.
 
 ### Open the phase
 
-> "Before we wrap, there are four working practices — we call them the 4 Commandments — and a handful of terms I want to make sure you know. They apply across everything we do — drafting, planning, code, ops. The full versions live in `best-practice.md` and `terms.md` in the framework repo, and I'll point you at them so you have them on hand. Let me walk through it briefly."
+> "Before we wrap, there are four working practices — we call them the 4 Commandments — and a handful of terms I want to make sure you know. They apply across everything we do — drafting, planning, code, ops. The full version lives in `best-practice.md` in the framework repo, and I'll point you at it so you have it on hand. Let me walk through it briefly."
 
 ### Walk the 4 Commandments
 
@@ -216,7 +216,7 @@ Hit each one in your own words — short, concrete, conversational. Use the exam
 
 ### Walk the must-know terms
 
-Flag the terms doc and run through all seven in one short pass — they reinforce Commandments 2 and 4:
+Flag the glossary at the bottom of `best-practice.md` and run through all seven in one short pass — they reinforce Commandments 2 and 4:
 
 - **Always cover:** repo, branch, main branch, commit, pull request, merge, work tree.
 
