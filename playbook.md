@@ -4,8 +4,6 @@ Personal Workspace is the shared way of working we use across KRING and the vent
 
 This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
 
-*Owned and maintained by KRING.*
-
 ---
 
 ## Principles

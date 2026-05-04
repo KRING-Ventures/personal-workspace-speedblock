@@ -25,11 +25,11 @@ For each person at your venture, after Step 3:
 - **A personal AI assistant on Telegram** — remembers the user across conversations, scoped to the user's work.
 - **Daily brief** (morning) — calendar, top priorities, anything urgent.
 - **Weekly brief** (Monday morning) — open commitments, what the user is waiting on, patterns worth noticing.
-- **Heartbeats** — periodic background check-ins; only surface things when something actually needs attention.
+- **Proactive check-ins** — quiet, periodic; only surfaces things when something actually needs attention.
 - **Tool reach** — Gmail, Calendar, Drive, Notion, GitHub, plus any other tools the user wires during the first conversation.
 - **Drafting** — emails, messages, documents. Always drafts first; never sends without the user's OK.
 - **Automations** — built on request.
-- **4 Commandments walkthrough during the first conversation** — the assistant teaches the user the four working practices (make the agent repeat back your prompt, work in small batches and save as you go, KISS, work on a copy in shared projects) and the must-know vocab. Reference doc: `best-practice.md`.
+- **4 Commandments walkthrough during the first conversation** — the assistant teaches the user the four working practices and the must-know vocab. Reference: `best-practice.md`.
 
 Source of truth for what's in each version: `CHANGELOG.md`.
 
@@ -41,7 +41,7 @@ Send us one intake with everything we need to deploy.
 
 **Once for your venture as a whole:**
 
-- Confirm your tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the fixed beta tech stack. We don't provision into your tenants; that's on you.
+- Confirm your tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the required tools. We don't provision into your tenants — that's on you.
 
 **For each user at your venture being onboarded:**
 

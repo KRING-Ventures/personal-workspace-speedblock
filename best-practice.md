@@ -2,7 +2,9 @@
 
 Best practices for working with AI agents — plus the must-know vocabulary that goes with them.
 
-The four practices below apply across everything: drafting, planning, code, ops. Your assistant follows them too, and will nudge you when you're skipping one. The glossary at the bottom is the shared vocabulary that makes the practices precise — most of it comes from software development but applies anywhere we treat work as versioned, reviewable changes.
+The four practices apply across everything: drafting, planning, code, ops. Your assistant follows them too, and will nudge you when you're skipping one.
+
+The glossary at the bottom is the shared vocabulary the practices use — most of it comes from software, but it applies anywhere work moves through saved, reviewable steps.
 
 ---
 

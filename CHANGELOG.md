@@ -8,6 +8,21 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.3.3] — 2026-05-04
+
+Readability pass on the human-facing docs — same content, fewer words, clearer for readers who are new to KRING.
+
+### Changed
+- `playbook.md` — removed duplicated "owned by KRING" line at the top (footer kept).
+- `onboarding.md` — replaced internal term *Heartbeats* with *Proactive check-ins*; trimmed the 4 Commandments line so it stops re-listing the practices (they live in `best-practice.md`); removed "fixed beta tech stack" jargon — now reads "These are the required tools."
+- `best-practice.md` — split the dense intro paragraph into two; rephrased "versioned, reviewable changes" to "saved, reviewable steps" so the framing lands for non-developers.
+- `human-roles.md` — converted the long "Does" paragraphs for Venture / KRING / User into bulleted lists so each role's job is scannable in one read; opened with "The humans this Speedblock relies on" instead of "active human layer."
+
+### Migrations
+- None — no per-user state shape change. Existing assistants pick up the new wording on next session boot via the catch-up loop in `agent-files/AGENTS.md`.
+
+---
+
 ## [0.3.2] — 2026-05-04
 
 Combine the working-practices doc and the glossary into a single file so both live in one place.
