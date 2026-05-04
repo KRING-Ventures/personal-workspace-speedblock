@@ -8,6 +8,23 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.3.2] — 2026-05-04
+
+Combine the working-practices doc and the glossary into a single file so both live in one place.
+
+### Changed
+- `best-practice.md` — now carries the 4 Commandments **and** the must-know vocabulary (seven terms + "why these matter") in one document. Glossary moved in as a bottom section.
+- `playbook.md`, `README.md`, `SKILL.md`, `onboarding.md` — references to `terms.md` collapsed into the single `best-practice.md` pointer.
+- `agent-files/onboarding/BOOTSTRAP.md` — Phase 5 script now points at `best-practice.md` only; the "walk the must-know terms" step refers to the glossary section at the bottom of the same file.
+
+### Removed
+- `terms.md` — content lives in `best-practice.md`.
+
+### Migrations
+- None — no per-user state shape change. Existing assistants continue against the same `agent-files/` payload; the catch-up loop in `agent-files/AGENTS.md` will pick up the new doc layout on next session boot.
+
+---
+
 ## [0.3.1] — 2026-04-30
 
 Align the working-practices layer to the canonical *4 Commandments* one-pager: rebrand, drop one practice, add KISS, and trim the glossary from nine terms to seven.
