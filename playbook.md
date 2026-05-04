@@ -1,8 +1,6 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace is the shared way of working we use across KRING and the ventures KRING builds: a standard set of tools and a personal AI assistant for every person.
-
-This document explains what's in it and how to use it. Read it once top to bottom; come back to specific sections when you need them.
+Personal Workspace is how KRING and the ventures KRING builds work: a standard set of tools and a personal AI assistant for every person.
 
 ---
 
@@ -31,21 +29,21 @@ Every Personal Workspace user runs on these. We don't mix and match.
 
 ## Your personal AI assistant
 
-You get your own AI assistant — powered by OpenClaw, running on Telegram. It's your partner for work.
+You get your own AI assistant on Telegram, built on OpenClaw.
 
 ### What it does for you
 
-- **Remembers.** Keeps context about you — your role, projects, the people you work with, how you like things done. Memory carries between conversations.
-- **Briefs you.** Each morning: your calendar, priorities, anything urgent. Each week: open commitments, things you're waiting on, patterns worth noticing.
-- **Drafts for you.** Emails, messages, documents. Always drafts first — never sends without your OK.
-- **Uses your tools.** Reads your Gmail, Calendar, Drive, Notion, GitHub — plus any other tools you wire it to.
-- **Tracks commitments.** Notices when you've said you'll do something or are waiting on a reply.
-- **Preps meetings.** For meetings that matter, pulls together who's there, what's relevant, and what you want to get out of it.
-- **Builds automations.** If you want it to handle recurring work, you can ask it to set that up.
+- **Remembers.** Your role, projects, who you work with, how you like things done — memory carries across conversations.
+- **Briefs you.** Mornings: calendar, priorities, urgent items. Mondays: open commitments, what's pending, patterns worth noticing.
+- **Drafts for you.** Emails, messages, documents. Drafts only — never sends without your OK.
+- **Uses your tools.** Reads Gmail, Calendar, Drive, Notion, GitHub, plus anything else you wire in.
+- **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
+- **Preps meetings.** Pulls together attendees, context, and what you want from the meeting.
+- **Builds automations.** Ask it to handle recurring work.
 
 ### What it asks you before doing
 
-Your assistant drafts and researches freely. But it always asks first before anything leaves your account or changes things for other people.
+Drafts and research are free. Anything that leaves your account or changes things for other people gets a check first.
 
 | The assistant... | Asks first? |
 |---|---|
@@ -69,20 +67,20 @@ Four practices that apply across everything — drafting, planning, code, ops:
 
 Full version, plus the vocabulary (branch, PR, merge, etc.): [`best-practice.md`](./best-practice.md).
 
-Your assistant follows these too, and will nudge you when you're skipping one.
+Your assistant follows these too, and will nudge you when you skip one.
 
 ---
 
 ## Working rhythm
 
-- **Each day.** Morning brief from your assistant → use it throughout the day for drafting, research, and recall → it writes a short memory log at end of day.
-- **Each week.** Monday morning: a weekly review — open commitments, things you're waiting on, calendar overview, patterns worth noticing.
+- **Each day.** Morning brief from your assistant → use it through the day for drafting, research, and recall → it writes a short memory log at end of day.
+- **Each week.** Monday morning: a weekly review — open commitments, what you're waiting on, calendar overview, patterns worth noticing.
 
 ---
 
 ## Glossary
 
-- **Personal Workspace** — the shared way of working across KRING and the ventures KRING builds.
+- **Personal Workspace** — how KRING and the ventures KRING builds work: same tools, personal assistant for every person.
 - **OpenClaw** — the AI assistant system that powers your personal assistant.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
 - **Brief** — the daily or weekly summary your assistant sends you.

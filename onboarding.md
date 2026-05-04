@@ -1,96 +1,64 @@
 # Personal Workspace — Onboarding
 
-How your venture gets onboarded onto Personal Workspace.
+How your venture gets onto Personal Workspace.
 
-Throughout this doc:
-
-- **You / your venture** — the venture activating Personal Workspace and rolling it out to its team. The reader.
-- **KRING / we** — the deploying party. We build and deploy one assistant per person at your venture, then hand them back to you.
-- **Your team / your users** — the people at your venture being onboarded, one personal AI assistant each.
-
-Three steps:
+## The three steps
 
 1. **Activate** — you send us the intake.
-2. **Build & deploy** — we deploy one assistant per user.
-3. **Finish onboarding** — you roll the assistants out to your team; each team member runs a first conversation with their own assistant on Telegram.
+2. **Build & deploy** — we set up one assistant per user.
+3. **Finish onboarding** — you hand each assistant to its user; each user runs a first conversation on Telegram.
 
-When Step 3 is done, your venture is running on Personal Workspace.
+When step 3 is done, your venture is running on Personal Workspace.
 
----
+## What each user gets
 
-## What this version ships
-
-For each person at your venture, after Step 3:
-
-- **A personal AI assistant on Telegram** — remembers the user across conversations, scoped to the user's work.
-- **Daily brief** (morning) — calendar, top priorities, anything urgent.
-- **Weekly brief** (Monday morning) — open commitments, what the user is waiting on, patterns worth noticing.
-- **Proactive check-ins** — quiet, periodic; only surfaces things when something actually needs attention.
-- **Tool reach** — Gmail, Calendar, Drive, Notion, GitHub, plus any other tools the user wires during the first conversation.
-- **Drafting** — emails, messages, documents. Always drafts first; never sends without the user's OK.
+- **A personal AI assistant on Telegram** — one per user, remembers across conversations.
+- **Daily brief** (mornings) — calendar, priorities, urgent items.
+- **Weekly review** (Mondays) — open commitments, what's outstanding, patterns worth noticing.
+- **Proactive check-ins** — quiet; surfaces things only when they actually need attention.
+- **Tool reach** — Gmail, Calendar, Drive, Notion, GitHub, plus anything else the user wires in.
+- **Drafting** — emails, messages, documents. Drafts only; never sends without approval.
 - **Automations** — built on request.
-- **4 Commandments walkthrough during the first conversation** — the assistant teaches the user the four working practices and the must-know vocab. Reference: `best-practice.md`.
-
-Source of truth for what's in each version: `CHANGELOG.md`.
-
----
+- **4 Commandments walkthrough** — the assistant teaches the user the four working practices and the must-know vocab in the first conversation. See `best-practice.md`.
 
 ## Step 1 — Activate (you)
 
-Send us one intake with everything we need to deploy.
+Send us one intake with everything we need.
 
-**Once for your venture as a whole:**
+**Once, for your venture:**
 
-- Confirm your tenants are in place — Google Workspace, Slack, Notion, GitHub. These are the required tools. We don't provision into your tenants — that's on you.
+- Confirm your tenants are in place: Google Workspace, Slack, Notion, GitHub. These are the required tools. We don't provision into your tenants — that's on you.
 
-**For each user at your venture being onboarded:**
+**For each user:**
 
-- Their full name and primary email.
-- Confirmation the user's accounts are live in your tenants (Google Workspace, Slack, Notion, GitHub if relevant to the user's role).
-- The user's Telegram handle (e.g. `@maria`). Telegram must be installed on a device the user uses day-to-day.
-- The name the user wants for the assistant (e.g. `Ida`, `Kerstin`). One assistant per user. Vibe and personality come out of the first conversation; only the name is decided up front.
+- Full name and primary email.
+- Confirmation the user's accounts are live in your tenants (GitHub only if relevant to the user's role).
+- The user's Telegram handle (e.g. `@maria`). Telegram must be installed on a device the user uses daily.
+- The name the user wants for the assistant (e.g. `Ida`, `Kerstin`). Personality emerges in the first conversation; only the name is set up front.
 
-**How to send it.** Email or message the intake to your KRING contact — the person at KRING you've been coordinating with. One document or message with one section per user works fine. We don't start until the intake is complete; if anything's missing, we'll tell you what we still need.
+**Send it** to your KRING contact — email or message, one document with one section per user. We'll come back if anything is missing.
 
-*Tools beyond the standard stack* — anything venture-specific (e.g. Linear, Figma) — get wired by each user with the assistant *after* deployment, not at intake.
+*Anything beyond the standard stack* (Linear, Figma, etc.) — the user wires those with the assistant after deployment, not at intake.
 
----
+## Step 2 — Build & deploy (us)
 
-## Step 2 — Build & deploy (us — KRING)
-
-We take your intake and deploy one assistant per user. For each:
-
-- Spin up an OpenClaw runtime for the user.
-- Load the framework's onboarding templates so the assistant knows how to run the first conversation.
-- Set the assistant's name from your intake.
-- Wire Telegram.
-- Confirm the assistant is reachable.
-
-When all the assistants are live, we send you a list of Telegram handles — one per user — back through the same channel you used for the intake.
-
-From there, the rest is yours.
-
----
+We deploy one assistant per user, wire each to Telegram, and confirm each is reachable. Then we send you the list of Telegram handles — one per user — through the same channel you used for the intake.
 
 ## Step 3 — Finish onboarding (you)
 
-You roll the assistants out to your team, one user at a time. For each user at your venture:
+For each user, in any order:
 
-1. **Send the user the assistant's Telegram handle** (e.g. `@ida_kring`). Use Slack, email, or whatever channel you normally use with your team — we don't prescribe a format.
-2. **Share `playbook.md` with the user** so the user knows what Personal Workspace is before starting. Send the link from this repo, or a copy your team mirrors internally.
-3. **Tell the user to open Telegram, find the assistant by the handle, and send any message to start.** The assistant introduces itself and runs the first conversation from there — about 30–45 minutes, real conversation, not a form. The assistant walks the user through wiring up tools (Gmail, Calendar, Drive, Notion, GitHub) one at a time, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
+1. **Send the user the assistant's Telegram handle** (e.g. `@ida_kring`) — Slack, email, or whatever you normally use with your team.
+2. **Share `playbook.md`** so the user knows what Personal Workspace is before starting.
+3. **Tell the user to open Telegram, find the assistant, and send any message.** The assistant introduces itself and runs the first conversation — about 30–45 minutes, real conversation, not a form. It walks the user through wiring up Gmail, Calendar, Drive, Notion, GitHub, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
 
-That's your part. The first conversation runs between the user and the assistant directly — you're not in it. You coordinate the rollout (who goes first, fielding questions on the side) but the conversation itself is between the user and the assistant.
-
----
+You're not in the first conversation — that's between the user and the assistant. You coordinate the rollout and field questions on the side.
 
 ## References
 
-- `playbook.md` — what Personal Workspace is and how it works day-to-day. Read this if you're new, or share it with your team in Step 3.
-- `human-roles.md` — who does what in the three steps above (the venture, KRING, the user).
-- `agent-files/onboarding/BOOTSTRAP.md` — the full script each assistant follows in the first conversation.
-- `agent-files/AGENTS.md` — session boot and operational rules (assistant-side; useful if you want to understand how it works under the hood).
-- `agent-files/TOOLS.md` — per-user tool table; filled in during the first conversation.
+- `playbook.md` — what Personal Workspace is and how it works day-to-day. Share with your team in Step 3.
+- `agent-files/onboarding/BOOTSTRAP.md` — the script the assistant follows in the first conversation.
+- `agent-files/AGENTS.md` — operational rules (assistant-side; useful if you want to understand how it works under the hood).
 
 ---
 

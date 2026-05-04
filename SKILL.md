@@ -83,7 +83,6 @@ See `agent-files/README.md` for the full layout and the framework-vs-personal sp
 - **`playbook.md`** — Personal Workspace operating manual. What each user is stepping into: tool stack, what the assistant does, working rhythm. Read by users and by anyone orienting to how Personal Workspace works.
 - **`best-practice.md`** — The 4 Commandments for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). The assistant teaches this in BOOTSTRAP Phase 5 and reinforces it during ongoing work.
 - **`onboarding.md`** — The three-step flow in detail (Activate → Build & deploy → Finish onboarding). Read by the venture.
-- **`human-roles.md`** — Who does what across the three steps (the venture, KRING, each user).
 
 ## Version
 

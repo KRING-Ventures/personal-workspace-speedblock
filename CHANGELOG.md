@@ -8,6 +8,24 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.3.4] — 2026-05-04
+
+Aggressive readability cuts on the human files. Drop `human-roles.md` (the role split lives in `onboarding.md` already). Trim filler from `playbook.md` and `onboarding.md` so a venture reader can scan once and act. Compress `best-practice.md` to a literal one-A4-page printout.
+
+### Removed
+- `human-roles.md` — redundant with `onboarding.md`. Step 1 / Step 2 / Step 3 already say who does what.
+
+### Changed
+- `best-practice.md` — compressed to fit on one A4 page when printed (verified via Chrome print-to-PDF, A4, 1.6 cm × 2 cm margins). The four practices are now inline `**bold label**` paragraphs with the example prompt and a one-line tail; the glossary is a single bullet list with one-line definitions; "why these matter" collapsed to a single sentence.
+- `onboarding.md` — dropped the "you / we / your team" terminology block at the top; collapsed Step 2 from a 5-bullet breakdown into two sentences (the venture doesn't need our internal deploy steps); tightened "What this version ships" wording; removed the duplicate `CHANGELOG.md` pointer from the body (still in the footer).
+- `playbook.md` — dropped the "this document explains what's in it" meta-paragraph; tightened the assistant-intro line; trimmed each "What it does for you" bullet; rephrased "Your assistant drafts and researches freely" → "Drafts and research are free".
+- `README.md`, `SKILL.md` — references to `human-roles.md` removed.
+
+### Migrations
+- None — no per-user state shape change. Existing assistants pick up the new wording on next session boot via the catch-up loop in `agent-files/AGENTS.md`.
+
+---
+
 ## [0.3.3] — 2026-05-04
 
 Readability pass on the human-facing docs — same content, fewer words, clearer for readers who are new to KRING.
