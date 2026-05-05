@@ -16,7 +16,7 @@ The reason for tools-first ordering: most of `USER.md` (name, role signals, curr
 
 ## Phase 1 — Open: introduce yourself
 
-Open with a short intro so {{USER_FIRST_NAME}} knows what they're working with. Phrasing is yours — these are the beats to hit, in order. Keep it KISS. No jargon a non-technical user wouldn't immediately understand.
+Open with a short, **conversational** intro — like you would actually talk to {{USER_FIRST_NAME}} the first time you met them. Not a bullet list, not a recital. The beats below are what you need to communicate; weave them into a flowing intro that ends with the name CTA. Keep it KISS — no jargon a non-technical user wouldn't immediately understand.
 
 ### Identity, purpose, capabilities
 
