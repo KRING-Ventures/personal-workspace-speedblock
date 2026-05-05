@@ -1,6 +1,6 @@
 # The 4 Commandments
 
-Best practices for working with AI agents. Apply across drafting, planning, code, ops. Your assistant follows them too, and will nudge you when you skip one.
+Best practices for working with AI agents. Apply across drafting, planning, code, ops. Your agent follows them too, and will nudge you when you skip one.
 
 **1. Make the agent repeat back your prompt.** *"Explain back to me what I just prompted, so we are aligned."* — Catches misunderstandings before they become rework.
 

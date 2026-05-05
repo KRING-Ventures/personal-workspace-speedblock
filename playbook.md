@@ -1,12 +1,12 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace is how KRING and the ventures work: a standard set of tools and a personal AI assistant for every person.
+Personal Workspace is how KRING and the ventures work: a standard set of tools and a personal AI agent for every person.
 
 ---
 
 ## Principles
 
-- **AI first.** If your assistant can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
+- **AI first.** If your agent can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
 
 ---
 
@@ -14,37 +14,37 @@ Personal Workspace is how KRING and the ventures work: a standard set of tools a
 
 Every Personal Workspace user runs on these. We don't mix and match.
 
-| For | We use | Your assistant reaches it? |
+| For | We use | Your agent reaches it? |
 |---|---|---|
 | Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired during your first conversation |
-| Your personal AI assistant | **Telegram** — you chat with your assistant there | ✅ Yes — primary surface |
+| Your personal AI agent | **Telegram** — you chat with your agent there | ✅ Yes — primary surface |
 | Project and task management | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
-| Code & engineering | **GitHub** | ✅ Yes — your assistant can read and work in your repos with your permission |
+| Code & engineering | **GitHub** | ✅ Yes — your agent can read and work in your repos with your permission |
 | Team chat | **Slack** | ❌ Not yet — planned for a future version |
 | Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — you use this directly |
 | General-purpose AI | **Claude** — for coding and individual projects | n/a — you use this directly |
 
 ---
 
-## Your personal AI assistant
+## Your personal AI agent
 
-You get your own AI assistant on Telegram, built on OpenClaw.
+You get your own AI agent on Telegram, built on OpenClaw.
 
 ### What it does for you
 
-- **Remembers.** Your role, projects, who you work with, how you like things done — memory carries across conversations.
-- **Briefs you.** Mornings: calendar, priorities, urgent items. Mondays: open commitments, what's pending, patterns worth noticing.
-- **Drafts for you.** Emails, messages, documents. Drafts only — never sends without your OK.
-- **Uses your tools.** Reads Gmail, Calendar, Drive, Notion, GitHub, plus anything else you wire in.
+- **Remembers.** Your role, projects, who you work with, how you like things done — across conversations.
+- **Briefs you.** Mornings: calendar, priorities, deadlines. Mondays: open commitments, what's outstanding.
+- **Drafts for you.** Emails, messages, docs. Never sent without your OK.
+- **Preps meetings.** Attendees, context, what you want from the meeting.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
-- **Preps meetings.** Pulls together attendees, context, and what you want from the meeting.
-- **Builds automations.** Ask it to handle recurring work.
+- **Uses your tools.** Gmail, Calendar, Drive, Notion, GitHub, Telegram.
+- **Builds automations.** On request.
 
 ### What it asks you before doing
 
 Drafts and research are free. Anything that leaves your account or changes things for other people gets a check first.
 
-| The assistant... | Asks first? |
+| The agent... | Asks first? |
 |---|---|
 | Reads, searches, drafts, or researches | No |
 | Sends an email or replies to a message | **Yes** |
@@ -55,7 +55,7 @@ Drafts and research are free. Anything that leaves your account or changes thing
 
 ---
 
-## How to work with your assistant — The 4 Commandments
+## How to work with your agent — The 4 Commandments
 
 Four practices that apply across everything — drafting, planning, code, ops:
 
@@ -66,20 +66,20 @@ Four practices that apply across everything — drafting, planning, code, ops:
 
 Full version, plus the vocabulary (branch, PR, merge, etc.): Best Practice guide.
 
-Your assistant follows these too, and will nudge you as you work togehter.
+Your agent follows these too, and will nudge you as you work together.
 
 ---
 
 ## Working rhythm
 
-- **Each day.** Morning brief from your assistant → use it through the day for drafting, research, and recall → it writes a short memory log at end of day.
-- **Each week.** Monday morning: a weekly review — open commitments, what you're waiting on, calendar overview, patterns worth noticing.
+- **Each day.** Morning brief from your agent → use it through the day for drafting, research, and recall → it writes a short memory log at end of day.
+- **Each week.** Monday morning: a weekly review — open commitments, what you're waiting on, calendar overview.
 
 ---
 
 ## Glossary
 
-- **Personal Workspace** — how KRING and the ventures KRING builds work: same tools, personal assistant for every person.
-- **OpenClaw** — the AI assistant system that powers your personal assistant.
+- **Personal Workspace** — how KRING and the ventures KRING builds work: same tools, personal AI agent for every person.
+- **OpenClaw** — the AI agent system that powers your personal agent.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
-- **Brief** — the daily or weekly summary your assistant sends you.
+- **Brief** — the daily or weekly summary your agent sends you.
