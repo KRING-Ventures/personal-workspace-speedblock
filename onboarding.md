@@ -33,16 +33,15 @@ Send us one intake with everything we need.
 
 **For each user:**
 
-- Full name and primary email.
-- Confirmation the user's accounts are live in your tenants (GitHub only if relevant to the user's role).
+- Full name and primary email of the user.
 - The user's Telegram handle (e.g. `@maria`). Telegram must be installed on a device the user uses daily.
-- The name the user wants for the agent (e.g. `Ida`, `Kerstin`). Personality emerges in the first conversation; only the name is set up front.
+- The name the user wants for the agent (e.g. `Ida`).
 
-**Send it** to your KRING contact — email or message, one document with one section per user. We'll come back if anything is missing.
+**Send it** when activating the Speedblock in Cosmica. We'll come back if anything is missing.
 
 *Anything beyond the standard stack* (Linear, Figma, etc.) — the user wires those with the agent after deployment, not at intake.
 
-## Step 2 — Build & deploy (us)
+## Step 2 — Build & deploy (KRING)
 
 We deploy one agent per user, wire each to Telegram, and confirm each is reachable. Then we send you the list of Telegram handles — one per user — through the same channel you used for the intake.
 
@@ -50,11 +49,8 @@ We deploy one agent per user, wire each to Telegram, and confirm each is reachab
 
 For each user, in any order:
 
-1. **Send the user the agent's Telegram handle** (e.g. `@ida_kring`) — Slack, email, or whatever you normally use with your team.
-2. **Share `playbook.md`** so the user knows what Personal Workspace is before starting.
-3. **Tell the user to open Telegram, find the agent, and send any message.** The agent introduces itself and runs the first conversation — about 30–45 minutes, real conversation, not a form. It walks the user through wiring up Gmail, Calendar, Drive, Notion, GitHub, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
-
-You're not in the first conversation — that's between the user and the agent. You coordinate the rollout and field questions on the side.
+1. **Share the `Playbook`** so the user knows what Personal Workspace is before starting.
+2. **Tell the user to open Telegram, find the agent, and send any message.** The agent introduces itself and runs the first conversation — about ~20 minutes, real conversation, not a form. It walks the user through wiring up Gmail, Calendar, Drive, Notion, GitHub, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
 
 ## References
 
