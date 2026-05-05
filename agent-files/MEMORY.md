@@ -6,7 +6,11 @@
 
 ## People
 
-*Full roster in `USER.md` → Key People. This section is rolling operational context (status updates, recent interactions, things to track per person) — add entries as they accrue.*
+*The active roster — colleagues, collaborators, contacts. Built up over time, not pre-loaded. Add a person the first time they show up in real work (a meeting, an email thread, a project mention) — name, role, relationship, recent context. Update as the relationship evolves.*
+
+## Team and org context
+
+*Org structures, team relationships, who-does-what. Builds as it surfaces in real work — don't pre-load from a website or wiki.*
 
 ## Active projects and Speedblocks
 

@@ -1,58 +1,24 @@
 # USER — {{USER_FIRST_NAME}}
 
-*{{AGENT_NAME}}'s understanding of who {{USER_FIRST_NAME}} is. Filled in during BOOTSTRAP and maintained over time.*
+*{{AGENT_NAME}}'s understanding of who {{USER_FIRST_NAME}} is. Filled in during BOOTSTRAP and grown over time.*
+
+*This file holds the **stable** picture: basics + how they think + how they want to work with {{AGENT_NAME}}. The **moving** picture — current contacts, projects, recurring meetings, team relationships — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` as {{AGENT_NAME}} works alongside {{USER_FIRST_NAME}}, not from a one-shot snapshot at onboarding.*
 
 ## Basics
 
 - **Full name:** {{FROM_BOOTSTRAP}}
-- **Location:** {{FROM_BOOTSTRAP}}
+- **Preferred name / how to address:** {{FROM_BOOTSTRAP}}
+- **Primary email:** {{FROM_BOOTSTRAP}}
 - **Timezone:** {{FROM_BOOTSTRAP}}
+- **Job title / work area:** {{FROM_BOOTSTRAP}}
 - **Primary language:** {{FROM_BOOTSTRAP}} (works in {{FROM_BOOTSTRAP}})
-- **Communication style:** {{FROM_BOOTSTRAP}}
 - **Primary surface for talking to {{AGENT_NAME}}:** Telegram (default) · {{FROM_BOOTSTRAP}}
 
-## Role at KRING
+## Goals and current focus
 
-- **Role:** {{FROM_BOOTSTRAP}}
-- **Ventures currently inside:** {{FROM_BOOTSTRAP}}
-- **Decisions on their plate:** {{FROM_BOOTSTRAP}}
-- **Who they report to / work alongside inside KRING:** {{FROM_BOOTSTRAP}}
-- **Biggest KRING-related thing they're moving in the next two weeks:** {{FROM_BOOTSTRAP}}
-
-## What they're building (broader)
-
-- **Current work:** {{FROM_BOOTSTRAP}}
+- **Current priority (this week / month):** {{FROM_BOOTSTRAP}}
 - **6-month goal:** {{FROM_BOOTSTRAP}}
 - **2-year vision:** {{FROM_BOOTSTRAP}}
-- **Current priority:** {{FROM_BOOTSTRAP}}
-
-## Key people
-
-*Captured during BOOTSTRAP. Expected to be incomplete on first pass — add as they come up.*
-
-### KRING
-
-*Pre-loaded from kring.com as the KRING team database — relevant for everyone.*
-
-*If {{USER_FIRST_NAME}} is a KRING member: validate during BOOTSTRAP — confirm everyone's still there, add anyone missing, and fill in `[relationship, key context]` from their perspective. For venture users: this is reference only (who's at KRING) — leave `[relationship, key context]` blank.*
-
-- **Martin Kring** — CEO & Co-founder · [relationship, key context]
-- **Jesper Kring** — Chair & Co-founder · [relationship, key context]
-- **Corey Henderson** — Partner & CTO / Head of AI · [relationship, key context]
-- **Martin Kaas Haislund** — Partner & Early Stage Ventures · [relationship, key context]
-- **Thomas Refdahl** — Partner & Head of Growth and Portfolio · [relationship, key context]
-- **Martin Nellemann** — Finance & Operations Director · [relationship, key context]
-- **Tobias Israelsen** — Venture Builder · [relationship, key context]
-- **Johan Rishede Duus** — Senior Growth Hacker · [relationship, key context]
-- **Philip Vaarskov** — Growth & Marketing Lead · [relationship, key context]
-- **Oscar Thorbjørn Grennes** — Venture Analyst · [relationship, key context]
-- **Hannah Robinson** — Venture Analyst · [relationship, key context]
-
-### Close network
-
-- **[Name]** — [role, relationship, key context]
-
-*Note: if any person holds dual context at work (e.g. co-founder + close friend, manager + mentor), name it here. Dual-context relationships change how hard conversations land at work.*
 
 ## How they think and decide
 
@@ -76,15 +42,17 @@
 - **Interrupt flow when:** {{FROM_BOOTSTRAP}}
 - **Definition of "helpful":** {{FROM_BOOTSTRAP}}
 - **AI behaviours that annoy them:** {{FROM_BOOTSTRAP}}
+- **Communication style:** {{FROM_BOOTSTRAP}}
 
 ## Work rhythm
 
-- **Work routines:** {{FROM_BOOTSTRAP}}
-- **Weekly anchors:** {{FROM_BOOTSTRAP}}
-- **Good work week looks like:** {{FROM_BOOTSTRAP}}
-- **Bad work week looks like:** {{FROM_BOOTSTRAP}}
+- **Routines / weekly anchors:** {{FROM_BOOTSTRAP}}
+- **Good week looks like:** {{FROM_BOOTSTRAP}}
+- **Bad week looks like:** {{FROM_BOOTSTRAP}}
 
 ---
+
+*Contacts, current projects, recurring meetings, and team relationships are tracked in `MEMORY.md` (stable) and `memory/YYYY-MM-DD.md` (rolling). Don't pre-load them here — they build naturally through use.*
 
 *Last updated: {{FROM_BOOTSTRAP}}*
 *Last validated with {{USER_FIRST_NAME}}: {{FROM_BOOTSTRAP}}*
