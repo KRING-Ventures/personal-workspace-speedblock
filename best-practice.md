@@ -1,4 +1,4 @@
-# The 4 Commandments
+# The 4 AI Commandments
 
 Best practices for working with AI agents. Apply across drafting, planning, code, ops. Your agent follows them too, and will nudge you when you skip one.
 

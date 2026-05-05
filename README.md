@@ -21,7 +21,7 @@ Both layers live in this repo.
 | File | What it is |
 |---|---|
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your agent does, working rhythm. |
-| [`best-practice.md`](./best-practice.md) | The 4 Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
+| [`best-practice.md`](./best-practice.md) | The 4 AI Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
 | [`onboarding.md`](./onboarding.md) | Setup flow — three steps (venture activates → KRING deploys → venture finishes onboarding). |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
 

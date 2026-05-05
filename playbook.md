@@ -55,7 +55,7 @@ Drafts and research are free. Anything that leaves your account or changes thing
 
 ---
 
-## How to work with your agent — The 4 Commandments
+## How to work with your agent — The 4 AI Commandments
 
 Four practices that apply across everything — drafting, planning, code, ops:
 

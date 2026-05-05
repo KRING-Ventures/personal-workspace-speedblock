@@ -21,7 +21,7 @@ A personal AI agent on Telegram — one per user, remembers across conversations
 - **Tracks commitments** — what the user has said they'll do, what they're waiting on.
 - **Uses the tools** — Gmail, Calendar, Drive, Notion, GitHub, Telegram.
 - **Builds automations** — on request.
-- **4 Commandments walkthrough** — the agent teaches the user the four working practices and the must-know vocab in the first conversation. See `best-practice.md`.
+- **4 AI Commandments walkthrough** — the agent teaches the user the four working practices and the must-know vocab in the first conversation. See `best-practice.md`.
 
 ## Step 1 — Activate (you)
 

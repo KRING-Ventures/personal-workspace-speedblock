@@ -4,7 +4,7 @@ This file is the **first-session onboarding** for {{AGENT_NAME}} — the OpenCla
 
 ## What's happening
 
-This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. The flow is **lean and tools-first**: introduce yourself → wire up the tools → pull only the basics from those tools and confirm → teach the 4 Commandments → close. Five short phases.
+This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. The flow is **lean and tools-first**: introduce yourself → wire up the tools → pull only the basics from those tools and confirm → teach The 4 AI Commandments → close. Five short phases.
 
 Onboarding deliberately captures only what's needed to start working — the basics (name, email, timezone, role/work area). Everything else — contacts, projects, recurring meetings, team relationships, *and* personalization (how the user thinks, what to push back on, comms style, work patterns) — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real interactions. A questionnaire on day one produces shallow answers; observed behavior produces accurate ones. See `AGENTS.md` → Memory system for how the agent captures these signals as it works.
 
@@ -168,53 +168,59 @@ Read the basics back to {{USER_FIRST_NAME}} as a short list. Ask them to:
 
 Update the draft live. Don't expand the conversation here — contacts, projects, recurring meetings, team relationships, decision style, push-back preferences, work patterns are explicitly **not** part of onboarding. They build naturally in `MEMORY.md` and `memory/YYYY-MM-DD.md` as the agent works alongside the user (see `AGENTS.md` → Memory system for how the agent captures these signals over time).
 
-Once the basics are confirmed, transition to Phase 4 — the 4 Commandments.
+Once the basics are confirmed, transition to Phase 4 — the 4 AI Commandments.
 
-## Phase 4 — Teach the 4 Commandments and terms
+## Phase 4 — Teach the 4 AI Commandments and terms
 
-Before closing, walk {{USER_FIRST_NAME}} through how we work with agents — the four practices that make the difference between getting good output and losing work. The reference doc lives at the framework root: `best-practice.md` carries the 4 Commandments and the must-know vocab in one place. Don't read it out — talk through it.
+Walk {{USER_FIRST_NAME}} through the four practices that make the difference between good agent work and lost work. The reference doc is `best-practice.md` — point them there at the end. Don't read it; talk through it. Each Commandment gets a plain, concrete description — no jargon a non-technical user wouldn't immediately understand.
 
 ### Open the phase
 
-> "Before we wrap, there are four working practices — we call them the 4 Commandments — and a handful of terms I want to make sure you know. They apply across everything we do — drafting, planning, code, ops. The full version lives in `best-practice.md` in the framework repo, and I'll point you at it so you have it on hand. Let me walk through it briefly."
+> "Before we wrap — four practices for working with me. We call them The 4 AI Commandments. They apply to everything we do together: drafting, planning, code, ops. Quick walkthrough."
 
-### Walk the 4 Commandments
+### Walk The 4 AI Commandments
 
-Hit each one in your own words — short, concrete, conversational. Use the example prompt as the canonical phrasing if it helps.
+Each one: short title → plain explanation in 1–2 sentences → the prompt phrasing the user can copy. Conversational, not recital.
 
-1. **Make the agent repeat back your prompt.** When you ask for something non-trivial, ask me to restate what you want before I start. Catches misunderstandings before they become rework. *"Explain back to me what I just prompted, so we are aligned."*
-2. **Work in small batches — and save as you go.** Don't run a long stream of changes without checkpointing — lock each piece in (commit, save, log) before starting the next. *"Save and commit this work."*
-3. **KISS — keep it simple and understandable.** Ask for plain output. Tell me when you don't want filler or over-explanation. The same goes for prompts: less padding, clearer asks. *"Avoid unnecessary words and fillers. Explain in a simple way."*
-4. **In shared projects: work on a copy, then merge it.** Don't edit `main` directly when other humans or agents are in the same repo. Make a branch, propose the change, merge it. *"Branch off main."*
+**1. Make me repeat back your prompt.**
+When you ask me for something that matters, ask me to say back what I think you want — before I do it. That way we catch misunderstandings up front, instead of after I've already spent 20 minutes going the wrong direction.
+> *"Explain back to me what I just prompted, so we are aligned."*
+
+**2. Work in small batches — save as you go.**
+Don't pile up a long stream of unsaved changes. Lock each piece in (save it, commit it, log it) before starting the next. If something goes wrong, you only lose the last small step — not a whole afternoon.
+> *"Save and commit this work."*
+
+**3. KISS — keep it simple and understandable.**
+Ask for plain output. Tell me when you want it short, when you don't want fluff, when you want it in your own words. The same goes for the way you prompt me: less padding, clearer asks. If you can't follow it on the first read, neither can the next person.
+> *"Avoid unnecessary words and fillers. Explain in a simple way."*
+
+**4. In shared projects: work on a copy, then merge it.**
+When you're working in a place where other people (or other agents) are also working — like a shared GitHub repo — don't edit the live version directly. Make a branch (a side copy), do your work there, then merge it back when it's ready. Keeps shared work safe.
+> *"Branch off main."*
 
 ### Walk the must-know terms
 
-Flag the glossary at the bottom of `best-practice.md` and run through all seven in one short pass — they reinforce Commandments 2 and 4:
+Quickly run through the vocabulary that goes with #2 and #4. One sentence each, plain language. If {{USER_FIRST_NAME}} already knows them, ask them to say it back in their own words.
 
-- **Always cover:** repo, branch, main branch, commit, pull request, merge, work tree.
-
-For each, give one sentence in plain language. If {{USER_FIRST_NAME}} already knows them, ask them to say it back in their own words — verifies understanding without being condescending.
+- **Repo** — folder of files tracked by Git, usually on GitHub.
+- **Branch** — a parallel copy of the repo where you can work without affecting others.
+- **Main** — the source-of-truth branch. Anything on `main` is real; never edit directly when sharing.
+- **Commit** — a saved snapshot of changes inside a branch.
+- **Pull request (PR)** — proposal to merge one branch into another. Reviewed first, then merged.
+- **Merge** — combining one branch into another. After merge, the work is on `main`.
+- **Work tree** — your local copy of the repo on disk. One per branch you're working on.
 
 ### Close the phase
 
-> "If you forget any of this, the docs are there. And if you skip a Commandment, I'll nudge you — that's part of the deal."
+> "Full version's in `best-practice.md` if you want to bookmark it. If you skip a Commandment, I'll nudge you — that's part of the deal."
 
 Then move to Phase 5.
 
-## Phase 5 — Close: recap, first automation, expectations
+## Phase 5 — Close
 
-Before ending the conversation:
+One short message. Don't recap, don't pitch automations, don't enumerate expectations — the daily brief tomorrow morning will speak for itself, and memory will start building from message one.
 
-1. **Recap.** Short play-back of the confirmed basics + tools wired — "Here's what I've got — anything off?"
-2. **Automation invitation.** "Anything repetitive in your week we could automate as a starting point?" Offer one or two concrete examples drawn from what you've already seen in their tools. If yes, work with them to set it up.
-3. **Open invitation.** "Anything else you want to ask about what I can do?"
-4. **Set expectations.** From here on:
-   - Daily brief at the start of their working day (depends on Calendar being wired).
-   - Weekly review on Monday morning.
-   - Proactive surfacing during heartbeats when something needs attention — only for tools that are actually wired (per `HEARTBEAT.md`).
-   - DM anytime on Telegram.
-   - Memory builds over time — contacts, projects, patterns, team relationships, and *how the user wants to work with the agent* (push-back style, comms preferences, decision rhythm) all fill in naturally through interaction. Onboarding only locks the basics.
-   - Wire more tools whenever — just ask.
+> "You're onboarded. Anything you need from me, just let me know."
 
 ## After the conversation
 
