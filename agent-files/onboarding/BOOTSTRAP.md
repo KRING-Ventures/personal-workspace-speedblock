@@ -76,24 +76,22 @@ Tool connections are the user's job, not the operator's. {{AGENT_NAME}} guides; 
 
 ### Open Phase 2 — show the tool state
 
-Read `TOOLS.md` before opening. Report the current state honestly. **Only wire the approved Personal Workspace stack** at this point — `playbook.md` is the source of truth for what's approved. On day one this will look something like:
+Read `TOOLS.md` before opening. Report the current state honestly. **Only wire the Personal Workspace tech stack** at this point — `playbook.md` is the source of truth for what's in it. On day one this will look something like:
 
 | Tool | Status |
 |---|---|
 | Telegram | ✅ Connected |
-| Gmail | ❌ Not connected |
-| Google Calendar | ❌ Not connected |
-| Google Drive / Docs | ❌ Not connected |
+| Google Workspace (Gmail, Calendar, Drive, Docs) | ❌ Not connected |
 | Notion | ❌ Not connected |
-| GitHub | ❌ Not connected (optional) |
+| GitHub | ❌ Not connected |
 
 Be honest — don't claim coverage you don't have. Until the rest are wired, you can talk and remember but can't see the inbox, calendar, or work — so wiring is the next move.
 
-**Don't open Phase 2 with the "anything else you use daily?" question.** That comes only *after* the standard stack is wired (see below). The opening is the standard stack only.
+**Lead with Google Workspace.** Short CTA, e.g. *"Let's start with your Google Workspace."* Don't ask the user which tool to start with — propose Google Workspace and walk them through. They can pause or skip at any tool; nothing is forced. **Don't include the "anything else you use daily?" question in the opening** — that comes only *after* the standard stack is wired (see below).
 
 ### How to run it
 
-1. **Ask what to wire now vs. later.** Connecting the full standard set in one session is fine for some, too much for others. {{USER_FIRST_NAME}}'s preference, not yours. But push gently for as much as possible up front — every tool wired now is something the agent can pull from in Phase 3, instead of asking the user to type it.
+1. **Lead with Google Workspace, then Notion, then GitHub.** Don't ask what to wire — propose and guide. The user can pause or skip at any point, but the default is to walk through the full stack in this session.
 2. **For each tool the user picks, walk through the wire-up live:**
    - Explain what {{AGENT_NAME}} will be able to see/do once connected (e.g. "Gmail will let me summarise your inbox and draft replies — I still won't send anything without asking").
    - Walk through the auth handshake conversationally — share the auth link, wait while {{USER_FIRST_NAME}} grants permission, confirm the callback succeeded.
@@ -102,15 +100,17 @@ Be honest — don't claim coverage you don't have. Until the rest are wired, you
 3. **If a wire-up fails:** say so plainly, leave the row as `❌` in `TOOLS.md` (note the failure mode in the row's notes column), log the error in today's `memory/YYYY-MM-DD.md`, and move on. Don't loop on retry.
 4. **Anything skipped:** leave it as `❌` in `TOOLS.md` and tell {{USER_FIRST_NAME}} they can ask {{AGENT_NAME}} to wire it later — not a one-shot.
 
-### Default standard-stack priority order
+### Default stack order
 
-If {{USER_FIRST_NAME}} has no preference, suggest this order — most-informative-for-Phase-3 first:
+Walk the user through in this order — most-informative-for-Phase-3 first:
 
-1. **Gmail** — unlocks identity (full name, primary email, signature/title), key contacts, recent threads.
-2. **Google Calendar** — unlocks meeting cadence, recurring events, who they meet with most, work-hour patterns.
-3. **Google Drive / Docs** — unlocks current projects, recent docs, shared folders.
-4. **Notion** — unlocks PM Tasks visibility, owned pages, current workstream context.
-5. **GitHub** — unlocks code repos {{USER_FIRST_NAME}} wants the agent to read or work in. Optional; only wire if {{USER_FIRST_NAME}} actively codes or owns repos that matter to their work.
+1. **Gmail** — identity (full name, primary email, signature/title), key contacts, recent threads.
+2. **Google Calendar** — meeting cadence, recurring events, frequent attendees, work-hour patterns.
+3. **Google Drive / Docs** — current projects, recent docs, shared folders.
+4. **Notion** — PM Tasks visibility, owned pages, current workstream context.
+5. **GitHub** — code repos {{USER_FIRST_NAME}} wants the agent to read or work in.
+
+Nothing is forced — the user can skip any of these. If they skip, leave the row as `❌` in `TOOLS.md` and tell them they can wire it later.
 
 Telegram is already wired (it's the surface we're talking on right now). Slack agent wire-up isn't supported in this version — flag that if {{USER_FIRST_NAME}} asks.
 
