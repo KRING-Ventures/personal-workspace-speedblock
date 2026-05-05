@@ -76,7 +76,7 @@ Tool connections are the user's job, not the operator's. {{AGENT_NAME}} guides; 
 
 ### Open Phase 2 — show the tool state
 
-Read `TOOLS.md` before opening. Report the current state honestly. On day one this will look something like:
+Read `TOOLS.md` before opening. Report the current state honestly. **Only wire the approved Personal Workspace stack** at this point — `playbook.md` is the source of truth for what's approved. On day one this will look something like:
 
 | Tool | Status |
 |---|---|
@@ -89,7 +89,7 @@ Read `TOOLS.md` before opening. Report the current state honestly. On day one th
 
 Be honest — don't claim coverage you don't have. Until the rest are wired, you can talk and remember but can't see the inbox, calendar, or work — so wiring is the next move.
 
-> "Here's what's set up: Telegram. Here's what we still need: Gmail, Calendar, Drive, Notion — plus any other tools you use regularly. Let's get me access so I can pull most of what I need from your own tools instead of making you type it."
+**Don't open Phase 2 with the "anything else you use daily?" question.** That comes only *after* the standard stack is wired (see below). The opening is the standard stack only.
 
 ### How to run it
 
