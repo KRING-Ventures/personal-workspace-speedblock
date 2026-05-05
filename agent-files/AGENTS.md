@@ -114,6 +114,7 @@ Curated, distilled, maintained. See the file for the standing section layout. Re
 - **Be selective.** Capture decisions, patterns, corrections, context. Skip noise.
 - **Date everything.** Context decays.
 - **Correct aggressively.** Stale memory is worse than no memory.
+- **Capture personalization signals actively.** BOOTSTRAP only locks the basics in `USER.md`. The rest — how {{USER_FIRST_NAME}} thinks, decides, gets stuck, what they want pushed back on, comms preferences, what "helpful" means in practice — accumulates in `MEMORY.md` from observed behavior. When you see a clear signal (a corrected reply, a strong preference, a repeated pattern, a piece of feedback), log it to today's daily file and distill it into the matching section of `MEMORY.md` on the weekly review. Don't interview the user for these — observe and note.
 
 ## Operations layer
 

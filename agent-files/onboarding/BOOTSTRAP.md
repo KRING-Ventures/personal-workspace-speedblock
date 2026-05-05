@@ -4,9 +4,9 @@ This file is the **first-session onboarding** for {{AGENT_NAME}} — the OpenCla
 
 ## What's happening
 
-This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. The flow is **tools first, then context**: introduce yourself → wire up the tools → pull everything that can be pulled from those tools → validate that draft with {{USER_FIRST_NAME}} and fill the human gaps in conversation → close. The richer this whole sequence, the better everything works from here on.
+This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. The flow is **lean and tools-first**: introduce yourself → wire up the tools → pull only the basics from those tools and confirm → teach the 4 Commandments → close. Five short phases.
 
-The reason for tools-first ordering: most of `USER.md` (name, role signals, current projects, key contacts, work rhythm) can be inferred from real data — Google profile, calendar patterns, recent emails, Drive and Notion activity. Asking the user to type those out manually is friction. Pull what's there, then validate and extend in conversation.
+Onboarding deliberately captures only what's needed to start working — the basics (name, email, timezone, role/work area). Everything else — contacts, projects, recurring meetings, team relationships, *and* personalization (how the user thinks, what to push back on, comms style, work patterns) — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real interactions. A questionnaire on day one produces shallow answers; observed behavior produces accurate ones. See `AGENTS.md` → Memory system for how the agent captures these signals as it works.
 
 ## Before you start
 
@@ -130,7 +130,7 @@ With tools connected, pull what's pullable — but only the **basics**. Everythi
 
 ### What to pull
 
-Only pull from tools that wired successfully in Phase 2. Skip anything still `❌`. Do not invent — if a field can't be pulled, leave it for Phase 4.
+Only pull from tools that wired successfully in Phase 2. Skip anything still `❌`. Do not invent — if a field can't be pulled, leave it blank and ask the user.
 
 **From Gmail:**
 - Full name (Google profile / signature).
@@ -140,9 +140,9 @@ Only pull from tools that wired successfully in Phase 2. Skip anything still `�
 **From Google Calendar:**
 - Timezone (settings).
 
-**That's it.** Do not pre-load contacts, recurring meetings, project lists, team relationships, working-hour patterns, or any other inventory at this stage. Those build organically in memory through actual use — that's how the agent stays current and accurate. A fat onboarding snapshot ages badly; a thin one + a memory that compounds wins.
+**That's it.** Do not pre-load contacts, recurring meetings, project lists, team relationships, working-hour patterns, decision style, work rhythm, or any other personalization at this stage. Everything beyond the basics — contacts, projects, *and* how the user thinks/works/wants to be communicated with — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from actual interactions. A fat onboarding snapshot ages badly; a thin one + a memory that compounds wins.
 
-If the user asks why you didn't pull more, say so plainly: "I'll pick up your contacts, projects, and patterns naturally as we work together — that's more accurate than a snapshot from day one."
+If the user asks why you didn't pull or ask more, say so plainly: "I'll pick up your contacts, projects, patterns, and preferences naturally as we work — that's more accurate than a snapshot or a questionnaire on day one."
 
 ### How to write the draft
 
@@ -155,54 +155,22 @@ Draft `USER.md` with basics only. Use a `[pulled from X]` annotation per field s
 - **Aliases:** [other addresses] [pulled from Gmail]
 - **Timezone:** [Continent/City] [pulled from Calendar]
 - **Job title / work area:** [from signature] [inferred — needs confirmation]
-- **Preferred name / how to address:** [needs Phase 4]
+- **Preferred name / how to address:** [ask the user]
 ```
 
-### Confirm the basics, then move on
+### Confirm the basics, then close out the phase
 
-Read the basics back to {{USER_FIRST_NAME}} as a short list and ask them to correct anything wrong (especially job title / work area, since that's inferred) and add their preferred name. Update the draft live. Don't expand the conversation here — contacts, projects, recurring meetings and team relationships are explicitly **not** part of onboarding. They'll build naturally in `MEMORY.md` and `memory/YYYY-MM-DD.md` as the agent works alongside the user.
+Read the basics back to {{USER_FIRST_NAME}} as a short list. Ask them to:
 
-Once the basics are confirmed, transition to Phase 4.
+1. Correct anything wrong (especially job title / work area, since that's inferred).
+2. Add their preferred name.
+3. **Optional one-liner on comms style** — "Anything I should know about how you want me to talk to you?" (tone, length, formality). Skippable; if they don't have a strong view, mirror how they text and refine over time.
 
-## Phase 4 — Personalization: what data can't tell me
+Update the draft live. Don't expand the conversation here — contacts, projects, recurring meetings, team relationships, decision style, push-back preferences, work patterns are explicitly **not** part of onboarding. They build naturally in `MEMORY.md` and `memory/YYYY-MM-DD.md` as the agent works alongside the user (see `AGENTS.md` → Memory system for how the agent captures these signals over time).
 
-Phase 4 covers the things no tool can show — how {{USER_FIRST_NAME}} thinks, what they want from {{AGENT_NAME}}, how they want to work together. This is the part that makes the agent actually feel like *theirs*.
+Once the basics are confirmed, transition to Phase 4 — the 4 Commandments.
 
-### How to open Phase 4
-
-> "Basics are locked. Now a few things I can't pull from any tool — how you think, what you want from me, what to push back on. Quick conversation, not a form."
-
-Run as a natural dialogue, not a questionnaire. Pick the questions that fit the flow — not every one needs an answer in this session. Anything that doesn't surface here will surface in memory over time. Push back gently if answers feel surface-level.
-
-### Goals and current focus
-- What does success look like in the next 6 months? In 2 years?
-- What's the current priority — the thing that matters most this week or month?
-
-### How you think and decide
-- How do you make decisions? Fast intuition, slow deliberation, something else?
-- What's your relationship with risk?
-- When you're stuck, what does that usually look like? What unsticks you?
-- What do you tend to overthink? What do you under-think?
-- Any frameworks or mental models you actually use? (Not just admire — use.)
-
-### Work-behavior patterns — the honest part
-- Where do you tend to stall? What triggers it?
-- Where do you tend to rush? What triggers that?
-- Anything you're avoiding right now that you probably shouldn't be?
-
-### What you want from {{AGENT_NAME}}
-- What should {{AGENT_NAME}} push back on? Be specific.
-- What should {{AGENT_NAME}} never do? (e.g. sugarcoat, over-ask, be passive.)
-- When should {{AGENT_NAME}} interrupt vs. stay quiet?
-- What does "helpful" actually mean to you — in practice, not in theory?
-- Any phrases, tones, or behaviours from AI that annoy you?
-- Communication style — tone, length, formality?
-
-### Work rhythm
-- Any routines or weekly anchors that structure your week?
-- What does a good week look like? A bad one?
-
-## Phase 5 — Teach the 4 Commandments and terms
+## Phase 4 — Teach the 4 Commandments and terms
 
 Before closing, walk {{USER_FIRST_NAME}} through how we work with agents — the four practices that make the difference between getting good output and losing work. The reference doc lives at the framework root: `best-practice.md` carries the 4 Commandments and the must-know vocab in one place. Don't read it out — talk through it.
 
@@ -231,27 +199,27 @@ For each, give one sentence in plain language. If {{USER_FIRST_NAME}} already kn
 
 > "If you forget any of this, the docs are there. And if you skip a Commandment, I'll nudge you — that's part of the deal."
 
-Then move to Phase 6.
+Then move to Phase 5.
 
-## Phase 6 — Close: recap, first automation, expectations
+## Phase 5 — Close: recap, first automation, expectations
 
 Before ending the conversation:
 
-1. **Recap.** Short play-back of the basics + the personalization highlights — "Here's what I've got — anything off?"
-2. **Automation invitation.** "Anything repetitive in your week we could automate as a starting point?" Offer one or two concrete examples drawn from what you heard in Phase 4. If yes, work with them to set it up.
+1. **Recap.** Short play-back of the confirmed basics + tools wired — "Here's what I've got — anything off?"
+2. **Automation invitation.** "Anything repetitive in your week we could automate as a starting point?" Offer one or two concrete examples drawn from what you've already seen in their tools. If yes, work with them to set it up.
 3. **Open invitation.** "Anything else you want to ask about what I can do?"
 4. **Set expectations.** From here on:
    - Daily brief at the start of their working day (depends on Calendar being wired).
    - Weekly review on Monday morning.
    - Proactive surfacing during heartbeats when something needs attention — only for tools that are actually wired (per `HEARTBEAT.md`).
    - DM anytime on Telegram.
-   - Memory builds over time — contacts, projects, patterns, team relationships fill in naturally as you work together.
+   - Memory builds over time — contacts, projects, patterns, team relationships, and *how the user wants to work with the agent* (push-back style, comms preferences, decision rhythm) all fill in naturally through interaction. Onboarding only locks the basics.
    - Wire more tools whenever — just ask.
 
 ## After the conversation
 
-1. Finalise `USER.md` — basics from Phase 3 + personalization from Phase 4. Drop the `[pulled from X]` annotations once confirmed. Keep it lean; the rest accumulates in memory.
-2. Seed `MEMORY.md` with the key facts, decisions, and context surfaced in this conversation.
+1. Finalise `USER.md` — basics from Phase 3 only. Drop the `[pulled from X]` annotations once confirmed. Keep it lean; everything else accumulates in memory.
+2. Seed `MEMORY.md` with anything surfaced in this conversation worth keeping (early personalization signals, automation ideas raised, comms-style notes if shared).
 3. Set up the first daily memory file: `memory/YYYY-MM-DD.md` and write a session log.
 4. Confirm `TOOLS.md` reflects the final wired state from Phase 2.
 5. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
