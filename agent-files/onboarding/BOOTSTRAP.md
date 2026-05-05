@@ -116,7 +116,7 @@ Nothing is forced — the user can skip any of these. If they skip, leave the ro
 
 Telegram is already wired (it's the surface we're talking on right now). Slack agent wire-up isn't supported in this version — flag that if {{USER_FIRST_NAME}} asks.
 
-After the standard set, ask {{USER_FIRST_NAME}} what else they use daily — any tool beyond the standard set the agent should connect to. Add new rows to `TOOLS.md` under "User-specific tools" and wire each one the same way (auth → live test → flip to ✅).
+**Don't ask about user-specific tools** (Linear, Figma, etc.) in Phase 2. The user can request additions whenever they want — covered in Phase 6 (close: "if you want to wire more tools later, just ask"). Phase 2 is the workspace tech stack only.
 
 ### Phase 2 checkpoint
 
