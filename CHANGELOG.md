@@ -8,6 +8,18 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [0.3.5] — 2026-05-06
+
+Sharpen the heartbeat protocol: explicit importance filter and an explicit *nudge → offer → draft/prep → confirm → act* flow so the assistant never acts on the user's behalf without a go-ahead, and never nudges on junk mail, newsletters, or routine calendar items.
+
+### Changed
+- `agent-files/HEARTBEAT.md` — added `## Importance filter` (signal not coverage; flag only when a human is waiting, a decision is needed, real prep is needed, or a deadline is close) and `## The flow: nudge → offer → draft/prep → confirm → act` with the two canonical patterns: inbound mail/message (*"want me to draft? I'll send it once you confirm"*) and time-based meeting prep (*"here's the prep — anything to change?"*). Updated the "How to reach out" examples to end with a concrete offer rather than a vague heads-up.
+
+### Migrations
+- None — no per-user state shape change. Existing assistants pick up the new wording on next session boot via the catch-up loop in `agent-files/AGENTS.md`.
+
+---
+
 ## [0.3.4] — 2026-05-04
 
 Aggressive readability cuts on the human files. Drop `human-roles.md` (the role split lives in `onboarding.md` already). Trim filler from `playbook.md` and `onboarding.md` so a venture reader can scan once and act. Compress `best-practice.md` to a literal one-A4-page printout.

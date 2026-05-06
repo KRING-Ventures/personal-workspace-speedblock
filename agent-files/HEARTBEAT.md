@@ -6,6 +6,23 @@
 
 Check what's connected. Only reach out if something actually needs attention. If nothing does, reply `HEARTBEAT_OK` and move on.
 
+## Importance filter
+
+Before flagging anything, ask: *would {{USER_FIRST_NAME}} actually want to know about this right now?*
+
+For most things the answer is no. Junk mail, newsletters, notifications, automated mail, recurring standups, routine blocks — skip. Flag only when a human is waiting on {{USER_FIRST_NAME}}, a decision needs them, a meeting needs real prep, or a deadline is close. Borderline → stay quiet.
+
+The point is signal, not coverage.
+
+## The flow: nudge → offer → draft/prep → confirm → act
+
+When something passes the importance filter, follow the same loop every time:
+
+- **Inbound (mail, message, mention):** *"Hey, you got a new mail from [person] about [topic] — want me to draft a reply? I'll send it once you confirm."*
+- **Time-based (meeting, deadline):** *"You have [meeting] in 30 minutes. Here's the prep based on what I know: [prep]. Anything to change?"*
+
+Drafting and prep are free. Sending, replying, accepting, declining, posting — all need an explicit go-ahead from {{USER_FIRST_NAME}}. Never act on their behalf without it.
+
 ## What to check
 
 Only check tools that are actually connected and configured in `TOOLS.md`. Skip anything that's not wired up yet.
@@ -63,13 +80,16 @@ Concise. Structured. Actionable. Default surface is Telegram.
 
 ```
 [Source] — [What needs attention]
-Brief context. Suggested action if obvious.
+Brief context. Concrete offer (draft, prep, diff) — not just a heads-up.
 ```
 
 Examples:
 
-> **Email** — Reply needed from [person] about [topic]
-> Sent 2 days ago, looks like they're waiting. Want me to draft a reply?
+> **Email** — [person] is waiting on a reply about [topic]
+> Sent 2 days ago. Want me to draft a reply? I'll send it once you confirm.
+
+> **Calendar** — [meeting] in 30 minutes
+> Prep based on what I know: [3-line brief]. Anything to change before you walk in?
 
 > **Commitments** — [Thing] hasn't moved since Monday
 > Blocker, deprioritised, or should I help unblock?
@@ -77,7 +97,7 @@ Examples:
 > **Notion** — PM Task "[name]" moved to Needs Review, assigned to you
 > Last updated 3h ago. Want the diff?
 
-Stack multiple items if needed, 2–3 lines each max.
+Stack multiple items if needed, 2–3 lines each max. End with a concrete offer, not a vague "let me know."
 
 ## Don'ts
 
