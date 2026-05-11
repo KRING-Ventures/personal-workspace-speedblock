@@ -1,20 +1,22 @@
 # Personal Workspace — Onboarding
 
-How your venture gets onto Personal Workspace.
+How your venture gets onto Personal Workspace, following the Cosmica Speedblock flow.
 
-Personal Workspace is a **Done with you** Speedblock — your admin does Phase 1, KRING does Phase 2, your team does Phase 3 with KRING's help.
+Personal Workspace is a **Done with you** Speedblock — you do a couple of small things in Cosmica, KRING provisions, and your agent does the rest with you in chat.
 
-## The three phases
+## The three steps in Cosmica
 
-1. **Admin setup** (you) — name each agent, submit Telegram handles, confirm tech-stack prereqs.
-2. **KRING setup** (KRING) — we provision the agents and DM each user on Telegram.
-3. **User setup** (you + KRING) — each user pairs with their agent, then the agent takes over for personal onboarding.
+After you activate Personal Workspace in the Cosmica marketplace, the Speedblock opens an **Onboarding** tab with three milestones:
 
-When Phase 3 is done for every user, your venture is running on Personal Workspace.
+1. **Name your agent** *(you)* — pick a name in Cosmica.
+2. **Provision the agent** *(KRING)* — we wire it up; you see status update.
+3. **Walk through the rest** *(your agent)* — open the chat, the agent runs the conversation.
+
+When step 3 is done for every teammate, your venture is running on Personal Workspace.
 
 ## What each user gets
 
-A personal AI agent on Telegram — one per user, remembers across conversations. Capabilities (same list, same words as `playbook.md`):
+A personal AI agent on Telegram — one per user, remembers across conversations. Same list, same words as `playbook.md`:
 
 - **Remembers** — role, projects, contacts, working preferences.
 - **Briefs** — mornings on calendar, priorities, deadlines. Mondays on open commitments and what's outstanding.
@@ -25,48 +27,47 @@ A personal AI agent on Telegram — one per user, remembers across conversations
 - **Builds automations** — on request.
 - **4 AI Commandments walkthrough** — the agent teaches the user the four working practices and the must-know vocab in the first conversation. See `best-practice.md`.
 
-## Phase 1 — Admin setup (you)
+## Step 1 — Name your agent
 
-Three sub-steps, in the Cosmica Speedblock admin:
+**Where:** Cosmica → Speedblocks → Personal Workspace → Onboarding tab.
 
-**1. Name each agent.** One name per seat (e.g. `Ida`). KRING needs the names to begin provisioning.
+You'll see a single input: *Pick a name for your agent*. This first agent is your venture's onboarding lead — it talks to you (the admin) and captures everything KRING needs to set up the rest of your team.
 
-**2. Submit Telegram handles.** One personal Telegram handle per agent (e.g. `@maria`). Telegram must be installed on a device each user uses daily. KRING pairs the agent to the handle you submit.
+Pick anything — `Mira`, `Otto`, your team mascot. You can change it later. Hit **Save name** and the milestone marks complete.
 
-**3. Confirm tech-stack prereqs.** Tick each tool once your venture has it in place. We don't provision into your tenants — that's on you.
+> **Note:** Cosmica's onboarding tab today names *one* agent per Speedblock activation. Your per-teammate agents come in step 3, when this first agent walks you through who's on the team. You don't have to fill in a list of users or Telegram handles upfront.
 
-| Tool | Required | Why |
-|---|---|---|
-| Google Workspace | Yes | Gmail, Calendar, Drive, Docs, Meet — the agent wires into this on the first conversation. |
-| Slack | Yes | Team chat layer KRING expects every venture to operate on. |
-| Notion | Optional | Wire up only if your venture uses it. |
-| GitHub | Optional | Only if your venture writes code. |
-| Claude | Optional | Each teammate uses Claude directly for coding and individual projects — the agent does not connect to it. |
+## Step 2 — KRING provisions
 
-KRING starts as soon as the required tools are ticked. *Anything beyond this stack* (Linear, Figma, etc.) — the user wires those with the agent after deployment, not at Phase 1.
+**What you'll see:** the panel switches to *"[name] is being built"* with a blue card. KRING is provisioning the agent and connecting it to your venture.
 
-## Phase 2 — KRING setup (KRING)
+**What KRING does:** spins up the runtime, wires Telegram, loads the Personal Workspace skill, and confirms the agent is reachable.
 
-KRING provisions one agent per seat, then reaches each user directly on Telegram with their agent's username. Phase 3 opens automatically once every user has been DM'd.
+You don't need to do anything in this step. When the agent is ready, the milestone flips and a **Talk to [name]** button appears.
 
-## Phase 3 — User setup (you + KRING)
+## Step 3 — Walk through the rest in chat
 
-The Speedblock admin shows a per-seat pairing tracker — one row per user, with the user's Telegram handle and pairing status.
+**Where:** click **Talk to [name]** in the Onboarding tab — it opens the conversation surface for your agent.
 
-Each user pairs with their agent in four steps:
+In chat, the agent will:
 
-1. ✅ KRING provides the agent's username to the user directly on Telegram. *(Done by the end of Phase 2.)*
-2. The user starts a new conversation with their agent on Telegram.
-3. The agent provides the user with a code they must send back to KRING on Telegram.
-4. KRING verifies and connects the user with their agent — they can now start the user onboarding with the agent.
+- Greet you and confirm what Personal Workspace is (≈5 min — point your team at `playbook.md` first if you want them oriented).
+- Ask you to list the teammates who get an agent (full name, primary email, Telegram handle, and the name they'd like for their agent).
+- Confirm your tenants are in place: Google Workspace, Slack, Notion (optional), GitHub (optional). We don't provision into your tenants — that's on you.
+- Hand the list back to KRING ops, who provisions one personal agent per teammate and DMs each user on Telegram with their agent's username.
 
-Once a user is paired, the agent runs the first conversation — about ~20 minutes, real conversation, not a form. It walks the user through wiring up Gmail, Calendar, Drive, Notion, GitHub, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
+**Then, for each teammate:**
 
-Share the `Playbook` with your team before they start, so they know what Personal Workspace is.
+1. KRING DMs the teammate on Telegram with their agent's username. *(Done by KRING.)*
+2. The teammate opens Telegram, finds the agent, sends any message.
+3. The agent introduces itself and runs the first conversation — about ~20 minutes, real conversation, not a form. It walks them through wiring up Gmail, Calendar, Drive, Notion, GitHub, and the 4 AI Commandments, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
+
+When every teammate has finished that first conversation, your venture is fully on Personal Workspace.
 
 ## References
 
-- `playbook.md` — what Personal Workspace is and how it works day-to-day. Share with your team in Phase 3.
+- `playbook.md` — what Personal Workspace is and how it works day-to-day. Share with your team before they pair with their agent.
+- `best-practice.md` — the 4 AI Commandments + must-know vocab.
 - `agent-files/onboarding/BOOTSTRAP.md` — the script the agent follows in the first conversation.
 - `agent-files/AGENTS.md` — operational rules (agent-side; useful if you want to understand how it works under the hood).
 
