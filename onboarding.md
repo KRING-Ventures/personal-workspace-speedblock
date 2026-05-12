@@ -20,9 +20,19 @@ Personal Workspace is a **Done with you** Speedblock. The venture admin gathers 
 1. The user starts a new conversation with the provided agent username on Telegram and sends a `Hi`.
 2. The user receives a verification code from the agent.
 3. The user sends the verification code back to KRING on Telegram. KRING verifies.
-4. The user can now talk with the agent — personal agent-led onboarding begins.
+4. The user can now talk with the agent — Phase 4 begins.
 
-When every employee has finished phase 3, your venture is running on Personal Workspace.
+## Phase 4 — Agent onboarding (agent-led)
+
+Once verified, the agent runs the user through the first conversation. Five short stages:
+
+1. **Intro.** The agent introduces itself — what it does, where it lives (Telegram), what tools it'll use, and the permission rule (its own files: no asking; anything that touches others: always asks first). Ends by asking the user what to call it.
+2. **Wire the tools.** The agent guides the user through connecting the workspace stack — Google Workspace (Gmail, Calendar, Drive, Docs), then Notion, then GitHub. The user authorises each one; the agent tests every connection live and confirms it works. The user can skip any tool and wire it later.
+3. **Confirm the basics.** With tools connected, the agent pulls name, email, timezone, and role from the user's own data, reads it back, and the user corrects anything wrong and adds their preferred name. Everything else — contacts, projects, communication style — builds up naturally in memory as the agent works alongside the user.
+4. **The 4 AI Commandments.** The agent walks the user through the four practices that keep agent work on the rails: ask the agent to repeat the prompt back, work in small saved batches, keep it simple, and branch off main in shared projects. Plus the must-know git vocabulary (repo, branch, commit, PR, merge).
+5. **Close.** The agent confirms onboarding is complete. From here, memory builds with every conversation — the relationship starts compounding.
+
+When every employee has finished phase 4, your venture is fully running on Personal Workspace.
 
 ## References
 
