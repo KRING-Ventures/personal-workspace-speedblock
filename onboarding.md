@@ -39,7 +39,7 @@ When every employee has finished phase 4, your venture is fully running on Perso
 
 What the user actually does to wire each agent-connected tool. All three are done by the user, in their own accounts — no KRING involvement. The agent guides every step inside Telegram.
 
-### Google Workspace — ~30–60 min, first time
+### Google Workspace — ~15 min, first time
 
 Done once in the venture's own **Google Cloud Console**. Uses the **Internal** OAuth consent screen — restricted to the venture's own Workspace domain — which skips Google's CASA verification entirely. Requires a Google Workspace account (a personal `@gmail.com` cannot use Internal).
 
