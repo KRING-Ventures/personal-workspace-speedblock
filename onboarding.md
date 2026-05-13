@@ -24,14 +24,13 @@ Personal Workspace is a **Done with you** Speedblock. The venture admin gathers 
 
 ## Phase 4 — Agent onboarding (agent-led)
 
-Once verified, the agent runs the user through the first conversation. Six short stages:
+Once verified, the agent runs the user through the first conversation:
 
-1. **Intro.** The agent introduces itself — **states its name** (the name KRING set during provisioning — no rename offered), explains what it does, where it lives (Telegram), what tools it'll use, and the permission rule (its own files: no asking; anything that touches others: always asks first).
-2. **Tech-stack map.** Before wiring anything, the agent walks the user through the **whole** Personal Workspace tech stack so they leave the first conversation knowing what they're running on — Google Workspace, Telegram, Notion, GitHub (agent-wired), plus Slack (not yet), Gemini (used directly inside Google apps), and Claude (general-purpose AI). Four are agent-connected, three the user uses themselves.
-3. **Wire the tools.** The user sets up each agent-wired tool themselves, in their own accounts. KRING is out of the loop — Personal Workspace is the agent; everything it plugs into lives in the user's own consoles. The agent guides each setup step-by-step in chat, the user clicks through their own admin panels, and the agent tests every connection live before moving on. Order and what's involved per tool is in **Phase 4 — Wiring detail** below. Wiring now is optional — the user can skip any tool and the agent will remind them later.
-4. **Confirm the basics.** With tools connected, the agent pulls name, email, timezone, and role from the user's own data, reads it back, and the user corrects anything wrong and adds their preferred name. Everything else — contacts, projects, communication style — builds up naturally in memory as the agent works alongside the user.
-5. **The 4 AI Commandments.** The agent walks the user through the four practices that keep agent work on the rails: ask the agent to repeat the prompt back, work in small saved batches, keep it simple, and branch off main in shared projects. Plus the must-know git vocabulary (repo, branch, commit, PR, merge).
-6. **Close.** The agent confirms onboarding is complete. From here, memory builds with every conversation — the relationship starts compounding.
+1. The agent introduces itself, maps the tech stack, and explains how it works.
+2. The agent guides the user through wiring up Google Workspace, Notion, and GitHub — step-by-step, in chat. Wiring detail below. Optional now; the agent reminds them later if skipped.
+3. The agent confirms the basics (name, email, timezone, role), walks through the 4 AI Commandments, and closes onboarding.
+
+The full agent script lives in `agent-files/onboarding/BOOTSTRAP.md`.
 
 When every employee has finished phase 4, your venture is fully running on Personal Workspace.
 
