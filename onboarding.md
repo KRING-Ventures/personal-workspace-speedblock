@@ -24,13 +24,11 @@ Personal Workspace is a **Done with you** Speedblock. The venture admin gathers 
 
 ## Phase 4 — Agent onboarding (agent-led)
 
-Once verified, the agent runs the user through the first conversation:
+The agent takes it from here and walks you through the first conversation:
 
-1. The agent introduces itself, maps the tech stack, and explains how it works.
-2. The agent guides the user through wiring up Google Workspace, Notion, and GitHub — step-by-step, in chat. Wiring detail below. Optional now; the agent reminds them later if skipped.
-3. The agent confirms the basics (name, email, timezone, role), walks through the 4 AI Commandments, and closes onboarding.
-
-The full agent script lives in `agent-files/onboarding/BOOTSTRAP.md`.
+1. Introduces itself and the tools you'll be using together.
+2. Helps you connect Google Workspace, Notion, and GitHub — one at a time, in chat. (Wiring detail below. You can skip and come back later.)
+3. Confirms the basics about you, shares a few ground rules for working with the agent, and closes onboarding.
 
 When every employee has finished phase 4, your venture is fully running on Personal Workspace.
 
