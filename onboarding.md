@@ -28,7 +28,7 @@ In your first conversation, the agent:
 2. Helps you connect Google Workspace, Notion, and GitHub (skip and come back later if you want — wiring detail below).
 3. Confirms the basics about you and closes onboarding.
 
-## Phase 4 — Wiring detail
+## Phase 4 — Wiring detail (the agent will guide you set-by-step)
 
 ### Google Workspace — ~15 min
 
