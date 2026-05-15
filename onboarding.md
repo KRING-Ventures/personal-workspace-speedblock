@@ -55,12 +55,7 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 - Menu → **APIs & Services** → **OAuth consent screen**.
 - User Type: **Internal** → Create.
 - App name, user support email, developer contact email → Save and Continue.
-- **Scopes** → Add or remove scopes → tick:
-  - `https://mail.google.com/` (Gmail — full mailbox, needed for read + draft + send-with-permission)
-  - `https://www.googleapis.com/auth/calendar` (Calendar)
-  - `https://www.googleapis.com/auth/drive` (Drive)
-  - `https://www.googleapis.com/auth/documents` (Docs)
-- Save and Continue → Back to Dashboard.
+- Click through the remaining panels (Scopes, Summary) without changes — the agent requests the scopes it needs at auth time.
 
 **4. Create the OAuth client**
 
