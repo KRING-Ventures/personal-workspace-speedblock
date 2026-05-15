@@ -50,8 +50,6 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
   - **Google Drive API**
   - **Google Docs API**
 
-*(Sheets, Slides, Contacts (People), Tasks, Meet are out of scope in this version — don't enable them. If we add them to the agent later, this list grows.)*
-
 **3. Configure the OAuth consent screen**
 
 - Menu → **APIs & Services** → **OAuth consent screen**.
@@ -63,8 +61,6 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
   - `https://www.googleapis.com/auth/drive` (Drive)
   - `https://www.googleapis.com/auth/documents` (Docs)
 - Save and Continue → Back to Dashboard.
-
-*(Internal apps skip Google's verification / CASA — that's only required for External apps.)*
 
 **4. Create the OAuth client**
 
@@ -78,7 +74,6 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 
 - Paste **Client ID** and **Client Secret** to the agent on Telegram.
 - The agent returns an auth link. Click it → choose your Workspace account → **Allow**.
-- The agent confirms by reading 3 recent emails and listing today's calendar back to you.
 
 ### Notion — ~10 min
 
@@ -102,9 +97,7 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 **4. Share pages with the integration**
 
 - Open each page or database the agent should access → **•••** (top right) → **Connections** → **Add connections** → pick the integration.
-- Children inherit access by default — share a top-level page to give the agent everything under it.
-
-*(If your workspace admin restricts integrations, they'll need to approve it from Settings → Connections.)*
+- Share a top-level page to give the agent access to everything under it.
 
 ### GitHub — ~10 min
 
