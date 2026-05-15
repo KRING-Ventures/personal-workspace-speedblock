@@ -41,7 +41,7 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 - Name: e.g. *Personal Workspace Agent*. Organization: your Workspace domain (e.g. `yourcompany.com`).
 - Click **Create**, then switch into the new project.
 
-**2. Enable the four APIs**
+**2. Enable the nine APIs**
 
 - Menu (☰) → **APIs & Services** → **Library**.
 - Search and click **Enable** on each — one at a time:
@@ -49,6 +49,11 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
   - **Google Calendar API**
   - **Google Drive API**
   - **Google Docs API**
+  - **Google Sheets API**
+  - **Google Slides API**
+  - **People API**
+  - **Google Meet API**
+  - **Google Tasks API**
 
 **3. Configure the OAuth consent screen**
 
