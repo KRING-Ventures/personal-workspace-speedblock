@@ -1,63 +1,132 @@
 # Personal Workspace — Onboarding
 
-How your venture gets onto Personal Workspace.
+How a venture gets onto Personal Workspace.
 
-## The three steps
+## Phase 1 — Admin (venture)
 
-1. **Activate** — you send us the intake.
-2. **Build & deploy** — we set up one agent per user.
-3. **Finish onboarding** — you hand each agent to its user; each user runs a first conversation on Telegram.
+1. Submit your agent names to KRING.
+2. Have each employee set up a Telegram account.
+3. Submit each employee's Telegram username to KRING.
 
-When step 3 is done, your venture is running on Personal Workspace.
+## Phase 2 — KRING
 
-## What each user gets
+1. KRING sets up the agents.
+2. KRING messages each employee on Telegram with their agent's username.
 
-A personal AI agent on Telegram — one per user, remembers across conversations. Capabilities (same list, same words as `playbook.md`):
+## Phase 3 — User (employee)
 
-- **Remembers** — role, projects, contacts, working preferences.
-- **Briefs** — mornings on calendar, priorities, deadlines. Mondays on open commitments and what's outstanding.
-- **Drafts** — emails, messages, docs. Never sent without approval.
-- **Preps meetings** — attendees, context, intent.
-- **Tracks commitments** — what the user has said they'll do, what they're waiting on.
-- **Uses the tools** — Gmail, Calendar, Drive, Notion, GitHub, Telegram.
-- **Builds automations** — on request.
-- **4 AI Commandments walkthrough** — the agent teaches the user the four working practices and the must-know vocab in the first conversation. See `best-practice.md`.
+1. Message your agent on Telegram with `Hi`.
+2. You receive a verification code.
+3. Send the code back to KRING on Telegram.
+4. You can now talk to your agent — Phase 4 begins.
 
-## Step 1 — Activate (you)
+## Phase 4 — Agent onboarding (agent-led)
 
-Send us one intake with everything we need.
+In your first conversation, the agent:
 
-**Once, for your venture:**
+1. Introduces itself and the tools you'll use together.
+2. Helps you connect Google Workspace, Notion, and GitHub (skip and come back later if you want — wiring detail below).
+3. Confirms the basics about you and closes onboarding.
 
-- Confirm your tenants are in place: Google Workspace, Slack, Notion, GitHub. These are the required tools. We don't provision into your tenants — that's on you.
+## Phase 4 — Wiring detail (the agent will guide you set-by-step)
 
-**For each user:**
+### Google Workspace — ~15 min
 
-- Full name and primary email of the user.
-- The user's Telegram handle (e.g. `@maria`). Telegram must be installed on a device the user uses daily.
-- The name the user wants for the agent (e.g. `Ida`).
+Requires a Google Workspace account (personal `@gmail.com` won't work). You also need permission to create projects in your Workspace org — if your admin has locked this, ask them to enable project creation for your user.
 
-**Send it** when activating the Speedblock in Cosmica. We'll come back if anything is missing.
+**1. Create a Google Cloud project**
 
-*Anything beyond the standard stack* (Linear, Figma, etc.) — the user wires those with the agent after deployment, not at intake.
+- Go to [console.cloud.google.com](https://console.cloud.google.com) and sign in with your Workspace email.
+- Top bar → project selector → **New Project**.
+- Name: e.g. *Personal Workspace Agent*. Organization: your Workspace domain (e.g. `yourcompany.com`).
+- Click **Create**, then switch into the new project.
 
-## Step 2 — Build & deploy (KRING)
+**2. Enable the nine APIs**
 
-We deploy one agent per user, wire each to Telegram, and confirm each is reachable. Then we send you the list of Telegram handles — one per user — through the same channel you used for the intake.
+- Menu (☰) → **APIs & Services** → **Library**.
+- Search and click **Enable** on each — one at a time:
+  - **Gmail API**
+  - **Google Calendar API**
+  - **Google Drive API**
+  - **Google Docs API**
+  - **Google Sheets API**
+  - **Google Slides API**
+  - **People API**
+  - **Google Meet API**
+  - **Google Tasks API**
 
-## Step 3 — Finish onboarding (you)
+**3. Configure the OAuth consent screen**
 
-For each user, in any order:
+- Menu → **APIs & Services** → **OAuth consent screen**.
+- User Type: **Internal** → Create.
+- App name, user support email, developer contact email → Save and Continue.
+- Click through the remaining panels (Scopes, Summary) without changes — the agent requests the scopes it needs at auth time.
 
-1. **Share the `Playbook`** so the user knows what Personal Workspace is before starting.
-2. **Tell the user to open Telegram, find the agent, and send any message.** The agent introduces itself and runs the first conversation — about ~20 minutes, real conversation, not a form. It walks the user through wiring up Gmail, Calendar, Drive, Notion, GitHub, and asks the few questions tools can't answer (how the user makes decisions, what to push back on, communication preferences).
+**4. Create the OAuth client**
+
+- Menu → **APIs & Services** → **Credentials** → **Create Credentials** → **OAuth client ID**.
+- Application type: **Web application**.
+- Name: e.g. *Personal Workspace Agent*.
+- **Authorized redirect URIs**: paste the callback URL the agent gives you on Telegram. Save.
+- Copy the **Client ID** and **Client Secret** from the dialog.
+
+**5. Hand off to the agent**
+
+- Paste **Client ID** and **Client Secret** to the agent on Telegram.
+- The agent returns an auth link. Click it → choose your Workspace account → **Allow**.
+
+### Notion — ~10 min
+
+**1. Create an internal integration**
+
+- Go to [notion.so/profile/integrations](https://www.notion.so/profile/integrations) → **New integration**.
+- Name: e.g. *Personal Workspace Agent*. Associated workspace: pick your workspace. Type: **Internal**.
+
+**2. Set capabilities**
+
+- **Content Capabilities**: Read content · Update content · Insert content.
+- **Comment Capabilities**: Read comments · Insert comments.
+- **User Capabilities**: Read user information (with email — needed to tag owners).
+- Save.
+
+**3. Copy the secret**
+
+- Under **Secrets** → copy the **Internal Integration Secret** (`secret_…`).
+- Paste it to the agent on Telegram.
+
+**4. Share pages with the integration**
+
+- Open each page or database the agent should access → **•••** (top right) → **Connections** → **Add connections** → pick the integration.
+- Share a top-level page to give the agent access to everything under it.
+
+### GitHub — ~10 min
+
+**1. Create a fine-grained personal access token**
+
+- Go to [github.com/settings/tokens](https://github.com/settings/tokens) → **Fine-grained tokens** → **Generate new token**.
+- Token name: e.g. *Personal Workspace Agent*. Expiration: 1 year (or longer if your org allows).
+
+**2. Pick resource owner and repos**
+
+- **Resource owner**: yourself for personal repos, or your org for org repos. If org, the org owner must approve the token after you create it (Org Settings → Personal access tokens → Pending requests).
+- **Repository access**: *Only select repositories* (recommended — pick what the agent needs) or *All repositories*.
+
+**3. Set repository permissions**
+
+- **Contents**: Read and write.
+- **Issues**: Read and write.
+- **Pull requests**: Read and write.
+- **Metadata**: Read-only (auto-granted).
+- **Workflows**: Read and write *(only if you want the agent to edit GitHub Actions files)*.
+
+**4. Hand off to the agent**
+
+- Click **Generate token** → copy the token (`github_pat_…`) — shown only once.
+- Paste it to the agent on Telegram.
+
+*(If your org disables fine-grained tokens, fall back to a classic PAT with scopes `repo` and `workflow`.)*
 
 ## References
 
-- `playbook.md` — what Personal Workspace is and how it works day-to-day. Share with your team in Step 3.
-- `agent-files/onboarding/BOOTSTRAP.md` — the script the agent follows in the first conversation.
-- `agent-files/AGENTS.md` — operational rules (agent-side; useful if you want to understand how it works under the hood).
-
----
-
-*Current framework version is in `agent-files/onboarding/STATE_VERSION`. Per-version history is in `CHANGELOG.md`.*
+- `playbook.md` — Personal Workspace day-to-day.
+- `best-practice.md` — the 4 AI Commandments and must-know git vocab.
