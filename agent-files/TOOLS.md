@@ -79,3 +79,18 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
   - Organise freely within the workspace.
   - Ask before touching anything outside it.
   - Use `trash/` over `rm`.
+
+## Microsoft 365 (legacy) — only if the user migrated from M365
+
+Add this block during onboarding **only if** {{USER_FIRST_NAME}} confirmed they have legacy Microsoft 365 data. Otherwise delete this section.
+
+- **Account:** [legacy email]
+- **Cut-over date:** YYYY-MM-DD — date {{USER_FIRST_NAME}} switched onto Google Workspace as daily driver.
+- **Access mode:** web-only (Outlook Web + OneDrive Web). No desktop clients.
+- **Status:** read-only archive.
+- **Auto-forward to Google:** active until YYYY-MM-DD, then off.
+- **Rules:**
+  - Search only; never send, never edit, never reply from this account.
+  - Things older than the cut-over date live here; newer things live in Google.
+  - If unsure where data lives, ask once: *"Is this before or after [cut-over date]?"* — then search the right system.
+  - See `agent-files/playbooks/ms-to-google-overlap.md` for full overlap rules.

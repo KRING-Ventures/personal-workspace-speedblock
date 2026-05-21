@@ -77,9 +77,16 @@ Your agent follows these too, and will nudge you as you work together.
 
 ---
 
+## Migrations
+
+- **Coming from Microsoft 365?** See `playbooks/migrations/ms-to-google.md`. The short version: Google becomes your daily driver, M365 stays as a read-only backup for old data. Your agent knows the cut-over date and searches the right system.
+
+---
+
 ## Glossary
 
 - **Personal Workspace** — how KRING and the ventures KRING builds work: same tools, personal AI agent for every person.
 - **OpenClaw** — the AI agent system that powers your personal agent.
 - **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
 - **Brief** — the daily or weekly summary your agent sends you.
+- **Cut-over date** — the day you switched onto Google Workspace as your daily driver (logged in `TOOLS.md`). Things older than this live in your legacy system; newer things live in Google.

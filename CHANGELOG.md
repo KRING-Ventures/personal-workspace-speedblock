@@ -8,6 +8,24 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [Unreleased] — v1.0 integration branch
+
+First v1.0 feature: Microsoft 365 → Google Workspace migration. New users coming from M365 get a step-by-step migration path, and their agent learns to handle the dual-system overlap window (search the right system based on the cut-over date).
+
+### Added
+- `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
+- `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
+- `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
+
+### Changed
+- `onboarding.md` — Phase 4 now asks if the user has legacy MS data; if yes, routes them into the migration playbook and tells the agent to log a Microsoft 365 (legacy) entry in `TOOLS.md`. New `### Microsoft 365 legacy data` section above References summarises the migration steps.
+- `playbook.md` — added a `## Migrations` section pointing at the new playbook; added `Cut-over date` to the glossary.
+
+### Migrations
+- None — no per-user state shape change. Users without legacy MS data are unaffected. Existing assistants pick up the new behaviour on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
+
+---
+
 ## [0.3.5] — 2026-05-06
 
 Sharpen the heartbeat protocol: explicit importance filter and an explicit *nudge → offer → draft/prep → confirm → act* flow so the assistant never acts on the user's behalf without a go-ahead, and never nudges on junk mail, newsletters, or routine calendar items.
