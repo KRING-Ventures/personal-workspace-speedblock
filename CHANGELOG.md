@@ -8,17 +8,24 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
-## [Unreleased]
+## [Unreleased] — v1.0 integration branch
 
-Tidy-up of the human/agent rule split. The user-facing "4 AI Commandments" one-pager gets the filename it's been called by everywhere — and `AGENTS.md` now states the rule for where future rules go.
+First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up of the human/agent rule split — the user-facing "4 AI Commandments" one-pager finally gets the filename it's been called by everywhere.
+
+### Added
+- `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
+- `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
+- `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
 
 ### Changed
 - `best-practice.md` → `ai-commandments.md` — renamed (no content changes). The user-facing file is now named what it actually is.
 - `agent-files/AGENTS.md` — added a header note explaining the split: universal practices live in `ai-commandments.md` (root, human-readable); agent-only operational rules live here. One home per rule.
+- `onboarding.md` — Phase 4 now asks if the user has legacy MS data; if yes, routes them into the migration playbook and tells the agent to log a Microsoft 365 (legacy) entry in `TOOLS.md`. New `### Microsoft 365 legacy data` section above References summarises the migration steps.
+- `playbook.md` — added a `## Migrations` section pointing at the new playbook; added `Cut-over date` to the glossary.
 - `README.md`, `SKILL.md`, `onboarding.md`, `agent-files/AGENTS.md`, `agent-files/onboarding/BOOTSTRAP.md` — pointers updated to `ai-commandments.md`.
 
 ### Migrations
-- None — no per-user state shape change. Existing assistants pick up the new filename + header on next session boot via the catch-up loop in `agent-files/AGENTS.md`.
+- None — no per-user state shape change. Users without legacy MS data are unaffected. Existing assistants pick up the new behaviour, filename, and header on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
 
 ---
 
