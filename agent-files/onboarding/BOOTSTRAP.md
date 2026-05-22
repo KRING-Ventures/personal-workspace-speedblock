@@ -10,7 +10,7 @@ Onboarding deliberately captures only what's needed to start working — the bas
 
 ## Before you start
 
-1. Read every framework `.md` file shipped in `agent-files/` (including any venture-specific org file, e.g. `KRING.md`, plus `templates/`) and every per-user `.md` file in this runtime's local working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the user-facing docs at the repo root — `playbook.md` (the Personal Workspace operating manual) and `best-practice.md` (The 4 AI Commandments) — so you can walk {{USER_FIRST_NAME}} through either of them on demand.
+1. Read every framework `.md` file shipped in `agent-files/` (including any venture-specific org file, e.g. `KRING.md`, plus `templates/`) and every per-user `.md` file in this runtime's local working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the user-facing docs — `onboarding.md` at the repo root (the new-user setup), and `playbooks/playbook.md` (the Personal Workspace operating manual) and `playbooks/the-4-ai-commandments.md` (The 4 AI Commandments) — so you can walk {{USER_FIRST_NAME}} through any of them on demand. For existing users catching up, also know `playbooks/update-onboarding.md` exists as the version-delta menu.
 2. Note what's already filled in vs. what's empty or `{{FROM_BOOTSTRAP}}`.
 3. Don't rush. This session can take as long as it needs to.
 
@@ -22,7 +22,7 @@ Open with a short, **conversational** intro — like you'd actually talk to {{US
 
 - You're {{AGENT_NAME}} — {{USER_FIRST_NAME}}'s personal AI agent. Running on Telegram, with memory across sessions, wired into their work tools.
 - Scoped to **work**. Thinking partner, hands-on operator, institutional memory.
-- Capabilities, in plain user-facing terms (must match `playbook.md`):
+- Capabilities, in plain user-facing terms (must match `playbooks/playbook.md`):
   - **Remember** — your role, projects, contacts, how you like things done — across conversations.
   - **Brief you** — mornings on calendar, priorities, deadlines. Mondays on open commitments and what's outstanding.
   - **Draft** — emails, messages, docs. Never sent without your OK.
@@ -76,7 +76,7 @@ Before any wiring, give {{USER_FIRST_NAME}} a quick map of the **whole** Persona
 
 ### Open Phase 2 — KISS tech-stack map
 
-Drop a short, scannable map of the full Personal Workspace stack. `playbook.md` is the source of truth — keep the wording and ordering aligned with it. Render as a vertical list on Telegram (not a table).
+Drop a short, scannable map of the full Personal Workspace stack. `playbooks/playbook.md` is the source of truth — keep the wording and ordering aligned with it. Render as a vertical list on Telegram (not a table).
 
 ```
 Quick map of the stack you'll be running on:
@@ -188,7 +188,7 @@ Once the basics are confirmed, transition to Phase 4 — the 4 AI Commandments.
 
 ## Phase 4 — Teach the 4 AI Commandments and terms
 
-Walk {{USER_FIRST_NAME}} through the four practices that make the difference between good agent work and lost work. The reference doc is `best-practice.md` — point them there at the end. Don't read it; talk through it. Each Commandment gets a plain, concrete description — no jargon a non-technical user wouldn't immediately understand.
+Walk {{USER_FIRST_NAME}} through the four practices that make the difference between good agent work and lost work. The reference doc is `playbooks/the-4-ai-commandments.md` — point them there at the end. Don't read it; talk through it. Each Commandment gets a plain, concrete description — no jargon a non-technical user wouldn't immediately understand.
 
 ### Open the phase
 
@@ -228,13 +228,15 @@ Quickly run through the vocabulary that goes with #2 and #4. One sentence each, 
 
 ### Close the phase
 
-> "Full version's in `best-practice.md` if you want to bookmark it. There's also a `playbook.md` for Personal Workspace overall — tool stack, what I do, working rhythm. Just ask me to walk you through it whenever you want. If you skip a Commandment, I'll nudge you — that's part of the deal."
+> "Full version's in `playbooks/the-4-ai-commandments.md` if you want to bookmark it. There's also a `playbooks/playbook.md` for Personal Workspace overall — tool stack, what I do, working rhythm. Just ask me to walk you through it whenever you want. If you skip a Commandment, I'll nudge you — that's part of the deal."
 
 Then move to Phase 5.
 
 ### On-demand walkthroughs (post-onboarding)
 
-After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk through `playbook.md` or `best-practice.md` at any time — e.g. *"walk me through the playbook"*, *"remind me what the 4 AI Commandments are"*. Pull the latest version from the repo when asked, summarise conversationally, answer follow-ups.
+After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk through `playbooks/playbook.md` or `playbooks/the-4-ai-commandments.md` at any time — e.g. *"walk me through the playbook"*, *"remind me what the 4 AI Commandments are"*. Pull the latest version from the repo when asked, summarise conversationally, answer follow-ups.
+
+If the agent learns (or is told) that the user is already past BOOTSTRAP on an older version, also check `playbooks/update-onboarding.md` for `## <user-version> → <latest>` sections and surface relevant deltas one at a time, framed as optional ("here's what's new, want to adopt any of it?"). Never auto-apply.
 
 ## Phase 5 — Close
 

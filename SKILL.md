@@ -80,9 +80,10 @@ See `agent-files/README.md` for the full layout and the framework-vs-personal sp
 
 ## Human deliverables (read alongside this skill)
 
-- **`playbook.md`** — Personal Workspace operating manual. What each user is stepping into: tool stack, what the assistant does, working rhythm. Read by users and by anyone orienting to how Personal Workspace works.
-- **`best-practice.md`** — The 4 AI Commandments for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). The agent teaches this in BOOTSTRAP Phase 4 and reinforces it during ongoing work.
-- **`onboarding.md`** — The three-step flow in detail (Activate → Build & deploy → Finish onboarding). Read by the venture.
+- **`onboarding.md`** — The full new-user flow in detail (Activate → Build & deploy → Finish onboarding) on the latest version. Read by the venture and by every new user.
+- **`playbooks/playbook.md`** — Personal Workspace operating manual. What each user is stepping into: tool stack, what the assistant does, working rhythm.
+- **`playbooks/the-4-ai-commandments.md`** — The 4 AI Commandments for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). The agent teaches this in BOOTSTRAP Phase 4 and reinforces it during ongoing work.
+- **`playbooks/update-onboarding.md`** — For existing users only. Menu of what's shipped since they onboarded; the agent surfaces relevant entries based on the user's local `STATE_VERSION` and lets them decide what to adopt.
 
 ## Version
 

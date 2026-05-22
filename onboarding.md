@@ -26,7 +26,7 @@ In your first conversation, the agent:
 
 1. Introduces itself and the tools you'll use together.
 2. Helps you connect Google Workspace, Notion, and GitHub (skip and come back later if you want — wiring detail below).
-3. Asks if you have legacy Microsoft 365 data to migrate. If yes, routes you into `playbooks/migrations/ms-to-google.md` and logs a Microsoft 365 (legacy) entry in `TOOLS.md` so it can search the right system later.
+3. Asks if you have legacy Microsoft 365 data to migrate. If yes, walks you through the *Microsoft 365 legacy data* section below and logs a Microsoft 365 (legacy) entry in `TOOLS.md` so it can search the right system later.
 4. Confirms the basics about you and closes onboarding.
 
 ## Phase 4 — Wiring detail (the agent will guide you set-by-step)
@@ -129,21 +129,71 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 
 ### Microsoft 365 legacy data — only if you said yes above
 
-If you're coming from a Microsoft 365 setup (Outlook mail, OneDrive/SharePoint files, Outlook calendar/contacts), don't try a hard cut-over. Mirror your data into Google and keep M365 as a read-only backup.
+If you're coming from a Microsoft 365 setup (Outlook mail, OneDrive/SharePoint files, Outlook calendar/contacts), don't try a hard cut-over.
 
-Full step-by-step in `playbooks/migrations/ms-to-google.md`. Short version:
+**The principle: mirror, don't cut over.** Google becomes your daily driver from day one. Microsoft stays as a read-only backup for anything older than the cut-over date. Auto-forward + auto-reply on the old address for 30–60 days, then it goes dark; the M365 licence stays so the archive remains searchable.
 
-1. **Mail** — Google Data Migration Service (Admin console) imports Outlook/Exchange into Gmail with folders, flags, dates preserved.
-2. **Files** — Google Migrate for Workspace mirrors OneDrive/SharePoint into a **Shared Drive** (not "My Drive").
-3. **Calendar** — Publish your Outlook calendar as `.ics`, add it to Google Calendar from URL.
-4. **Contacts** — Export CSV from Outlook → import into Google Contacts.
-5. **Cut-over day** — set auto-forward + out-of-office on the M365 mailbox; pin Outlook Web (`outlook.office.com`) as a bookmark only.
-6. **Tell your agent** the cut-over date. It writes a `## Microsoft 365 (legacy)` block into `TOOLS.md` so it knows when to search the old system vs the new.
+Run the four steps in this order. Mail and files are long-running — start those first, do calendar and contacts while they run.
+
+**1. Mail — Google Data Migration Service**
+
+In the Google Admin console: **Apps → Google Workspace → Gmail → Data migration**.
+
+- Source: **Microsoft Exchange / Microsoft 365**. Auth with the M365 admin account (or per-user app password if no admin).
+- Pick a date range (default = everything) and the users to migrate.
+- Start. Folder structure, flags, read/unread state, and original dates are preserved.
+
+Verify: spot-check 5 recent and 5 old messages (content, date, folder match); open one attachment by name. Rules/filters don't migrate — rebuild any important ones in Gmail directly.
+
+**2. Files — OneDrive / SharePoint → Drive**
+
+In Admin console: **Apps → Google Workspace → Drive and Docs → Migrate data**. Tool is **Google Migrate for Workspace** (successor to Mover).
+
+- Source: OneDrive or SharePoint. Auth with M365.
+- **Destination:** a **Shared Drive**, not "My Drive". Mirror the original folder tree.
+- Conflict policy: skip duplicates by content hash.
+- Start. You'll get an email when it's done.
+
+Verify: three files open in Docs/Sheets/Slides without formatting damage; sharing on a folder matches the M365 ACL. Office files open as-is — convert in-place when you next edit, don't batch-convert.
+
+Don't bulk-dump into "My Drive" — personal Drives don't share well.
+
+**3. Calendar — `.ics` export → Google Calendar**
+
+In Outlook Web (`outlook.office.com`): **Calendar → Settings → View all Outlook settings → Calendar → Shared calendars → Publish a calendar**. Pick *Can view all details*, copy the ICS URL.
+
+In Google Calendar: **Settings → Add calendar → From URL** and paste it. Imports past + future events.
+
+**Re-share recurring meetings from Google.** Anything you organise that repeats — re-create or re-share from Google so future edits propagate to attendees. Imported events are read-only copies.
+
+**4. Contacts — CSV export → Google Contacts**
+
+In Outlook Web: **People → Manage → Export contacts** → CSV. In Google Contacts: **Import** → upload the CSV. Re-create labels (Google's name for contact groups) — they don't import cleanly.
+
+**Cut-over day checklist**
+
+- [ ] All four migrations above run and verified.
+- [ ] Update your email signature in Gmail.
+- [ ] Auto-forward on the M365 mailbox → your Google address.
+- [ ] Out-of-office on the M365 mailbox: *"I've moved to <new>. This inbox is no longer monitored after [date]. Mail is forwarded for the next 30 days."*
+- [ ] Update your address in places that send you mail: bank, calendar invitees, login emails.
+- [ ] Set Google Calendar as default in your phone calendar app; sign out of Outlook on mobile if you only used it for calendar.
+- [ ] Pin `outlook.office.com` as a bookmark on the laptop. **Don't** keep the Outlook desktop client open — it'll fight you for notifications.
+- [ ] Tell your agent the cut-over date. It writes a `## Microsoft 365 (legacy)` block into `TOOLS.md` so it knows when to search the old system vs the new.
 
 After 30 days the forward goes off; the M365 licence stays so the archive remains searchable.
 
+**Common gotchas**
+
+- **"Where's my folder structure?"** Gmail uses labels, not folders. DMS converts each Outlook folder to a label with the same name. A message can carry multiple labels — that's normal.
+- **Shared mailboxes.** DMS doesn't do them natively — run as separate user migrations or use CloudMigrator / BitTitan.
+- **Distribution lists / Groups.** Recreate in Google Groups; don't migrate.
+- **Power Automate / Outlook rules.** Don't migrate. Rebuild as Gmail filters or as agent automations.
+- **Encrypted (IRM/AIP) mail.** Doesn't decrypt on migration — arrives locked. Decrypt before migrating or leave it readable only via M365.
+- **Microsoft Teams chat history.** Not in scope. Export what matters as a text archive before tenancy decommission.
+
 ## References
 
-- `playbook.md` — Personal Workspace day-to-day.
-- `best-practice.md` — the 4 AI Commandments and must-know git vocab.
-- `playbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.
+- `playbooks/playbook.md` — Personal Workspace day-to-day.
+- `playbooks/the-4-ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
+- `playbooks/update-onboarding.md` — for existing users: what's shipped since you onboarded.

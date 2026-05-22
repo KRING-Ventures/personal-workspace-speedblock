@@ -10,19 +10,32 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased] — v1.0 integration branch
 
-First v1.0 feature: Microsoft 365 → Google Workspace migration. New users coming from M365 get a step-by-step migration path, and their agent learns to handle the dual-system overlap window (search the right system based on the cut-over date).
+Restructure the human layer around two stable files (`onboarding.md` for new users on latest, `playbooks/update-onboarding.md` for existing users catching up) plus a `playbooks/` folder for the operating manual and 4 AI Commandments. First v1.0 feature lands in this shape: Microsoft 365 → Google Workspace migration, optional and menu-driven.
 
 ### Added
-- `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
+- `playbooks/` — new folder holding `playbook.md` (operating manual), `the-4-ai-commandments.md` (renamed from `best-practice.md`), and `update-onboarding.md` (new).
+- `playbooks/update-onboarding.md` — append-only menu for existing users. Each `## <from> → <to>` section frames a version's deltas as "what shipped / who it's for / how to adopt if you want." Nothing auto-applies; the agent surfaces relevant sections based on the user's local `STATE_VERSION` and the user decides. First entry: `## beta → v1.0` with the MS → Google migration as an opt-in.
 - `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
 - `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
 
 ### Changed
-- `onboarding.md` — Phase 4 now asks if the user has legacy MS data; if yes, routes them into the migration playbook and tells the agent to log a Microsoft 365 (legacy) entry in `TOOLS.md`. New `### Microsoft 365 legacy data` section above References summarises the migration steps.
-- `playbook.md` — added a `## Migrations` section pointing at the new playbook; added `Cut-over date` to the glossary.
+- `onboarding.md` — stays a single file (no `onboarding/` subfolders). Phase 4 asks about legacy MS data; if yes, walks the new in-file *Microsoft 365 legacy data* section, which now carries the full setup (principle, 4 migration steps, cut-over checklist, common gotchas) — i.e. the content previously in `playbooks/migrations/ms-to-google.md`.
+- `playbooks/playbook.md` (moved from repo root) — `## Migrations` pointer now references the `onboarding.md` section + `update-onboarding.md` entry instead of the removed migration playbook file; `Cut-over date` added to the glossary; reference to the 4 AI Commandments uses the new filename.
+- `README.md`, `SKILL.md` — Human layer table and deliverables list updated to the new paths; current version line bumped to `0.3.5`.
+- `agent-files/AGENTS.md`, `agent-files/onboarding/BOOTSTRAP.md` — references to `best-practice.md` and root-level `playbook.md` updated to `playbooks/the-4-ai-commandments.md` and `playbooks/playbook.md`.
+
+### Removed
+- `playbooks/migrations/ms-to-google.md` — folded into `onboarding.md` as the *Microsoft 365 legacy data* section, per the single-file rule for onboarding. The folder is removed.
+- `best-practice.md` — renamed to `playbooks/the-4-ai-commandments.md` (content unchanged; file's H1 was already "The 4 AI Commandments").
+- `playbook.md` (root) — moved to `playbooks/playbook.md`.
 
 ### Migrations
-- None — no per-user state shape change. Users without legacy MS data are unaffected. Existing assistants pick up the new behaviour on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
+- None — no per-user state shape change. Existing assistants pick up the new file layout on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
+
+### Principles set this version
+- **Single `onboarding.md`.** One file, always reflects the latest setup. Never split into per-topic subfolders.
+- **`update-onboarding.md` is a menu, not a checklist.** Updates are guideline-driven, not enforced. The agent surfaces relevant deltas; the user decides what to adopt. No completion state tracked beyond "last-seen version" in the user's local `STATE_VERSION`.
+- **Append-only, never pruned.** Each release appends a `## <from> → <to>` section newest-on-top in `update-onboarding.md`. Old sections stay forever so users on older versions can still find their starting point.
 
 ---
 

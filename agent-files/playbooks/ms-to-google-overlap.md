@@ -66,5 +66,6 @@ If you set this up with the user during onboarding, write that block into `TOOLS
 
 ## Related
 
-- `playbooks/migrations/ms-to-google.md` — the human-facing migration playbook
+- `onboarding.md` § *Microsoft 365 legacy data* — the human-facing migration setup
+- `playbooks/update-onboarding.md` § *beta → v1.0* — the existing-user adoption path
 - `TOOLS.md` template — `## Microsoft 365 (legacy)` section

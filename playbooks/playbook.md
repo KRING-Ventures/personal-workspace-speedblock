@@ -64,7 +64,7 @@ Four practices that apply across everything — drafting, planning, code, ops:
 3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
 4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
-Full version, plus the vocabulary (branch, PR, merge, etc.): Best Practice guide.
+Full version, plus the vocabulary (branch, PR, merge, etc.): `the-4-ai-commandments.md`.
 
 Your agent follows these too, and will nudge you as you work together.
 
@@ -79,7 +79,7 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Migrations
 
-- **Coming from Microsoft 365?** See `playbooks/migrations/ms-to-google.md`. The short version: Google becomes your daily driver, M365 stays as a read-only backup for old data. Your agent knows the cut-over date and searches the right system.
+- **Coming from Microsoft 365?** See the *Microsoft 365 legacy data* section in `onboarding.md` (one-time setup) and the *Microsoft 365 → Google* entry in `update-onboarding.md` (if you're already onboarded and adopting this now). Short version: Google becomes your daily driver, M365 stays as a read-only backup. Your agent knows the cut-over date and searches the right system.
 
 ---
 
