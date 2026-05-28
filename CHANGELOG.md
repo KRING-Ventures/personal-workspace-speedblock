@@ -8,6 +8,20 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
+## [Unreleased]
+
+Tidy-up of the human/agent rule split. The user-facing "4 AI Commandments" one-pager gets the filename it's been called by everywhere — and `AGENTS.md` now states the rule for where future rules go.
+
+### Changed
+- `best-practice.md` → `ai-commandments.md` — renamed (no content changes). The user-facing file is now named what it actually is.
+- `agent-files/AGENTS.md` — added a header note explaining the split: universal practices live in `ai-commandments.md` (root, human-readable); agent-only operational rules live here. One home per rule.
+- `README.md`, `SKILL.md`, `onboarding.md`, `agent-files/AGENTS.md`, `agent-files/onboarding/BOOTSTRAP.md` — pointers updated to `ai-commandments.md`.
+
+### Migrations
+- None — no per-user state shape change. Existing assistants pick up the new filename + header on next session boot via the catch-up loop in `agent-files/AGENTS.md`.
+
+---
+
 ## [0.3.5] — 2026-05-06
 
 Sharpen the heartbeat protocol: explicit importance filter and an explicit *nudge → offer → draft/prep → confirm → act* flow so the assistant never acts on the user's behalf without a go-ahead, and never nudges on junk mail, newsletters, or routine calendar items.

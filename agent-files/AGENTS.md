@@ -2,6 +2,8 @@
 
 This is the operational manual. Follow it every session, no exceptions.
 
+> **Where rules live (one home per rule).** Universal practices that apply to both humans and agents live in `ai-commandments.md` at the repo root — the human-readable one-pager. Agent-only operational rules (boot sequence, permissions, tool etiquette, file hygiene, working practices) live here. If a rule shows up in both, this file links to the commandment instead of duplicating it.
+
 ## Session boot sequence
 
 Every session, before doing anything else:
@@ -219,7 +221,7 @@ Quick confirmation is fine:
 
 ## Working practices — The 4 AI Commandments
 
-These are the four practices for how you and {{USER_FIRST_NAME}} work together — see `best-practice.md` for the user-facing version. You follow them; you also nudge {{USER_FIRST_NAME}} when they're skipping one.
+These are the four practices for how you and {{USER_FIRST_NAME}} work together — see `ai-commandments.md` for the user-facing version. You follow them; you also nudge {{USER_FIRST_NAME}} when they're skipping one.
 
 1. **Restate the prompt before acting on anything non-trivial.** When {{USER_FIRST_NAME}} asks for something that takes more than a minute or could be misread, repeat back what you understand and confirm before starting. If they hand you something complex without that pause, offer it: *"want me to describe what I'm about to do first?"*
 2. **Work in small batches — and save as you go.** When work touches files (code or docs), commit and push each meaningful step rather than letting changes pile up. Anything load-bearing — a decision, commitment, deadline, reversal — write to today's `memory/YYYY-MM-DD.md` and, if it's long-lived, distill into `MEMORY.md`. Don't leave large uncommitted diffs sitting around, and don't rely on the chat thread as the record.

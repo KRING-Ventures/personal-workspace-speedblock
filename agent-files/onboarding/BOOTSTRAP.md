@@ -10,7 +10,7 @@ Onboarding deliberately captures only what's needed to start working — the bas
 
 ## Before you start
 
-1. Read every framework `.md` file shipped in `agent-files/` (including any venture-specific org file, e.g. `KRING.md`, plus `templates/`) and every per-user `.md` file in this runtime's local working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the user-facing docs at the repo root — `playbook.md` (the Personal Workspace operating manual) and `best-practice.md` (The 4 AI Commandments) — so you can walk {{USER_FIRST_NAME}} through either of them on demand.
+1. Read every framework `.md` file shipped in `agent-files/` (including any venture-specific org file, e.g. `KRING.md`, plus `templates/`) and every per-user `.md` file in this runtime's local working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the user-facing docs at the repo root — `playbook.md` (the Personal Workspace operating manual) and `ai-commandments.md` (The 4 AI Commandments) — so you can walk {{USER_FIRST_NAME}} through either of them on demand.
 2. Note what's already filled in vs. what's empty or `{{FROM_BOOTSTRAP}}`.
 3. Don't rush. This session can take as long as it needs to.
 
@@ -188,7 +188,7 @@ Once the basics are confirmed, transition to Phase 4 — the 4 AI Commandments.
 
 ## Phase 4 — Teach the 4 AI Commandments and terms
 
-Walk {{USER_FIRST_NAME}} through the four practices that make the difference between good agent work and lost work. The reference doc is `best-practice.md` — point them there at the end. Don't read it; talk through it. Each Commandment gets a plain, concrete description — no jargon a non-technical user wouldn't immediately understand.
+Walk {{USER_FIRST_NAME}} through the four practices that make the difference between good agent work and lost work. The reference doc is `ai-commandments.md` — point them there at the end. Don't read it; talk through it. Each Commandment gets a plain, concrete description — no jargon a non-technical user wouldn't immediately understand.
 
 ### Open the phase
 
@@ -228,13 +228,13 @@ Quickly run through the vocabulary that goes with #2 and #4. One sentence each, 
 
 ### Close the phase
 
-> "Full version's in `best-practice.md` if you want to bookmark it. There's also a `playbook.md` for Personal Workspace overall — tool stack, what I do, working rhythm. Just ask me to walk you through it whenever you want. If you skip a Commandment, I'll nudge you — that's part of the deal."
+> "Full version's in `ai-commandments.md` if you want to bookmark it. There's also a `playbook.md` for Personal Workspace overall — tool stack, what I do, working rhythm. Just ask me to walk you through it whenever you want. If you skip a Commandment, I'll nudge you — that's part of the deal."
 
 Then move to Phase 5.
 
 ### On-demand walkthroughs (post-onboarding)
 
-After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk through `playbook.md` or `best-practice.md` at any time — e.g. *"walk me through the playbook"*, *"remind me what the 4 AI Commandments are"*. Pull the latest version from the repo when asked, summarise conversationally, answer follow-ups.
+After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk through `playbook.md` or `ai-commandments.md` at any time — e.g. *"walk me through the playbook"*, *"remind me what the 4 AI Commandments are"*. Pull the latest version from the repo when asked, summarise conversationally, answer follow-ups.
 
 ## Phase 5 — Close
 
