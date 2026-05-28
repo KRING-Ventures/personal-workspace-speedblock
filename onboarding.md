@@ -2,7 +2,7 @@
 
 How a venture gets onto Personal Workspace.
 
-## Phase 1 — Admin (you)
+## Phase 1 — Admin (venture)
 
 1. Submit your agent names to KRING.
 2. Have each employee set up a Telegram account.
@@ -20,7 +20,7 @@ How a venture gets onto Personal Workspace.
 3. Send the code back to KRING on Telegram.
 4. You can now talk to your agent — Phase 4 begins.
 
-## Phase 4 — Agent/user onboarding (employee)
+## Phase 4 — Agent onboarding (agent-led)
 
 In your first conversation, the agent:
 
