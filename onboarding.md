@@ -129,4 +129,4 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 ## References
 
 - `playbook.md` — Personal Workspace day-to-day.
-- `best-practice.md` — the 4 AI Commandments and must-know git vocab.
+- `ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
