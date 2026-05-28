@@ -16,6 +16,8 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 - `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
 - `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
 - `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
+- `agent-files/AGENTS.md` — new `## Procedures` section with `verify-before-stating` (covers "never hallucinate") and `clear-and-complete-instructions` (covers the simple-but-detailed synergy). Each procedure has Trigger / Steps / Fallback / Proof. The boot sequence now anchors them: *"before any user-facing reply, run the procedures whose triggers fired; if Proof is missing, revise before sending."*
+- `agent-files/EVALS.md` — six golden test prompts to manually re-run when procedures change, so we can spot-check that the behaviour actually held.
 
 ### Changed
 - `best-practice.md` → `ai-commandments.md` — renamed (no content changes). The user-facing file is now named what it actually is.
