@@ -26,7 +26,8 @@ In your first conversation, the agent:
 
 1. Introduces itself and the tools you'll use together.
 2. Helps you connect Google Workspace, Notion, and GitHub (skip and come back later if you want — wiring detail below).
-3. Confirms the basics about you and closes onboarding.
+3. Asks if you have legacy Microsoft 365 data to migrate. If yes, routes you into `playbooks/migrations/ms-to-google.md` and logs a Microsoft 365 (legacy) entry in `TOOLS.md` so it can search the right system later.
+4. Confirms the basics about you and closes onboarding.
 
 ## Phase 4 — Wiring detail (the agent will guide you set-by-step)
 
@@ -126,7 +127,23 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 
 *(If your org disables fine-grained tokens, fall back to a classic PAT with scopes `repo` and `workflow`.)*
 
+### Microsoft 365 legacy data — only if you said yes above
+
+If you're coming from a Microsoft 365 setup (Outlook mail, OneDrive/SharePoint files, Outlook calendar/contacts), don't try a hard cut-over. Mirror your data into Google and keep M365 as a read-only backup.
+
+Full step-by-step in `playbooks/migrations/ms-to-google.md`. Short version:
+
+1. **Mail** — Google Data Migration Service (Admin console) imports Outlook/Exchange into Gmail with folders, flags, dates preserved.
+2. **Files** — Google Migrate for Workspace mirrors OneDrive/SharePoint into a **Shared Drive** (not "My Drive").
+3. **Calendar** — Publish your Outlook calendar as `.ics`, add it to Google Calendar from URL.
+4. **Contacts** — Export CSV from Outlook → import into Google Contacts.
+5. **Cut-over day** — set auto-forward + out-of-office on the M365 mailbox; pin Outlook Web (`outlook.office.com`) as a bookmark only.
+6. **Tell your agent** the cut-over date. It writes a `## Microsoft 365 (legacy)` block into `TOOLS.md` so it knows when to search the old system vs the new.
+
+After 30 days the forward goes off; the M365 licence stays so the archive remains searchable.
+
 ## References
 
 - `playbook.md` — Personal Workspace day-to-day.
 - `ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
+- `playbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.
