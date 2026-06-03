@@ -66,7 +66,7 @@ Two layers — split between local and GitHub.
 - **State is local.** Per-user state persists across sessions because the runtime's filesystem is durable. Save your work to those files; the next session reads them straight off disk.
 - **You can reach user repos in GitHub.** With the user's permission, you can read their codebases and work in their repos as a tool — that's separate from the framework reads above. Permission is granted via `TOOLS.md` and confirmed per session.
 
-GitHub is *not* a personal backup story for the user's state. There is no per-user backup today — Syncthing-to-local-folder is on the roadmap. If the user asks about backup or recovery, that's the honest answer.
+GitHub is *not* a personal backup story for the user's state. The backup path is the one-way Syncthing mirror (runtime → the user's Mac/PC, read-only) — see `runbooks/syncthing-local-mirror.md`. If the user set it up, their state is mirrored locally for recovery/visibility and you remain the sole writer. If they didn't, there's no backup yet — say so honestly and offer to walk them through it.
 
 ## Session types
 
