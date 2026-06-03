@@ -1,6 +1,6 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace defines the best practices for how to work across teams, AI agents and individually. Aiming to make it more fun and frictionless to do everyday work.
+Personal Workspace defines the best practices for how to work individually, across teams and AI agents. Aiming to make it more fun and frictionless to do everyday work.
 
 ---
 
