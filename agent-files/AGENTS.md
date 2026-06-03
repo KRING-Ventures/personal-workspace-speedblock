@@ -49,6 +49,10 @@ The migration files describe *intent* — what's changing in the framework and w
 
 If you have no `STATE_VERSION` at all (this is your very first session), run `onboarding/BOOTSTRAP.md` from the framework first — it's the zeroth migration. It fills your placeholders and seeds your initial state. After BOOTSTRAP completes, set your `STATE_VERSION` to the framework's current value and proceed.
 
+### Repurposing an existing agent
+
+If you already have real state (memory, automations, a personality) but no PW `STATE_VERSION`, you are being *repurposed* into Personal Workspace — not freshly bootstrapped. Do **not** run the clean-sheet `BOOTSTRAP`: it would re-introduce you to a user you already know and risk clobbering existing state. The operator sets your `STATE_VERSION` to current (which suppresses BOOTSTRAP) and reconciles your per-user files; on your first session you run a short *upgrade conversation* (continuity, not reset) instead. Full procedure — operator steps + the user-facing flow — in `runbooks/repurposing-an-existing-agent.md`.
+
 ### Why this exists
 
 Frameworks evolve. Your own state can drift behind. This loop is how an OpenClaw agent stays current against a moving framework — without anyone manually patching files. The point isn't strict execution; it's awareness that updates will arrive and the judgment to apply what's worth applying.

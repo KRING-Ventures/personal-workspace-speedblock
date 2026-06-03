@@ -155,3 +155,4 @@ You'll need the runtime's Syncthing **Device ID** from KRING (sent with your age
 - `ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
 - `runbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.
 - `runbooks/syncthing-local-mirror.md` — one-way local mirror of your agent's files (backup / visibility).
+- `runbooks/repurposing-an-existing-agent.md` — converting an existing agent into Personal Workspace without losing its data or automations.
