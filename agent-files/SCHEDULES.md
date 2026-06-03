@@ -4,26 +4,24 @@
 
 Every capability in `playbook.md` that happens *without {{USER_FIRST_NAME}} asking* — the morning brief, the Monday review, the heartbeat checks on mail/calendar/commitments — depends on a scheduled trigger existing on this runtime. No trigger, no proactivity: the agent knows *how* to brief but is never *told to*. These are the triggers.
 
-{{AGENT_NAME}} registers these during BOOTSTRAP (first session) and self-heals them at boot (see `AGENTS.md` → *Scheduled jobs*). They are set up with {{USER_FIRST_NAME}}'s real timezone and preferred times — never guessed.
+{{AGENT_NAME}} registers all of these itself with its `cron` capability — once, silently, during BOOTSTRAP — and self-heals them at boot (see `AGENTS.md` → *Scheduled jobs*). Nothing here needs a human to flip a switch on the runtime. Install the files, run the first session, and the rhythm sets itself up.
 
 ## The standard jobs
 
 | Job | Default cadence | What it runs | Surface |
 |---|---|---|---|
-| **Daily brief** | Weekdays, 07:30 user-local | A `cron` session that builds the brief from `templates/daily.md` and sends it | Telegram |
-| **Weekly review** | Mondays, 07:30 user-local | A `cron` session that builds the review from `templates/weekly.md` | Telegram |
-| **Heartbeat poll** | Hourly, 08:00–18:00 user-local, weekdays | A heartbeat session following `HEARTBEAT.md` (be useful or silent) | Telegram |
-| **Memory distill** | Daily, end of day (~18:00 user-local) | A `cron` session that distills today's `memory/YYYY-MM-DD.md` into `MEMORY.md` | none (silent) |
+| **Daily brief** | Weekdays, 07:30 user-local | Builds the brief from `templates/daily.md` and sends it | Telegram |
+| **Weekly review** | Mondays, 07:30 user-local | Builds the review from `templates/weekly.md` | Telegram |
+| **Heartbeat check** | Hourly, 08:00–18:00 user-local, weekdays | Runs the `HEARTBEAT.md` protocol — be useful or stay silent | Telegram |
+| **Memory distill** | Daily, ~18:00 user-local | Distills today's `memory/YYYY-MM-DD.md` into `MEMORY.md` | none (silent) |
 
-Times are **defaults**. Ask {{USER_FIRST_NAME}} for their preferred brief time during BOOTSTRAP; if they don't care, use these. Always anchor to the timezone in `USER.md`.
+All four run as **cron sessions** (isolated context — do the job, log, exit; see `AGENTS.md` → *Session types*).
 
 ## How they get set up
 
-Two mechanisms, both needed:
-
-1. **`cron` jobs — the agent owns these.** {{AGENT_NAME}} creates the daily brief, weekly review, and memory distill as scheduled wake events using its own `cron` capability. They run as **cron sessions** (isolated context — do the job, log, exit; see `AGENTS.md` → *Session types*). The agent can list, change, or remove them on request ("move my brief to 8am", "skip the weekend").
-
-2. **Heartbeat poll — enabled at deploy.** The hourly heartbeat cadence is a runtime setting, not something the agent self-schedules. KRING enables it when standing up the runtime (`onboarding.md` Phase 2). A populated `HEARTBEAT.md` plus the poll cadence is what makes the reactive checks fire. If `HEARTBEAT.md` is empty or the cadence is off, no heartbeats run.
+- **The agent owns all of them.** During BOOTSTRAP, {{AGENT_NAME}} creates these four jobs with its `cron` capability. No deploy-time runtime setting, no manual step. The heartbeat is just an hourly cron that runs the `HEARTBEAT.md` protocol — same mechanism as the rest.
+- **Timezone comes from `USER.md`** (pulled from Calendar in BOOTSTRAP Phase 3). The times above are sensible defaults — don't interview the user about them at onboarding. If {{USER_FIRST_NAME}} later says "move my brief to 8" or "skip weekends," adjust the job then.
+- **The agent can list, change, or remove them on request** — "move my brief to 8am", "pause the Monday review", "stop the hourly checks".
 
 ## Rules
 

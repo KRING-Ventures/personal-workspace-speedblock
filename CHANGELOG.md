@@ -39,17 +39,17 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 Fix the missing trigger layer — the reason the proactive capabilities (morning brief, Monday review, heartbeat checks) never fired for anyone. The framework described them but nothing ever scheduled them. Plus a folder rename to kill the `playbook.md` vs `playbooks/` naming clash.
 
 ### Added
-- `agent-files/SCHEDULES.md` — canonical list of the recurring jobs every agent runs (daily brief, weekly review, memory distill, heartbeat poll), with default cadences, how they get created, and the rules. This is the trigger layer the proactive capabilities depend on.
-- `agent-files/onboarding/BOOTSTRAP.md` — new **Phase 5 — Set up the rhythm (schedules)**: the agent confirms timezone, asks the preferred brief time, and registers the daily brief / weekly review / memory-distill `cron` jobs (renumbered old Phase 5 Close → Phase 6; added a schedule-confirmation step to *After the conversation*).
-- `agent-files/AGENTS.md` — new **Operations layer → Scheduled jobs** with a boot self-heal: on every main session the agent verifies its jobs are registered and recreates any missing ones (so agents onboarded before this version pick the schedule up automatically). Boot-sequence step 9 now points at it.
-- `onboarding.md` — Phase 2 now has an explicit KRING deploy step: **enable the heartbeat poll on the runtime** (the one trigger the agent can't self-schedule).
+- `agent-files/SCHEDULES.md` — canonical list of the four recurring jobs every agent runs (daily brief, weekly review, hourly heartbeat check, memory distill), with default cadences and rules. The agent owns all four as `cron` jobs — no runtime setting, no manual step. The heartbeat is just an hourly cron that runs the `HEARTBEAT.md` protocol. This is the trigger layer the proactive capabilities depend on.
+- `agent-files/onboarding/BOOTSTRAP.md` — new **Phase 5 — Set up the rhythm (schedules)**: the agent registers all four `cron` jobs *silently* using the timezone already pulled in Phase 3 and default times. No new questions — onboarding length unchanged. (Renumbered old Phase 5 Close → Phase 6; added a schedule-confirmation step to *After the conversation*.)
+- `agent-files/AGENTS.md` — new **Operations layer → Scheduled jobs** with a boot self-heal: on every main session the agent verifies its four jobs are registered and recreates any missing ones (so agents onboarded before this version pick the schedule up automatically, no redeploy). Boot-sequence step 9 now points at it.
 
 ### Changed
 - `playbooks/` → `runbooks/` and `agent-files/playbooks/` → `agent-files/runbooks/` — removes the collision with the top-level `playbook.md` operating manual. All references updated (`onboarding.md`, `agent-files/TOOLS.md`, both migration files, this changelog).
-- `agent-files/README.md` — layout now lists `SCHEDULES.md`; clarified `HEARTBEAT.md` is the *what to do when a poll fires*, `SCHEDULES.md` is the *what makes the poll fire*.
+- `agent-files/README.md` — layout now lists `SCHEDULES.md`; clarified `HEARTBEAT.md` is the *what to do when a check fires*, `SCHEDULES.md` is the *what makes it fire*.
+- `onboarding.md` — Phase 2 notes the agent self-schedules its own brief/review/heartbeat in Phase 4, so KRING has no schedule step at deploy.
 
 ### Migrations
-- None — no per-user state shape change. Existing assistants self-heal their schedule on next main session via the new boot check in `agent-files/AGENTS.md`, using the timezone already in their `USER.md`. KRING must enable the heartbeat poll per runtime (see `onboarding.md` Phase 2) for the hourly reactive checks.
+- None — no per-user state shape change. Existing assistants self-heal their schedule on next main session via the new boot check in `agent-files/AGENTS.md`, using the timezone already in their `USER.md`. Nothing for KRING to do per runtime.
 
 ---
 

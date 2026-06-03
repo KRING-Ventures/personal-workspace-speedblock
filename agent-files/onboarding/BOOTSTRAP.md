@@ -238,23 +238,21 @@ After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk
 
 ## Phase 5 — Set up the rhythm (schedules)
 
-This is the step that makes the proactive stuff actually happen. Skip it and {{AGENT_NAME}} stays purely reactive — no morning brief ever arrives, no Monday review, no heartbeat checks. The capabilities promised in Phase 1 are real *only* if their triggers get created here. Reference: `SCHEDULES.md`.
+This is the step that makes the proactive stuff actually happen. Skip it and {{AGENT_NAME}} stays purely reactive — no morning brief ever arrives, no Monday review, no heartbeat checks. The capabilities promised in Phase 1 are real *only* if their triggers get created here.
 
-Keep it to one short exchange — don't make a production of it:
+**Do this silently — it's setup, not a conversation.** Don't ask the user anything; you already have what you need. The timezone came from Calendar in Phase 3; the times are sensible defaults the user can change later. Don't lengthen onboarding for it.
 
-1. **Confirm the timezone** pulled in Phase 3. The schedule anchors to it.
-2. **Ask one question:** *"I'll send you a brief each weekday morning and a review on Mondays — what time works? Default is 07:30."* Take their answer or the default.
-3. **Register the jobs** using your `cron` capability, per the table in `SCHEDULES.md`:
-   - Daily brief (weekdays, chosen time) → builds from `templates/daily.md`.
-   - Weekly review (Mondays, chosen time) → builds from `templates/weekly.md`.
-   - Memory distill (daily, end of day) → distills the daily log into `MEMORY.md`.
+1. **Register the four jobs** with your `cron` capability, per the table in `SCHEDULES.md`, anchored to the timezone in `USER.md`:
+   - Daily brief (weekdays, 07:30) → builds from `templates/daily.md`.
+   - Weekly review (Mondays, 07:30) → builds from `templates/weekly.md`.
+   - Heartbeat check (hourly, work hours) → runs the `HEARTBEAT.md` protocol.
+   - Memory distill (daily, ~18:00) → distills the daily log into `MEMORY.md`.
    - Before creating each, check it doesn't already exist. Don't stack duplicates.
-4. **Log each job** to `automations/AUTOMATIONS.md` using the entry template.
-5. **Heartbeat:** the hourly poll is enabled at deploy by KRING, not here. If you can confirm it's live, say so in one line. If you can tell it isn't, note it in today's `memory/YYYY-MM-DD.md` so it gets fixed — don't claim proactive checks are running when they aren't.
+2. **Log each job** to `automations/AUTOMATIONS.md` using the entry template.
 
-Close the phase plainly:
+One line at most to {{USER_FIRST_NAME}} as you move on — not a section:
 
-> "You'll get your first brief tomorrow morning at [time]. During the day I'll keep an eye on things and flag anything that needs you — nothing sent on your behalf without your OK."
+> "You'll get your first brief tomorrow morning. During the day I'll keep an eye on mail, calendar and commitments and flag anything that needs you — nothing sent on your behalf without your OK. Want a different time for the brief? Just say."
 
 Then move to Phase 6.
 
@@ -270,5 +268,5 @@ One short message. Don't recap, don't pitch automations, don't enumerate expecta
 2. Seed `MEMORY.md` with anything surfaced in this conversation worth keeping (early personalization signals, automation ideas raised, comms-style notes if shared).
 3. Set up the first daily memory file: `memory/YYYY-MM-DD.md` and write a session log.
 4. Confirm `TOOLS.md` reflects the final wired state from Phase 2.
-5. **Confirm the schedule from Phase 5 is registered** — daily brief, weekly review, memory distill all present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
+5. **Confirm the schedule from Phase 5 is registered** — daily brief, weekly review, heartbeat check, memory distill all present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
 6. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
