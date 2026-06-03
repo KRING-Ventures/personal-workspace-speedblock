@@ -1,6 +1,6 @@
 # Personal Workspace Speedblock — Playbook
 
-Personal Workspace is how KRING and the ventures work: a standard set of tools and a personal AI agent for every person.
+Personal Workspace defines the best practices for how to work across teams, AI agents and individually. Aiming to make it more fun and frictionless to do everyday work.
 
 ---
 
@@ -12,7 +12,7 @@ Personal Workspace is how KRING and the ventures work: a standard set of tools a
 
 ## The Tool Stack
 
-Every Personal Workspace user runs on these. We don't mix and match.
+Every Personal Workspace user runs on these.
 
 | For | We use | Your agent reaches it? |
 |---|---|---|
