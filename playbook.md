@@ -83,6 +83,12 @@ Your agent follows these too, and will nudge you as you work together.
 
 ---
 
+## Your files, mirrored locally
+
+Your agent's files — its memory, your profile, your notes — can be mirrored to a folder on your own Mac/PC, kept in sync automatically. It's **one-way**: the agent writes, your machine receives a read-only copy. So if the agent is ever down, you still have everything it knows in a folder you control. To change something you ask the agent — you don't edit the local copy. Setup is in the Syncthing local-mirror runbook.
+
+---
+
 ## Glossary
 
 - **Personal Workspace** — best practices for how work is done individually and across teams.

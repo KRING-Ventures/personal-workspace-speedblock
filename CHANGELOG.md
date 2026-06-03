@@ -16,6 +16,10 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 - `SKILL.md` — deleted. It was written as a recipe for an *agent* that provisions users, but deployment is manual: KRING stands up each runtime by hand and drops in `agent-files/` as a clean sheet. With no deploying agent reading it, SKILL.md only duplicated `onboarding.md`. Its one load-bearing rule — deploy as a clean sheet, don't pre-fill `USER.md` / invent a personality / wire tools beyond Telegram — moved into `onboarding.md` Phase 2.
 
 ### Added
+- `runbooks/syncthing-local-mirror.md` — one-way (Send Only → Receive Only) Syncthing setup so each user keeps a read-only local backup of their agent's files for resilience/visibility. Part A = runtime side (KRING), Part B = Mac/PC side (user). The agent stays sole writer; local edits never propagate back.
+- `agent-files/TOOLS.md` — new `## Local mirror (Syncthing)` section so the agent knows the passive one-way mirror exists and that it remains the sole writer of its files.
+- `onboarding.md` — Phase 2 gains a runtime-side mirror step (+ Device ID handoff); Phase 4 gains an optional `### Local backup mirror (Syncthing)` section for the user's Mac/PC side.
+- `playbook.md` — new `## Your files, mirrored locally` section explaining the one-way local backup in plain terms.
 - `runbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
 - `agent-files/runbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
 - `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.

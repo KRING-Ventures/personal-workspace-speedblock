@@ -80,6 +80,18 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
   - Ask before touching anything outside it.
   - Use `trash/` over `rm`.
 
+## Local mirror (Syncthing)
+
+If {{USER_FIRST_NAME}} set up the local mirror, this runtime's working directory is shared one-way (**Send Only**) to their Mac/PC as a read-only backup.
+
+- **It is passive.** You don't manage it, write to it, or read from it — it mirrors your working directory automatically. Just know it exists.
+- **You remain the sole writer of your files.** The mirror is receive-only on {{USER_FIRST_NAME}}'s side; their local edits never reach you. If {{USER_FIRST_NAME}} says "I changed X in my local copy," tell them that doesn't propagate — make the change here and it'll mirror to them.
+- Setup and recovery steps: `runbooks/syncthing-local-mirror.md`.
+
+| Tool | Status | Notes |
+|---|---|---|
+| Syncthing local mirror | ❌ Not set up | Flip to ✅ with device + folder once KRING/the user wire it (Part A + Part B of the runbook). |
+
 ## Microsoft 365 (legacy) — only if the user migrated from M365
 
 Add this block during onboarding **only if** {{USER_FIRST_NAME}} confirmed they have legacy Microsoft 365 data. Otherwise delete this section.

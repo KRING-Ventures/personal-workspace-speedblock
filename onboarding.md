@@ -11,7 +11,8 @@ How a venture gets onto Personal Workspace.
 ## Phase 2 — KRING
 
 1. KRING sets up the agents — one OpenClaw runtime per employee, seeded with `agent-files/` as-is. Deploy each as a **clean sheet**: don't pre-fill `USER.md`, don't invent the agent's personality, don't wire tools beyond Telegram. The agent builds all of that *with* the user in the first conversation (Phase 4). Pre-filling breaks the relationship that first conversation is meant to create. (The agent sets up its own brief / review / heartbeat schedule in Phase 4 — no runtime step needed; see `agent-files/SCHEDULES.md`.)
-2. KRING messages each employee on Telegram with their agent's username.
+2. Set up the one-way local mirror on the runtime (Syncthing, **Send Only**) so the employee can keep a read-only backup of their agent's files. Runtime side only here; the employee finishes the Mac/PC side in Phase 4. See `runbooks/syncthing-local-mirror.md` → Part A.
+3. KRING messages each employee on Telegram with their agent's username, plus the runtime's Syncthing **Device ID** (needed for the mirror in Phase 4).
 
 ## Phase 3 — User (employee)
 
@@ -142,8 +143,15 @@ Full step-by-step in `runbooks/migrations/ms-to-google.md`. Short version:
 
 After 30 days the forward goes off; the M365 licence stays so the archive remains searchable.
 
+### Local backup mirror (Syncthing) — ~10 min, optional but recommended
+
+A read-only copy of your agent's files on your own Mac/PC, kept in sync automatically — so if the agent is ever down, you still have everything it knows in a folder you control. It's **one-way**: the agent writes, your machine receives. You read the mirror; to change anything you ask the agent.
+
+You'll need the runtime's Syncthing **Device ID** from KRING (sent with your agent username in Phase 2). Full step-by-step in `runbooks/syncthing-local-mirror.md` → Part B.
+
 ## References
 
 - `playbook.md` — Personal Workspace day-to-day.
 - `ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
 - `runbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.
+- `runbooks/syncthing-local-mirror.md` — one-way local mirror of your agent's files (backup / visibility).
