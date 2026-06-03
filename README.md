@@ -4,17 +4,16 @@ The **Personal Workspace** Speedblock — the standardised AI-native work enviro
 
 A Speedblock ships as two layers:
 
-- **Skill layer** — machine-actionable, loaded by an agent to do the work.
-- **Human layer** — deliverables for human eyes (playbook, onboarding guide, role spec) and for human hands (people who run parts of the setup).
+- **Agent payload** — `agent-files/`, deployed into each user's OpenClaw runtime as a clean sheet.
+- **Human layer** — deliverables for human eyes (playbook, onboarding guide) and for the people who run the setup.
 
 Both layers live in this repo.
 
-## Skill layer
+## Agent payload
 
 | File / folder | What it is |
 |---|---|
-| [`SKILL.md`](./SKILL.md) | Skill entry point — how an agent provisions a new user on Personal Workspace. |
-| [`agent-files/`](./agent-files) | Skill payload — shared OpenClaw framework + per-user blueprints deployed into each user's agent runtime. |
+| [`agent-files/`](./agent-files) | Shared OpenClaw framework + per-user blueprints, deployed into each user's agent runtime. KRING deploys this by hand, one runtime per user. |
 
 ## Human layer
 
@@ -45,7 +44,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 ## Repos involved
 
-- **This repo** (`personal-workspace-speedblock`, public) — skill + human deliverables for Personal Workspace.
+- **This repo** (`personal-workspace-speedblock`, public) — agent payload + human deliverables for Personal Workspace.
 - **Shared skills** (`claw-shared`, private) — other OpenClaw skills loaded on demand.
 - **Per-user state** — each assistant's `IDENTITY`, `USER`, `TOOLS`, `automations/`, `MEMORY`, `memory/`, `STATE_VERSION` live on the runtime's local filesystem, seeded from the per-user blueprints in this repo at deployment. There is no per-user GitHub repo for state; the assistant doesn't push state back to GitHub.
 

@@ -12,6 +12,9 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up of the human/agent rule split — the user-facing "4 AI Commandments" one-pager finally gets the filename it's been called by everywhere.
 
+### Removed
+- `SKILL.md` — deleted. It was written as a recipe for an *agent* that provisions users, but deployment is manual: KRING stands up each runtime by hand and drops in `agent-files/` as a clean sheet. With no deploying agent reading it, SKILL.md only duplicated `onboarding.md`. Its one load-bearing rule — deploy as a clean sheet, don't pre-fill `USER.md` / invent a personality / wire tools beyond Telegram — moved into `onboarding.md` Phase 2.
+
 ### Added
 - `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
 - `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.

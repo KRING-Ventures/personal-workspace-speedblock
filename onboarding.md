@@ -10,7 +10,7 @@ How a venture gets onto Personal Workspace.
 
 ## Phase 2 — KRING
 
-1. KRING sets up the agents.
+1. KRING sets up the agents — one OpenClaw runtime per employee, seeded with `agent-files/` as-is. Deploy each as a **clean sheet**: don't pre-fill `USER.md`, don't invent the agent's personality, don't wire tools beyond Telegram. The agent builds all of that *with* the user in the first conversation (Phase 4). Pre-filling breaks the relationship that first conversation is meant to create.
 2. KRING messages each employee on Telegram with their agent's username.
 
 ## Phase 3 — User (employee)
