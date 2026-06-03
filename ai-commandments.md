@@ -4,7 +4,7 @@ Best practices for working with AI agents. Apply across drafting, planning, code
 
 **1. Make the agent repeat back your prompt.** *"Explain back to me what I just prompted, so we are aligned."* — Catches misunderstandings before they become rework.
 
-**2. Work in small batches — save as you go.** *"Save and commit this work."* — Lock each piece in before starting the next; don't pile up large unsaved changes.
+**2. Work in small batches — save as you go.** *"Commit and push this work."* — Lock each piece in before starting the next; don't pile up large unsaved changes.
 
 **3. KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* — Plain beats clever. If you can't follow it on the first read, neither can the next person.
 
