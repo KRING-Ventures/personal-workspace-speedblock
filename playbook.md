@@ -18,11 +18,11 @@ Every Personal Workspace user runs on these.
 |---|---|---|
 | Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired during your first conversation |
 | Your personal AI agent | **Telegram** — you chat with your agent there | ✅ Yes — primary surface |
-| Project and task management | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
-| Code & engineering | **GitHub** | ✅ Yes — your agent can read and work in your repos with your permission |
+| Meeting transcriptions and notes | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
+| Code storage & access | **GitHub** | ✅ Yes — your agent can read and work in your repos with your permission |
 | Team chat | **Slack** | ❌ Not yet — planned for a future version |
 | Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — you use this directly |
-| General-purpose AI | **Claude** — for coding and individual projects | n/a — you use this directly |
+| General-purpose AI & Coding | **Claude** — for coding and individual projects | n/a — you use this directly |
 
 ---
 
