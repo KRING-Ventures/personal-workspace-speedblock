@@ -38,7 +38,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 ## Current version
 
-**`0.3.4`** — shipped 2026-05-04. See [`CHANGELOG.md`](./CHANGELOG.md).
+**`0.3.6`** — shipped 2026-06-03. See [`CHANGELOG.md`](./CHANGELOG.md).
 
 **Next:** `1.0.0` — target is the framework being stable enough to recommend for general venture deployments without KRING hand-holding.
 

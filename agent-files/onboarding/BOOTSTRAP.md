@@ -236,7 +236,29 @@ Then move to Phase 5.
 
 After the first conversation, {{USER_FIRST_NAME}} can ask {{AGENT_NAME}} to walk through `playbook.md` or `ai-commandments.md` at any time — e.g. *"walk me through the playbook"*, *"remind me what the 4 AI Commandments are"*. Pull the latest version from the repo when asked, summarise conversationally, answer follow-ups.
 
-## Phase 5 — Close
+## Phase 5 — Set up the rhythm (schedules)
+
+This is the step that makes the proactive stuff actually happen. Skip it and {{AGENT_NAME}} stays purely reactive — no morning brief ever arrives, no Monday review, no heartbeat checks. The capabilities promised in Phase 1 are real *only* if their triggers get created here. Reference: `SCHEDULES.md`.
+
+Keep it to one short exchange — don't make a production of it:
+
+1. **Confirm the timezone** pulled in Phase 3. The schedule anchors to it.
+2. **Ask one question:** *"I'll send you a brief each weekday morning and a review on Mondays — what time works? Default is 07:30."* Take their answer or the default.
+3. **Register the jobs** using your `cron` capability, per the table in `SCHEDULES.md`:
+   - Daily brief (weekdays, chosen time) → builds from `templates/daily.md`.
+   - Weekly review (Mondays, chosen time) → builds from `templates/weekly.md`.
+   - Memory distill (daily, end of day) → distills the daily log into `MEMORY.md`.
+   - Before creating each, check it doesn't already exist. Don't stack duplicates.
+4. **Log each job** to `automations/AUTOMATIONS.md` using the entry template.
+5. **Heartbeat:** the hourly poll is enabled at deploy by KRING, not here. If you can confirm it's live, say so in one line. If you can tell it isn't, note it in today's `memory/YYYY-MM-DD.md` so it gets fixed — don't claim proactive checks are running when they aren't.
+
+Close the phase plainly:
+
+> "You'll get your first brief tomorrow morning at [time]. During the day I'll keep an eye on things and flag anything that needs you — nothing sent on your behalf without your OK."
+
+Then move to Phase 6.
+
+## Phase 6 — Close
 
 One short message. Don't recap, don't pitch automations, don't enumerate expectations — the daily brief tomorrow morning will speak for itself, and memory will start building from message one.
 
@@ -248,4 +270,5 @@ One short message. Don't recap, don't pitch automations, don't enumerate expecta
 2. Seed `MEMORY.md` with anything surfaced in this conversation worth keeping (early personalization signals, automation ideas raised, comms-style notes if shared).
 3. Set up the first daily memory file: `memory/YYYY-MM-DD.md` and write a session log.
 4. Confirm `TOOLS.md` reflects the final wired state from Phase 2.
-5. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
+5. **Confirm the schedule from Phase 5 is registered** — daily brief, weekly review, memory distill all present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
+6. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.

@@ -17,7 +17,8 @@ One flat set of canonical templates. Files marked **(per-user)** are blueprints 
 ```
 SOUL.md                # character, boundaries, voice
 AGENTS.md              # session boot, memory, permissions, onboarding rule
-HEARTBEAT.md           # proactive check-in protocol
+HEARTBEAT.md           # proactive check-in protocol (what to do when a poll fires)
+SCHEDULES.md           # the recurring jobs that fire the proactive layer (brief, review, heartbeat)
 KRING.md               # KRING org context (the entity)
 MEMORY.md              # long-term memory template
 IDENTITY.md            # name, role, vibe, emoji  (per-user)

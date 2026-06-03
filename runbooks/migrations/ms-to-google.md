@@ -140,5 +140,5 @@ Your agent knows the cut-over date (it's logged in `TOOLS.md` when you set this 
 ## Related
 
 - `playbook.md` — Personal Workspace top-level playbook
-- `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for the overlap window
+- `agent-files/runbooks/ms-to-google-overlap.md` — agent-side rules for the overlap window
 - `onboarding.md` — Phase 4 asks if you have legacy MS data; that routes you here

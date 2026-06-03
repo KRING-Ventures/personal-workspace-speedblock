@@ -11,7 +11,8 @@ How a venture gets onto Personal Workspace.
 ## Phase 2 — KRING
 
 1. KRING sets up the agents — one OpenClaw runtime per employee, seeded with `agent-files/` as-is. Deploy each as a **clean sheet**: don't pre-fill `USER.md`, don't invent the agent's personality, don't wire tools beyond Telegram. The agent builds all of that *with* the user in the first conversation (Phase 4). Pre-filling breaks the relationship that first conversation is meant to create.
-2. KRING messages each employee on Telegram with their agent's username.
+2. **Enable the heartbeat poll on the runtime.** The agent self-schedules its daily brief and weekly review during Phase 4, but the hourly heartbeat cadence is a runtime setting it can't set itself. Turn it on at deploy (hourly, work hours) so the proactive checks in `agent-files/HEARTBEAT.md` actually fire. Skip this and the agent stays reactive-only — see `agent-files/SCHEDULES.md`.
+3. KRING messages each employee on Telegram with their agent's username.
 
 ## Phase 3 — User (employee)
 
@@ -26,7 +27,7 @@ In your first conversation, the agent:
 
 1. Introduces itself and the tools you'll use together.
 2. Helps you connect Google Workspace, Notion, and GitHub (skip and come back later if you want — wiring detail below).
-3. Asks if you have legacy Microsoft 365 data to migrate. If yes, routes you into `playbooks/migrations/ms-to-google.md` and logs a Microsoft 365 (legacy) entry in `TOOLS.md` so it can search the right system later.
+3. Asks if you have legacy Microsoft 365 data to migrate. If yes, routes you into `runbooks/migrations/ms-to-google.md` and logs a Microsoft 365 (legacy) entry in `TOOLS.md` so it can search the right system later.
 4. Confirms the basics about you and closes onboarding.
 
 ## Phase 4 — Wiring detail (the agent will guide you set-by-step)
@@ -131,7 +132,7 @@ Requires a Google Workspace account (personal `@gmail.com` won't work). You also
 
 If you're coming from a Microsoft 365 setup (Outlook mail, OneDrive/SharePoint files, Outlook calendar/contacts), don't try a hard cut-over. Mirror your data into Google and keep M365 as a read-only backup.
 
-Full step-by-step in `playbooks/migrations/ms-to-google.md`. Short version:
+Full step-by-step in `runbooks/migrations/ms-to-google.md`. Short version:
 
 1. **Mail** — Google Data Migration Service (Admin console) imports Outlook/Exchange into Gmail with folders, flags, dates preserved.
 2. **Files** — Google Migrate for Workspace mirrors OneDrive/SharePoint into a **Shared Drive** (not "My Drive").
@@ -146,4 +147,4 @@ After 30 days the forward goes off; the M365 licence stays so the archive remain
 
 - `playbook.md` — Personal Workspace day-to-day.
 - `ai-commandments.md` — the 4 AI Commandments and must-know git vocab.
-- `playbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.
+- `runbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration playbook.

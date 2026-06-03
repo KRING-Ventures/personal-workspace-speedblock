@@ -16,8 +16,8 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 - `SKILL.md` — deleted. It was written as a recipe for an *agent* that provisions users, but deployment is manual: KRING stands up each runtime by hand and drops in `agent-files/` as a clean sheet. With no deploying agent reading it, SKILL.md only duplicated `onboarding.md`. Its one load-bearing rule — deploy as a clean sheet, don't pre-fill `USER.md` / invent a personality / wire tools beyond Telegram — moved into `onboarding.md` Phase 2.
 
 ### Added
-- `playbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
-- `agent-files/playbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
+- `runbooks/migrations/ms-to-google.md` — human-facing migration playbook (mail, files, calendar, contacts, cut-over checklist, daily-work guidance, common gotchas).
+- `agent-files/runbooks/ms-to-google-overlap.md` — agent-side rules for handling a user with a Microsoft 365 read-only archive alongside Google Workspace.
 - `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
 - `agent-files/AGENTS.md` — new `## Procedures` section with `verify-before-stating` (covers "never hallucinate") and `clear-and-complete-instructions` (covers the simple-but-detailed synergy). Each procedure has Trigger / Steps / Fallback / Proof. The boot sequence now anchors them: *"before any user-facing reply, run the procedures whose triggers fired; if Proof is missing, revise before sending."*
 - `agent-files/EVALS.md` — six golden test prompts to manually re-run when procedures change, so we can spot-check that the behaviour actually held.
@@ -31,6 +31,25 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 
 ### Migrations
 - None — no per-user state shape change. Users without legacy MS data are unaffected. Existing assistants pick up the new behaviour, filename, and header on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
+
+---
+
+## [0.3.6] — 2026-06-03
+
+Fix the missing trigger layer — the reason the proactive capabilities (morning brief, Monday review, heartbeat checks) never fired for anyone. The framework described them but nothing ever scheduled them. Plus a folder rename to kill the `playbook.md` vs `playbooks/` naming clash.
+
+### Added
+- `agent-files/SCHEDULES.md` — canonical list of the recurring jobs every agent runs (daily brief, weekly review, memory distill, heartbeat poll), with default cadences, how they get created, and the rules. This is the trigger layer the proactive capabilities depend on.
+- `agent-files/onboarding/BOOTSTRAP.md` — new **Phase 5 — Set up the rhythm (schedules)**: the agent confirms timezone, asks the preferred brief time, and registers the daily brief / weekly review / memory-distill `cron` jobs (renumbered old Phase 5 Close → Phase 6; added a schedule-confirmation step to *After the conversation*).
+- `agent-files/AGENTS.md` — new **Operations layer → Scheduled jobs** with a boot self-heal: on every main session the agent verifies its jobs are registered and recreates any missing ones (so agents onboarded before this version pick the schedule up automatically). Boot-sequence step 9 now points at it.
+- `onboarding.md` — Phase 2 now has an explicit KRING deploy step: **enable the heartbeat poll on the runtime** (the one trigger the agent can't self-schedule).
+
+### Changed
+- `playbooks/` → `runbooks/` and `agent-files/playbooks/` → `agent-files/runbooks/` — removes the collision with the top-level `playbook.md` operating manual. All references updated (`onboarding.md`, `agent-files/TOOLS.md`, both migration files, this changelog).
+- `agent-files/README.md` — layout now lists `SCHEDULES.md`; clarified `HEARTBEAT.md` is the *what to do when a poll fires*, `SCHEDULES.md` is the *what makes the poll fire*.
+
+### Migrations
+- None — no per-user state shape change. Existing assistants self-heal their schedule on next main session via the new boot check in `agent-files/AGENTS.md`, using the timezone already in their `USER.md`. KRING must enable the heartbeat poll per runtime (see `onboarding.md` Phase 2) for the hourly reactive checks.
 
 ---
 

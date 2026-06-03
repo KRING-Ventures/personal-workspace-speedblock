@@ -93,4 +93,4 @@ Add this block during onboarding **only if** {{USER_FIRST_NAME}} confirmed they 
   - Search only; never send, never edit, never reply from this account.
   - Things older than the cut-over date live here; newer things live in Google.
   - If unsure where data lives, ask once: *"Is this before or after [cut-over date]?"* — then search the right system.
-  - See `agent-files/playbooks/ms-to-google-overlap.md` for full overlap rules.
+  - See `agent-files/runbooks/ms-to-google-overlap.md` for full overlap rules.
