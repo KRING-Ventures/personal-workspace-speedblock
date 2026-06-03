@@ -28,7 +28,7 @@ Every Personal Workspace user runs on these. We don't mix and match.
 
 ## Your personal AI agent
 
-You get your own AI agent on Telegram, built on OpenClaw.
+You get your own personal AI agent for everyday work.
 
 ### What it does for you
 
@@ -37,7 +37,7 @@ You get your own AI agent on Telegram, built on OpenClaw.
 - **Drafts for you.** Emails, messages, docs. Never sent without your OK.
 - **Preps meetings.** Attendees, context, what you want from the meeting.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
-- **Uses your tools.** Gmail, Calendar, Drive, Notion, GitHub, Telegram.
+- **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
 - **Builds automations.** On request.
 
 ### What it asks you before doing
@@ -59,12 +59,12 @@ Drafts and research are free. Anything that leaves your account or changes thing
 
 Four practices that apply across everything — drafting, planning, code, ops:
 
-1. **Make the agent repeat back your prompt.** *"Explain back to me what I just prompted, so we are aligned."* Catches misunderstandings before they become rework.
-2. **Work in small batches — and save as you go.** *"Save and commit this work."* Lock each piece in before starting the next; don't pile up large unsaved changes.
+1. **Make the agent repeat back your prompt.** *"Explain back to me what I just told you, so we are aligned."* Catches misunderstandings before they become rework.
+2. **Work in small batches — and save as you go.** *"Commit and push this work."* Lock each piece in before starting the next; don't pile up large unsaved changes.
 3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
 4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
-Full version, plus the vocabulary (branch, PR, merge, etc.): Best Practice guide.
+Full version, plus the vocabulary (branch, PR, merge, etc.): AI Commandments Guide.
 
 Your agent follows these too, and will nudge you as you work together.
 
@@ -79,14 +79,12 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Migrations
 
-- **Coming from Microsoft 365?** See `playbooks/migrations/ms-to-google.md`. The short version: Google becomes your daily driver, M365 stays as a read-only backup for old data. Your agent knows the cut-over date and searches the right system.
+- **Coming from Microsoft 365?** See the Microsoft to Google Workspace migration playbook. The short version: Google becomes your daily driver, M365 stays as a read-only backup for old data. Your agent knows the cut-over date and searches the right system.
 
 ---
 
 ## Glossary
 
-- **Personal Workspace** — how KRING and the ventures KRING builds work: same tools, personal AI agent for every person.
+- **Personal Workspace** — best practices for how work is done individually and across teams.
 - **OpenClaw** — the AI agent system that powers your personal agent.
-- **Speedblock** — KRING's name for a focused project run in stages (Scope → Research → Solution → Build).
-- **Brief** — the daily or weekly summary your agent sends you.
-- **Cut-over date** — the day you switched onto Google Workspace as your daily driver (logged in `TOOLS.md`). Things older than this live in your legacy system; newer things live in Google.
+- **Speedblock** — KRING's name for a ready-to-impelment product solving specfic roadblocks.
