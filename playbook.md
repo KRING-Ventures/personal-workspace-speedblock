@@ -12,7 +12,7 @@ Personal Workspace defines the best practices for how to work individually, acro
 
 ## The Tool Stack
 
-Every Personal Workspace user runs on these.
+Every Personal Workspace user runs on these as the basics.
 
 | For | We use | Your agent reaches it? |
 |---|---|---|
