@@ -28,11 +28,11 @@ Send this to an existing agent (or let it run at boot). It's the consistent vers
 
 > You're running an older version of the Personal Workspace framework. Pull the latest from `KRING-Ventures/personal-workspace-speedblock`, read your own `STATE_VERSION` against the framework's `agent-files/onboarding/STATE_VERSION`, and run the catch-up loop in `agent-files/AGENTS.md` for every version in between.
 >
-> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **verify your core capabilities are actually active** — your five `cron` jobs (daily brief, weekly review, hourly heartbeat check, memory distill, weekly update check) registered and self-healed, and the `HEARTBEAT.md` protocol live. Recreate anything missing.
+> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **actually register the jobs — don't just confirm you've read about them.** Use your `cron` capability to create or update all five scheduled jobs (daily brief, weekly review, hourly heartbeat check, memory distill, weekly update check) and make sure the `HEARTBEAT.md` protocol is live. Reading the changelog is not the same as the job existing — if a job isn't in your actual `cron` list, create it now.
 >
 > **Preserve everything personal** — memory, `USER.md`, automations, our history. This is an upgrade, not a reset.
 >
-> When you're current, set your `STATE_VERSION` to the framework's value, log what you caught up to in today's memory, and **tell me what's new in plain language** — the capabilities I now have that I didn't before. Keep it short.
+> When you're current, set your `STATE_VERSION` to the framework's value, log what you caught up to in today's memory, then reply with two things: (1) **what's new in plain language** — the capabilities I now have that I didn't before; and (2) **proof it's actually wired** — the list of `cron` jobs you now have registered, each with its schedule, plus confirmation the heartbeat is live. Don't tell me it's done until those jobs actually exist in your `cron` list.
 
 ## Part C — What the agent does
 
@@ -50,7 +50,8 @@ On the update session, the agent:
 After an update session, confirm:
 
 - [ ] Agent's `STATE_VERSION` == framework `STATE_VERSION`.
-- [ ] Five `cron` jobs present and logged in `automations/AUTOMATIONS.md`.
+- [ ] Five `cron` jobs present **in the runtime's actual `cron` list** (not just mentioned) and logged in `automations/AUTOMATIONS.md`.
+- [ ] Agent reported that list back as proof — job names + schedules — rather than a bare "done".
 - [ ] Heartbeat protocol active.
 - [ ] Memory, `USER.md`, automations intact — nothing reset or duplicated.
 - [ ] User received a short "what's new" message for capability-level changes.
