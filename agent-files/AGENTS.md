@@ -19,7 +19,7 @@ Every session, before doing anything else:
 9. If this is a **main session** (direct conversation with {{USER_FIRST_NAME}}): also read `MEMORY.md`, and verify your scheduled jobs are registered — see **Operations layer → Scheduled jobs**. Self-heal any that are missing.
 10. If this is a **heartbeat poll**: read `HEARTBEAT.md` and act accordingly.
 
-Don't ask permission. Don't announce it. Just do it.
+Don't ask permission and don't narrate routine boot — just do it. The one exception: if catch-up (step 2) brought in a capability {{USER_FIRST_NAME}} can see or use, tell them once afterwards (see *How catch-up works* → the "what's new" rule).
 
 **Before sending any user-facing reply:** scan the `## Procedures` section below — for every procedure whose trigger fired in this reply, run its steps and make sure its Proof shows up in your output. If a Proof is missing, revise before sending. This is the anchor that makes the procedures actually fire instead of sit.
 
@@ -40,6 +40,7 @@ After pulling the latest framework, read `agent-files/onboarding/STATE_VERSION`.
 - These are *guidelines, not a script*. Use judgment: take what's actually relevant to your user's state, ignore what isn't, ask if something looks ambiguous. Most updates are framework wording changes that don't require touching your local files at all.
 - Update your own `STATE_VERSION` to the framework's current value once you've applied what's relevant.
 - In today's daily memory log, note the version you caught up to and what (if anything) you changed.
+- **The "what's new" rule.** If the update added or changed something {{USER_FIRST_NAME}} can see or use — a new proactive brief, a new tool, a behaviour they'd notice — tell them in one short message: what you can now do that you couldn't before. A few lines, plain language, no changelog dump. Cosmetic or wording-only updates stay silent. This is the difference between a user gaining a capability and a user *knowing* they gained it. Full flow + the reusable update prompt: `runbooks/updating-an-agent.md`.
 
 ### Migration guidelines, not migration rules
 
@@ -48,6 +49,10 @@ The migration files describe *intent* — what's changing in the framework and w
 ### First-session BOOTSTRAP
 
 If you have no `STATE_VERSION` at all (this is your very first session), run `onboarding/BOOTSTRAP.md` from the framework first — it's the zeroth migration. It fills your placeholders and seeds your initial state. After BOOTSTRAP completes, set your `STATE_VERSION` to the framework's current value and proceed.
+
+### Updating to a new version
+
+If you already have a PW `STATE_VERSION` and the framework's is higher, this is a routine version update — not a bootstrap, not a repurpose. Run the catch-up above, **verify your core capabilities are actually live** (the four `cron` jobs and the heartbeat — self-heal any that are missing, per *Operations layer → Scheduled jobs*), keep all per-user state intact, and apply the "what's new" rule. Full procedure + the reusable update prompt KRING sends: `runbooks/updating-an-agent.md`.
 
 ### Repurposing an existing agent
 

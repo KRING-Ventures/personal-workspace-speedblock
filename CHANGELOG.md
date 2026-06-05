@@ -8,9 +8,15 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ---
 
-## [Unreleased] — v1.0 integration branch
+## [Unreleased]
 
-First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up of the human/agent rule split — the user-facing "4 AI Commandments" one-pager finally gets the filename it's been called by everywhere.
+_Nothing yet._
+
+---
+
+## [1.0.0] — 2026-06-05
+
+First stable release — the framework graduates from beta. Highlights: Microsoft 365 → Google Workspace migration, the one-way Syncthing local backup mirror, the procedures/evals layer, a standard agent-update path, and the human/agent rule split tidy-up (the user-facing "4 AI Commandments" one-pager finally gets the filename it's been called by everywhere).
 
 ### Removed
 - `SKILL.md` — deleted. It was written as a recipe for an *agent* that provisions users, but deployment is manual: KRING stands up each runtime by hand and drops in `agent-files/` as a clean sheet. With no deploying agent reading it, SKILL.md only duplicated `onboarding.md`. Its one load-bearing rule — deploy as a clean sheet, don't pre-fill `USER.md` / invent a personality / wire tools beyond Telegram — moved into `onboarding.md` Phase 2.
@@ -26,6 +32,7 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 - `agent-files/TOOLS.md` — new `## Microsoft 365 (legacy)` section template that onboarding fills in (account, cut-over date, access mode, status, auto-forward window, rules) for users who migrated from M365.
 - `agent-files/AGENTS.md` — new `## Procedures` section with `verify-before-stating` (covers "never hallucinate") and `clear-and-complete-instructions` (covers the simple-but-detailed synergy). Each procedure has Trigger / Steps / Fallback / Proof. The boot sequence now anchors them: *"before any user-facing reply, run the procedures whose triggers fired; if Proof is missing, revise before sending."*
 - `agent-files/EVALS.md` — six golden test prompts to manually re-run when procedures change, so we can spot-check that the behaviour actually held.
+- `runbooks/updating-an-agent.md` — the standard path for bringing an existing PW agent up to the current version. Holds a reusable update prompt (the consistent version of the hand-written "update to latest + activate cron/heartbeat + preserve personalization" message), a KRING ship checklist whose load-bearing step is bumping `STATE_VERSION` (the trigger that makes an update actually reach agents), and a post-update verification checklist. `agent-files/AGENTS.md` catch-up section gains an *Updating to a new version* pointer.
 
 ### Changed
 - `best-practice.md` → `ai-commandments.md` — renamed (no content changes). The user-facing file is now named what it actually is.
@@ -33,6 +40,7 @@ First v1.0 feature: Microsoft 365 → Google Workspace migration. Plus a tidy-up
 - `onboarding.md` — Phase 4 now asks if the user has legacy MS data; if yes, routes them into the migration playbook and tells the agent to log a Microsoft 365 (legacy) entry in `TOOLS.md`. New `### Microsoft 365 legacy data` section above References summarises the migration steps.
 - `playbook.md` — added a `## Migrations` section pointing at the new playbook; added `Cut-over date` to the glossary.
 - `README.md`, `SKILL.md`, `onboarding.md`, `agent-files/AGENTS.md`, `agent-files/onboarding/BOOTSTRAP.md` — pointers updated to `ai-commandments.md`.
+- `agent-files/AGENTS.md` — catch-up is no longer fully silent. Cosmetic/wording updates stay silent as before, but a version that adds or changes a *user-visible capability* now requires a short "what's new" message, so existing users actually learn what their agent can newly do (previously a user could gain a morning brief and never be told). New *Updating to a new version* subsection points at `runbooks/updating-an-agent.md`.
 
 ### Migrations
 - None — no per-user state shape change. Users without legacy MS data are unaffected. Existing assistants pick up the new behaviour, filename, and header on next session boot via the catch-up loop in `agent-files/AGENTS.md`. The `## Microsoft 365 (legacy)` block in `TOOLS.md` is opt-in per user.
