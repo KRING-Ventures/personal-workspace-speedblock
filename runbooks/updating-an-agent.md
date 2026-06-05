@@ -28,7 +28,7 @@ Send this to an existing agent (or let it run at boot). It's the consistent vers
 
 > You're running an older version of the Personal Workspace framework. Pull the latest from `KRING-Ventures/personal-workspace-speedblock`, read your own `STATE_VERSION` against the framework's `agent-files/onboarding/STATE_VERSION`, and run the catch-up loop in `agent-files/AGENTS.md` for every version in between.
 >
-> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **verify your core capabilities are actually active** — your four `cron` jobs (daily brief, weekly review, hourly heartbeat check, memory distill) registered and self-healed, and the `HEARTBEAT.md` protocol live. Recreate anything missing.
+> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **verify your core capabilities are actually active** — your five `cron` jobs (daily brief, weekly review, hourly heartbeat check, memory distill, weekly update check) registered and self-healed, and the `HEARTBEAT.md` protocol live. Recreate anything missing.
 >
 > **Preserve everything personal** — memory, `USER.md`, automations, our history. This is an upgrade, not a reset.
 >
@@ -40,26 +40,30 @@ On the update session, the agent:
 
 1. **Pulls** the latest framework.
 2. **Runs catch-up** per `agent-files/AGENTS.md` → *How catch-up works*: reads `CHANGELOG.md` from its version onward, applies what fits this user, ignores cosmetic-only changes.
-3. **Verifies core capabilities are active, not just described.** Checks its four `cron` jobs exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that the heartbeat is registered. A capability the framework documents but the runtime never scheduled is not a real capability.
+3. **Verifies core capabilities are active, not just described.** Checks its five `cron` jobs exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that the heartbeat is registered. A capability the framework documents but the runtime never scheduled is not a real capability.
 4. **Preserves per-user state.** No re-interviewing, no clean-sheet intro, no duplicate jobs.
 5. **Sets `STATE_VERSION`** to current and logs the catch-up in today's `memory/YYYY-MM-DD.md`.
-6. **Tells the user what's new** — a short, feature-level "here's what I can now do" message, in the continuity tone from `repurposing-an-existing-agent.md` Part B. Cosmetic/wording updates stay silent; capability-level updates get one short message. This is required by the *"what's new" rule* in `agent-files/AGENTS.md` → *How catch-up works*.
+6. **Tells the user what's new** — a short, feature-level "here's what I can now do" message, in the continuity tone from `repurposing-an-existing-agent.md` Part B. Cosmetic/wording updates stay silent; capability-level updates get one short message. *(This Part-C flow is the operator-triggered push — KRING already chose to ship it, so the agent applies and explains. The **weekly automatic check** instead asks before applying — see "The weekly update check" below.)* Required by the *"what's new" rule* in `agent-files/AGENTS.md` → *How catch-up works*.
 
 ## Verification checklist
 
 After an update session, confirm:
 
 - [ ] Agent's `STATE_VERSION` == framework `STATE_VERSION`.
-- [ ] Four `cron` jobs present and logged in `automations/AUTOMATIONS.md`.
+- [ ] Five `cron` jobs present and logged in `automations/AUTOMATIONS.md`.
 - [ ] Heartbeat protocol active.
 - [ ] Memory, `USER.md`, automations intact — nothing reset or duplicated.
 - [ ] User received a short "what's new" message for capability-level changes.
 - [ ] Today's memory log notes the version caught up to.
 
-## The weekly update check
+## The weekly update check (notify, then ask)
 
-Catch-up runs at every session boot — but an agent only boots when the user opens a session, so a quiet user could go weeks without their agent ever noticing a new version. The **update check** job (`SCHEDULES.md`, Mondays ~09:00) closes that: once a week the agent pulls the framework on its own, and if there's a new version it catches up and sends a short "what's new". It's the proactive half of the "what's new" rule — the operator-sent prompt below is the manual half, for when you want to push an update immediately rather than wait for the weekly check.
+Catch-up runs at every session boot — but an agent only boots when the user opens a session, so a quiet user could go weeks without their agent ever noticing a new version. The **update check** job (`SCHEDULES.md`, Mondays ~09:00) closes that: once a week the agent pulls the framework on its own. If there's a new version, it does **not** silently apply it — it tells the user there's an update and what it adds, in plain language, and **asks whether to apply it now**. It only catches up once the user says yes; if they defer, it leaves their version untouched and re-offers next week.
+
+This is deliberate. A version that auto-rolls out to everyone the moment it ships can put a whole fleet onto an unevaluated change at once — and the user never got to decide whether now is the right time to take that risk. The weekly check makes every update a *choice*: explained first, applied on consent.
+
+The operator-sent prompt in Part B is the manual half — for when KRING has evaluated a version and wants to push it to a specific agent immediately rather than wait for that agent's weekly check.
 
 ## How the "what's new" rule is wired
 
-Catch-up used to be fully silent (`agent-files/AGENTS.md`: *"Don't announce it. Just do it."*) — right for wording/cosmetic updates, wrong for capability-level ones, which is why a user could gain a morning brief and never be told. As of `1.0.0`, `AGENTS.md` → *How catch-up works* keeps silent catch-up as the default but **requires a short user-facing "what's new" message when a version adds or changes a user-visible capability**. The prompt in Part B reinforces it explicitly for operator-triggered updates.
+Catch-up used to be fully silent (`agent-files/AGENTS.md`: *"Don't announce it. Just do it."*) — right for wording/cosmetic updates, wrong for capability-level ones, which is why a user could gain a morning brief and never be told. As of `1.0.0`, `AGENTS.md` → *How catch-up works* keeps silent auto-apply for cosmetic/mechanical changes, but for any change a user can see or use it **explains the update and asks before applying** — at boot and via the weekly check alike. Cosmetic stays invisible; capability-level changes are always a user choice.

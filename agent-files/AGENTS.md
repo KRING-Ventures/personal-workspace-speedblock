@@ -19,7 +19,7 @@ Every session, before doing anything else:
 9. If this is a **main session** (direct conversation with {{USER_FIRST_NAME}}): also read `MEMORY.md`, and verify your scheduled jobs are registered — see **Operations layer → Scheduled jobs**. Self-heal any that are missing.
 10. If this is a **heartbeat poll**: read `HEARTBEAT.md` and act accordingly.
 
-Don't ask permission and don't narrate routine boot — just do it. The one exception: if catch-up (step 2) brought in a capability {{USER_FIRST_NAME}} can see or use, tell them once afterwards (see *How catch-up works* → the "what's new" rule).
+Don't ask permission and don't narrate routine boot — just do it. The one exception: if catch-up (step 2) finds a new version with a change {{USER_FIRST_NAME}} can see or use, don't apply it silently — explain it and ask first (see *How catch-up works* → the "what's new" rule).
 
 **Before sending any user-facing reply:** scan the `## Procedures` section below — for every procedure whose trigger fired in this reply, run its steps and make sure its Proof shows up in your output. If a Proof is missing, revise before sending. This is the anchor that makes the procedures actually fire instead of sit.
 
@@ -40,7 +40,7 @@ After pulling the latest framework, read `agent-files/onboarding/STATE_VERSION`.
 - These are *guidelines, not a script*. Use judgment: take what's actually relevant to your user's state, ignore what isn't, ask if something looks ambiguous. Most updates are framework wording changes that don't require touching your local files at all.
 - Update your own `STATE_VERSION` to the framework's current value once you've applied what's relevant.
 - In today's daily memory log, note the version you caught up to and what (if anything) you changed.
-- **The "what's new" rule.** If the update added or changed something {{USER_FIRST_NAME}} can see or use — a new proactive brief, a new tool, a behaviour they'd notice — tell them in one short message: what you can now do that you couldn't before. A few lines, plain language, no changelog dump. Cosmetic or wording-only updates stay silent. This is the difference between a user gaining a capability and a user *knowing* they gained it. Full flow + the reusable update prompt: `runbooks/updating-an-agent.md`.
+- **The "what's new" rule — explain, then ask.** Cosmetic or wording-only updates: apply silently, no message. But if a new version adds or changes something {{USER_FIRST_NAME}} can see or use — a new proactive brief, a new tool, a behaviour they'd notice — **don't apply it silently**. Tell them in one short, plain-language message what the version adds (a few lines, no changelog dump) and **ask whether to apply it now**. Apply only on their yes; if they defer, stay on the current version and re-offer later. This keeps anyone from being moved onto an unevaluated version without choosing to — at boot and via the weekly *update check* job alike. The one exception is an operator-triggered update (the prompt in `runbooks/updating-an-agent.md` Part B): KRING already chose to ship it, so apply and explain rather than ask. Full flow: `runbooks/updating-an-agent.md`.
 
 ### Migration guidelines, not migration rules
 
@@ -135,7 +135,7 @@ Curated, distilled, maintained. See the file for the standing section layout. Re
 
 ### Scheduled jobs
 
-The proactive capabilities — daily brief, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all five as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and tells {{USER_FIRST_NAME}} when there's a new version — the proactive half of the "what's new" rule.
+The proactive capabilities — daily brief, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all five as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and, when there's a new version, tells {{USER_FIRST_NAME}} what it adds and asks before applying — the proactive half of the "what's new" rule.
 
 - **Self-heal at boot.** On a main session, check that the five jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
 - **Never silently recreate a job the user paused.** Respect "off"; it lives in `MEMORY.md`.
