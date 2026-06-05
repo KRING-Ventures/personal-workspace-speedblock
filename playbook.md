@@ -89,8 +89,14 @@ Your agent's files — its memory, your profile, your notes — can be mirrored 
 
 ---
 
+## Staying up to date
+
+Personal Workspace improves over time — new capabilities, better defaults. You don't have to manage any of it. About once a week your agent checks for a new version; if there is one, it tells you what's new in plain language and **asks before changing anything**. Nothing updates behind your back. Everything you've built up — its memory, your settings, how it knows you — carries over untouched. Say yes when you're ready, or "not now" and it'll ask again later.
+
+---
+
 ## Glossary
 
 - **Personal Workspace** — best practices for how work is done individually and across teams.
 - **OpenClaw** — the AI agent system that powers your personal agent.
-- **Speedblock** — KRING's name for a ready-to-impelment product solving specfic roadblocks.
+- **Speedblock** — KRING's name for a ready-to-implement product solving specific roadblocks.
