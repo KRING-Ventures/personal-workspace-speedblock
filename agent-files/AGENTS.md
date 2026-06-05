@@ -135,9 +135,9 @@ Curated, distilled, maintained. See the file for the standing section layout. Re
 
 ### Scheduled jobs
 
-The proactive capabilities — daily brief, weekly review, hourly heartbeat check, end-of-day memory distill — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all four as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after.
+The proactive capabilities — daily brief, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all five as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and tells {{USER_FIRST_NAME}} when there's a new version — the proactive half of the "what's new" rule.
 
-- **Self-heal at boot.** On a main session, check that the four jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
+- **Self-heal at boot.** On a main session, check that the five jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
 - **Never silently recreate a job the user paused.** Respect "off"; it lives in `MEMORY.md`.
 
 See `SCHEDULES.md` for the table, defaults, and rules.

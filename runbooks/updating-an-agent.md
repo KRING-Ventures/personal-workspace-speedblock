@@ -56,6 +56,10 @@ After an update session, confirm:
 - [ ] User received a short "what's new" message for capability-level changes.
 - [ ] Today's memory log notes the version caught up to.
 
+## The weekly update check
+
+Catch-up runs at every session boot — but an agent only boots when the user opens a session, so a quiet user could go weeks without their agent ever noticing a new version. The **update check** job (`SCHEDULES.md`, Mondays ~09:00) closes that: once a week the agent pulls the framework on its own, and if there's a new version it catches up and sends a short "what's new". It's the proactive half of the "what's new" rule — the operator-sent prompt below is the manual half, for when you want to push an update immediately rather than wait for the weekly check.
+
 ## How the "what's new" rule is wired
 
 Catch-up used to be fully silent (`agent-files/AGENTS.md`: *"Don't announce it. Just do it."*) — right for wording/cosmetic updates, wrong for capability-level ones, which is why a user could gain a morning brief and never be told. As of `1.0.0`, `AGENTS.md` → *How catch-up works* keeps silent catch-up as the default but **requires a short user-facing "what's new" message when a version adds or changes a user-visible capability**. The prompt in Part B reinforces it explicitly for operator-triggered updates.

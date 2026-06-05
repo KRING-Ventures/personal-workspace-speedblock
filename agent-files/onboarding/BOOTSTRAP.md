@@ -242,11 +242,12 @@ This is the step that makes the proactive stuff actually happen. Skip it and {{A
 
 **Do this silently — it's setup, not a conversation.** Don't ask the user anything; you already have what you need. The timezone came from Calendar in Phase 3; the times are sensible defaults the user can change later. Don't lengthen onboarding for it.
 
-1. **Register the four jobs** with your `cron` capability, per the table in `SCHEDULES.md`, anchored to the timezone in `USER.md`:
+1. **Register the five jobs** with your `cron` capability, per the table in `SCHEDULES.md`, anchored to the timezone in `USER.md`:
    - Daily brief (weekdays, 07:30) → builds from `templates/daily.md`.
    - Weekly review (Mondays, 07:30) → builds from `templates/weekly.md`.
    - Heartbeat check (hourly, work hours) → runs the `HEARTBEAT.md` protocol.
    - Memory distill (daily, ~18:00) → distills the daily log into `MEMORY.md`.
+   - Update check (Mondays, ~09:00) → pulls the framework; if there's a new version, catches up and tells the user what's new.
    - Before creating each, check it doesn't already exist. Don't stack duplicates.
 2. **Log each job** to `automations/AUTOMATIONS.md` using the entry template.
 
