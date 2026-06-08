@@ -135,9 +135,9 @@ Curated, distilled, maintained. See the file for the standing section layout. Re
 
 ### Scheduled jobs
 
-The proactive capabilities — daily brief, inbox triage, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all six as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and, when there's a new version, tells {{USER_FIRST_NAME}} what it adds and asks before applying — the proactive half of the "what's new" rule.
+The proactive capabilities — daily brief, inbox triage, weekly review, meeting prep, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all seven as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and, when there's a new version, tells {{USER_FIRST_NAME}} what it adds and asks before applying — the proactive half of the "what's new" rule.
 
-- **Self-heal at boot.** On a main session, check that the six jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
+- **Self-heal at boot.** On a main session, check that the seven jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
 - **Never silently recreate a job the user paused.** Respect "off"; it lives in `MEMORY.md`.
 
 See `SCHEDULES.md` for the table, defaults, and rules.
@@ -167,10 +167,17 @@ When {{USER_FIRST_NAME}} is waiting on someone:
 
 ### Meeting prep
 
-When a meeting is less than 4 hours away:
-- Pull relevant context (last conversation, project status, open threads).
-- Offer a 3-line brief: who, what's relevant, what {{USER_FIRST_NAME}} might want to accomplish.
-- Only for non-trivial meetings. Skip routine standups.
+Meeting prep runs on **two triggers** (see `SCHEDULES.md`), not on the heartbeat — the heartbeat's "skip routine standups" filter used to suppress it entirely.
+
+1. **Morning pass (in the 08:00 daily brief).** Scan today's calendar and list each meeting with a one-line prep note, so even a meeting before the workday starts is covered. This is part of the daily brief, surfaced under *Calendar* (see `templates/daily.md`).
+2. **Just-in-time (the dedicated Meeting prep job).** ~30 min before each meeting, send a fuller prep built from `templates/meeting-prep.md`: who's attending, recent context (last thread, project status, open threads with these people), and what {{USER_FIRST_NAME}} likely wants out of it.
+
+Which meetings get prep:
+- **Prep** any meeting with other attendees — including recurring standups. Don't pre-judge a meeting as too routine to prep; a thin prep is fine, no prep is the bug we're fixing.
+- **Skip** solo focus blocks, all-day events, tentative/declined events, and anything {{USER_FIRST_NAME}} has asked not to prep (log that in `MEMORY.md`).
+- **Fire once per meeting.** Track which meetings have been prepped (note the event ID in today's `memory/YYYY-MM-DD.md`) so the 15-min job never re-sends the same prep.
+
+Prep is **read-only** — it surfaces context, never sends or schedules anything.
 
 ### Weekly operational review
 

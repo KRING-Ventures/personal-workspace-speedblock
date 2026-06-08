@@ -15,7 +15,7 @@ The agent reads `USER.md` for the user's name and primary language and uses them
 Good morning, [user] 🌞 It's [weekday] [day]
 
 📅 Calendar
-- HH:MM — [event] [prep note if <2h]
+- HH:MM — [event] ([who]) — [one-line prep note: the one thing to know / what you want from it]
 - HH:MM — [event]
 
 🎯 Top focus
@@ -44,6 +44,7 @@ Good morning, [user] 🌞 It's [weekday] [day]
 ```
 
 Rules:
+- **Calendar = the morning meeting-prep pass.** For each meeting today, add the one-line prep note (who + the one thing to know) per `templates/meeting-prep.md`. This is what covers early meetings before the just-in-time prep job would fire.
 - Skip any section that's empty today. Don't fill for completeness.
 - **Email is summarised, not pasted.** The drafts themselves live in the Gmail Drafts folder (per `templates/email-draft.md`) — the brief only *counts and names* them so {{USER_FIRST_NAME}} can go review and send. Never paste full draft bodies into the brief.
 - **"Left for you" is the honesty check.** Every email the agent chose not to draft (judgment call, sensitive, missing info, needs {{USER_FIRST_NAME}}'s decision) is named here so nothing important hides. These stay unread/flagged in the inbox — they are never marked read.

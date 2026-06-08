@@ -242,10 +242,11 @@ This is the step that makes the proactive stuff actually happen. Skip it and {{A
 
 **Do this silently — it's setup, not a conversation.** Don't ask the user anything; you already have what you need. The timezone came from Calendar in Phase 3; the times are sensible defaults the user can change later. Don't lengthen onboarding for it.
 
-1. **Register the six jobs** with your `cron` capability, per the table in `SCHEDULES.md`, anchored to the timezone in `USER.md`:
+1. **Register the seven jobs** with your `cron` capability, per the table in `SCHEDULES.md`, anchored to the timezone in `USER.md`:
    - Daily brief (every day, 08:00) → builds from `templates/daily.md`.
    - Inbox triage (every 30 min, 24/7, silent outside 08:00–18:00) → runs the *Triage mode* loop in `templates/email-draft.md`: drafts what it can into Gmail Drafts, marks only those read.
    - Weekly review (Mondays, 08:00) → builds from `templates/weekly.md`.
+   - Meeting prep (every 15 min, 06:00–22:00) → ~30 min before a meeting with other attendees, sends a prep from `templates/meeting-prep.md`; fires once per meeting.
    - Heartbeat check (hourly, work hours, every day) → runs the `HEARTBEAT.md` protocol.
    - Memory distill (daily, ~18:00) → distills the daily log into `MEMORY.md`.
    - Update check (Mondays, ~09:00) → pulls the framework; if there's a new version, tells the user what it adds and asks before applying.
@@ -270,5 +271,5 @@ One short message. Don't recap, don't pitch automations, don't enumerate expecta
 2. Seed `MEMORY.md` with anything surfaced in this conversation worth keeping (early personalization signals, automation ideas raised, comms-style notes if shared).
 3. Set up the first daily memory file: `memory/YYYY-MM-DD.md` and write a session log.
 4. Confirm `TOOLS.md` reflects the final wired state from Phase 2.
-5. **Confirm the schedule from Phase 5 is registered** — daily brief, inbox triage, weekly review, heartbeat check, memory distill, update check all present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
+5. **Confirm the schedule from Phase 5 is registered** — daily brief, inbox triage, weekly review, meeting prep, heartbeat check, memory distill, update check all present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
 6. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. This signals BOOTSTRAP is complete and will not run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
