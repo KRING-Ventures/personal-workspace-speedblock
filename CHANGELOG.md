@@ -32,6 +32,15 @@ The v1.0 meeting-prep capability was defined in `AGENTS.md` but had no real trig
 - `agent-files/onboarding/BOOTSTRAP.md`, `runbooks/updating-an-agent.md` — register seven jobs, not six.
 - `agent-files/EVALS.md` — new golden prompt #9: prep fires for a routine standup and flags an external attendee.
 
+### Added — Calendar management (v1.1 draft)
+
+The Beta sheet promised calendar "orchestration" but v1.0 only read the calendar and accepted/declined invites with permission. Now the agent actively manages time. No per-user state change.
+
+- `agent-files/AGENTS.md` — new *Calendar management* subsection. Permission line: **own time is free to manage; anything touching other people asks first.** No-ask = read calendar, read others' free/busy in the venture workspace, block own focus time, draft proposed times. Ask-first = create/move/cancel meetings with attendees, send booking invites, accept/decline. Documents the two moves the user wants: booking-style invites (offer 2–3 slots, attendees pick) and read-the-room scheduling (check workspace free/busy, propose the least-disruptive slot). Permission table gains four rows.
+- `agent-files/HEARTBEAT.md` — calendar section refocused from per-meeting prep (now its own job) to **calendar load**: conflicts, back-to-back days, no deep-work/lunch — with an offer to block focus time.
+- `playbook.md` — new user-facing *Manages your calendar* capability + four permission-table rows.
+- `agent-files/EVALS.md` — new golden prompt #10: agent blocks own focus time without asking but asks before moving a meeting with attendees.
+
 _Not yet shipped to the fleet: `STATE_VERSION` stays at 1.0.0 until sign-off. Bumping it to 1.1.0 is the final step that makes the update check offer this to deployed agents._
 
 ---
