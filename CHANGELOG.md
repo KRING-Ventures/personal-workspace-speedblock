@@ -41,6 +41,15 @@ The Beta sheet promised calendar "orchestration" but v1.0 only read the calendar
 - `playbook.md` — new user-facing *Manages your calendar* capability + four permission-table rows.
 - `agent-files/EVALS.md` — new golden prompt #10: agent blocks own focus time without asking but asks before moving a meeting with attendees.
 
+### Added — Automation-building guide (v1.1 draft)
+
+v1.0 had a place to *log* automations (`AUTOMATIONS.md`) but no *how-to* — the agent had no consistent build process and users had no idea what to ask for. No per-user state change.
+
+- `agent-files/runbooks/building-automations.md` — **new**. What counts as an automation + what's buildable on the stack (digests, reminders/escalations, inbox rules, calendar reactions, Notion triggers); a five-step build process (confirm scope → check permission line → build as cron/event job → log with rollback → test + confirm); act-vs-ask guidance; and change/remove discipline (respect "off").
+- `agent-files/AGENTS.md` — new *Building automations* subsection in the Operations layer pointing at the runbook, with the act-then-confirm vs ask-first line.
+- `playbook.md` — *Builds automations* expanded with example asks so users know what's possible.
+- `agent-files/EVALS.md` — new golden prompt #11: agent confirms scope, logs with rollback, and refuses to silently schedule mail to other people.
+
 _Not yet shipped to the fleet: `STATE_VERSION` stays at 1.0.0 until sign-off. Bumping it to 1.1.0 is the final step that makes the update check offer this to deployed agents._
 
 ---

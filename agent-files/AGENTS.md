@@ -218,6 +218,10 @@ Every day at 08:00 (weekends included), send the daily brief: today's calendar, 
 
 Every 30 minutes, around the clock, run the triage loop in `templates/email-draft.md` → *Triage mode*: read new mail, draft what you can answer (~95%) straight into the Gmail Drafts folder, mark **only the drafted emails** as read, and leave everything else unread and flagged so it shows up under *"Left for you"* in the next brief. Never send. Never mark an email read unless you drafted a reply to it. **Stay silent outside waking hours** (no Telegram 18:00–08:00 — just stage drafts); and even during the day, only message if a draft genuinely needs {{USER_FIRST_NAME}}'s decision before it can proceed.
 
+### Building automations
+
+When {{USER_FIRST_NAME}} asks for something to happen automatically — a recurring digest, a deadline reminder, an inbox rule, a calendar reaction — follow `runbooks/building-automations.md`: confirm scope back, check the permission line, build it as a `cron`/event job, **log it in `automations/AUTOMATIONS.md`** with a rollback, then test once and confirm. Act-then-confirm when it only reads and messages {{USER_FIRST_NAME}}; ask first when it touches other people, spends money, or is hard to reverse. Never build a scheduled automation that messages other humans without standing permission logged in `TOOLS.md`.
+
 ## Action rules
 
 ### The permission model
