@@ -10,7 +10,15 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
-### Changed — Email triage & brief rhythm (v1.1 draft)
+_Nothing yet._
+
+---
+
+## [1.0.1] — 2026-06-08
+
+Completes and fixes what Beta + 1.0 already promised — reliable meeting prep, real calendar management, the refined email-triage/brief rhythm, and an automation-building guide. Shipped as a patch: no new roadmap scope (1.1 is reserved for the NEXT features — Slack, Obsidian brain, techstack, onboarding flow, repurpose, Cosmica MCP). No per-user state shape change, so no migration; existing agents pick it up via the catch-up loop plus a "what's new" message for the user-visible changes.
+
+### Changed — Email triage & brief rhythm
 
 Reshapes how the agent handles mail and how the daily/weekly briefs split. User-visible capability change → requires a "what's new" message on catch-up (see `agent-files/AGENTS.md`). No per-user state shape change → no migration.
 
@@ -21,7 +29,7 @@ Reshapes how the agent handles mail and how the daily/weekly briefs split. User-
 - `agent-files/AGENTS.md` — added an *Inbox triage* operations subsection; updated *Daily brief* (08:00, all week, draft summary) and the scheduled-jobs list/counts.
 - `playbook.md` — user-facing "what it does" and "working rhythm" updated to the 8:00 all-week brief + all-day Gmail-Drafts triage model.
 
-### Fixed — Meeting prep now actually fires (v1.1 draft)
+### Fixed — Meeting prep now actually fires
 
 The v1.0 meeting-prep capability was defined in `AGENTS.md` but had no real trigger — it rode the hourly heartbeat, whose "skip routine standups" filter swallowed it, and which never ran before 08:00. In practice prep rarely arrived. Now on two dedicated triggers, no per-user state change.
 
@@ -32,7 +40,7 @@ The v1.0 meeting-prep capability was defined in `AGENTS.md` but had no real trig
 - `agent-files/onboarding/BOOTSTRAP.md`, `runbooks/updating-an-agent.md` — register seven jobs, not six.
 - `agent-files/EVALS.md` — new golden prompt #9: prep fires for a routine standup and flags an external attendee.
 
-### Added — Calendar management (v1.1 draft)
+### Added — Calendar management
 
 The Beta sheet promised calendar "orchestration" but v1.0 only read the calendar and accepted/declined invites with permission. Now the agent actively manages time. No per-user state change.
 
@@ -41,7 +49,7 @@ The Beta sheet promised calendar "orchestration" but v1.0 only read the calendar
 - `playbook.md` — new user-facing *Manages your calendar* capability + four permission-table rows.
 - `agent-files/EVALS.md` — new golden prompt #10: agent blocks own focus time without asking but asks before moving a meeting with attendees.
 
-### Added — Automation-building guide (v1.1 draft)
+### Added — Automation-building guide
 
 v1.0 had a place to *log* automations (`AUTOMATIONS.md`) but no *how-to* — the agent had no consistent build process and users had no idea what to ask for. No per-user state change.
 
@@ -50,7 +58,8 @@ v1.0 had a place to *log* automations (`AUTOMATIONS.md`) but no *how-to* — the
 - `playbook.md` — *Builds automations* expanded with example asks so users know what's possible.
 - `agent-files/EVALS.md` — new golden prompt #11: agent confirms scope, logs with rollback, and refuses to silently schedule mail to other people.
 
-_Not yet shipped to the fleet: `STATE_VERSION` stays at 1.0.0 until sign-off. Bumping it to 1.1.0 is the final step that makes the update check offer this to deployed agents._
+### Migrations
+- None — no per-user state shape change. Existing agents pick up the new behaviour, the new seventh cron job (Meeting prep, self-healed at boot like the others), and the new/updated templates on next session boot via the catch-up loop in `agent-files/AGENTS.md`, plus a "what's new" message for the user-visible changes.
 
 ---
 
