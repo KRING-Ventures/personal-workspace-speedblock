@@ -28,7 +28,7 @@ Send this to an existing agent (or let it run at boot). It's the consistent vers
 
 > You're running an older version of the Personal Workspace framework. Pull the latest from `KRING-Ventures/personal-workspace-speedblock`, read your own `STATE_VERSION` against the framework's `agent-files/onboarding/STATE_VERSION`, and run the catch-up loop in `agent-files/AGENTS.md` for every version in between.
 >
-> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **actually register the jobs — don't just confirm you've read about them.** Use your `cron` capability to create or update all five scheduled jobs (daily brief, weekly review, hourly heartbeat check, memory distill, weekly update check) and make sure the `HEARTBEAT.md` protocol is live. Reading the changelog is not the same as the job existing — if a job isn't in your actual `cron` list, create it now.
+> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **actually register the jobs — don't just confirm you've read about them.** Use your `cron` capability to create or update all seven scheduled jobs (daily brief, inbox triage, weekly review, meeting prep, hourly heartbeat check, memory distill, weekly update check) and make sure the `HEARTBEAT.md` protocol is live. Reading the changelog is not the same as the job existing — if a job isn't in your actual `cron` list, create it now.
 >
 > **Preserve everything personal** — memory, `USER.md`, automations, our history. This is an upgrade, not a reset.
 >

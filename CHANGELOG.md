@@ -14,6 +14,55 @@ _Nothing yet._
 
 ---
 
+## [1.0.1] — 2026-06-08
+
+Completes and fixes what Beta + 1.0 already promised — reliable meeting prep, real calendar management, the refined email-triage/brief rhythm, and an automation-building guide. Shipped as a patch: no new roadmap scope (1.1 is reserved for the NEXT features — Slack, Obsidian brain, techstack, onboarding flow, repurpose, Cosmica MCP). No per-user state shape change, so no migration; existing agents pick it up via the catch-up loop plus a "what's new" message for the user-visible changes.
+
+### Changed — Email triage & brief rhythm
+
+Reshapes how the agent handles mail and how the daily/weekly briefs split. User-visible capability change → requires a "what's new" message on catch-up (see `agent-files/AGENTS.md`). No per-user state shape change → no migration.
+
+- `agent-files/SCHEDULES.md` — daily brief moves to **08:00 every day** (was weekdays 07:30); weekly review moves to **Mondays 08:00**. New sixth job **Inbox triage** — every 30 min, 24/7 (silent outside 08:00–18:00, so drafts are ready overnight without pinging). Heartbeat now runs every day and explicitly cedes email to the triage job. Updated the "five → six" counts and added the daily-brief↔triage rhythm note.
+- `agent-files/templates/email-draft.md` — new **Triage mode**: the agent drafts ~95% of mail **straight into the Gmail Drafts folder** and marks **only the drafted emails** as read; everything it doesn't draft stays unread and flagged. Existing per-email Telegram approval is retained as **Interactive mode**. Still never sends without approval.
+- `agent-files/templates/daily.md` — brief now summarises triage output: *Drafts ready to review (N)*, *Left for you (M — not drafted)*, *Still in Drafts from before* (day-after reminder for unsent drafts), plus tasks/reminders. Email is summarised, never pasted.
+- `agent-files/templates/weekly.md` — explicitly **email-free big picture**: added *Open commitments* and *Week ahead — milestones & events*; reinforced that individual emails belong in the daily brief only.
+- `agent-files/AGENTS.md` — added an *Inbox triage* operations subsection; updated *Daily brief* (08:00, all week, draft summary) and the scheduled-jobs list/counts.
+- `playbook.md` — user-facing "what it does" and "working rhythm" updated to the 8:00 all-week brief + all-day Gmail-Drafts triage model.
+
+### Fixed — Meeting prep now actually fires
+
+The v1.0 meeting-prep capability was defined in `AGENTS.md` but had no real trigger — it rode the hourly heartbeat, whose "skip routine standups" filter swallowed it, and which never ran before 08:00. In practice prep rarely arrived. Now on two dedicated triggers, no per-user state change.
+
+- `agent-files/SCHEDULES.md` — new seventh job **Meeting prep**: every 15 min, 06:00–22:00, every day. Fires ~30 min before any meeting with other attendees, once per meeting. Heartbeat row updated to cede meeting prep to it. "Six → seven" counts updated.
+- `agent-files/AGENTS.md` — rewrote *Meeting prep*: two layers (morning pass in the 08:00 brief + just-in-time job), preps **all** meetings with attendees incl. recurring standups, skips solo/all-day/declined, fires once per meeting (event ID logged in the daily memory file), read-only.
+- `agent-files/templates/meeting-prep.md` — **new** template: who / context / your angle / handy links, with a collapsed one-line variant for the daily brief.
+- `agent-files/templates/daily.md` — Calendar section now carries the morning prep note per meeting (who + the one thing to know), covering early meetings.
+- `agent-files/onboarding/BOOTSTRAP.md`, `runbooks/updating-an-agent.md` — register seven jobs, not six.
+- `agent-files/EVALS.md` — new golden prompt #9: prep fires for a routine standup and flags an external attendee.
+
+### Added — Calendar management
+
+The Beta sheet promised calendar "orchestration" but v1.0 only read the calendar and accepted/declined invites with permission. Now the agent actively manages time. No per-user state change.
+
+- `agent-files/AGENTS.md` — new *Calendar management* subsection. Permission line: **own time is free to manage; anything touching other people asks first.** No-ask = read calendar, read others' free/busy in the venture workspace, block own focus time, draft proposed times. Ask-first = create/move/cancel meetings with attendees, send booking invites, accept/decline. Documents the two moves the user wants: booking-style invites (offer 2–3 slots, attendees pick) and read-the-room scheduling (check workspace free/busy, propose the least-disruptive slot). Permission table gains four rows.
+- `agent-files/HEARTBEAT.md` — calendar section refocused from per-meeting prep (now its own job) to **calendar load**: conflicts, back-to-back days, no deep-work/lunch — with an offer to block focus time.
+- `playbook.md` — new user-facing *Manages your calendar* capability + four permission-table rows.
+- `agent-files/EVALS.md` — new golden prompt #10: agent blocks own focus time without asking but asks before moving a meeting with attendees.
+
+### Added — Automation-building guide
+
+v1.0 had a place to *log* automations (`AUTOMATIONS.md`) but no *how-to* — the agent had no consistent build process and users had no idea what to ask for. No per-user state change.
+
+- `agent-files/runbooks/building-automations.md` — **new**. What counts as an automation + what's buildable on the stack (digests, reminders/escalations, inbox rules, calendar reactions, Notion triggers); a five-step build process (confirm scope → check permission line → build as cron/event job → log with rollback → test + confirm); act-vs-ask guidance; and change/remove discipline (respect "off").
+- `agent-files/AGENTS.md` — new *Building automations* subsection in the Operations layer pointing at the runbook, with the act-then-confirm vs ask-first line.
+- `playbook.md` — *Builds automations* expanded with example asks so users know what's possible.
+- `agent-files/EVALS.md` — new golden prompt #11: agent confirms scope, logs with rollback, and refuses to silently schedule mail to other people.
+
+### Migrations
+- None — no per-user state shape change. Existing agents pick up the new behaviour, the new seventh cron job (Meeting prep, self-healed at boot like the others), and the new/updated templates on next session boot via the catch-up loop in `agent-files/AGENTS.md`, plus a "what's new" message for the user-visible changes.
+
+---
+
 ## [1.0.0] — 2026-06-05
 
 First stable release — the framework graduates from beta. Highlights: Microsoft 365 → Google Workspace migration, the one-way Syncthing local backup mirror, the procedures/evals layer, a standard agent-update path, and the human/agent rule split tidy-up (the user-facing "4 AI Commandments" one-pager finally gets the filename it's been called by everywhere).

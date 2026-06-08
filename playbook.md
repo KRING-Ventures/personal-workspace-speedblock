@@ -33,12 +33,13 @@ You get your own personal AI agent for everyday work.
 ### What it does for you
 
 - **Remembers.** Your role, projects, who you work with, how you like things done — across conversations.
-- **Briefs you.** Mornings: calendar, priorities, deadlines. Mondays: open commitments, what's outstanding.
-- **Drafts for you.** Emails, messages, docs. Never sent without your OK.
-- **Preps meetings.** Attendees, context, what you want from the meeting.
+- **Briefs you.** Every morning at 8: calendar, priorities, deadlines, plus what it drafted overnight and what it left for you. Mondays: the big-picture week — open commitments, what closed, what's ahead.
+- **Triages your inbox.** All day, every 30 min: it drafts replies to almost everything (~95%) straight into your Gmail Drafts and marks only those as read — you open Drafts, review, and send. Anything it didn't touch stays unread and is called out in the brief. Never sent without your OK.
+- **Preps meetings.** ~30 min before each one: who's in it, the context, what you want out of it — plus a heads-up on every meeting in the morning brief.
+- **Manages your calendar.** Finds times, blocks your focus time, and schedules for you — including offering people a few slots to pick from and checking colleagues' availability across the venture workspace. It books your own time freely; anything involving other people, it asks first.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
 - **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
-- **Builds automations.** On request.
+- **Builds automations.** On request — recurring digests, deadline reminders, inbox rules, calendar reactions. Just describe what you want to happen automatically; it confirms the details, builds it, and shows you how to switch it off. Example asks: *"every Friday, summarise what I closed this week"* · *"remind me 3 days before any deadline"* · *"label anything from my accountant and file the receipts."*
 
 ### What it asks you before doing
 
@@ -47,7 +48,11 @@ Drafts and research are free. Anything that leaves your account or changes thing
 | The agent... | Asks first? |
 |---|---|
 | Reads, searches, drafts, or researches | No |
+| Blocks your own focus time / a solo event | No |
+| Checks colleagues' free/busy in the venture workspace | No |
 | Sends an email or replies to a message | **Yes** |
+| Schedules, moves, or cancels a meeting with other people | **Yes** |
+| Sends a booking invite to others | **Yes** |
 | Accepts or declines a calendar invite | **Yes** |
 | Writes to someone else's Notion page | **Yes** |
 | Pushes to a shared GitHub branch / opens a PR | **Yes** |
@@ -72,8 +77,8 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Working rhythm
 
-- **Each day.** Morning brief from your agent → use it through the day for drafting, research, and recall → it writes a short memory log at end of day.
-- **Each week.** Monday morning: a weekly review — open commitments, what you're waiting on, calendar overview.
+- **Each day (incl. weekends).** 8:00 brief → through the day it triages your inbox every 30 min so drafts are always waiting in Gmail → you review and send → it writes a short memory log at end of day. Drafts you leave unsent get re-surfaced in the next day's brief.
+- **Each week.** Monday 8:00: a weekly review — the big picture, no email. Open commitments, what closed last week, the week's milestones, what you're waiting on.
 
 ---
 
