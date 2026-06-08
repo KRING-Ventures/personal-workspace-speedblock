@@ -21,6 +21,17 @@ Reshapes how the agent handles mail and how the daily/weekly briefs split. User-
 - `agent-files/AGENTS.md` — added an *Inbox triage* operations subsection; updated *Daily brief* (08:00, all week, draft summary) and the scheduled-jobs list/counts.
 - `playbook.md` — user-facing "what it does" and "working rhythm" updated to the 8:00 all-week brief + all-day Gmail-Drafts triage model.
 
+### Fixed — Meeting prep now actually fires (v1.1 draft)
+
+The v1.0 meeting-prep capability was defined in `AGENTS.md` but had no real trigger — it rode the hourly heartbeat, whose "skip routine standups" filter swallowed it, and which never ran before 08:00. In practice prep rarely arrived. Now on two dedicated triggers, no per-user state change.
+
+- `agent-files/SCHEDULES.md` — new seventh job **Meeting prep**: every 15 min, 06:00–22:00, every day. Fires ~30 min before any meeting with other attendees, once per meeting. Heartbeat row updated to cede meeting prep to it. "Six → seven" counts updated.
+- `agent-files/AGENTS.md` — rewrote *Meeting prep*: two layers (morning pass in the 08:00 brief + just-in-time job), preps **all** meetings with attendees incl. recurring standups, skips solo/all-day/declined, fires once per meeting (event ID logged in the daily memory file), read-only.
+- `agent-files/templates/meeting-prep.md` — **new** template: who / context / your angle / handy links, with a collapsed one-line variant for the daily brief.
+- `agent-files/templates/daily.md` — Calendar section now carries the morning prep note per meeting (who + the one thing to know), covering early meetings.
+- `agent-files/onboarding/BOOTSTRAP.md`, `runbooks/updating-an-agent.md` — register seven jobs, not six.
+- `agent-files/EVALS.md` — new golden prompt #9: prep fires for a routine standup and flags an external attendee.
+
 _Not yet shipped to the fleet: `STATE_VERSION` stays at 1.0.0 until sign-off. Bumping it to 1.1.0 is the final step that makes the update check offer this to deployed agents._
 
 ---
