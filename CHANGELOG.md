@@ -10,7 +10,18 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
-_Nothing yet._
+### Changed — Email triage & brief rhythm (v1.1 draft)
+
+Reshapes how the agent handles mail and how the daily/weekly briefs split. User-visible capability change → requires a "what's new" message on catch-up (see `agent-files/AGENTS.md`). No per-user state shape change → no migration.
+
+- `agent-files/SCHEDULES.md` — daily brief moves to **08:00 every day** (was weekdays 07:30); weekly review moves to **Mondays 08:00**. New sixth job **Inbox triage** — every 30 min, 24/7 (silent outside 08:00–18:00, so drafts are ready overnight without pinging). Heartbeat now runs every day and explicitly cedes email to the triage job. Updated the "five → six" counts and added the daily-brief↔triage rhythm note.
+- `agent-files/templates/email-draft.md` — new **Triage mode**: the agent drafts ~95% of mail **straight into the Gmail Drafts folder** and marks **only the drafted emails** as read; everything it doesn't draft stays unread and flagged. Existing per-email Telegram approval is retained as **Interactive mode**. Still never sends without approval.
+- `agent-files/templates/daily.md` — brief now summarises triage output: *Drafts ready to review (N)*, *Left for you (M — not drafted)*, *Still in Drafts from before* (day-after reminder for unsent drafts), plus tasks/reminders. Email is summarised, never pasted.
+- `agent-files/templates/weekly.md` — explicitly **email-free big picture**: added *Open commitments* and *Week ahead — milestones & events*; reinforced that individual emails belong in the daily brief only.
+- `agent-files/AGENTS.md` — added an *Inbox triage* operations subsection; updated *Daily brief* (08:00, all week, draft summary) and the scheduled-jobs list/counts.
+- `playbook.md` — user-facing "what it does" and "working rhythm" updated to the 8:00 all-week brief + all-day Gmail-Drafts triage model.
+
+_Not yet shipped to the fleet: `STATE_VERSION` stays at 1.0.0 until sign-off. Bumping it to 1.1.0 is the final step that makes the update check offer this to deployed agents._
 
 ---
 

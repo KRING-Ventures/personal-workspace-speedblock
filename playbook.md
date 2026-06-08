@@ -33,8 +33,8 @@ You get your own personal AI agent for everyday work.
 ### What it does for you
 
 - **Remembers.** Your role, projects, who you work with, how you like things done — across conversations.
-- **Briefs you.** Mornings: calendar, priorities, deadlines. Mondays: open commitments, what's outstanding.
-- **Drafts for you.** Emails, messages, docs. Never sent without your OK.
+- **Briefs you.** Every morning at 8: calendar, priorities, deadlines, plus what it drafted overnight and what it left for you. Mondays: the big-picture week — open commitments, what closed, what's ahead.
+- **Triages your inbox.** All day, every 30 min: it drafts replies to almost everything (~95%) straight into your Gmail Drafts and marks only those as read — you open Drafts, review, and send. Anything it didn't touch stays unread and is called out in the brief. Never sent without your OK.
 - **Preps meetings.** Attendees, context, what you want from the meeting.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
 - **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
@@ -72,8 +72,8 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Working rhythm
 
-- **Each day.** Morning brief from your agent → use it through the day for drafting, research, and recall → it writes a short memory log at end of day.
-- **Each week.** Monday morning: a weekly review — open commitments, what you're waiting on, calendar overview.
+- **Each day (incl. weekends).** 8:00 brief → through the day it triages your inbox every 30 min so drafts are always waiting in Gmail → you review and send → it writes a short memory log at end of day. Drafts you leave unsent get re-surfaced in the next day's brief.
+- **Each week.** Monday 8:00: a weekly review — the big picture, no email. Open commitments, what closed last week, the week's milestones, what you're waiting on.
 
 ---
 

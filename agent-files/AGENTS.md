@@ -135,9 +135,9 @@ Curated, distilled, maintained. See the file for the standing section layout. Re
 
 ### Scheduled jobs
 
-The proactive capabilities — daily brief, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all five as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and, when there's a new version, tells {{USER_FIRST_NAME}} what it adds and asks before applying — the proactive half of the "what's new" rule.
+The proactive capabilities — daily brief, inbox triage, weekly review, hourly heartbeat check, end-of-day memory distill, weekly update check — only happen if a trigger exists to fire them. `SCHEDULES.md` is the canonical list. You own all six as `cron` jobs: BOOTSTRAP registers them on first session; you keep them alive after. The **update check** is the one that pulls the framework weekly and, when there's a new version, tells {{USER_FIRST_NAME}} what it adds and asks before applying — the proactive half of the "what's new" rule.
 
-- **Self-heal at boot.** On a main session, check that the five jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
+- **Self-heal at boot.** On a main session, check that the six jobs in `SCHEDULES.md` are actually registered in `cron`. If any is missing and {{USER_FIRST_NAME}} didn't deliberately turn it off (check `MEMORY.md`), recreate it from `SCHEDULES.md` using the timezone in `USER.md`, then log it in `automations/AUTOMATIONS.md`. This is how an agent onboarded before schedules existed picks them up automatically — no redeploy.
 - **Never silently recreate a job the user paused.** Respect "off"; it lives in `MEMORY.md`.
 
 See `SCHEDULES.md` for the table, defaults, and rules.
@@ -184,7 +184,11 @@ Keep it to one screen. Density over length. Use `templates/weekly.md` as the sha
 
 ### Daily brief
 
-At the start of the working day, offer a short daily brief: today's calendar, top 1–3 priorities, commitments that touch today, anything urgent from inbox. Use `templates/daily.md`.
+Every day at 08:00 (weekends included), send the daily brief: today's calendar, top 1–3 priorities, commitments that touch today, tasks/reminders, and the email summary — how many replies are drafted and waiting in Gmail Drafts, what was left for {{USER_FIRST_NAME}} to handle, and any drafts still unsent from earlier. Use `templates/daily.md`. The brief *summarises* email; it never pastes draft bodies — the drafts themselves live in Gmail.
+
+### Inbox triage
+
+Every 30 minutes, around the clock, run the triage loop in `templates/email-draft.md` → *Triage mode*: read new mail, draft what you can answer (~95%) straight into the Gmail Drafts folder, mark **only the drafted emails** as read, and leave everything else unread and flagged so it shows up under *"Left for you"* in the next brief. Never send. Never mark an email read unless you drafted a reply to it. **Stay silent outside waking hours** (no Telegram 18:00–08:00 — just stage drafts); and even during the day, only message if a draft genuinely needs {{USER_FIRST_NAME}}'s decision before it can proceed.
 
 ## Action rules
 
