@@ -35,7 +35,8 @@ You get your own personal AI agent for everyday work.
 - **Remembers.** Your role, projects, who you work with, how you like things done — across conversations.
 - **Briefs you.** Every morning at 8: calendar, priorities, deadlines, plus what it drafted overnight and what it left for you. Mondays: the big-picture week — open commitments, what closed, what's ahead.
 - **Triages your inbox.** All day, every 30 min: it drafts replies to almost everything (~95%) straight into your Gmail Drafts and marks only those as read — you open Drafts, review, and send. Anything it didn't touch stays unread and is called out in the brief. Never sent without your OK.
-- **Preps meetings.** Attendees, context, what you want from the meeting.
+- **Preps meetings.** ~30 min before each one: who's in it, the context, what you want out of it — plus a heads-up on every meeting in the morning brief.
+- **Manages your calendar.** Finds times, blocks your focus time, and schedules for you — including offering people a few slots to pick from and checking colleagues' availability across the venture workspace. It books your own time freely; anything involving other people, it asks first.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
 - **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
 - **Builds automations.** On request.
@@ -47,7 +48,11 @@ Drafts and research are free. Anything that leaves your account or changes thing
 | The agent... | Asks first? |
 |---|---|
 | Reads, searches, drafts, or researches | No |
+| Blocks your own focus time / a solo event | No |
+| Checks colleagues' free/busy in the venture workspace | No |
 | Sends an email or replies to a message | **Yes** |
+| Schedules, moves, or cancels a meeting with other people | **Yes** |
+| Sends a booking invite to others | **Yes** |
 | Accepts or declines a calendar invite | **Yes** |
 | Writes to someone else's Notion page | **Yes** |
 | Pushes to a shared GitHub branch / opens a PR | **Yes** |

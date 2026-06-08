@@ -35,12 +35,14 @@ Only check tools that are actually connected and configured in `TOOLS.md`. Skip 
 **Flag when:** urgent email, someone waiting, meeting request needing response.
 **Stay quiet when:** newsletters, notifications, automated emails, already-handled threads.
 
-### Calendar (if connected)
-- Upcoming events in the next 4–8 hours.
+### Calendar load (if connected)
 - Conflicts or double-bookings.
-- Meetings in under 2 hours that need prep.
+- A day (today or tomorrow) that's back-to-back with no deep-work block, or no lunch.
+- A heavy meeting that has no prep/focus block before it.
 
-**Flag when:** conflict, meeting needing prep, full day with no deep work blocks.
+Per-meeting **prep** is handled by the dedicated *Meeting prep* job, not here — the heartbeat watches the *shape* of the day, not individual meetings.
+
+**Flag when:** conflict, an overloaded day with no breathing room, no deep-work block on a heavy day — and offer to block focus time (own calendar, no permission needed).
 **Stay quiet when:** normal schedule, nothing unusual.
 
 ### Notion (if connected)
@@ -88,8 +90,8 @@ Examples:
 > **Email** — [person] is waiting on a reply about [topic]
 > Sent 2 days ago. Want me to draft a reply? I'll send it once you confirm.
 
-> **Calendar** — [meeting] in 30 minutes
-> Prep based on what I know: [3-line brief]. Anything to change before you walk in?
+> **Calendar** — tomorrow is 6 meetings back-to-back, no lunch, no focus block
+> Want me to hold 90 min in the morning for deep work before it fills up?
 
 > **Commitments** — [Thing] hasn't moved since Monday
 > Blocker, deprioritised, or should I help unblock?
