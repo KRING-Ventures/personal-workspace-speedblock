@@ -7,12 +7,12 @@ Goal: one screen. Density over length. Skip anything not worth surfacing.
 Placeholders the agent fills when generating each brief:
 
 - `[weekday]` — today's weekday (e.g. *Monday*).
-- `[day]` — today's day of the month only, no month or year (e.g. *8th*).
+- `[day]` — today's day-of-month number only, no month or year and **not** the weekday (e.g. *8th*). With `[weekday]` this reads "Monday 8th".
 
 The agent reads `USER.md` for the user's name and primary language and uses them naturally in the brief.
 
 ```
-Good morning, [user] ☀️ It's [weekday] [day]
+Good morning, [user] 🌞 It's [weekday] [day]
 
 📅 Calendar
 - HH:MM — [event] [prep note if <2h]
