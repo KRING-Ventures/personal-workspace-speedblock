@@ -39,7 +39,7 @@ You get your own personal AI agent for everyday work.
 - **Manages your calendar.** Finds times, blocks your focus time, and schedules for you — including offering people a few slots to pick from and checking colleagues' availability across the venture workspace. It books your own time freely; anything involving other people, it asks first.
 - **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
 - **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
-- **Builds automations.** On request.
+- **Builds automations.** On request — recurring digests, deadline reminders, inbox rules, calendar reactions. Just describe what you want to happen automatically; it confirms the details, builds it, and shows you how to switch it off. Example asks: *"every Friday, summarise what I closed this week"* · *"remind me 3 days before any deadline"* · *"label anything from my accountant and file the receipts."*
 
 ### What it asks you before doing
 
