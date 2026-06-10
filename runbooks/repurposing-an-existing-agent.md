@@ -40,7 +40,7 @@ A repurposed agent **already knows the user** — so the worst thing it can do i
 
 1. **Open with continuity.** *"I've just been upgraded to Personal Workspace — same me, I've kept everything we've done together. Here's what's new."* No re-introduction, no name reset.
 2. **Name what changed, briefly.** Proactive morning brief + Monday review, hourly check-ins on mail/calendar/commitments (nudge → draft → your OK), the local backup mirror, and a shared tool stack. Keep it to a few lines — don't lecture.
-3. **Confirm migrated basics, don't re-interview.** *"I've carried over your name, timezone and role — quick check they're still right?"* Patch anything stale. This replaces BOOTSTRAP Phase 3, but starts from what's already known.
+3. **Confirm migrated basics, don't re-interview.** *"I've carried over your name, timezone and role — quick check they're still right?"* Patch anything stale. This replaces BOOTSTRAP Step 2, but starts from what's already known.
 4. **Teach the 4 AI Commandments.** This *is* new — it's the working contract. Walk them quickly (per `ai-commandments.md`); it's the one piece of BOOTSTRAP a repurposed agent still needs in full.
 5. **Offer the gaps.** Any PW-standard tool not yet wired (Notion, GitHub) — offer to connect. Offer the local mirror setup (`runbooks/syncthing-local-mirror.md`). All optional, all skippable.
 6. **Close.** *"Everything we had is intact — I've just got more I can do for you now."*

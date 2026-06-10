@@ -69,7 +69,7 @@ At deployment:
 
 1. The OpenClaw runtime reads the shared framework from `personal-workspace-speedblock/agent-files/`.
 2. The runtime seeds its local working directory with the per-user blueprints (`IDENTITY.md`, `USER.md`, `TOOLS.md`, `automations/AUTOMATIONS.md`, empty `MEMORY.md`, empty `memory/`, `STATE_VERSION`). Blueprints carry `{{FROM_BOOTSTRAP}}` markers — the assistant fills those during the first conversation.
-3. **First live session:** the assistant runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. The assistant fills its own `USER.md`, confirms its `IDENTITY.md` (agent name / vibe / emoji), and wires `TOOLS.md`. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
+3. **First live session:** the assistant runs `onboarding/BOOTSTRAP.md` as a dialogue with its user. Tools were already wired by KRING during activation — the assistant confirms `TOOLS.md` reflects that, fills its own `USER.md` (basics + operating preferences), confirms its `IDENTITY.md` (agent name / vibe / emoji), and registers its proactive schedule. Seeds `MEMORY.md` and today's `memory/YYYY-MM-DD.md`. Sets its own `STATE_VERSION` to the framework's current value.
 4. **Subsequent sessions:** the assistant runs the onboarding catch-up loop in `AGENTS.md` — reading the framework, comparing `STATE_VERSION` values, and reading any `MIGRATIONS/` notes for versions it's behind. BOOTSTRAP is the zeroth migration; the top-level `CHANGELOG.md` + `onboarding/MIGRATIONS/` cover every version after.
 
 **Placeholders.** Two kinds, both written as double curly braces:

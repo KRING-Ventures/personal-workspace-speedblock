@@ -29,7 +29,7 @@ The **update check** is the proactive trigger behind the "what's new" rule in `A
 ## How they get set up
 
 - **The agent owns all of them.** During BOOTSTRAP, {{AGENT_NAME}} creates these seven jobs with its `cron` capability. No deploy-time runtime setting, no manual step. The heartbeat is just an hourly cron that runs the `HEARTBEAT.md` protocol — same mechanism as the rest.
-- **Timezone comes from `USER.md`** (pulled from Calendar in BOOTSTRAP Phase 3). The times above are sensible defaults — don't interview the user about them at onboarding. If {{USER_FIRST_NAME}} later says "move my brief to 8" or "skip weekends," adjust the job then.
+- **Timezone comes from `USER.md`** (pulled from Calendar in BOOTSTRAP Step 2). The times above are sensible defaults — don't interview the user about them at onboarding. If {{USER_FIRST_NAME}} later says "move my brief to 8" or "skip weekends," adjust the job then.
 - **The agent can list, change, or remove them on request** — "move my brief to 8am", "pause the Monday review", "stop the hourly checks".
 
 ## Rules

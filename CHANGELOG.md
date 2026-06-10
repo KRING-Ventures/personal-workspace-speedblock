@@ -10,7 +10,16 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
-_Nothing yet._
+### Changed — Activation / onboarding split (WIP, toward 1.1)
+
+Splits the single setup doc into two flows that were previously mashed together: **activation** (how a venture gets deployed) and **user onboarding** (the agent-led first conversation). Driven by the v1.1 Activation Flow + Onboarding Flow designs. WIP on `feat/activation-onboarding-split` — refining before dry-run; `STATE_VERSION` not bumped yet. Human files and agent files are kept in step.
+
+- `onboarding.md` — split. Now **only** the agent-led user onboarding: a 6-step flow (Welcome & intro → Gets to know you → Maps your needs → optional First real task → optional First automation → Live), ~16 min core / ~30 min with the optional steps. Always-on in-thread support footer.
+- `activation.md` — **new.** The venture-and-KRING deployment process across three stages (Provisioning ~1 day → Setup ~3–4 days → Onboarding handover). Absorbs the old venture-side phases plus the full tool-wiring detail (Google Workspace, Notion, GitHub, M365 legacy, Syncthing) — wiring now happens during activation, performed by KRING, not by the user during onboarding.
+- `agent-files/onboarding/BOOTSTRAP.md` — restructured to match the 6-step user flow. Phase-2 live tool-wiring removed (tools are wired in activation); Step 2 now confirms the already-wired state and pulls basics; schedule registration folds into Step 3 (Maps your needs); the 4 AI Commandments become a light reference in Step 1 rather than a dedicated teaching phase; optional first-task and first-automation demos added.
+- `README.md`, `playbook.md`, `agent-files/README.md`, `runbooks/migrations/ms-to-google.md` — pointers and "wired during your first conversation" wording updated to the activation/onboarding split.
+
+**Open for refinement:** channel (designs show Slack; repo is still Telegram throughout — a repo-wide surface swap is deferred to its own pass); depth of the 4 AI Commandments in onboarding; the exact Venture/KRING/User labor split (flagged "needs Corey's eyes" in the design).
 
 ---
 

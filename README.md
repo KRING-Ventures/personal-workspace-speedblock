@@ -21,7 +21,8 @@ Both layers live in this repo.
 |---|---|
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your agent does, working rhythm. |
 | [`ai-commandments.md`](./ai-commandments.md) | The 4 AI Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
-| [`onboarding.md`](./onboarding.md) | Setup flow — three steps (venture activates → KRING deploys → venture finishes onboarding). |
+| [`activation.md`](./activation.md) | Activation flow — how a venture gets deployed (provisioning → KRING sets up and wires the agents → access handover). ~5 business days. |
+| [`onboarding.md`](./onboarding.md) | User onboarding flow — the agent-led first conversation each user goes through once they get access. ~16 min. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
 
 ## Versioning

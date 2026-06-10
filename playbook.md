@@ -16,9 +16,9 @@ Every Personal Workspace user runs on these as the basics.
 
 | For | We use | Your agent reaches it? |
 |---|---|---|
-| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired during your first conversation |
+| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired by KRING during activation |
 | Your personal AI agent | **Telegram** — you chat with your agent there | ✅ Yes — primary surface |
-| Meeting transcriptions & notes | **Notion** — your venture's Notion workspace | ✅ Yes — wired during your first conversation |
+| Meeting transcriptions & notes | **Notion** — your venture's Notion workspace | ✅ Yes — wired by KRING during activation |
 | Code storage & access | **GitHub** | ✅ Yes — your agent can read and work in your repos with your permission |
 | Team chat | **Slack** | ❌ Not yet — planned for a future version |
 | Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — you use this directly |
