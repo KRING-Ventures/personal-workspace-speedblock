@@ -13,7 +13,7 @@ KRING does the rest: we build each agent, connect it to your tools, and hand eac
 You set these up and own them — nothing runs through KRING; we just connect your agents to them. Get them in place before we wire the agents:
 - **Google Workspace** (Business Starter) — email, calendar, files. One per person, at workspace.google.com. ~30–45 min.
 - **Slack** (Pro recommended) — where each person talks to their agent. One per person, at slack.com. ~10 min.
-- **ChatGPT** (OpenAI) — the AI engine the agents run on, via the Codex CLI over a ChatGPT subscription. One per person, at chatgpt.com. ~10 min.
+- **ChatGPT** (OpenAI) — the AI engine the agents run on, via the Codex CLI over a ChatGPT **Team** account. One seat per person, at chatgpt.com. ~10 min.
 
 → Step-by-step for each, with plans and links: `tool-setup.md`.
 

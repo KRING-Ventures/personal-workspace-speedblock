@@ -10,7 +10,7 @@ The step-by-step for the three apps Personal Workspace needs. This is for whoeve
 |---|---|---|---|---|
 | **Google Workspace** | Business Starter (or higher) | workspace.google.com | One per person | ~30–45 min, + a few hrs for domain check |
 | **Slack** | Pro recommended (Free works to start) | slack.com | One per person | ~10 min |
-| **ChatGPT (OpenAI)** | ChatGPT subscription (Plus or Team) — runs via Codex CLI | chatgpt.com | One per person | ~10 min |
+| **ChatGPT (OpenAI)** | ChatGPT **Team** plan — runs via Codex CLI | chatgpt.com | Team account for the venture, one seat per person | ~10 min |
 
 ---
 
@@ -45,11 +45,11 @@ Where each person talks to their agent, and where the team communicates.
 
 The AI engine your agents run on. The agent connects through the **Codex CLI**, signed in to a **ChatGPT subscription** — it runs over the subscription, not a pay-per-use API account. You own the account; billing stays with you.
 
-1. Go to **chatgpt.com** and take out a ChatGPT subscription — **Plus** or **Team** (confirm which with KRING based on how many people you're setting up).
-2. One subscription per person — each agent signs in as its own user.
-3. Share the login with KRING so we can connect the agent via the Codex CLI.
+1. Go to **chatgpt.com** and set up a **ChatGPT Team** account for the venture.
+2. Add one seat per person — each agent signs in as its own user.
+3. Share the logins with KRING so we can connect each agent via the Codex CLI.
 
-*About 10 minutes per person.*
+*About 10 minutes.*
 
 ---
 
