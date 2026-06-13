@@ -10,9 +10,12 @@ Setting up your venture takes about **5 business days**. Most of the work is our
 KRING does the rest: we build each agent, connect it to your tools, and hand each person access. You never touch the technical setup.
 
 ## The three apps you need
-- **Google Workspace** — email, calendar, files. One account per person (not a personal `@gmail.com`).
-- **Slack** — where each person talks to their agent.
-- **ChatGPT** — the AI engine the agents run on.
+One account per person, set up before we wire the agents:
+- **Google Workspace** (Business Starter) — email, calendar, files. At workspace.google.com. ~30–45 min.
+- **Slack** (Pro recommended) — where each person talks to their agent. At slack.com. ~10 min.
+- **ChatGPT** — the AI engine the agents run on. We'll confirm the exact account with you.
+
+→ Step-by-step for each, with plans and links: `tool-setup.md`.
 
 A few extra apps (like Notion and GitHub) are optional — people connect those themselves later. See `playbook.md`.
 

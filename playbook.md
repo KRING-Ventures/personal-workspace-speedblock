@@ -43,14 +43,18 @@ You get your own personal AI agent for everyday work.
 
 ### What it does for you
 
-- **Remembers.** Your role, projects, who you work with, how you like things done — across conversations.
-- **Briefs you.** Every morning at 8: calendar, priorities, deadlines, plus what it drafted overnight and what it left for you. Mondays: the big-picture week — open commitments, what closed, what's ahead.
-- **Triages your inbox.** All day, every 30 min: it drafts replies to almost everything (~95%) straight into your Gmail Drafts and marks only those as read — you open Drafts, review, and send. Anything it didn't touch stays unread and is called out in the brief. Never sent without your OK.
-- **Preps meetings.** ~30 min before each one: who's in it, the context, what you want out of it — plus a heads-up on every meeting in the morning brief.
-- **Manages your calendar.** Finds times, blocks your focus time, and schedules for you — including offering people a few slots to pick from and checking colleagues' availability across the venture workspace. It books your own time freely; anything involving other people, it asks first.
-- **Tracks commitments.** Notices when you've said you'll do something or you're waiting on a reply.
-- **Uses your tools.** Gmail, Calendar, Drive, Notion, etc.
-- **Builds automations.** On request — recurring digests, deadline reminders, inbox rules, calendar reactions. Just describe what you want to happen automatically; it confirms the details, builds it, and shows you how to switch it off. Example asks: *"every Friday, summarise what I closed this week"* · *"remind me 3 days before any deadline"* · *"label anything from my accountant and file the receipts."*
+| What it does | How it works |
+|---|---|
+| **Remembers you** | Your role, projects, who you work with, how you like things done — across every conversation. |
+| **Briefs you** | Every morning at 8: calendar, priorities, deadlines, and what it drafted overnight. Mondays: the week ahead. |
+| **Triages your inbox** | All day, it drafts ~95% of replies straight into your Gmail Drafts — you review and send. Never sent without your OK. |
+| **Preps your meetings** | ~30 min before each: who's in it, the context, and what you want out of it. |
+| **Manages your calendar** | Finds times, blocks focus time, schedules for you. Your own time freely; anything with other people, it asks first. |
+| **Tracks commitments** | Notices what you've promised and what you're waiting on. |
+| **Uses your tools** | Gmail, Calendar, Drive, Notion, and more. |
+| **Builds automations** | On request — describe what should happen automatically and it builds it, then shows you how to switch it off. |
+
+*Automation examples: "every Friday, summarise what I closed this week" · "remind me 3 days before any deadline" · "label anything from my accountant and file the receipts."*
 
 ### What it asks you before doing
 

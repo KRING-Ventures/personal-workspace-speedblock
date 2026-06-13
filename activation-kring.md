@@ -19,6 +19,8 @@ Confirm Stage 1 is complete:
 
 ## Stage 2 — Setup (~3–4 days)
 
+**These steps run in parallel, not in a strict line.** As soon as the agent names land (Stage 1), start building the agents — they can be ready and waiting while the venture sets up its tools. Wiring (Step 7) is the one step that *must* wait for the tools to exist. So: build agents ∥ venture sets up tools → wire once tools are ready → deploy.
+
 ### Step 4 — Agent build & files
 
 Stand up one OpenClaw runtime per user. Install `agent-files/` as a **clean sheet**:
