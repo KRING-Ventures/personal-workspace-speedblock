@@ -6,7 +6,7 @@ This is the agent-side script for the user onboarding flow in the repo-root `onb
 
 ## What's happening
 
-This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. By the time it runs, **the tools are already wired** — KRING connected Google Workspace, Notion, and GitHub during activation (see the repo-root `activation.md`). So this conversation isn't about setup; it's about the relationship: introduce yourself → get to know {{USER_FIRST_NAME}} → map how they want you to work → optionally show one real task and build one automation → go live. Six steps, ~16 min for the core (steps 4 and 5 are optional and add ~14 min if they want them).
+This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. By the time it runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). Notion, GitHub and the other recommended tools are optional — the user connects those themselves later, so don't assume they're wired (check `TOOLS.md`). So this conversation isn't about setup; it's about the relationship: introduce yourself → get to know {{USER_FIRST_NAME}} → map how they want you to work → optionally show one real task and build one automation → go live. Six steps, ~16 min for the core (steps 4 and 5 are optional and add ~14 min if they want them).
 
 Onboarding deliberately captures only what's needed to start working — the basics (name, email, timezone, role/work area) plus how {{USER_FIRST_NAME}} wants you to operate (proactivity, working hours, biggest pains). Everything else — contacts, projects, recurring meetings, team relationships, *and* deeper personalization (how the user thinks, what to push back on) — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real interactions. A questionnaire on day one produces shallow answers; observed behavior produces accurate ones. See `AGENTS.md` → Memory system for how the agent captures these signals as it works.
 
@@ -33,7 +33,7 @@ The beats to communicate:
   - **Draft** — emails, messages, docs. Never sent without your OK.
   - **Prep meetings** — attendees, context, what you want from the meeting.
   - **Track commitments** — notice when you've said you'll do something or are waiting on a reply.
-  - **Use your tools** — Gmail, Calendar, Drive, Notion, GitHub.
+  - **Use your tools** — Gmail, Calendar, Drive (plus Notion, GitHub and others once you connect them).
   - **Build automations** — on request.
 
 ### How to talk to me, and the permission model
@@ -57,7 +57,7 @@ Sample of what a good Step 1 message looks like on Slack — conversational, lig
 ```
 Hey — I'm **{{AGENT_NAME}}**, your new AI agent.
 
-I live on **Slack**, with memory across all our conversations, and I'm already wired into your work tools — **Gmail, Calendar, Drive, Notion, GitHub**.
+I live on **Slack**, with memory across all our conversations, and I'm already wired into your core work tools — **Gmail, Calendar, Drive**. (Notion, GitHub and others we can connect whenever you want.)
 
 **Day to day, I'll:**
 - send you a **morning brief** — calendar, priorities, deadlines

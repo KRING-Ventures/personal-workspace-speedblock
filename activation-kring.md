@@ -108,7 +108,9 @@ Requires a Google Workspace account (not `@gmail.com`) and permission to create 
 
 ---
 
-### Notion — ~10 min per user *(if used)*
+### Notion — ~10 min per user *(self-serve)*
+
+> Recommended stack — the **user** connects this themselves after activation, not KRING. Kept here as reference KRING can hand over if asked.
 
 **1. Create an internal integration**
 - [notion.so/profile/integrations](https://www.notion.so/profile/integrations) → **New integration**.
@@ -126,7 +128,9 @@ Requires a Google Workspace account (not `@gmail.com`) and permission to create 
 
 ---
 
-### GitHub — ~10 min per user *(if used)*
+### GitHub — ~10 min per user *(self-serve)*
+
+> Recommended stack — the **user** connects this themselves after activation, not KRING. Kept here as reference KRING can hand over if asked.
 
 **1. Create a fine-grained personal access token**
 - [github.com/settings/tokens](https://github.com/settings/tokens) → **Fine-grained tokens** → **Generate new token**.

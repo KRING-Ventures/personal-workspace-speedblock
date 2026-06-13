@@ -16,13 +16,13 @@ Your day-to-day guide to Personal Workspace: the tools you'll use, what your age
 
 ### Mandatory tech stack
 
-The apps required to use Personal Workspace. These are set up during activation.
+The apps required to use Personal Workspace. You own and set these up; KRING connects your agent to them during activation.
 
 | App | What it's for | Your agent reaches it? |
 |---|---|---|
 | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage — email, calendar, files, docs, meetings | ✅ Yes — wired by KRING during activation |
 | **Slack** | Team and agent communication — where you talk to your agent | ✅ Yes — primary surface |
-| **ChatGPT** | The LLM OpenClaw runs on | n/a — infrastructure |
+| **ChatGPT** (Business Team) | The AI engine your agent runs on — via the Codex CLI | n/a — your agent runs on it |
 
 ### Recommended tech stack
 
