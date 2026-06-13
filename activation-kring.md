@@ -165,6 +165,7 @@ A read-only copy of the agent's files on the user's Mac/PC, kept in sync automat
 
 ## References
 
+- `buy-in.md` — the value case for Personal Workspace (venture-facing).
 - `activation.md` — the venture-facing activation overview.
 - `onboarding.md` — the user-facing onboarding flow (Stage 3).
 - `agent-files/onboarding/BOOTSTRAP.md` — the agent-side onboarding script.

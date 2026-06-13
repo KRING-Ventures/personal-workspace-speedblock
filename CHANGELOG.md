@@ -18,8 +18,12 @@ Splits the single setup doc into two flows that were previously mashed together:
 - `activation.md` — **new.** The venture-and-KRING deployment process across three stages (Provisioning ~1 day → Setup ~3–4 days → Onboarding handover). Absorbs the old venture-side phases plus the full tool-wiring detail (Google Workspace, Notion, GitHub, M365 legacy, Syncthing) — wiring now happens during activation, performed by KRING, not by the user during onboarding.
 - `agent-files/onboarding/BOOTSTRAP.md` — restructured to match the 6-step user flow. Phase-2 live tool-wiring removed (tools are wired in activation); Step 2 now confirms the already-wired state and pulls basics; schedule registration folds into Step 3 (Maps your needs); the 4 AI Commandments become a light reference in Step 1 rather than a dedicated teaching phase; optional first-task and first-automation demos added.
 - `README.md`, `playbook.md`, `agent-files/README.md`, `runbooks/migrations/ms-to-google.md` — pointers and "wired during your first conversation" wording updated to the activation/onboarding split.
+- **Surface swap — Telegram → Slack.** Slack is now the channel each user talks to their agent on, throughout the human-facing docs. Telegram removed from the product.
+- **Tech stack split — Mandatory vs Recommended.** `playbook.md` now separates the apps required to run Personal Workspace (Google Workspace, Slack, ChatGPT) from the recommended ones users self-wire (Notion, GitHub, Whispr Flow, Claude). GitHub moved to Recommended/self-service; M365 migration stays optional and KRING-run.
+- **Plain-language + value pass.** Rewrote `activation.md`, `onboarding.md`, and the `playbook.md` intro to lead with what the user/venture is doing and the value it provides, in simple language with a cleaner layout. Venture-facing docs now show outcomes, not our internal mechanics; the technical steps live only in `activation-kring.md`.
+- `buy-in.md` — **new.** The value case for Personal Workspace — the three big time drains it targets (~28% of the week on email, ~1.8 h/day searching, ~10 h/month on calendar) and what each user and the venture gets. Sourced from the Workspace solution deck.
 
-**Open for refinement:** channel (designs show Slack; repo is still Telegram throughout — a repo-wide surface swap is deferred to its own pass); depth of the 4 AI Commandments in onboarding; the exact Venture/KRING/User labor split (flagged "needs Corey's eyes" in the design).
+**Open for refinement:** depth of the 4 AI Commandments in onboarding; the exact Venture/KRING/User labor split (flagged "needs Corey's eyes" in the design); a separate KRING-as-its-own-venture activation flow (raised, not yet built).
 
 ---
 

@@ -19,6 +19,7 @@ Both layers live in this repo.
 
 | File | What it is |
 |---|---|
+| [`buy-in.md`](./buy-in.md) | The case for Personal Workspace — the pains it solves and the value it delivers, for the user and the venture. Start here. |
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your agent does, working rhythm. |
 | [`ai-commandments.md`](./ai-commandments.md) | The 4 AI Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
 | [`activation.md`](./activation.md) | Activation flow — how a venture gets deployed (provisioning → KRING sets up and wires the agents → access handover). ~5 business days. |

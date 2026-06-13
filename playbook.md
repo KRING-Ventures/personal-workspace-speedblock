@@ -1,12 +1,14 @@
-# Personal Workspace Speedblock — Playbook
+# Personal Workspace — Playbook
 
-Personal Workspace defines the best practices for how to work individually, across teams and AI agents. Aiming to make it more fun and frictionless to do everyday work.
+Your day-to-day guide to Personal Workspace: the tools you'll use, what your agent does for you, and the rhythm you'll settle into. The goal is simple — make everyday work faster, calmer, and more fun.
+
+> New here, or want the case for why this is worth it? Start with `buy-in.md`.
 
 ---
 
-## Principles
+## The one principle
 
-- **AI first.** If your agent can do something for you, let it. You approve anything that gets sent, replied to, or changed for other people.
+**AI first.** If your agent can do something for you, let it. The only thing it checks with you on is anything that gets sent, replied to, or changed for other people — that always gets your OK.
 
 ---
 
