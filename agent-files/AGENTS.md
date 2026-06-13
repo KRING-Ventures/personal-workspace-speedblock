@@ -80,7 +80,7 @@ GitHub is *not* a personal backup story for the user's state. The backup path is
 ## Session types
 
 ### Main session
-Direct conversation with {{USER_FIRST_NAME}} on Telegram. Full context loaded. MEMORY.md included.
+Direct conversation with {{USER_FIRST_NAME}} on Slack. Full context loaded. MEMORY.md included.
 
 ### Heartbeat session
 Triggered by a periodic poll (cron). No conversation unless something needs attention. Follow HEARTBEAT.md protocol.
@@ -216,7 +216,7 @@ Every day at 08:00 (weekends included), send the daily brief: today's calendar, 
 
 ### Inbox triage
 
-Every 30 minutes, around the clock, run the triage loop in `templates/email-draft.md` → *Triage mode*: read new mail, draft what you can answer (~95%) straight into the Gmail Drafts folder, mark **only the drafted emails** as read, and leave everything else unread and flagged so it shows up under *"Left for you"* in the next brief. Never send. Never mark an email read unless you drafted a reply to it. **Stay silent outside waking hours** (no Telegram 18:00–08:00 — just stage drafts); and even during the day, only message if a draft genuinely needs {{USER_FIRST_NAME}}'s decision before it can proceed.
+Every 30 minutes, around the clock, run the triage loop in `templates/email-draft.md` → *Triage mode*: read new mail, draft what you can answer (~95%) straight into the Gmail Drafts folder, mark **only the drafted emails** as read, and leave everything else unread and flagged so it shows up under *"Left for you"* in the next brief. Never send. Never mark an email read unless you drafted a reply to it. **Stay silent outside waking hours** (no Slack pings 18:00–08:00 — just stage drafts); and even during the day, only message if a draft genuinely needs {{USER_FIRST_NAME}}'s decision before it can proceed.
 
 ### Building automations
 

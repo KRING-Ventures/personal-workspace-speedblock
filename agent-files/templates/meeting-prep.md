@@ -1,6 +1,6 @@
 # Meeting prep template
 
-Used by the **Meeting prep** job (`SCHEDULES.md`) ~30 min before a meeting, and for the one-line prep notes in the daily brief's *Calendar* section. Default surface: Telegram.
+Used by the **Meeting prep** job (`SCHEDULES.md`) ~30 min before a meeting, and for the one-line prep notes in the daily brief's *Calendar* section. Default surface: Slack.
 
 Goal: everything {{USER_FIRST_NAME}} needs to walk in sharp, in well under a screen. Read-only — prep never schedules or sends anything.
 

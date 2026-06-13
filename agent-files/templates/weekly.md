@@ -1,6 +1,6 @@
 # Weekly brief template
 
-Used for {{AGENT_NAME}}'s Monday 08:00 review with {{USER_FIRST_NAME}}. Default surface: Telegram.
+Used for {{AGENT_NAME}}'s Monday 08:00 review with {{USER_FIRST_NAME}}. Default surface: Slack.
 
 Goal: one screen. Dense, honest, actionable. Not a report — a conversation starter.
 

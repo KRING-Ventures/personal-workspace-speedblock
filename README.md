@@ -41,7 +41,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 **`1.0.0`** — shipped 2026-06-05. First stable release. See [`CHANGELOG.md`](./CHANGELOG.md).
 
-**Next:** `1.1.0` — expanded tech stack, Slack access (agent reads/responds on your behalf), and an Obsidian-based agent brain/filesystem. Cosmica-native agent access is in the pipeline.
+**Next:** `1.1.0` — expanded tech stack, and an Obsidian-based agent brain/filesystem. Cosmica-native agent access is in the pipeline.
 
 ## Repos involved
 
@@ -51,4 +51,4 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 ## Agent layer
 
-**Personal OpenClaw assistant** — one per user. Telegram surface. Built from this repo's `agent-files/` + the runtime's local per-user state.
+**Personal OpenClaw assistant** — one per user. Slack surface. Built from this repo's `agent-files/` + the runtime's local per-user state.

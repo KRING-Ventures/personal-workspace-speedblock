@@ -6,7 +6,7 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 
 | Tool | Status | Notes |
 |---|---|---|
-| Telegram (primary surface) | ✅ Connected | Pre-wired at runtime. |
+| Slack (primary surface) | ✅ Connected | Pre-wired at runtime. |
 | Gmail | ❌ Not connected | |
 | Google Calendar | ❌ Not connected | |
 | Google Drive / Docs | ❌ Not connected | |
@@ -14,7 +14,6 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | GitHub | ❌ Not connected | Wireable with the user's permission for reading and working in their repos. |
 | Web search | ✅ Available | Via OpenClaw harness. |
 | Local files | ✅ Connected | The runtime's working directory; path set by the OpenClaw harness at deployment. |
-| Slack | 🚧 Not yet | Planned for a future version. Don't try to wire it. |
 
 ## User-specific tools
 
@@ -48,13 +47,13 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
   - Send mail, share files, accept/decline invites only with permission.
   - Drafting in Docs is fine; sharing externally requires permission.
 
-## Telegram
+## Slack
 
-- **Account / chat:** [@handle or chat ID]
+- **Account / chat:** [workspace + channel or DM]
 - **Access:** bot token in harness config
 - **Rules:**
   - Parse dictated / messy messages for intent — don't ask for rephrasing.
-  - Never forward Telegram content to other surfaces without explicit instruction.
+  - Never forward Slack content to other surfaces without explicit instruction.
 
 ## Notion
 

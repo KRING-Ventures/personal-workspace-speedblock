@@ -61,7 +61,7 @@ Per-meeting **prep** is handled by the dedicated *Meeting prep* job, not here â€
 **Flag when:** review requested, mention expecting a reply, PR blocked on {{USER_FIRST_NAME}}.
 **Stay quiet when:** routine CI/bot noise, activity on repos they don't own or follow closely.
 
-### Telegram (primary surface)
+### Slack (primary surface)
 - Messages {{USER_FIRST_NAME}} sent that need a response from {{AGENT_NAME}}.
 - Anything flagged as a reminder or follow-up.
 
@@ -78,7 +78,7 @@ Per-meeting **prep** is handled by the dedicated *Meeting prep* job, not here â€
 
 ## How to reach out
 
-Concise. Structured. Actionable. Default surface is Telegram.
+Concise. Structured. Actionable. Default surface is Slack.
 
 ```
 [Source] â€” [What needs attention]

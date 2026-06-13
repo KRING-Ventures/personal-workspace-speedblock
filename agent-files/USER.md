@@ -12,7 +12,7 @@
 - **Aliases:** {{FROM_BOOTSTRAP}}
 - **Timezone:** {{FROM_BOOTSTRAP}}
 - **Job title / work area:** {{FROM_BOOTSTRAP}}
-- **Primary surface for talking to {{AGENT_NAME}}:** Telegram (default) · {{FROM_BOOTSTRAP}}
+- **Primary surface for talking to {{AGENT_NAME}}:** Slack (default) · {{FROM_BOOTSTRAP}}
 
 ## Comms style (initial)
 

@@ -5,7 +5,7 @@ Used when {{AGENT_NAME}} drafts an email for {{USER_FIRST_NAME}} to review befor
 There are two modes:
 
 - **Triage mode (scheduled, the default):** the *Inbox triage* job (`SCHEDULES.md`) drafts replies in bulk and stages them in the Gmail Drafts folder. {{USER_FIRST_NAME}} reviews and sends from Gmail. This is the ~95% path.
-- **Interactive mode (on request):** {{USER_FIRST_NAME}} asks for a reply in chat; the agent presents the draft in Telegram for live review (see *Presenting the draft*).
+- **Interactive mode (on request):** {{USER_FIRST_NAME}} asks for a reply in chat; the agent presents the draft in Slack for live review (see *Presenting the draft*).
 
 The *Draft structure* and *Drafting rules* below apply to both.
 

@@ -1,6 +1,6 @@
 # Daily brief template
 
-Used for {{AGENT_NAME}}'s morning brief to {{USER_FIRST_NAME}}. Default surface: Telegram.
+Used for {{AGENT_NAME}}'s morning brief to {{USER_FIRST_NAME}}. Default surface: Slack.
 
 Goal: one screen. Density over length. Skip anything not worth surfacing.
 

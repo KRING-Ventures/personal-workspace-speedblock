@@ -7,7 +7,7 @@
 ### What happened
 
 - [What was discussed or worked on, in tight bullets.]
-- [Surfaces touched: Gmail / Calendar / Drive / Notion / Telegram.]
+- [Surfaces touched: Gmail / Calendar / Drive / Notion / Slack.]
 
 ### Decisions
 

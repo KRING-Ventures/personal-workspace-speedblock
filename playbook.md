@@ -12,17 +12,25 @@ Personal Workspace defines the best practices for how to work individually, acro
 
 ## The Tool Stack
 
-Every Personal Workspace user runs on these as the basics.
+### Mandatory tech stack
 
-| For | We use | Your agent reaches it? |
+The apps required to use Personal Workspace. These are set up during activation.
+
+| App | What it's for | Your agent reaches it? |
 |---|---|---|
-| Email, calendar, files, docs, meetings | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes — wired by KRING during activation |
-| Your personal AI agent | **Telegram** — you chat with your agent there | ✅ Yes — primary surface |
-| Meeting transcriptions & notes | **Notion** — your venture's Notion workspace | ✅ Yes — wired by KRING during activation |
-| Code storage & access | **GitHub** | ✅ Yes — your agent can read and work in your repos with your permission |
-| Team chat | **Slack** | ❌ Not yet — planned for a future version |
-| Help inside Google apps | **Gemini** — Google's AI inside Docs, Gmail, etc. | n/a — you use this directly |
-| General-purpose AI & Coding | **Claude** — for coding and individual projects | n/a — you use this directly |
+| **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage — email, calendar, files, docs, meetings | ✅ Yes — wired by KRING during activation |
+| **Slack** | Team and agent communication — where you talk to your agent | ✅ Yes — primary surface |
+| **ChatGPT** | The LLM OpenClaw runs on | n/a — infrastructure |
+
+### Recommended tech stack
+
+Apps we recommend for other tasks. Not required, but they make the experience better.
+
+| App | What it's for | Your agent reaches it? |
+|---|---|---|
+| **Notion** | Notes and meeting transcriptions — your venture's project workspace | ✅ Yes — wired by KRING during activation (if used) |
+| **Whispr Flow** | Fast speech-to-text — dictate messages and notes | n/a — you use this directly |
+| **Claude** | Everyday AI tasks and vibe coding | n/a — you use this directly |
 
 ---
 
