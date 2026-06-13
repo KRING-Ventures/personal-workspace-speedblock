@@ -35,9 +35,11 @@ Pre-filling breaks the relationship the first conversation is meant to create.
 Confirm the venture has set up accounts for each user:
 - [ ] Google Workspace (Gmail, Calendar, Drive, Docs, Meet) — Workspace account, not `@gmail.com`
 - [ ] Slack — team workspace + user account
-- [ ] ChatGPT — user account (LLM the agent system runs on)
+- [ ] ChatGPT — **Business (Team)** account, one seat per user (LLM the agent runs on, via the Codex CLI over the subscription)
 
 If the venture is still setting up accounts, wait before proceeding to Step 6.
+
+> **⚠️ ASK COREY — open item (placeholder).** We're standardising on the ChatGPT **Business (Team)** plan for now. Open question: is a base Business seat enough for an always-on agent running via the Codex CLI, or do we need to top up **credits** or move to a higher tier (Pro 5×/20×)? Codex runs on rolling 5-hour + weekly rate-limit windows, so a heavy agent can hit the ceiling. Confirm the right plan/credits setup with Corey before quoting usage to a venture.
 
 ### Step 6 — Grant app access
 
