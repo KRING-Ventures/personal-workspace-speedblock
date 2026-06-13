@@ -46,9 +46,9 @@ The venture admin grants KRING the access needed to wire each agent. See "Wiring
 Wire each agent's tools using the credentials from Step 6:
 - Google Workspace (Gmail, Calendar, Drive, Docs, Meet, Tasks, People)
 - Slack
-- Notion *(if the venture uses it — recommended stack)*
-- GitHub *(if the user has repos to connect — optional)*
-- Any Microsoft 365 legacy data if migrating — see `runbooks/migrations/ms-to-google.md`
+- Microsoft 365 legacy data — **only if the venture is migrating from M365 (optional)**. See `runbooks/migrations/ms-to-google.md`.
+
+> Notion and GitHub are Recommended stack and are self-service — the user connects them in their own time after activation. Don't wait on these or wire them during setup.
 
 Also set up the one-way local mirror (Syncthing, **Send Only**) on the runtime so the user can keep a read-only backup. The user finishes the Mac/PC side during onboarding. See `runbooks/syncthing-local-mirror.md` → Part A.
 

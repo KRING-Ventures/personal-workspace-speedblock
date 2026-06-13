@@ -24,11 +24,12 @@ The apps required to use Personal Workspace. These are set up during activation.
 
 ### Recommended tech stack
 
-Apps we recommend for other tasks. Not required, but they make the experience better.
+Apps we recommend for other tasks. Not required — you set these up yourself after activation.
 
 | App | What it's for | Your agent reaches it? |
 |---|---|---|
-| **Notion** | Notes and meeting transcriptions — your venture's project workspace | ✅ Yes — wired by KRING during activation (if used) |
+| **Notion** | Notes and meeting transcriptions — your venture's project workspace | ✅ Yes — connect it yourself after activation |
+| **GitHub** | Code repositories and version control | ✅ Yes — connect it yourself after activation |
 | **Whispr Flow** | Fast speech-to-text — dictate messages and notes | n/a — you use this directly |
 | **Claude** | Everyday AI tasks and vibe coding | n/a — you use this directly |
 
@@ -92,7 +93,7 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Migrations
 
-- **Coming from Microsoft 365?** See the Microsoft to Google Workspace migration playbook. The short version: Google becomes your daily driver, M365 stays as a read-only backup for old data. Your agent knows the cut-over date and searches the right system.
+- **Coming from Microsoft 365?** Optional. If your venture runs on M365, KRING can migrate your email, calendar, and files to Google Workspace during setup — just flag it at activation. Google becomes your daily driver; M365 stays as a read-only backup. Your agent knows the cut-over date and searches the right system.
 
 ---
 
