@@ -2,15 +2,15 @@
 
 The step-by-step for the three apps Personal Workspace needs. This is for whoever sets up the venture's accounts (usually an admin or founder). Do this once for the venture, plus one account per person.
 
-> You only need to get the accounts in place. KRING connects each agent to them — you don't wire anything yourself.
+> You own every account here — the logins and billing stay with you. Nothing runs through KRING. Your only job is to set them up; KRING just connects your agents to them.
 
 ## At a glance
 
-| App | Plan to get | Where | One account per person? | Time |
+| App | Plan to get | Where | How many | Time |
 |---|---|---|---|---|
-| **Google Workspace** | Business Starter (or higher) | workspace.google.com | Yes | ~30–45 min setup, + a few hrs for domain check |
-| **Slack** | Pro recommended (Free works to start) | slack.com | Yes | ~10 min |
-| **ChatGPT** | *To be confirmed with KRING* | — | — | — |
+| **Google Workspace** | Business Starter (or higher) | workspace.google.com | One per person | ~30–45 min, + a few hrs for domain check |
+| **Slack** | Pro recommended (Free works to start) | slack.com | One per person | ~10 min |
+| **ChatGPT (OpenAI)** | OpenAI account with API access | platform.openai.com | One for the venture | ~10 min |
 
 ---
 
@@ -41,11 +41,16 @@ Where each person talks to their agent, and where the team communicates.
 
 ---
 
-## ChatGPT
+## ChatGPT (OpenAI)
 
-The AI engine the agents run on.
+The AI engine your agents run on. You set up and own the account — billing stays with you.
 
-> **Open item:** we're confirming whether the venture sets up ChatGPT accounts (and which plan) or whether KRING provides the model directly. KRING will tell you exactly what's needed here before setup — don't buy anything yet.
+1. Go to **platform.openai.com** and create an account for the venture (OpenAI is the company behind ChatGPT).
+2. Add billing and turn on **API access**.
+3. Generate an API key.
+4. Share the key with KRING so we can connect your agents to it.
+
+*About 10 minutes. One account covers the whole venture.*
 
 ---
 
