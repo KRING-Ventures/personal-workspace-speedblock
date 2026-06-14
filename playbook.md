@@ -2,7 +2,7 @@
 
 Your day-to-day guide to Personal Workspace: the tools you'll use, what your agent does for you, and the rhythm you'll settle into. The goal is simple — make everyday work faster, calmer, and more fun.
 
-> New here, or want the case for why this is worth it? Start with `buy-in.md`.
+> New here, or want the case for why this is worth it? Start with **Why It's Worth It**.
 
 ---
 
@@ -84,7 +84,7 @@ Four practices that apply across everything — drafting, planning, code, ops:
 3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
 4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
 
-Full version, plus the vocabulary (branch, PR, merge, etc.): AI Commandments Guide.
+Full version, plus the vocabulary (branch, PR, merge, etc.): the **AI Commandments**.
 
 Your agent follows these too, and will nudge you as you work together.
 

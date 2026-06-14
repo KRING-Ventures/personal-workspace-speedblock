@@ -23,12 +23,11 @@ A baseline monthly cost **per person**, covering the apps your agent runs on plu
 |---|---|
 | Google Workspace (Business Starter) | ~€6 |
 | Slack (Pro) | ~€8 |
-| ChatGPT (Business Team) | ~€25 *(plan being confirmed)* |
-| Agent hosting & runtime | *KRING baseline* |
-| **Estimated baseline** | **`[Ask Corey — to confirm]` / person / month** |
+| ChatGPT (Business Team) | ~€25 |
+| Agent hosting & runtime | confirmed with you by KRING |
 
-> Subscription prices are public-list approximations and vary by plan and currency. KRING confirms the all-in per-seat figure before you commit.
+> These are public-list app prices and vary by plan and currency. KRING confirms your all-in per-seat figure — apps plus hosting — before you commit.
 
 ---
 
-→ Ready to set up? See `activation.md`. · Curious how it works day to day? See `playbook.md`.
+→ Ready to set up? See **Activation**. · Curious how it works day to day? See the **Playbook**.

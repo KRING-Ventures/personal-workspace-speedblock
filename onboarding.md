@@ -19,6 +19,6 @@ For day-to-day, your own agent is your first line of support — just ask it in 
 
 ---
 
-→ Day-to-day detail: `playbook.md`.
+→ Day-to-day detail: the **Playbook**.
 
 <!-- Maintenance: keep this in step with agent-files/onboarding/BOOTSTRAP.md — a change here is a change there. -->

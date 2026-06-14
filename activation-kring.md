@@ -48,6 +48,7 @@ The venture admin grants KRING the access needed to wire each agent. See "Wiring
 ### Step 7 — Wire agent tools
 
 Wire each agent's tools using the credentials from Step 6:
+- ChatGPT (Codex CLI sign-in) — what the agent runs on; without it the runtime can't think
 - Google Workspace (Gmail, Calendar, Drive, Docs, Meet, Tasks, People)
 - Slack
 - Microsoft 365 legacy data — **only if the venture is migrating from M365 (optional)**. See `runbooks/migrations/ms-to-google.md`.
@@ -76,6 +77,26 @@ Monitor: the agent should complete `STATE_VERSION` and finalize `USER.md` by the
 ---
 
 ## Wiring detail
+
+### ChatGPT (Codex CLI) — ~10 min per user
+
+What the agent runs on. It signs in to the venture's **ChatGPT Business (Team)** subscription through the **Codex CLI** — no OpenAI API key, no pay-per-use billing. Do this as part of standing up the runtime; the agent can't run without it.
+
+Requires: one ChatGPT Team **member seat per agent** (created by the venture, on a domain email), and that seat's sign-in.
+
+**1. Confirm the Codex CLI** is installed on the agent's runtime.
+
+**2. Sign in with ChatGPT**
+- Run `codex login` and complete the **"Sign in with ChatGPT"** flow using the agent's Team seat (the venture-domain email).
+- This authenticates the agent against the subscription — not an API key.
+
+**3. Verify**
+- Run a quick `codex` prompt; confirm it responds with **no API-key prompt** and no per-token charge.
+- The seat is now the agent's identity; it draws on the subscription's rolling usage allowance.
+
+> **⚠️ ASK COREY (see Step 5).** Open question on whether a base Team seat's allowance covers an always-on agent, or whether we need credits / a higher tier. Confirm before quoting usage.
+
+---
 
 ### Google Workspace — ~15 min per user
 

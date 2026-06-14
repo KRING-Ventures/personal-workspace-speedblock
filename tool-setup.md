@@ -9,8 +9,8 @@ The step-by-step for the three apps Personal Workspace needs. This is for whoeve
 | App | Plan to get | Where | How many | Time |
 |---|---|---|---|---|
 | **Google Workspace** | Business Starter (or higher) | workspace.google.com | One per person | ~30–45 min, + a few hrs for domain check |
-| **Slack** | Pro recommended (Free works to start) | slack.com | One per person | ~10 min |
-| **ChatGPT (OpenAI)** | ChatGPT **Business (Team)** plan — runs via Codex CLI | chatgpt.com | Business account for the venture, one seat per person | ~10 min |
+| **Slack** | Pro | slack.com | One per person | ~10 min |
+| **ChatGPT** | ChatGPT **Business (Team)** plan | chatgpt.com | One workspace, one member per person | ~10 min |
 
 ---
 
@@ -35,19 +35,19 @@ Where each person talks to their agent, and where the team communicates.
 1. Go to **slack.com** → *Create a new workspace*.
 2. Name it for your venture.
 3. Invite each person by email — one account each.
-4. **Pro** is recommended (keeps full message history); the Free plan works to start.
+4. Choose the **Pro** plan — it keeps full message history, which your agent relies on.
 
 *About 10 minutes.*
 
 ---
 
-## ChatGPT (OpenAI)
+## ChatGPT
 
-The AI engine your agents run on. The agent connects through the **Codex CLI**, signed in to a **ChatGPT subscription** — it runs over the subscription, not a pay-per-use API account. You own the account; billing stays with you.
+The AI engine your agents run on. It runs on your ChatGPT subscription — not a pay-per-use account — so the cost is predictable and stays with you.
 
-1. Go to **chatgpt.com** and set up a **ChatGPT Business (Team)** account for the venture.
-2. Add one seat per person — each agent signs in as its own user.
-3. Share the logins with KRING so we can connect each agent via the Codex CLI.
+1. Go to **chatgpt.com** and create a **ChatGPT Business (Team)** workspace for your venture.
+2. Invite one member per person getting an agent. Use an email on your own domain (e.g. `ada@yourcompany.com`) — that member becomes the agent's identity.
+3. That's all you do here. When you hand over access (the secure step we walk you through), KRING signs each agent into its own seat — you never share raw passwords.
 
 *About 10 minutes.*
 
@@ -55,8 +55,8 @@ The AI engine your agents run on. The agent connects through the **Codex CLI**, 
 
 ## Recommended apps — set up later, yourself
 
-Optional tools people connect on their own after going live (not part of activation): **Notion**, **GitHub**, **Whispr Flow**, **Claude**. See `playbook.md` for what each is for.
+Optional tools people connect on their own after going live (not part of activation): **Notion**, **GitHub**, **Whispr Flow**, **Claude**. See the **Playbook** for what each is for.
 
 ---
 
-→ Back to the overview: `activation.md`.
+→ Back to **Activation**.
