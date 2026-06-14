@@ -15,7 +15,7 @@ Your tools are already connected, so this is about how you'll work together.
 From here, your agent runs your morning brief, drafts your email, and learns as you work.
 
 ## Need help later?
-Just ask your agent in your thread — it's your first line of support. If something's beyond it, **Moss** — KRING's Personal Workspace support agent — picks it up and handles anything technical.
+For day-to-day, your own agent is your first line of support — just ask it in your thread. For anything bigger — setup, the Speedblock itself, or if your agent is ever down — **Moss**, KRING's Personal Workspace support agent, steps in and handles it.
 
 ---
 

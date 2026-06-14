@@ -14,7 +14,20 @@ Most of your week disappears into email, hunting for files, and scheduling. Pers
 - **Hours back, every week.**
 
 ## What it asks of you
-Almost nothing. Setup takes ~5 days and KRING does the work — you confirm a few accounts, name your agent, and have one 15-minute first conversation.
+Almost nothing. Setup takes about **5 business days** — from activation to your first conversation — and KRING does the work. You confirm a few accounts, name your agent, and have one 15-minute first conversation.
+
+## What it costs to run
+A baseline monthly cost **per person**, covering the apps your agent runs on plus hosting. You own the app subscriptions directly; hosting is billed by KRING.
+
+| Per person / month | Approx. |
+|---|---|
+| Google Workspace (Business Starter) | ~€6 |
+| Slack (Pro) | ~€8 |
+| ChatGPT (Business Team) | ~€25 *(plan being confirmed)* |
+| Agent hosting & runtime | *KRING baseline* |
+| **Estimated baseline** | **`[Ask Corey — to confirm]` / person / month** |
+
+> Subscription prices are public-list approximations and vary by plan and currency. KRING confirms the all-in per-seat figure before you commit.
 
 ---
 
