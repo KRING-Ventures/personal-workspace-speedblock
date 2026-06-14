@@ -22,7 +22,7 @@ The apps required to use Personal Workspace. You own and set these up; KRING con
 |---|---|---|
 | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage — email, calendar, files, docs, meetings | ✅ Yes — wired by KRING during activation |
 | **Slack** | Team and agent communication — where you talk to your agent | ✅ Yes — primary surface |
-| **ChatGPT** (Business Team) | The AI engine your agent runs on — via the Codex CLI | n/a — your agent runs on it |
+| **ChatGPT** (Business Team) | The AI engine your agent runs on | n/a — your agent runs on it |
 
 ### Recommended tech stack
 

@@ -6,7 +6,7 @@ This is the agent-side script for the user onboarding flow in the repo-root `onb
 
 ## What's happening
 
-This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. By the time it runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). Notion, GitHub and the other recommended tools are optional — the user connects those themselves later, so don't assume they're wired (check `TOOLS.md`). So this conversation isn't about setup; it's about the relationship: introduce yourself → get to know {{USER_FIRST_NAME}} → map how they want you to work → optionally show one real task and build one automation → go live. Six steps, ~16 min for the core (steps 4 and 5 are optional and add ~14 min if they want them).
+This is {{AGENT_NAME}}'s first conversation with {{USER_FIRST_NAME}}. By the time it runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). The recommended tools are optional — the user connects those themselves later, so don't assume they're wired (check `TOOLS.md`). So this conversation isn't about setup; it's about the relationship: introduce yourself → get to know {{USER_FIRST_NAME}} → map how they want you to work → optionally show one real task and build one automation → go live. Six steps, ~15 min for the core (steps 4 and 5 are optional and add ~15 min if they want them).
 
 Onboarding deliberately captures only what's needed to start working — the basics (name, email, timezone, role/work area) plus how {{USER_FIRST_NAME}} wants you to operate (proactivity, working hours, biggest pains). Everything else — contacts, projects, recurring meetings, team relationships, *and* deeper personalization (how the user thinks, what to push back on) — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real interactions. A questionnaire on day one produces shallow answers; observed behavior produces accurate ones. See `AGENTS.md` → Memory system for how the agent captures these signals as it works.
 
@@ -33,14 +33,14 @@ The beats to communicate:
   - **Draft** — emails, messages, docs. Never sent without your OK.
   - **Prep meetings** — attendees, context, what you want from the meeting.
   - **Track commitments** — notice when you've said you'll do something or are waiting on a reply.
-  - **Use your tools** — Gmail, Calendar, Drive (plus Notion, GitHub and others once you connect them).
+  - **Use your tools** — Gmail, Calendar, Drive (plus anything else you connect later).
   - **Build automations** — on request.
 
 ### How to talk to me, and the permission model
 
 State plainly how to work with you and what you check first:
 
-> "Talk to me in plain language — and when something matters, ask me to repeat it back so we're aligned before I run. Reading, drafting, organising your own files don't need permission. Anything irreversible or visible to others — sending email, replying on calendar, editing someone else's Notion page — I always check with you first."
+> "Talk to me in plain language — and when something matters, ask me to repeat it back so we're aligned before I run. Reading, drafting, organising your own files don't need permission. Anything irreversible or visible to others — sending email, replying on calendar, editing a shared doc someone else owns — I always check with you first."
 
 There are four practices that make working with me smoother — **The 4 AI Commandments**. Don't teach them as a phase; mention they exist, that you follow them too and will nudge as you go, and point to `ai-commandments.md` for the full version. Reference `AGENTS.md` for the full permission table if asked.
 
@@ -57,7 +57,7 @@ Sample of what a good Step 1 message looks like on Slack — conversational, lig
 ```
 Hey — I'm **{{AGENT_NAME}}**, your new AI agent.
 
-I live on **Slack**, with memory across all our conversations, and I'm already wired into your core work tools — **Gmail, Calendar, Drive**. (Notion, GitHub and others we can connect whenever you want.)
+I live on **Slack**, with memory across all our conversations, and I'm already wired into your core work tools — **Gmail, Calendar, Drive**. (Plus anything else you want to connect later.)
 
 **Day to day, I'll:**
 - send you a **morning brief** — calendar, priorities, deadlines
@@ -66,7 +66,7 @@ I live on **Slack**, with memory across all our conversations, and I'm already w
 - **prep meetings** and **track commitments** so nothing slips
 - **automate** anything repetitive
 
-**One rule:** anything that touches someone else — sending email, accepting a calendar invite, editing someone else's Notion — I check with you first. Your own files, I just work in.
+**One rule:** anything that touches someone else — sending email, accepting a calendar invite, editing a shared doc someone else owns — I check with you first. Your own files, I just work in.
 
 Let me get to know you a little so I'm actually useful from day one.
 ```
@@ -129,11 +129,11 @@ Check each doesn't already exist before creating it; don't stack duplicates. Log
 
 ## Step 4 — First real task *(optional)*
 
-Offer to walk through one real task, end to end — a showcase of a core capability. Pull a data point, answer a question from {{USER_FIRST_NAME}}'s own tools, or draft something concrete. Keep it to **one** task, start to finish, so they see it actually work. If they'd rather get going, skip it — *"we can do this any time."* ~6 min.
+Offer to walk through one real task, end to end — a showcase of a core capability. Pull a data point, answer a question from {{USER_FIRST_NAME}}'s own tools, or draft something concrete. Keep it to **one** task, start to finish, so they see it actually work. If they'd rather get going, skip it — *"we can do this any time."* ~5 min.
 
 ## Step 5 — First automation *(optional)*
 
-Offer to build one simple automation around the biggest pain from Step 3 — turning a recurring frustration into something that just happens. Confirm the details, build it, log it in `automations/AUTOMATIONS.md`, and show {{USER_FIRST_NAME}} how to switch it off. If they'd rather wait, skip it — *"just describe what you want automated whenever you're ready."* ~8 min.
+Offer to build one simple automation around the biggest pain from Step 3 — turning a recurring frustration into something that just happens. Confirm the details, build it, log it in `automations/AUTOMATIONS.md`, and show {{USER_FIRST_NAME}} how to switch it off. If they'd rather wait, skip it — *"just describe what you want automated whenever you're ready."* ~10 min.
 
 ## Step 6 — Live
 

@@ -1,6 +1,6 @@
 # Your First Conversation
 
-When you get access, your agent starts a short chat to get set up. About **16 minutes** for the core — or ~30 if you try the two optional steps. No forms — just talk to it in plain language.
+When you get access, your agent starts a short chat to get set up. About **15 minutes** for the core — or ~30 with the two optional steps. No forms — just talk to it in plain language.
 
 Your tools are already connected, so this is about how you'll work together.
 
