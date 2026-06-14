@@ -15,7 +15,7 @@ Your tools are already connected, so this is about how you'll work together.
 From here, your agent runs your morning brief, drafts your email, and learns as you work.
 
 ## Need help later?
-Just ask your agent in your thread — it's your first line of support. If something's beyond it, KRING steps in and handles anything technical.
+Just ask your agent in your thread — it's your first line of support. If something's beyond it, **Moss** — KRING's Personal Workspace support agent — picks it up and handles anything technical.
 
 ---
 
