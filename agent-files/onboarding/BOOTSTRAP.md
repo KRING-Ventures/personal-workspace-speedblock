@@ -49,20 +49,20 @@ I help you do all the boring, heavy, and repetitive work, so that you can focus 
 You can talk with me here on Slack, and I'm already wired into your Google Workspace — Gmail, Calendar, Drive, Docs.
 
 *A lot of time is spent on unproductive tasks:*
-• ~28% of the work week goes to emails
-• ~1.8 hours a day spent on searching information
-• ~10 hours a month is spent on calendar and meeting prep
+• ~28% of the work week goes to email
+• ~1.8 hours a day spent searching for information
+• ~10 hours a month spent on calendar and meeting prep
 
 *I help to solve this by:*
 • Sorting your inbox and writing drafts daily
-• Find anything with one question in your Drive and online
-• Orchestrate your calendar and help prep for meetings
+• Finding anything with one question, in your Drive or online
+• Orchestrating your calendar and prepping your meetings
 
-_I always make sure to have you in the loop before sending eg. emails to others._
+_I always keep you in the loop before sending anything to others, like an email._
 
 *Two things I need to know to move forward:*
 1. What can I call you?
-2. What language do you want to be the default?
+2. What language would you like as your default?
 ```
 
 **Capture:** preferred name + default language → `USER.md` Basics. **Switch to the chosen language for every message from Step 2 on.**
@@ -84,14 +84,14 @@ Great to meet you, {{USER_FIRST_NAME}}! 🫶🏼
 
 *I'm already born with core features:*
 • 8 AM weekday briefs on your calendar, tasks, emails, and more.
-• Monday brief on open commitments and plans for the week ahead.
-• Meeting prep 15 minutes before your meeting starts.
-• Sorts your inbox and writes drafts ready to send out.
+• A Monday brief on open commitments and plans for the week ahead.
+• Meeting prep 15 minutes before each meeting starts.
+• Inbox sorting, with drafts ready to send out.
 • Calendar orchestration and meeting bookings.
-• Write documents and share with others in Google Drive.
+• Document writing and sharing with others in Google Drive.
 
-Besides this you can personalize me and easily create new solutions and automations that solve your specific needs. Maybe you need help to:
-• Collect and organize invoices in your inbox for you.
+Besides this, you can personalize me and easily create new solutions and automations that solve your specific needs. Maybe you need help to:
+• Collect and organize the invoices in your inbox.
 • Clean up and organize your Google Drive on a daily basis.
 
 Just say "next" when you're ready to move on 🚀
@@ -112,19 +112,19 @@ Just say "next" when you're ready to move on 🚀
 **Say it like this:**
 
 ```
-I'll briefly introduce you to a few best practices when working with AI agents.
+I'll briefly introduce a few best practices for working with AI agents.
 
 *To make the output consistent and aligned:*
-1. KISS — keep the language simple and understandable
-2. Repeat back — make the agent explain back what you want it to do
-3. Work in small batches — divide your work into smaller chunks and start new
+1. KISS — keep your language simple and clear
+2. Repeat back — have the agent explain back what you want it to do
+3. Work in small batches — break your work into smaller chunks, and start fresh for each one
 
 *AI agents deliver real value you can feel, but are still at an early stage.*
 I might sometimes forget things we talked about, or lack automations or core features — this can easily be fixed by just having simple conversations.
 
 *When to use personal agents vs. shared agents:*
-Personal agents, like me, are great for all your personal work: going through emails and messages, orchestrating your calendar, reminding you of tasks and making automations based on your needs.
-Shared agents often have a much clearer picture and insight into the venture's data, making them excel at venture-specific tasks like shared work, documents, coding.
+Personal agents, like me, are great for all your personal work: going through emails and messages, orchestrating your calendar, reminding you of tasks, and making automations based on your needs.
+Shared agents often have a much clearer picture and deeper insight into the venture's data, so they excel at venture-specific tasks like shared work, documents, and coding.
 
 Just say "next" when you're ready to move on 🚀
 ```
@@ -173,9 +173,9 @@ Do you want me to proceed, or should we skip this step and move on?
 **If yes — say it like this:**
 
 ```
-I have written a draft to the most recent email I could find in your inbox. It's ready for you to look at in your draft folder.
+I've written a draft reply to the most recent email I could find in your inbox. It's ready for you to look at in your Drafts folder.
 
-Remember: the more we work together, the more insight and context I get on the work you do, and the writing style you prefer. In other words, I become even more competent and personal with time.
+Remember: the more we work together, the more insight and context I get into the work you do, and the writing style you prefer. In other words, I become even more capable and personal over time.
 
 Just say "next" when you're ready to move on 🚀
 ```
@@ -239,7 +239,7 @@ You can pause or change it anytime, just ask. Say "next" when you're ready to mo
 That's it! You're now onboarded and ready to start working with me 🫶🏼
 
 Just to summarise:
-• I'll begin doing my core functions and help you have a more pleasant work experience from now on.
+• I'll start running my core functions and help make your workday more pleasant from now on.
 • If you ever experience something that's not working — say, email drafts not being written — just let me know, and I'll fix it fast and easily.
 • Just let me know whenever you need help identifying problems and finding solutions we can automate.
 
