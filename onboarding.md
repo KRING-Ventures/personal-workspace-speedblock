@@ -5,11 +5,11 @@ When you get access, your agent starts a short chat to get set up. About **15 mi
 Your tools are already connected, so this is about how you'll work together.
 
 ## What happens
-1. **It introduces itself** — who it is, the time it saves you, and it asks what to call you and your default language.
-2. **It shows what it can do** — the core features it comes with, and how you can add your own.
-3. **It shares how to work with it** — a few simple best practices, and when to use your personal agent vs. a shared team agent.
-4. **It gets to know you** — your role, what you do, and what you're working on.
-5. **You see it work** *(optional)* — it drafts a reply to a real email so you can see a feature in action.
+1. **The agent introduces itself** — who the agent is, the time it saves you, and it asks what to call you and your default language.
+2. **The agent shows what it can do** — the core features the agent comes with, and how you can add your own.
+3. **The agent shares how to work together** — a few simple best practices, and when to use your personal agent vs. a shared team agent.
+4. **The agent gets to know you** — your role, what you do, and what you're working on.
+5. **You see the agent work** *(optional)* — the agent drafts a reply to a real email so you can see a feature in action.
 6. **You build one automation** *(optional)* — turn a recurring annoyance into something automatic.
 7. **You're live** — a quick recap, and you're set.
 
