@@ -18,9 +18,9 @@ The apps required to use Personal Workspace. You own and set these up; KRING con
 
 | App | What it's for | Agent uses it? |
 |---|---|---|
-| **Google Workspace** | Default workspace and file storage for easy collaboration (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes |
+| **Google Workspace** | Default workspace for easy collaboration (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes |
 | **Slack** | Everyday team and agent communication | ✅ Yes |
-| **ChatGPT** (Business Team) | The AI engine your agent runs on | ✅ Yes |
+| **ChatGPT** | The AI engine your agent runs on | ✅ Yes |
 
 ### Recommended tech stack
 
