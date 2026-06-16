@@ -17,7 +17,7 @@ Write for the reader's *one job* — not to cover everything. Detail lives one c
 
 KISS means: say the one thing clearly, in the fewest words that still land. Short but unclear fails too.
 
-**When you ask someone to *do* something, give them enough to finish it** — where to go, what to get, how long it takes. Lean isn't starved. If those steps run long, keep the overview page short and move the steps into their own do-it guide (like `tool-setup.md`).
+**When you ask someone to *do* something, give them enough to finish it** — where to go, what to get, how long it takes. Lean isn't starved. If those steps run long, keep the overview page short and move the detail into the relevant detail guide (e.g. the app-provisioning steps live inside `activation-kring.md`, not on the one-screen `activation.md`).
 
 ## Applies to
 

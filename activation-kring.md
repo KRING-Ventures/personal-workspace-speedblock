@@ -41,6 +41,22 @@ If the venture is still setting up accounts, wait before proceeding to Step 6.
 
 > **⚠️ ASK COREY — open item (placeholder).** We're standardising on the ChatGPT **Business (Team)** plan for now. Open question: is a base Business seat enough for an always-on agent running via the Codex CLI, or do we need to top up **credits** or move to a higher tier (Pro 5×/20×)? Codex runs on rolling 5-hour + weekly rate-limit windows, so a heavy agent can hit the ceiling. Confirm the right plan/credits setup with Corey before quoting usage to a venture.
 
+#### How the venture provisions these accounts (one-time)
+
+The venture sets these up itself — **it owns every account; logins and billing stay with the venture, nothing runs through KRING.** KRING only connects the agents to them (Steps 6–7). Done once per venture, plus one account per person.
+
+| App | Plan | Where | How many | Time |
+|---|---|---|---|---|
+| **Google Workspace** | Business Starter (or higher) | workspace.google.com | One per person | ~30–45 min + a few hrs for domain check |
+| **Slack** | Pro | slack.com | One per person | ~10 min |
+| **ChatGPT** | Business (Team) | chatgpt.com | One workspace, one member per person | ~10 min |
+
+- **Google Workspace** — email, calendar, files; the core the agent works from. A personal `@gmail.com` won't work — it needs a Workspace account on the venture's own domain. At workspace.google.com → *Get started*: pick Business Starter, add (or buy) the company domain, verify it (a DNS record, a few hours to confirm), create one user per person.
+- **Slack (Pro)** — where each person talks to their agent. Create the workspace, invite one account per person, choose **Pro** (it keeps full message history, which the agent relies on).
+- **ChatGPT (Business / Team)** — the LLM the agent runs on, over the subscription (not metered API). Create a Business (Team) workspace and invite one member per person on the venture's own domain (that member becomes the agent's identity). KRING signs each agent into its seat at handover — no shared passwords.
+
+Recommended extras (Notion, GitHub, Whispr Flow, Claude) are self-serve, set up later by each person — not part of activation. See the Playbook.
+
 ### Step 6 — Grant app access
 
 The venture admin grants KRING the access needed to wire each agent. See "Wiring detail" below for exactly what each tool needs per user.

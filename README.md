@@ -24,7 +24,6 @@ Both layers live in this repo.
 | [`ai-commandments.md`](./ai-commandments.md) | The 4 AI Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
 | [`activation.md`](./activation.md) | Activation flow — how a venture gets deployed (provisioning → KRING sets up and wires the agents → access handover). ~5 business days. |
 | [`onboarding.md`](./onboarding.md) | User onboarding flow — the agent-led first conversation each user goes through once they get access. ~16 min. |
-| [`tool-setup.md`](./tool-setup.md) | Step-by-step for setting up the required apps — plans, links, and time per app. For whoever provisions the venture's accounts. |
 | [`WRITING.md`](./WRITING.md) | The writing standard every user-facing page must pass — one job, plain, selective, one screen. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
 
