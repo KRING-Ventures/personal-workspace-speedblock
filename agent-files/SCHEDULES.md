@@ -20,11 +20,11 @@ Every capability in `playbook.md` that happens *without {{USER_FIRST_NAME}} aski
 
 All seven run as **cron sessions** (isolated context — do the job, log, exit; see `AGENTS.md` → *Session types*).
 
-The **daily brief** and **inbox triage** are two halves of one rhythm: triage runs every 30 minutes around the clock so drafts are always ready and waiting — including overnight, silently, so the morning brief already reflects everything that landed while {{USER_FIRST_NAME}} slept. The 08:00 brief is the once-a-day summary of what triage produced (drafts staged, mail left for you) alongside the day's calendar, commitments, and tasks. Both run **every day of the week** — weekends included — because the inbox and commitments don't pause on Saturday. The weekly review is the only Monday-specific job and the only one that deliberately leaves email out.
+A few things the table doesn't make obvious:
 
-**Meeting prep works in two layers.** The 08:00 daily brief lists every meeting *today* with a one-line prep note (so even an early meeting is covered before the day starts). The dedicated **Meeting prep** job is the just-in-time layer: it fires a fuller prep ~30 min before each real meeting. This is deliberately its *own* job, not a heartbeat check — the heartbeat's "skip routine standups" filter used to swallow meeting prep entirely, so it now runs on its own trigger that doesn't apply that filter.
-
-The **update check** is the proactive trigger behind the "what's new" rule in `AGENTS.md`. Catch-up also runs at every session boot — but a user who hasn't opened a session in a while would otherwise never hear about a new version. This job guarantees they do: at most one message a week, only when something changed. It **notifies and asks before applying** — so no one is moved onto a version they didn't choose, and a freshly shipped update can't silently roll out across the whole fleet at once.
+- **Brief + triage are one rhythm.** Triage runs every 30 min round the clock (silent overnight) so the 08:00 brief already reflects everything that landed. Both run every day; the weekly review is the only Monday-only job and the only one that leaves email out.
+- **Meeting prep is its own job, not a heartbeat check** — the heartbeat's "skip routine standups" filter used to swallow it. The daily brief covers the morning's meetings in one line each; this job fires the fuller ~30-min-before prep.
+- **Update check notifies and asks before applying** — at most one message a week, only when there's a new version, so no one is moved onto a version they didn't choose.
 
 ## How they get set up
 
