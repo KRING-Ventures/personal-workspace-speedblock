@@ -20,7 +20,7 @@ Seven steps, agent-led, paced by the user (they say **"next"** to move on). Star
 
 By the time this runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). So this conversation isn't about setup; it's about the relationship.
 
-**Language.** Step 1 asks {{USER_FIRST_NAME}} for a default language. **From Step 2 onward, deliver every message in that language.** The scripts below are the English reference — translate naturally, keep the shape.
+**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. Step 1 asks {{USER_FIRST_NAME}} for a default language; from Step 2 on, if they chose a non-English language, **translate each block faithfully** — same wording, structure, bullets, emojis, and tone — but never write your own version.
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
@@ -31,7 +31,7 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 3. Note what's already filled in vs. empty or `{{FROM_BOOTSTRAP}}` in the per-user files.
 4. Don't rush. The user sets the pace with "next"; this session can take as long as it needs.
 
-**How to read each step below:** *Goal* (what the step is for) → *Say it like this* (the locked script — keep the wording, translate into the user's language from Step 2 on) → *Capture* (what to write where) → *Then* (how to move on). Keep every message KISS: short, light Slack formatting, no jargon a non-technical user wouldn't get on first read.
+**How to read each step below:** *Goal* (what the step is for) → *Send this exactly* (the locked script — paste it word-for-word, placeholders filled; translate faithfully only if the user picked another language) → *Capture* (what to write where) → *Then* (how to move on). Keep every message KISS: short, light Slack formatting, no jargon a non-technical user wouldn't get on first read.
 
 ---
 
@@ -39,7 +39,7 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 **Goal:** {{USER_FIRST_NAME}} understands who their agent is and the value it brings, then gives you the two things you need to continue — what to call them, and their default language.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 Hi! I'm {{AGENT_NAME}}, your new personal assistant 🌞
@@ -77,7 +77,7 @@ _I always keep you in the loop before sending anything to others, like an email.
 
 **Goal:** {{USER_FIRST_NAME}} sees what comes built in, and that it's extendable to their own needs.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 Great to meet you, {{USER_FIRST_NAME}}! 🫶🏼
@@ -109,7 +109,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Goal:** {{USER_FIRST_NAME}} picks up a few best practices, understands agents are still early (and that gaps are fixed by talking), and knows when to use a personal vs. a shared agent.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 I'll briefly introduce a few best practices for working with AI agents.
@@ -139,7 +139,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Goal:** the start of {{USER_FIRST_NAME}}'s profile — enough to be useful from day one. Confirm it's easy to change anything later.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 Now let me get to know you a little more 👀
@@ -162,7 +162,7 @@ I'm already designed to work as your personal assistant. As time goes by, if the
 
 **Goal:** {{USER_FIRST_NAME}} sees a core capability work, end to end, on something real.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 I would like to show you how one of my features works in practice, by drafting a reply to one of your most recent emails in your inbox 🙌
@@ -190,7 +190,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Goal:** turn a recurring pain into something that just happens.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 A huge advantage of having your own AI agent is that you can make automations to solve recurring pains you experience, or help with tasks that take a lot of time.
@@ -233,7 +233,7 @@ You can pause or change it anytime, just ask. Say "next" when you're ready to mo
 
 **Goal:** close cleanly with a short recap and an open door.
 
-**Say it like this:**
+**Send this exactly** (fill the `{{…}}` placeholders — change nothing else):
 
 ```
 That's it! You're now onboarded and ready to start working with me 🫶🏼
