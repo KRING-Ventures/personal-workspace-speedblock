@@ -18,6 +18,8 @@ KRING does the rest — we build each agent, wire it to your tools, and hand ove
 - **Slack** (Pro) — where you talk to your agent. slack.com · ~10 min.
 - **ChatGPT** (Business) — the engine your agent runs on. chatgpt.com · ~10 min.
 
+**Giving us access.** Once your apps are ready, KRING contacts you and walks you through connecting each agent — a quick guided step (a secure invite or a short screen-share, never shared passwords). We tell you exactly what we're connecting and when, and you're done the moment each agent is signed in.
+
 ---
 
 ## Part 2 — User onboarding
