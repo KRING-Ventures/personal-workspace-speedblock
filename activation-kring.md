@@ -51,11 +51,11 @@ Wire each agent's tools using the credentials from Step 6:
 - ChatGPT (Codex CLI sign-in) — what the agent runs on; without it the runtime can't think
 - Google Workspace (Gmail, Calendar, Drive, Docs, Meet, Tasks, People)
 - Slack
-- Microsoft 365 legacy data — **only if the venture is migrating from M365 (optional)**. See `runbooks/migrations/ms-to-google.md`.
+- Microsoft 365 legacy data — **only if the venture is migrating from M365 (optional)**. See `agent-files/runbooks/migrations/ms-to-google.md`.
 
 > Notion and GitHub are Recommended stack and are self-service — the user connects them in their own time after activation. Don't wait on these or wire them during setup.
 
-Also set up the one-way local mirror (Syncthing, **Send Only**) on the runtime so the user can keep a read-only backup. The user finishes the Mac/PC side during onboarding. See `runbooks/syncthing-local-mirror.md` → Part A.
+Also set up the one-way local mirror (Syncthing, **Send Only**) on the runtime so the user can keep a read-only backup. The user finishes the Mac/PC side during onboarding. See `agent-files/runbooks/syncthing-local-mirror.md` → Part A.
 
 ---
 
@@ -173,7 +173,7 @@ Requires a Google Workspace account (not `@gmail.com`) and permission to create 
 
 ### Microsoft 365 legacy data — only if migrating from M365
 
-Full step-by-step in `runbooks/migrations/ms-to-google.md`. Short version:
+Full step-by-step in `agent-files/runbooks/migrations/ms-to-google.md`. Short version:
 
 1. **Mail** — Google Data Migration Service imports Outlook/Exchange into Gmail.
 2. **Files** — Google Migrate for Workspace mirrors OneDrive/SharePoint into a Shared Drive.
@@ -188,7 +188,7 @@ After 30 days the forward goes off; the M365 licence stays so the archive remain
 
 ### Local backup mirror (Syncthing) — ~10 min per user, optional
 
-A read-only copy of the agent's files on the user's Mac/PC, kept in sync automatically. KRING sets up the runtime (Send Only) side in Step 7; the user finishes their Mac/PC side during onboarding using the Syncthing **Device ID**. Full step-by-step: `runbooks/syncthing-local-mirror.md`.
+A read-only copy of the agent's files on the user's Mac/PC, kept in sync automatically. KRING sets up the runtime (Send Only) side in Step 7; the user finishes their Mac/PC side during onboarding using the Syncthing **Device ID**. Full step-by-step: `agent-files/runbooks/syncthing-local-mirror.md`.
 
 ---
 
@@ -199,5 +199,5 @@ A read-only copy of the agent's files on the user's Mac/PC, kept in sync automat
 - `onboarding.md` — the user-facing onboarding flow (Stage 3).
 - `agent-files/onboarding/BOOTSTRAP.md` — the agent-side onboarding script.
 - `playbook.md` — Personal Workspace day-to-day.
-- `runbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration.
-- `runbooks/syncthing-local-mirror.md` — one-way local mirror setup.
+- `agent-files/runbooks/migrations/ms-to-google.md` — Microsoft 365 → Google Workspace migration.
+- `agent-files/runbooks/syncthing-local-mirror.md` — one-way local mirror setup.

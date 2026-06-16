@@ -50,6 +50,13 @@ Splits the single setup doc into two flows that were previously mashed together:
 - `agent-files/EVALS.md` — pass/fail contract updated to match: verify evals no longer fail an answer for lacking a source ref (only for fabrication / answering without checking); labels renamed from the old procedure names.
 - `agent-files/runbooks/building-automations.md` — pointer updated to the renamed habit.
 
+**Runbooks consolidated + repurpose/update now delivers onboarding.**
+
+- **Runbooks moved into the agent's reach.** `updating-an-agent.md`, `repurposing-an-existing-agent.md`, `syncthing-local-mirror.md`, and `migrations/ms-to-google.md` moved from the repo-root `runbooks/` into `agent-files/runbooks/`. `AGENTS.md`/`TOOLS.md` pointed agents at `runbooks/…`, but those files lived outside the agent's workspace, so the pointers didn't resolve for a deployed agent. Root operator docs (`activation-kring.md`) updated to the new paths.
+- **Repurposed users now get the full onboarding, not just an upgrade note.** `repurposing-an-existing-agent.md` Part B rewritten: a repurposed agent runs the same onboarding *beats* as `BOOTSTRAP.md` (core features, best practices, the optional email-draft demo and first-automation) — it just skips the identity collection it already has. Rule: *deliver the onboarding, skip the introductions.* Fixes users being quietly dropped onto Personal Workspace and never shown what it means.
+- `updating-an-agent.md` — added step 7: if an update reaches a user who never received the onboarding (repurposed/updated before the flow existed), run the continuity-aware onboarding rather than a one-line what's-new.
+- Stale counts fixed: "five cron jobs" → seven (`updating-an-agent.md`), "four standard jobs" → seven (`repurposing-an-existing-agent.md`), "eight prompts" → count-agnostic (`EVALS.md`).
+
 ---
 
 ## [1.0.1] — 2026-06-08

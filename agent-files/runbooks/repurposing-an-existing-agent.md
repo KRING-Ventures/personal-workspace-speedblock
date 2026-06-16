@@ -30,22 +30,25 @@ Prerequisite: shell access to the agent's runtime.
    - `MEMORY.md` + `memory/*.md` — **content untouched.** These are the user's memory. Adjust only headers/section names if the PW layout needs it; never rewrite the substance.
    - `automations/AUTOMATIONS.md` — preserve every existing entry. Don't delete or duplicate automations.
 5. **Set `STATE_VERSION`** at the root of the working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. (This is the load-bearing rule above — it suppresses `BOOTSTRAP`.)
-6. **Reconcile schedules, don't stack them.** On the next main session the boot self-heal will add any of the four standard jobs (brief, weekly review, heartbeat, memory distill) that are missing — *check existing cron jobs first so you don't end up with two morning briefs*. If the agent already had its own brief/heartbeat-type jobs, fold them into the PW ones rather than running both.
+6. **Reconcile schedules, don't stack them.** On the next main session the boot self-heal will add any of the seven standard jobs (see `SCHEDULES.md`) that are missing — *check existing cron jobs first so you don't end up with two morning briefs*. If the agent already had its own brief/heartbeat-type jobs, fold them into the PW ones rather than running both.
 
 Success signal: the agent boots, does **not** start a clean-sheet intro, keeps all prior memory and automations, and reports it's on the current `STATE_VERSION`.
 
 ## Part B — What the user experiences
 
-A repurposed agent **already knows the user** — so the worst thing it can do is greet them like a stranger and re-ask everything. The user-facing flow is *continuity, not reset*: "same me, new capabilities." On the first main session after repurposing, the agent runs a short **upgrade conversation** instead of `BOOTSTRAP`:
+A repurposed agent **already knows the user** — so the worst thing it can do is greet them like a stranger and re-ask everything. But it must **not** skip the onboarding either: a repurposed user still deserves the same Personal Workspace onboarding a new user gets — the value, the best practices, the optional demos. The rule is: **deliver the onboarding, skip the introductions.** Run the same beats as `onboarding/BOOTSTRAP.md`, drawing on its "say it like this" wording, but drop the identity-collection (name, language, role, timezone) — you already have all of that.
 
-1. **Open with continuity.** *"I've just been upgraded to Personal Workspace — same me, I've kept everything we've done together. Here's what's new."* No re-introduction, no name reset.
-2. **Name what changed, briefly.** Proactive morning brief + Monday review, hourly check-ins on mail/calendar/commitments (nudge → draft → your OK), the local backup mirror, and a shared tool stack. Keep it to a few lines — don't lecture.
-3. **Confirm migrated basics, don't re-interview.** *"I've carried over your name, timezone and role — quick check they're still right?"* Patch anything stale. This replaces BOOTSTRAP Step 2, but starts from what's already known.
-4. **Teach the 4 AI Commandments.** This *is* new — it's the working contract. Walk them quickly (per `ai-commandments.md`); it's the one piece of BOOTSTRAP a repurposed agent still needs in full.
-5. **Offer the gaps.** Any PW-standard tool not yet wired (Notion, GitHub) — offer to connect. Offer the local mirror setup (`runbooks/syncthing-local-mirror.md`). All optional, all skippable.
-6. **Close.** *"Everything we had is intact — I've just got more I can do for you now."*
+On the first main session after repurposing, the agent runs this **continuity-aware onboarding** instead of clean-sheet `BOOTSTRAP`:
 
-What the user must **not** experience: losing memory, losing automations, being asked to re-state things the agent already knew, or a duplicate set of scheduled jobs firing.
+1. **Open with continuity, not a cold hello.** *"I've just been upgraded to Personal Workspace — same me, I've kept everything we've done together. Let me quickly show you what I can now do."* No re-introduction, no name reset.
+2. **Walk the core features** (BOOTSTRAP Step 2). The 8 AM weekday brief, Monday review, meeting prep 15 min ahead, inbox triage with ready-to-send drafts, calendar orchestration, document drafting — plus that they can ask for new automations any time. This is the value; give it in full, not a one-line mention.
+3. **Cover the best practices** (BOOTSTRAP Step 3). The 4 AI Commandments (per `ai-commandments.md`) and *when to use a personal agent vs a shared/venture agent*. This is genuinely new to a repurposed user — don't shortcut it.
+4. **Confirm migrated basics, don't re-interview** (replaces BOOTSTRAP Step 1/4). *"I've carried over your name, timezone and role — quick check they're still right?"* Patch anything stale. You start from what's already known instead of asking from scratch.
+5. **Offer the optional demos** (BOOTSTRAP Steps 5–6), exactly as a new user gets them: draft a reply to a recent email to show the inbox flow, and offer to turn their biggest recurring pain into a working automation. Both optional, both skippable.
+6. **Offer the gaps.** Any PW-standard tool not yet wired (Notion, GitHub) — offer to connect. Offer the local mirror setup (`runbooks/syncthing-local-mirror.md`). All optional.
+7. **Close** (BOOTSTRAP Step 7). *"That's it — everything we had is intact, I've just got more I can do for you now. Any questions?"*
+
+What the user must **not** experience: losing memory, losing automations, being asked to re-state things the agent already knew, a duplicate set of scheduled jobs firing — or, the failure this fixes, being quietly dropped onto Personal Workspace and **never shown the onboarding at all**.
 
 ## Rollback
 
