@@ -1,4 +1,4 @@
-# Personal Workspace — Activation Flow
+# Personal Workspace — Activation Guide
 
 The whole venture-facing journey in one place: getting set up, then each person's first conversation with their agent.
 
