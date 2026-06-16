@@ -18,7 +18,7 @@ One flat set of canonical templates. Files marked **(per-user)** are blueprints 
 SOUL.md                # character, boundaries, voice
 AGENTS.md              # session boot, memory, permissions, answering habits
 HEARTBEAT.md           # proactive check-in protocol (what to do when a poll fires)
-SCHEDULES.md           # the seven recurring jobs that fire the proactive layer (see the file)
+SCHEDULES.md           # the seven recurring jobs/triggers that fire the proactive layer (see the file)
 KRING.md               # KRING org context — read on demand, not at boot
 MEMORY.md              # long-term memory template
 EVALS.md               # golden prompts to spot-check the answering habits

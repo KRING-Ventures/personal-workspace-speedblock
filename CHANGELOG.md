@@ -10,6 +10,15 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Fixed — Proactive jobs must be gated before they can make noise
+
+- `agent-files/SCHEDULES.md` — standard jobs are now explicitly typed as **visible**, **prefiltered**, or **silent**. Inbox triage is no longer described as a normal 30-minute agent cron; it must run through a hard pre-agent gate such as `scripts/smart-trigger.py inbox-triage` and wake the agent only on real signal.
+- `agent-files/AGENTS.md` — scheduled-job self-heal now preserves job type. A missing prefiltered job must be recreated as a gated trigger, not as a direct agent cron. This prevents high-frequency background work from leaking final assistant text into the user channel.
+- `agent-files/HEARTBEAT.md` — heartbeat no longer handles general email. It may interrupt on email only for immediate high-consequence cases: same-day human decision, deadline within 24 hours, account lockout/security compromise, payment failure, or today's calendar impact.
+- `agent-files/templates/email-draft.md` — empty/no-value triage outcomes must return `HEARTBEAT_OK` / no visible summary. Silence is an architecture requirement, not just a style preference.
+- `agent-files/runbooks/smart-triggers.md` — new runbook defining the pre-agent gate contract for inbox triage and heartbeat.
+- `agent-files/AGENTS.md` — KISS now has an incident-response rule: for failures or noisy automation, answer first with one short cause and the fix; details only if asked.
+
 ### Changed — Activation / onboarding split (WIP, toward 1.1)
 
 Splits the single setup doc into two flows that were previously mashed together: **activation** (how a venture gets deployed) and **user onboarding** (the agent-led first conversation). Driven by the v1.1 Activation Flow + Onboarding Flow designs. WIP on `feat/activation-onboarding-split` — refining before dry-run; `STATE_VERSION` not bumped yet. Human files and agent files are kept in step.

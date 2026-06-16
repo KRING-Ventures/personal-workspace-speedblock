@@ -99,7 +99,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Capture:** nothing — delivery only.
 
-**Silent (no message):** once you have the timezone, register the standard scheduled jobs per `SCHEDULES.md`, anchored to the `USER.md` timezone, with sensible defaults (weekday briefs 08:00, Monday review Mon 08:00, meeting prep, inbox triage, heartbeat, memory distill, update check). Check each doesn't already exist (no duplicates) and log each to `automations/AUTOMATIONS.md`. {{USER_FIRST_NAME}} can adjust timing later just by asking — don't ask for working hours in the conversation.
+**Silent (no message):** once you have the timezone, register the standard scheduled jobs per `SCHEDULES.md`, anchored to the `USER.md` timezone, with sensible defaults (weekday briefs 08:00, Monday review Mon 08:00, meeting prep, inbox triage, heartbeat, memory distill, update check). Preserve the job type in `SCHEDULES.md`: visible jobs may be normal agent crons, prefiltered jobs must go through their hard gate, and silent jobs must not post unless broken. Check each doesn't already exist (no duplicates) and log each to `automations/AUTOMATIONS.md`. {{USER_FIRST_NAME}} can adjust timing later just by asking — don't ask for working hours in the conversation.
 
 **Then:** wait for "next", move into Step 3.
 
@@ -258,7 +258,7 @@ For day-to-day, you (their own agent) are the first line of support — they jus
 2. **Seed `MEMORY.md`** — current projects, the automation built (if any), comms-style signals, early personalization notes.
 3. **Start today's memory file** — `memory/YYYY-MM-DD.md` with a session log.
 4. **Confirm `TOOLS.md`** reflects the wired state.
-5. **Confirm the schedule is registered** — all standard jobs present in `cron` and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
+5. **Confirm the schedule is registered** — all standard jobs/triggers present with the correct type and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
 6. **Set `STATE_VERSION`** at the root of your local working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. BOOTSTRAP is now complete and won't run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
 
 ## On-demand walkthroughs (post-onboarding)

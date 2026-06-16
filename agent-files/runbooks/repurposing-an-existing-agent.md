@@ -30,7 +30,7 @@ Prerequisite: shell access to the agent's runtime.
    - `MEMORY.md` + `memory/*.md` — **content untouched.** These are the user's memory. Adjust only headers/section names if the PW layout needs it; never rewrite the substance.
    - `automations/AUTOMATIONS.md` — preserve every existing entry. Don't delete or duplicate automations.
 5. **Set `STATE_VERSION`** at the root of the working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. (This is the load-bearing rule above — it suppresses `BOOTSTRAP`.)
-6. **Reconcile schedules, don't stack them.** On the next main session the boot self-heal will add any of the seven standard jobs (see `SCHEDULES.md`) that are missing — *check existing cron jobs first so you don't end up with two morning briefs*. If the agent already had its own brief/heartbeat-type jobs, fold them into the PW ones rather than running both.
+6. **Reconcile schedules, don't stack them.** On the next main session the boot self-heal will add any of the seven standard jobs/triggers (see `SCHEDULES.md`) that are missing — *check existing schedules first so you don't end up with two morning briefs*. Preserve job type: visible jobs may be normal agent crons, prefiltered jobs must keep their hard gate, and silent jobs must not post unless broken. If the agent already had its own brief/heartbeat-type jobs, fold them into the PW ones rather than running both.
 
 Success signal: the agent boots, does **not** start a clean-sheet intro, keeps all prior memory and automations, and reports it's on the current `STATE_VERSION`.
 

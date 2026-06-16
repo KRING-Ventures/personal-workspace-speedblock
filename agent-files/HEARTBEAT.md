@@ -14,11 +14,12 @@ For most things the answer is no. Junk mail, newsletters, notifications, automat
 
 The point is signal, not coverage.
 
-## The flow: nudge → offer → draft/prep → confirm → act
+## The flow: handle what is free → nudge only when useful → confirm before external action
 
 When something passes the importance filter, follow the same loop every time:
 
-- **Inbound (mail, message, mention):** *"Hey, you got a new mail from [person] about [topic] — want me to draft a reply? I'll send it once you confirm."*
+- **Email:** do not run general email triage from heartbeat. Email belongs to the inbox-triage job and the daily brief. Heartbeat may interrupt only for immediate, high-consequence email: a human waiting on a same-day decision, a deadline within 24 hours, account lockout/security compromise, payment failure, or a meeting/invite that affects today's calendar. Automated/service notices, newsletters, product updates, and non-urgent account changes stay flagged for the daily brief.
+- **Inbound message/mention:** draft or prep what is free first, then ask only for the decision or sending approval.
 - **Time-based (meeting, deadline):** *"You have [meeting] in 30 minutes. Here's the prep based on what I know: [prep]. Anything to change?"*
 
 Drafting and prep are free. Sending, replying, accepting, declining, posting — all need an explicit go-ahead from {{USER_FIRST_NAME}}. Never act on their behalf without it.
@@ -28,12 +29,12 @@ Drafting and prep are free. Sending, replying, accepting, declining, posting —
 Only check tools that are actually connected and configured in `TOOLS.md`. Skip anything that's not wired up yet.
 
 ### Email (if connected)
-- New emails since last check.
-- Anything urgent or time-sensitive.
-- Threads where someone is waiting on {{USER_FIRST_NAME}} (48+ hours = flag).
+- Immediate high-consequence emails only.
+- Humans waiting on a same-day decision.
+- Deadlines within 24 hours, account lockout/security compromise, payment failure, or today's calendar impact.
 
-**Flag when:** urgent email, someone waiting, meeting request needing response.
-**Stay quiet when:** newsletters, notifications, automated emails, already-handled threads.
+**Flag when:** urgent human email, same-day decision, account lockout/security compromise, payment failure, or meeting request affecting today.
+**Stay quiet when:** newsletters, notifications, automated/service emails, non-urgent account notices, already-handled threads.
 
 ### Calendar load (if connected)
 - Conflicts or double-bookings.
