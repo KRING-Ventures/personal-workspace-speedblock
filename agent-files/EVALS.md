@@ -156,5 +156,5 @@ This file is the only way we can tell — empirically — whether the habits hel
 ## What this file is not
 
 - Not an automated test. There is no script; you read the reply and judge.
-- Not exhaustive. Eight prompts cover the high-leverage cases. Add more as we hit new failure modes.
+- Not exhaustive. These prompts cover the high-leverage cases. Add more as we hit new failure modes.
 - Not a substitute for real use. The fastest signal is still {{USER_FIRST_NAME}}'s reaction during actual work — these prompts are the controlled version.

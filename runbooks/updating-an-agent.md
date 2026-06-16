@@ -40,7 +40,7 @@ On the update session, the agent:
 
 1. **Pulls** the latest framework.
 2. **Runs catch-up** per `agent-files/AGENTS.md` → *How catch-up works*: reads `CHANGELOG.md` from its version onward, applies what fits this user, ignores cosmetic-only changes.
-3. **Verifies core capabilities are active, not just described.** Checks its five `cron` jobs exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that the heartbeat is registered. A capability the framework documents but the runtime never scheduled is not a real capability.
+3. **Verifies core capabilities are active, not just described.** Checks its seven `cron` jobs exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that the heartbeat is registered. A capability the framework documents but the runtime never scheduled is not a real capability.
 4. **Preserves per-user state.** No re-interviewing, no clean-sheet intro, no duplicate jobs.
 5. **Sets `STATE_VERSION`** to current and logs the catch-up in today's `memory/YYYY-MM-DD.md`.
 6. **Tells the user what's new** — a short, feature-level "here's what I can now do" message, in the continuity tone from `repurposing-an-existing-agent.md` Part B. Cosmetic/wording updates stay silent; capability-level updates get one short message. *(This Part-C flow is the operator-triggered push — KRING already chose to ship it, so the agent applies and explains. The **weekly automatic check** instead asks before applying — see "The weekly update check" below.)* Required by the *"what's new" rule* in `agent-files/AGENTS.md` → *How catch-up works*.
@@ -50,7 +50,7 @@ On the update session, the agent:
 After an update session, confirm:
 
 - [ ] Agent's `STATE_VERSION` == framework `STATE_VERSION`.
-- [ ] Five `cron` jobs present **in the runtime's actual `cron` list** (not just mentioned) and logged in `automations/AUTOMATIONS.md`.
+- [ ] Seven `cron` jobs present **in the runtime's actual `cron` list** (not just mentioned) and logged in `automations/AUTOMATIONS.md`.
 - [ ] Agent reported that list back as proof — job names + schedules — rather than a bare "done".
 - [ ] Heartbeat protocol active.
 - [ ] Memory, `USER.md`, automations intact — nothing reset or duplicated.
