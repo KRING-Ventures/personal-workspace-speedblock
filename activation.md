@@ -1,49 +1,42 @@
 # Personal Workspace — Activation Guide
 
-The whole venture-facing journey in one place: getting set up, then each person's first conversation with their agent.
+**Going live is mostly on us.** Your hands-on part is small — set up three accounts once (~30–45 min) and have one ~15-minute chat with your agent. KRING does all the technical setup. Start to finish: about **5 business days**.
 
 ---
 
 ## Part 1 — Getting set up
 
-Setting up your venture takes about **5 business days** — often faster if your apps are ready early. Most of the work is ours. Here's your part.
+### Your part — three quick things
+1. **Activate & sign** in Cosmica — pick how many people, accept the terms, sign.
+2. **Name your agents** — one name per person (it becomes the agent's identity).
+3. **Set up three apps** and give us access — the only hands-on bit. Details just below.
 
-### What you do
-1. **Activate & sign.** In Cosmica, choose how many people to set up, accept the terms, and sign the agreement.
-2. **Name your agents.** One name per person — it becomes the agent's identity.
-3. **Set up three apps and give us access** — so we can connect each agent to them (see below).
+**KRING does the rest** — we build each agent, connect it to your tools, and hand each person access. You never touch the technical setup.
 
-KRING does the rest: we build each agent, connect it to your tools, and hand each person access. You never touch the technical setup.
+> Start the three apps as soon as you've named your agents — that's the part that paces everything. We build the agents in parallel while you set them up.
 
-> **Tip:** start your three apps as soon as you've named your agents. That's the part that paces everything — we build your agents in parallel while you set the apps up.
+### The three apps
+You own these; we just connect your agents to them.
 
-### The three apps you need
-You set these up and own them — nothing runs through KRING; we just connect your agents to them. Get them in place before we wire the agents:
-- **Google Workspace** (Business Standard) — email, calendar, files. One per person, at workspace.google.com. ~30–45 min (plus a few hours for the domain to verify — usually the longest wait).
-- **Slack** (Pro) — where each person talks to their agent. One per person, at slack.com. ~10 min.
-- **ChatGPT** — the AI engine the agents run on. **Business (Team)** plan, one member per person, at chatgpt.com. ~10 min.
+- **Google Workspace** (Business Standard) — email, calendar, files. One per person · workspace.google.com · ~30–45 min (the domain check is the longest wait).
+- **Slack** (Pro) — where you talk to your agent. One per person · slack.com · ~10 min.
+- **ChatGPT** (Business) — the engine your agent runs on. One member per person · chatgpt.com · ~10 min.
 
-A few extra apps (like Notion and GitHub) are optional — people connect those themselves later. See the **Playbook**.
+Optional extras like Notion and GitHub you connect yourself later — see the **Playbook**. *On Microsoft 365?* You can move email, calendar, and files to Google whenever you like — KRING can help during setup, or your agent can help later. Optional; adds a little time.
 
-**Coming from Microsoft 365?** Optional. You can move your email, calendar, and files to Google Workspace — KRING can run the migration during setup if you flag it, or you can do it later with your agent's help. Either way it's optional and adds some time.
-
-### Questions during setup?
-Stuck on a domain check or an app step? **Moss** — KRING's Personal Workspace support agent — is your contact through activation and setup, right up until your own agent goes live.
+Stuck on anything? **Moss**, KRING's Personal Workspace support agent, is your contact until your own agent goes live.
 
 ---
 
 ## Part 2 — Your first conversation
 
-When you get access, your agent starts a short chat to get set up. About **15 minutes** for the core — or ~30 with the two optional steps. No forms — you just talk to it, and you move at your own pace by saying **"next"**.
+When you get access, your agent starts a short chat to get set up — about **15 minutes** (or ~30 with the two optional steps). No forms; you just talk to it and say **"next"** to move on. Your tools are already connected, so this is about how you'll work together.
 
-Your tools are already connected, so this is about how you'll work together.
-
-### What happens
-1. **The agent introduces itself** — who the agent is, the time it saves you, and it asks what to call you and your default language.
-2. **The agent shows what it can do** — the core features the agent comes with, and how you can add your own.
-3. **The agent shares how to work together** — a few simple best practices, and when to use your personal agent vs. a shared team agent.
-4. **The agent gets to know you** — your role, what you do, and what you're working on.
-5. **You see the agent work** *(optional)* — the agent drafts a reply to a real email so you can see a feature in action.
+1. **It introduces itself** — who your agent is, the time it saves you, and asks what to call you and your language.
+2. **It shows what it can do** — the core features, and how you can add your own.
+3. **It shares how to work together** — a few best practices, and personal vs. shared agents.
+4. **It gets to know you** — your role, what you do, what you're working on.
+5. **You see it work** *(optional)* — it drafts a reply to a real email so you see a feature live.
 6. **You build one automation** *(optional)* — turn a recurring annoyance into something automatic.
 7. **You're live** — a quick recap, and you're set.
 
@@ -52,7 +45,7 @@ From here, your agent runs your morning brief, drafts your email, and learns as 
 ---
 
 ## Need help?
-Day-to-day, your own agent is your first line of support — just ask it in your thread. For anything bigger — setup, the Speedblock itself, or if your agent is ever down — **Moss**, KRING's Personal Workspace support agent, steps in and handles it.
+Day-to-day, your own agent is your first line of support — just ask it in your thread. For anything bigger — setup, the Speedblock itself, or if your agent is ever down — **Moss** steps in and handles it.
 
 → Day-to-day detail: the **Playbook**.
 
