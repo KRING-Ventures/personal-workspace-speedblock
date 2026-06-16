@@ -1,14 +1,12 @@
 # Personal Workspace — Playbook
 
-Your day-to-day guide to Personal Workspace: the tools you'll use, what your agent does for you, and the rhythm you'll settle into. The goal is simple — make everyday work faster, calmer, and more fun.
-
-> New here, or want the case for why this is worth it? Start with **Why It's Worth It**.
+Your guide to Personal Workspace: the tools you'll use, what your agent does for you, and the rhythm you'll settle into. The goal is simple — make everyday work better, faster, and more fun.
 
 ---
 
-## The one principle
+## AI First Principle
 
-**AI first.** If your agent can do something for you, let it. The only thing it checks with you on is anything that gets sent, replied to, or changed for other people — that always gets your OK.
+If your agent can do something for you, let it. The only thing it checks with you on is anything that gets sent, replied to, or changed for other people — that always gets your OK.
 
 ---
 
@@ -20,9 +18,9 @@ The apps required to use Personal Workspace. You own and set these up; KRING con
 
 | App | What it's for | Your agent reaches it? |
 |---|---|---|
-| **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage — email, calendar, files, docs, meetings | ✅ Yes — wired by KRING during activation |
-| **Slack** | Team and agent communication — where you talk to your agent | ✅ Yes — primary surface |
-| **ChatGPT** (Business Team) | The AI engine your agent runs on | n/a — your agent runs on it |
+| **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage for easy collaboration | ✅ Yes |
+| **Slack** | Everyday team and agent communication | ✅ Yes |
+| **ChatGPT** (Business Team) | The AI engine your agent runs on | ✅ Yes |
 
 ### Recommended tech stack
 
@@ -30,10 +28,10 @@ Apps we recommend for other tasks. Not required — you set these up yourself af
 
 | App | What it's for | Your agent reaches it? |
 |---|---|---|
-| **Notion** | Notes and meeting transcriptions — your venture's project workspace | ✅ Yes — connect it yourself after activation |
-| **GitHub** | Code repositories and version control | ✅ Yes — connect it yourself after activation |
-| **Whispr Flow** | Fast speech-to-text — dictate messages and notes | n/a — you use this directly |
-| **Claude** | Everyday AI tasks and vibe coding | n/a — you use this directly |
+| **Notion** | Notes and meeting transcriptions for easy collaboration | ✅ Connect yourself |
+| **GitHub** | Code repositories and version control | ✅ Connect yourself |
+| **Whispr Flow** | Fast speech-to-text to dictate messages and notes | n/a — used directly |
+| **Claude** | Vibe coding or tasks beyond PA scope | n/a — used directly |
 
 ---
 
@@ -112,11 +110,3 @@ Your agent's files — its memory, your profile, your notes — can be mirrored 
 ## Staying up to date
 
 Personal Workspace improves over time — new capabilities, better defaults. You don't have to manage any of it. About once a week your agent checks for a new version; if there is one, it tells you what's new in plain language and **asks before changing anything**. Nothing updates behind your back. Everything you've built up — its memory, your settings, how it knows you — carries over untouched. Say yes when you're ready, or "not now" and it'll ask again later.
-
----
-
-## Glossary
-
-- **Personal Workspace** — best practices for how work is done individually and across teams.
-- **OpenClaw** — the AI agent system that powers your personal agent.
-- **Speedblock** — KRING's name for a ready-to-implement product solving specific roadblocks.
