@@ -16,30 +16,22 @@ If your agent can do something for you, let it. The only thing it checks with yo
 
 The apps required to use Personal Workspace. You own and set these up; KRING connects your agent to them during activation.
 
-<table>
-<colgroup><col width="27%"><col width="53%"><col width="20%"></colgroup>
-<thead><tr><th align="left">App</th><th align="left">What it's for</th><th align="left">Agent uses it?</th></tr></thead>
-<tbody>
-<tr><td><b>Google Workspace</b> (Gmail, Calendar, Drive, Docs, Meet)</td><td>Default workspace and file storage for easy collaboration</td><td>✅ Yes</td></tr>
-<tr><td><b>Slack</b></td><td>Everyday team and agent communication</td><td>✅ Yes</td></tr>
-<tr><td><b>ChatGPT</b> (Business Team)</td><td>The AI engine your agent runs on</td><td>✅ Yes</td></tr>
-</tbody>
-</table>
+| App | What it's for | Agent uses it? |
+|---|---|---|
+| **Google Workspace** | Default workspace and file storage for easy collaboration (Gmail, Calendar, Drive, Docs, Meet) | ✅ Yes |
+| **Slack** | Everyday team and agent communication | ✅ Yes |
+| **ChatGPT** (Business Team) | The AI engine your agent runs on | ✅ Yes |
 
 ### Recommended tech stack
 
 Optional apps for other tasks. Not required — you set these up yourself, whenever you like.
 
-<table>
-<colgroup><col width="27%"><col width="53%"><col width="20%"></colgroup>
-<thead><tr><th align="left">App</th><th align="left">What it's for</th><th align="left">Agent uses it?</th></tr></thead>
-<tbody>
-<tr><td><b>Notion</b></td><td>Notes and meeting transcriptions for easy collaboration</td><td>✅ Connect yourself</td></tr>
-<tr><td><b>GitHub</b></td><td>Code repositories and version control</td><td>✅ Connect yourself</td></tr>
-<tr><td><b>Whispr Flow</b></td><td>Fast speech-to-text to dictate messages and notes</td><td>n/a — used directly</td></tr>
-<tr><td><b>Claude</b></td><td>Vibe coding or tasks beyond PA scope</td><td>n/a — used directly</td></tr>
-</tbody>
-</table>
+| App | What it's for | Agent uses it? |
+|---|---|---|
+| **Notion** | Notes and meeting transcriptions for easy collaboration | ✅ Connect yourself |
+| **GitHub** | Code repositories and version control | ✅ Connect yourself |
+| **Whispr Flow** | Fast speech-to-text to dictate messages and notes | n/a — used directly |
+| **Claude** | Vibe coding or tasks beyond PA scope | n/a — used directly |
 
 ---
 
