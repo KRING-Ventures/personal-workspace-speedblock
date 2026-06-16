@@ -2,7 +2,7 @@
 
 *The **stable** picture of {{USER_FIRST_NAME}}: basics + a few one-liners that touch every interaction. Locked during BOOTSTRAP, edited only when something changes (new email, moved timezone, changed role).*
 
-*The **moving** picture — current contacts, projects, recurring meetings, team relationships, decision style, push-back preferences, work patterns, goals, rhythm — lives in `MEMORY.md` (curated long-term) and `memory/YYYY-MM-DD.md` (rolling daily). It's built from observed behavior over time, not from a one-shot questionnaire. See `AGENTS.md` → Memory system.*
+*The **moving** picture — current contacts, projects, recurring meetings, team relationships, decision style, push-back preferences, work patterns, goals, rhythm — lives in `MEMORY.md` (curated long-term) and `memory/YYYY-MM-DD.md` (rolling daily). It's built from observed behavior over time, not from a one-shot questionnaire. See `AGENTS.md` → Memory.*
 
 ## Basics
 

@@ -10,7 +10,7 @@ Every capability in `playbook.md` that happens *without {{USER_FIRST_NAME}} aski
 
 | Job | Default cadence | What it runs | Surface |
 |---|---|---|---|
-| **Daily brief** | Every day, 08:00 user-local | Runs the morning inbox sweep (see *Inbox triage*), then builds the brief from `templates/daily.md` and sends it — today's calendar, focus, commitments, plus what the agent drafted and what it left for {{USER_FIRST_NAME}} | Slack |
+| **Daily brief** | Weekdays, 08:00 user-local | Runs the morning inbox sweep (see *Inbox triage*), then builds the brief from `templates/daily.md` and sends it — today's calendar, focus, commitments, plus what the agent drafted and what it left for {{USER_FIRST_NAME}} | Slack |
 | **Inbox triage** | Every 30 min, 24/7 | Runs the `templates/email-draft.md` triage loop: read new mail, draft everything it can answer (~95%) **into the Gmail Drafts folder**, mark **only the drafted emails** as read, leave the rest unread and flagged for {{USER_FIRST_NAME}}. Runs round the clock so drafts are ready whenever mail lands — but **stays silent outside waking hours** (no Slack pings 18:00–08:00; just stage drafts). Only ever messages mid-day if a draft genuinely needs a human decision now. | Slack (daytime only, when input is needed) |
 | **Weekly review** | Mondays, 08:00 user-local | Builds the review from `templates/weekly.md` — the big-picture week. **No email triage in this one**: open commitments, what closed last week, the week's milestones/events, direction. | Slack |
 | **Meeting prep** | Every 15 min, 06:00–22:00 user-local, every day | Checks the calendar for any meeting starting in ~30 min that has other attendees (skips solo/focus blocks). For each, sends a prep from `templates/meeting-prep.md` **once** — who's in it, recent context, what {{USER_FIRST_NAME}} wants from it. Tracks which meetings it's already prepped so it never double-fires. | Slack |
@@ -22,7 +22,7 @@ All seven run as **cron sessions** (isolated context — do the job, log, exit; 
 
 A few things the table doesn't make obvious:
 
-- **Brief + triage are one rhythm.** Triage runs every 30 min round the clock (silent overnight) so the 08:00 brief already reflects everything that landed. Both run every day; the weekly review is the only Monday-only job and the only one that leaves email out.
+- **Brief + triage are one rhythm.** Triage runs every 30 min round the clock, every day (silent overnight), so the 08:00 brief already reflects everything that landed. The brief itself goes out on weekdays. The weekly review is the only Monday-only job, and the only one that leaves email out.
 - **Meeting prep is its own job, not a heartbeat check** — the heartbeat's "skip routine standups" filter used to swallow it. The daily brief covers the morning's meetings in one line each; this job fires the fuller ~30-min-before prep.
 - **Update check notifies and asks before applying** — at most one message a week, only when there's a new version, so no one is moved onto a version they didn't choose.
 

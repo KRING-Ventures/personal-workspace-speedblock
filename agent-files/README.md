@@ -16,23 +16,26 @@ One flat set of canonical templates. Files marked **(per-user)** are blueprints 
 
 ```
 SOUL.md                # character, boundaries, voice
-AGENTS.md              # session boot, memory, permissions, onboarding rule
+AGENTS.md              # session boot, memory, permissions, answering habits
 HEARTBEAT.md           # proactive check-in protocol (what to do when a poll fires)
-SCHEDULES.md           # the recurring jobs that fire the proactive layer (brief, review, heartbeat)
-KRING.md               # KRING org context (the entity)
+SCHEDULES.md           # the seven recurring jobs that fire the proactive layer (see the file)
+KRING.md               # KRING org context — read on demand, not at boot
 MEMORY.md              # long-term memory template
+EVALS.md               # golden prompts to spot-check the answering habits
 IDENTITY.md            # name, role, vibe, emoji  (per-user)
 USER.md                # user profile, filled during BOOTSTRAP  (per-user)
 TOOLS.md               # what's actually wired up  (per-user)
 onboarding/
 ├── BOOTSTRAP.md       # first-session dialogue (zeroth migration)
 ├── STATE_VERSION      # current framework version
-└── MIGRATIONS/        # per-version per-user cleanup notes (empty unless a version changes per-user state)
+└── MIGRATIONS/        # per-version catch-up notes (README + one file per shipped migration)
 templates/
 ├── daily.md           # morning brief
 ├── weekly.md          # Monday morning brief
-├── email-draft.md     # email drafting structure
+├── meeting-prep.md    # just-in-time meeting prep
+├── email-draft.md     # email drafting / triage structure
 └── example-daily.md   # example shape for a memory/YYYY-MM-DD.md daily log
+runbooks/              # how-tos read on demand (updating, repurposing, automations, syncthing, migrations)
 automations/
 └── AUTOMATIONS.md     # index of built automations  (per-user)
 ```

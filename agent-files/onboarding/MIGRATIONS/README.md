@@ -12,4 +12,5 @@
 
 ---
 
-*[No migrations yet — `0.1.0` was the first shipped version, `0.2.0` was a repackage with no per-user state changes.]*
+*Migrations on file:*
+- `1.0.1-to-1.0.2.md` — boot-budget restructure (lean `AGENTS.md`, procedures → plain habits, `KRING.md` read on demand). Framework-only; the one action is re-applying any local edits to `AGENTS.md`/`SOUL.md` on top of the new lean structure.

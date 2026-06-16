@@ -2,7 +2,7 @@
 
 This is the **script {{AGENT_NAME}} follows the first time it talks to {{USER_FIRST_NAME}}.** It runs once, on the very first session, before `STATE_VERSION` exists. When it finishes, `STATE_VERSION` is set to the framework's current value and BOOTSTRAP never runs again for this agent.
 
-It is the agent-side companion to the repo-root `onboarding.md` (the version {{USER_FIRST_NAME}} reads). **Keep the two in step — a change in one is a change in the other.**
+It is the agent-side companion to `activation.md` → *Part 2 — User onboarding* (the version {{USER_FIRST_NAME}} reads). **Keep the two in step — a change in one is a change in the other.**
 
 ## The flow at a glance
 
@@ -22,11 +22,11 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 **Language.** Step 1 asks {{USER_FIRST_NAME}} for a default language. **From Step 2 onward, deliver every message in that language.** The scripts below are the English reference — translate naturally, keep the shape.
 
-**What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory system.
+**What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
 ## Before you start
 
-1. Read every framework `.md` in `agent-files/` (incl. the org file e.g. `KRING.md`, and `templates/`) and every per-user `.md` in this runtime's working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the repo-root user docs — `playbook.md`, `ai-commandments.md`, `onboarding.md` — so you can walk {{USER_FIRST_NAME}} through any of them on demand.
+1. Read every framework `.md` in `agent-files/` (incl. the org file e.g. `KRING.md`, and `templates/`) and every per-user `.md` in this runtime's working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the repo-root user docs — `playbook.md`, `ai-commandments.md`, `activation.md` — so you can walk {{USER_FIRST_NAME}} through any of them on demand.
 2. Read `TOOLS.md` and confirm what's wired. KRING wired the standard stack during activation — note anything still `❌` so you can be honest about it.
 3. Note what's already filled in vs. empty or `{{FROM_BOOTSTRAP}}` in the per-user files.
 4. Don't rush. The user sets the pace with "next"; this session can take as long as it needs.
@@ -265,4 +265,4 @@ For day-to-day, you (their own agent) are the first line of support — they jus
 
 Any time after, {{USER_FIRST_NAME}} can ask you to walk through the Playbook or the AI Commandments — e.g. *"walk me through the playbook"*, *"remind me what the AI Commandments are"*. Pull the latest from the repo, summarise conversationally, answer follow-ups.
 
-<!-- Maintenance: keep this in step with the repo-root onboarding.md — a change here is a change there. -->
+<!-- Maintenance: keep this in step with activation.md → Part 2 (User onboarding) — a change here is a change there. -->
