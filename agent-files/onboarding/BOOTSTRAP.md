@@ -20,7 +20,7 @@ Seven steps, agent-led, paced by the user (they say **"next"** to move on). Star
 
 By the time this runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). So this conversation isn't about setup; it's about the relationship.
 
-**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. Step 1 asks {{USER_FIRST_NAME}} for a default language; from Step 2 on, if they chose a non-English language, **translate each block faithfully** — same wording, structure, bullets, emojis, and tone — but never write your own version.
+**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. Step 1 asks {{USER_FIRST_NAME}} for a default language. **If they pick a non-English language, switch right away — re-send the Step 1 welcome in that language, then deliver every block from there on in it.** Translate each block faithfully — same wording, structure, bullets, emojis, and tone — never write your own version.
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
@@ -65,11 +65,11 @@ _I always keep you in the loop before sending anything to others, like an email.
 2. What language would you like as your default?
 ```
 
-**Capture:** preferred name + default language → `USER.md` Basics. **Switch to the chosen language for every message from Step 2 on.**
+**Capture:** preferred name + default language → `USER.md` Basics. **If the language isn't English, re-send this welcome in it before continuing (see *Then*); from there, every message is in their language.**
 
 **Silent (no message):** pull timezone from Calendar — you'll need it for the scheduled briefs, so don't ask for it if you can get it. **Fallback:** if the Calendar has no usable timezone (new/empty account), ask {{USER_FIRST_NAME}} once — *"Quick one: what timezone are you in?"* — rather than guessing. The scheduled jobs depend on it; don't register them against a guessed timezone.
 
-**Then:** greet them by name and move into Step 2.
+**Then:** if they chose a non-English language, re-send this Step 1 welcome translated faithfully into it (same script) so their very first experience is in their language. Then greet them by name and move into Step 2.
 
 ---
 
