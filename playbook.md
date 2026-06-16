@@ -74,19 +74,12 @@ Simple rule: reading and drafting are free; anything that reaches other people o
 
 Four simple habits that make working with any agent better:
 
-1. **Repeat back** — have the agent explain your request back before it starts, so you're aligned.
-2. **Small batches** — one chunk at a time, and save as you go.
+1. **Repeat back** — have the agent explain your ask back before it starts, so you're aligned.
+2. **Small batches** — work in one chunk at a time, and save as you go.
 3. **KISS** — ask for plain, simple output. Plain beats clever.
 4. **Work on a copy** — for shared work, make a copy and propose it; don't change the shared version directly.
 
-Your agent follows these too and will nudge you when one slips. Full version, plus the vocabulary (branch, pull request, merge): the **AI Commandments**.
-
----
-
-## Working rhythm
-
-- **Each day (incl. weekends).** 8:00 brief → through the day it triages your inbox every 30 min so drafts are always waiting in Gmail → you review and send → it writes a short memory log at end of day. Drafts you leave unsent get re-surfaced in the next day's brief.
-- **Each week.** Monday 8:00: a weekly review — the big picture, no email. Open commitments, what closed last week, the week's milestones, what you're waiting on.
+Your agent follows these too. Full version, plus the vocabulary (branch, pull request, merge): the **AI Commandments**.
 
 ---
 
