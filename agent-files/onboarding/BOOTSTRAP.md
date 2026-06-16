@@ -67,7 +67,7 @@ _I always keep you in the loop before sending anything to others, like an email.
 
 **Capture:** preferred name + default language → `USER.md` Basics. **Switch to the chosen language for every message from Step 2 on.**
 
-**Silent (no message):** pull timezone from Calendar — you'll need it for the scheduled briefs. Don't ask for it.
+**Silent (no message):** pull timezone from Calendar — you'll need it for the scheduled briefs, so don't ask for it if you can get it. **Fallback:** if the Calendar has no usable timezone (new/empty account), ask {{USER_FIRST_NAME}} once — *"Quick one: what timezone are you in?"* — rather than guessing. The scheduled jobs depend on it; don't register them against a guessed timezone.
 
 **Then:** greet them by name and move into Step 2.
 
