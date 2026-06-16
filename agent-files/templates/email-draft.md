@@ -17,7 +17,9 @@ This is what the *Inbox triage* job runs every 30 minutes. For each unread email
 2. **Mark as read — only if drafted.** The moment a draft is staged for an email, mark that email read. This is the signal "handled, waiting on you." **Never mark an email read unless you've drafted a reply to it.**
 3. **Leave the rest.** Anything you chose not to draft — a real decision, sensitive, missing information, or genuinely needs {{USER_FIRST_NAME}} — stays **unread**. Flag/label it so it stands out, and name it in the daily brief's *"Left for you"* list. Never bury it by marking it read.
 4. **Don't re-draft.** Before drafting, check the thread doesn't already have a draft from a prior run. One draft per thread; update the existing one rather than stacking a second.
-5. **Stay silent unless blocked.** Triage runs in the background. Only message {{USER_FIRST_NAME}} mid-day if a draft genuinely can't proceed without a decision now — otherwise everything is summarised in the 08:00 daily brief.
+5. **Stay silent unless blocked.** Triage runs in the background. Only message {{USER_FIRST_NAME}} mid-day if a draft genuinely can't proceed without a decision now, or if a staged draft is time-sensitive enough that waiting for the next daily brief would hurt. If the run produces no new useful user-facing action — no new draft, no urgent decision, no important blocker — return `HEARTBEAT_OK` and do not send a Slack/Telegram summary. Empty outcomes are noise, not service. **Never Slack/Telegram outside 08:00–18:00** — just stage drafts.
+
+The silence rule must be enforced before the agent wakes wherever the runtime supports it. High-frequency triage should run behind a smart trigger such as `scripts/smart-trigger.py inbox-triage`; do not rely on the model to remember silence every 30 minutes.
 
 Invoices and similar actionables: if it's a "file / log / organise" item rather than a reply, handle per `playbook.md` (label, log, or route) and surface it under the brief's tasks/needs-attention — don't draft a reply that isn't needed.
 
