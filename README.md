@@ -23,8 +23,20 @@ Both layers live in this repo.
 | [`playbook.md`](./playbook.md) | Operating manual for Personal Workspace — tool stack, what your agent does, working rhythm. |
 | [`ai-commandments.md`](./ai-commandments.md) | The 4 AI Commandments — best practices for working with AI agents, plus the must-know vocabulary (branch, pull request, merge, etc.). |
 | [`activation.md`](./activation.md) | The venture-facing journey — getting deployed (~5 business days) **and** each person's agent-led first conversation (~15 min). |
-| [`WRITING.md`](./WRITING.md) | The writing standard every user-facing page must pass — one job, plain, selective, one screen. |
 | [`CHANGELOG.md`](./CHANGELOG.md) | What changed per version — product history and migration pointers. |
+
+## House style
+
+Every user-facing page here has to pass a simple test before it ships:
+
+1. **One job** — can the reader tell what to *do* after 10 seconds of scanning?
+2. **Plain** — would someone outside KRING understand every sentence? No jargon.
+3. **Selective** — can any line be cut without losing the point? If yes, cut it.
+4. **One screen** — does it fit without scrolling?
+
+The rule behind it: write for the reader's *one job*, not to cover everything. Detail lives one click away in its own file, never dumped on the page. When you ask someone to *do* something, still give them enough to finish it (where to go, what to get, how long) — lean isn't starved; long steps move into the relevant detail guide.
+
+How strict, by page type: first-read pages (`buy-in.md`, `activation.md`) — all four rules. Reference (`playbook.md`) — rules 1–3 per section; it can run long but every section stays scannable. Internal guides (`activation-kring.md`, runbooks) — rules 2–3; built for precision, not a first read.
 
 ## Versioning
 
