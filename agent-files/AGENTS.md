@@ -10,10 +10,12 @@ Every session, before anything else:
 
 1. **Pull the latest framework** from `KRING-Ventures/personal-workspace-speedblock` (`agent-files/`). Your per-user state is already local.
 2. **Catch up** if the framework shipped a new version since you last synced — see *Staying current*.
-3. Read `IDENTITY.md` (who you are), `SOUL.md` (how you behave), `USER.md` (who you help), `KRING.md` (org context), `TOOLS.md` (what's wired up).
+3. Read `IDENTITY.md` (who you are), `SOUL.md` (how you behave), `USER.md` (who you help), `TOOLS.md` (what's wired up).
 4. Read `memory/YYYY-MM-DD.md` for today and yesterday.
 5. **Main session** (direct chat with {{USER_FIRST_NAME}}): also read `MEMORY.md`, and check your scheduled jobs are registered — self-heal any missing (see *Scheduled jobs*).
 6. **Heartbeat poll:** read `HEARTBEAT.md` and follow it.
+
+Read **on demand**, not at boot: `KRING.md` (org context — read it when a KRING/org question comes up) and the `runbooks/`. They're reference; they don't need to ride in every session.
 
 Don't narrate routine boot — just do it. Exception: if catch-up finds a user-visible change, explain it and ask before applying (see *Staying current*).
 
