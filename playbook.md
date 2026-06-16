@@ -16,7 +16,7 @@ If your agent can do something for you, let it. The only thing it checks with yo
 
 The apps required to use Personal Workspace. You own and set these up; KRING connects your agent to them during activation.
 
-| App | What it's for | Your agent reaches it? |
+| App | What it's for | Agent uses it? |
 |---|---|---|
 | **Google Workspace** (Gmail, Calendar, Drive, Docs, Meet) | Default workspace and file storage for easy collaboration | ✅ Yes |
 | **Slack** | Everyday team and agent communication | ✅ Yes |
@@ -24,9 +24,9 @@ The apps required to use Personal Workspace. You own and set these up; KRING con
 
 ### Recommended tech stack
 
-Apps we recommend for other tasks. Not required — you set these up yourself after activation.
+Optional apps for other tasks. Not required — you set these up yourself, whenever you like.
 
-| App | What it's for | Your agent reaches it? |
+| App | What it's for | Agent uses it? |
 |---|---|---|
 | **Notion** | Notes and meeting transcriptions for easy collaboration | ✅ Connect yourself |
 | **GitHub** | Code repositories and version control | ✅ Connect yourself |
@@ -43,48 +43,43 @@ You get your own personal AI agent for everyday work.
 
 | What it does | How it works |
 |---|---|
-| **Remembers you** | Your role, projects, who you work with, how you like things done — across every conversation. |
-| **Briefs you** | Every morning at 8: calendar, priorities, deadlines, and what it drafted overnight. Mondays: the week ahead. |
-| **Triages your inbox** | All day, it drafts ~95% of replies straight into your Gmail Drafts — you review and send. Never sent without your OK. |
-| **Preps your meetings** | ~30 min before each: who's in it, the context, and what you want out of it. |
-| **Manages your calendar** | Finds times, blocks focus time, schedules for you. Your own time freely; anything with other people, it asks first. |
-| **Tracks commitments** | Notices what you've promised and what you're waiting on. |
-| **Uses your tools** | Gmail, Calendar, Drive, Notion, and more. |
-| **Builds automations** | On request — describe what should happen automatically and it builds it, then shows you how to switch it off. |
+| **Remembers you** | Your role, your projects, who you work with, how you like things done — it carries that across every conversation. |
+| **Briefs you each morning** | At 8:00 on weekdays: your calendar, top priorities, deadlines, and the drafts it wrote overnight. Mondays add the week ahead. |
+| **Handles your inbox** | All day it reads new mail and writes ready-to-send replies into your Gmail drafts. You read and send — nothing goes out without your OK. |
+| **Preps your meetings** | About 30 minutes before each one: who's coming, the context, and what you'll want out of it. |
+| **Runs your calendar** | Finds times, blocks your focus time, books meetings. Your own time freely; anything involving other people, it checks with you first. |
+| **Keeps track** | Notices what you've promised and what you're waiting on, so nothing slips. |
+| **Writes and finds things** | Drafts documents, shares them in Drive, and finds anything across your tools from a single question. |
+| **Builds automations** | Just describe a repetitive task and it sets it up — then shows you how to switch it off. |
 
 *Automation examples: "every Friday, summarise what I closed this week" · "remind me 3 days before any deadline" · "label anything from my accountant and file the receipts."*
 
 ### What it asks you before doing
 
-Drafts and research are free. Anything that leaves your account or changes things for other people gets a check first.
+Simple rule: reading and drafting are free; anything that reaches other people or is hard to undo gets your OK first.
 
 | The agent... | Asks first? |
 |---|---|
-| Reads, searches, drafts, or researches | No |
-| Blocks your own focus time / a solo event | No |
-| Checks colleagues' free/busy in the venture workspace | No |
-| Sends an email or replies to a message | **Yes** |
-| Schedules, moves, or cancels a meeting with other people | **Yes** |
-| Sends a booking invite to others | **Yes** |
-| Accepts or declines a calendar invite | **Yes** |
-| Writes to someone else's Notion page | **Yes** |
-| Pushes to a shared GitHub branch / opens a PR | **Yes** |
-| Does anything irreversible or visible to others | **Yes** |
+| Reads, searches, drafts, researches, organises your files | No |
+| Blocks your own focus time or adds a solo event | No |
+| Checks colleagues' free/busy to find a time | No |
+| Sends or replies to any email or message | **Yes** |
+| Books, moves, or cancels a meeting with other people | **Yes** |
+| Writes to a shared doc or page, or opens a pull request | **Yes** |
+| Anything irreversible or visible to others | **Yes** |
 
 ---
 
 ## How to work with your agent — The 4 AI Commandments
 
-Four practices that apply across everything — drafting, planning, code, ops:
+Four simple habits that make working with any agent better:
 
-1. **Make the agent repeat back your prompt.** *"Explain back to me what I just told you, so we are aligned."* Catches misunderstandings before they become rework.
-2. **Work in small batches — and save as you go.** *"Commit and push this work."* Lock each piece in before starting the next; don't pile up large unsaved changes.
-3. **KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* Plain beats clever.
-4. **In shared projects: work on a copy, then merge it.** *"Branch off main."* Don't edit `main` directly when other humans or agents share the repo — branch, PR, review, merge.
+1. **Repeat back** — have the agent explain your request back before it starts, so you're aligned.
+2. **Small batches** — one chunk at a time, and save as you go.
+3. **KISS** — ask for plain, simple output. Plain beats clever.
+4. **Work on a copy** — for shared work, make a copy and propose it; don't change the shared version directly.
 
-Full version, plus the vocabulary (branch, PR, merge, etc.): the **AI Commandments**.
-
-Your agent follows these too, and will nudge you as you work together.
+Your agent follows these too and will nudge you when one slips. Full version, plus the vocabulary (branch, pull request, merge): the **AI Commandments**.
 
 ---
 
@@ -97,7 +92,7 @@ Your agent follows these too, and will nudge you as you work together.
 
 ## Migrations
 
-- **Coming from Microsoft 365?** Optional. If your venture runs on M365, KRING can migrate your email, calendar, and files to Google Workspace during setup — just flag it at activation. Google becomes your daily driver; M365 stays as a read-only backup. Your agent knows the cut-over date and searches the right system.
+- **Coming from Microsoft 365?** You can move your email, calendar, and files over to Google Workspace whenever you like — and your agent can help you through it. Google becomes your daily driver; M365 can stay as a read-only backup, and your agent knows which system to search.
 
 ---
 
