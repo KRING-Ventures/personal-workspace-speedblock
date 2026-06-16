@@ -6,7 +6,7 @@ Four simple habits for working well with any AI agent. They keep its output clea
 *Try: "Explain back what I just asked, so we're aligned."*
 Why: catches a misunderstanding before it turns into rework.
 
-**2. Small batches.** Give it one chunk at a time, and save as you go.
+**2. Small batches.** Work in one chunk at a time, and save as you go.
 *Try: "Commit and push this."*
 Why: small steps are easy to check and easy to fix; big piles aren't.
 
