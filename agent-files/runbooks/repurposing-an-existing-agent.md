@@ -6,7 +6,7 @@ Turning an OpenClaw agent that **already has its own history, memory, automation
 
 Three different things, don't confuse them:
 
-- **Clean-sheet deploy** — brand-new agent, no prior state. Runs `BOOTSTRAP.md` (the full first-conversation). See `onboarding.md`.
+- **Clean-sheet deploy** — brand-new agent, no prior state. Runs `BOOTSTRAP.md` (the full first-conversation). See `activation.md` → Part 2.
 - **Version update** — an agent already on Personal Workspace catching up to a newer framework version. Automatic at boot via the catch-up loop. See `agent-files/AGENTS.md` → *Onboarding: how you catch up*. Nothing to do here.
 - **Repurpose (this file)** — an existing agent that was *something else* (or a generic assistant) becoming a Personal Workspace agent. It has real data you must preserve, but no PW `STATE_VERSION`, so it would wrongly trigger `BOOTSTRAP` (the clean-sheet intro) if you just dropped the files in. This runbook is how you avoid that.
 

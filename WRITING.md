@@ -21,7 +21,7 @@ KISS means: say the one thing clearly, in the fewest words that still land. Shor
 
 ## Applies to
 
-**First-read pages** — `buy-in.md`, `activation.md`, `onboarding.md`. All four rules, one screen.
+**First-read pages** — `buy-in.md`, `activation.md`. All four rules; keep each section to one screen (activation.md now carries two short parts — setup, then first conversation).
 
 **Reference pages** — `playbook.md`. Rules 1–3 per section; you consult it, so it can run long, but every section must be scannable and answer one question fast.
 
