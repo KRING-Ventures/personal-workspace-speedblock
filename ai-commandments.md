@@ -1,21 +1,32 @@
 # The 4 AI Commandments
 
-Best practices for working with AI agents. Apply across drafting, planning, code, ops. Your agent follows them too, and will nudge you when you skip one.
+Four simple habits for working well with any AI agent. They keep its output clear and aligned with what you actually want — and your agent follows them too, nudging you gently when one slips.
 
-**1. Make the agent repeat back your prompt.** *"Explain back to me what I just prompted, so we are aligned."* — Catches misunderstandings before they become rework.
+**1. Repeat back.** Have the agent say your request back before it starts.
+*Try: "Explain back what I just asked, so we're aligned."*
+Why: catches a misunderstanding before it turns into rework.
 
-**2. Work in small batches — save as you go.** *"Commit and push this work."* — Lock each piece in before starting the next; don't pile up large unsaved changes.
+**2. Small batches.** Give it one chunk at a time, and save as you go.
+*Try: "Commit and push this."*
+Why: small steps are easy to check and easy to fix; big piles aren't.
 
-**3. KISS — keep it simple and understandable.** *"Avoid unnecessary words and fillers. Explain in a simple way."* — Plain beats clever. If you can't follow it on the first read, neither can the next person.
+**3. KISS — keep it simple.** Ask for plain, short output.
+*Try: "Keep it simple — no filler."*
+Why: if you can't follow it on the first read, neither can the next person.
 
-**4. In shared projects: work on a copy, then merge.** *"Branch off main."* — Don't edit `main` directly when others share the repo. Branch, change, propose, merge.
+**4. Work on a copy.** For anything shared, work on a copy and propose it — don't change the shared version directly.
+*Try: "Branch off main."*
+Why: nobody's work gets overwritten, and changes get a quick review before they land.
 
-## Must-know vocabulary
+---
 
-- **Repo** — folder of files tracked by Git, usually on GitHub.
-- **Branch** — a parallel copy of the repo where you can work without affecting others.
-- **Main** — the source-of-truth branch. Anything on `main` is real; never edit directly when sharing.
-- **Commit** — a saved snapshot of changes inside a branch.
-- **Pull request (PR)** — proposal to merge one branch into another. Reviewed first, then merged.
-- **Merge** — combining one branch into another. After merge, the work is on `main`.
-- **Work tree** — your local copy of the repo on disk. One per branch you're working on.
+## A few words worth knowing
+
+These come up with commandment 4, mostly when you're working with code:
+
+- **Repo** — a folder of files tracked together (usually on GitHub).
+- **Main** — the real, shared version. Don't edit it directly when others share it.
+- **Branch** — your own copy to work on without touching everyone else's.
+- **Commit** — a saved snapshot of your changes.
+- **Pull request (PR)** — asking to merge your branch in; it gets reviewed first.
+- **Merge** — combining your branch into main once it's approved.

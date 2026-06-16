@@ -21,15 +21,15 @@ Almost nothing. Setup takes about **5 business days** and KRING does the work �
 ## What it costs to run
 A simple base cost **per person, per month** — the apps your agent runs on, plus its hosting. You own the app subscriptions directly; KRING bills the hosting.
 
-| Per person / month | Approx. |
+| Per person / month | Approx. (EUR) |
 |---|---|
-| Google Workspace (Business Standard) | ~$14 |
-| Slack (Pro) | ~$7 |
-| ChatGPT (Business) | ~$20 |
-| Agent hosting (a small cloud server) | ~$5 |
-| **Estimated base** | **~$46 / person / month** |
+| Google Workspace (Business Standard) | ~€14 |
+| Slack (Pro) | ~€7 |
+| ChatGPT (Business) | ~€21 |
+| Agent hosting (a small cloud server) | ~€4 |
+| **Estimated base** | **~€46 / person / month** |
 
-> Figures are list prices on **annual** billing, in USD. Paying monthly runs higher (~$55), and EUR/DKK rates, taxes, and any volume discounts differ — so KRING confirms your exact all-in per-seat figure before you commit. Optional extras (Notion, GitHub, a domain) aren't in the base.
+> Danish/EU list prices on **annual** billing, **excluding VAT** (businesses reclaim it). Paying monthly runs a bit higher, and any volume discounts differ — so KRING confirms your exact all-in per-seat figure before you commit. Optional extras (Notion, GitHub, a domain) aren't in the base.
 
 For roughly the price of a couple of lunches a month, each person gets hours of their week back.
 

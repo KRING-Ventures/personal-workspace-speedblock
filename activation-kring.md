@@ -47,11 +47,11 @@ The venture sets these up itself — **it owns every account; logins and billing
 
 | App | Plan | Where | How many | Time |
 |---|---|---|---|---|
-| **Google Workspace** | Business Starter (or higher) | workspace.google.com | One per person | ~30–45 min + a few hrs for domain check |
+| **Google Workspace** | Business Standard | workspace.google.com | One per person | ~30–45 min + a few hrs for domain check |
 | **Slack** | Pro | slack.com | One per person | ~10 min |
 | **ChatGPT** | Business (Team) | chatgpt.com | One workspace, one member per person | ~10 min |
 
-- **Google Workspace** — email, calendar, files; the core the agent works from. A personal `@gmail.com` won't work — it needs a Workspace account on the venture's own domain. At workspace.google.com → *Get started*: pick Business Starter, add (or buy) the company domain, verify it (a DNS record, a few hours to confirm), create one user per person.
+- **Google Workspace** — email, calendar, files; the core the agent works from. A personal `@gmail.com` won't work — it needs a Workspace account on the venture's own domain. At workspace.google.com → *Get started*: pick Business Standard, add (or buy) the company domain, verify it (a DNS record, a few hours to confirm), create one user per person.
 - **Slack (Pro)** — where each person talks to their agent. Create the workspace, invite one account per person, choose **Pro** (it keeps full message history, which the agent relies on).
 - **ChatGPT (Business / Team)** — the LLM the agent runs on, over the subscription (not metered API). Create a Business (Team) workspace and invite one member per person on the venture's own domain (that member becomes the agent's identity). KRING signs each agent into its seat at handover — no shared passwords.
 

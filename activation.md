@@ -19,7 +19,7 @@ KRING does the rest: we build each agent, connect it to your tools, and hand eac
 
 ### The three apps you need
 You set these up and own them — nothing runs through KRING; we just connect your agents to them. Get them in place before we wire the agents:
-- **Google Workspace** (Business Starter) — email, calendar, files. One per person, at workspace.google.com. ~30–45 min (plus a few hours for the domain to verify — usually the longest wait).
+- **Google Workspace** (Business Standard) — email, calendar, files. One per person, at workspace.google.com. ~30–45 min (plus a few hours for the domain to verify — usually the longest wait).
 - **Slack** (Pro) — where each person talks to their agent. One per person, at slack.com. ~10 min.
 - **ChatGPT** — the AI engine the agents run on. **Business (Team)** plan, one member per person, at chatgpt.com. ~10 min.
 
