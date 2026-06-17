@@ -22,6 +22,24 @@ The `personal/` category in claw-shared is the one built for PA agents (daily
 brief, meeting prep, inbox triage, …). The agent can also reach the growth and
 fleet skills when a task genuinely calls for them.
 
+## Where the index lives (and why not in agent files)
+
+There are two indexes, and **neither is copied into the agent's own files** —
+that would just drift:
+
+1. **The live index** is automatic. OpenClaw exposes every shared skill's name +
+   description to the agent at boot, straight from the local clone. This is what
+   the agent actually scans to decide what to fetch — it's always exactly in sync
+   with the clone, no daily copy job needed.
+2. **The human-readable catalog** is `claw-shared/skills/INDEX.md`, generated
+   from frontmatter. The agent reads it *from its clone* (`~/claw-shared/skills/
+   INDEX.md`) when it wants the full browsable list.
+
+Both stay current by the same one mechanism: the nightly `git pull`. We
+deliberately **don't** maintain a second copy of the index inside the agent's
+workspace — one source of truth (the clone), pulled daily, beats two that
+disagree.
+
 ## One-time wiring (per PA agent host)
 
 KRING sets this up when the agent is provisioned (PA agents are KRING-assisted,
