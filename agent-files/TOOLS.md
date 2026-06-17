@@ -30,7 +30,7 @@ Skills are collected from the shared KRING claw repo:
 
   https://github.com/KRING-Ventures/claw-shared
 
-The OpenClaw agent loads skills on demand from this repo. Log non-default scopes here as they're granted.
+The OpenClaw agent loads skills on demand from this repo — only each skill's name + description sits in context; the full instructions are fetched the moment a skill is relevant. The `personal/` category is built for PA agents. Wiring (clone + `skills.load.extraDirs` + nightly pull) is in `runbooks/using-shared-skills.md`. Log non-default scopes here as they're granted.
 
 | Skill | Granted | Scope / notes |
 |---|---|---|
