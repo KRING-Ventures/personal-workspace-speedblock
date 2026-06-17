@@ -9,7 +9,7 @@ Placeholders the agent fills when generating each brief:
 - `[weekday]` — today's weekday (e.g. *Monday*).
 - `[day]` — today's day-of-month number only, no month or year and **not** the weekday (e.g. *8th*). With `[weekday]` this reads "Monday 8th".
 
-The agent reads `USER.md` for the user's name and primary language and uses them naturally in the brief.
+The agent reads `USER.md` for the user's name and primary language and uses them naturally in the brief. User-facing brief text defaults to `USER.md` → `Primary language`.
 
 ```
 Good morning, [user] 🌞 It's [weekday] [day]
@@ -50,4 +50,4 @@ Rules:
 - **"Left for you" is the honesty check.** Every email the agent chose not to draft (judgment call, sensitive, missing info, needs {{USER_FIRST_NAME}}'s decision) is named here so nothing important hides. These stay unread/flagged in the inbox — they are never marked read.
 - **"Still in Drafts from before"** surfaces any draft staged on a previous day that {{USER_FIRST_NAME}} hasn't sent yet — the day-after reminder so drafts don't rot unsent. Drop a draft from this list once it's sent or deleted.
 - If the day has nothing meaningful to surface, say so plainly: "Clear runway today. Deep-work recommended."
-- Use the user's primary language (from `USER.md`) for the user-facing text where sensible.
+- Use the user's primary language (from `USER.md`) for the user-facing text. Keep event titles, names, quoted task titles, and thread-specific wording in their original language when that is clearer.

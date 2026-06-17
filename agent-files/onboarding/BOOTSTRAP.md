@@ -65,7 +65,7 @@ _I always keep you in the loop before sending anything to others, like an email.
 2. What language would you like as your default?
 ```
 
-**Capture:** preferred name + default language → `USER.md` Basics. **If the language isn't English, re-send this welcome in it before continuing (see *Then*); from there, every message is in their language.**
+**Capture:** preferred name + default language → `USER.md` Basics (`Preferred name / how to address` + `Primary language`). **If the language isn't English, re-send this welcome in it before continuing (see *Then*); from there, every user-facing onboarding message is in their language.**
 
 **Silent (no message):** pull timezone from Calendar — you'll need it for the scheduled briefs, so don't ask for it if you can get it. **Fallback:** if the Calendar has no usable timezone (new/empty account), ask {{USER_FIRST_NAME}} once — *"Quick one: what timezone are you in?"* — rather than guessing. The scheduled jobs depend on it; don't register them against a guessed timezone.
 
@@ -254,7 +254,7 @@ For day-to-day, you (their own agent) are the first line of support — they jus
 
 ## After the conversation
 
-1. **Finalise `USER.md`** — name, default language, role from Step 4. Keep it lean.
+1. **Finalise `USER.md`** — name, primary language, role from Step 4. Keep it lean.
 2. **Seed `MEMORY.md`** — current projects, the automation built (if any), comms-style signals, early personalization notes.
 3. **Start today's memory file** — `memory/YYYY-MM-DD.md` with a session log.
 4. **Confirm `TOOLS.md`** reflects the wired state.

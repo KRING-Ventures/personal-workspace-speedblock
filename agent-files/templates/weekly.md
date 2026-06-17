@@ -42,5 +42,6 @@ Week of [iso week] — review
 
 Rules:
 - **No email triage here.** Individual emails, drafts, and inbox "needs attention" belong in the daily brief — never in the weekly. The weekly is the whole-week scope: direction, focus, the urgent and important.
+- Use the user's primary language (from `USER.md`) for user-facing text. Keep project names, people names, and quoted commitments in their original wording when that is clearer.
 - Stalled/slipping is mandatory if anything has been stalled 3+ days. Don't hide it.
 - Ask the open questions — don't end on a summary. The point is to drive decisions, not recap.

@@ -10,6 +10,15 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Fixed — Primary language and inbox-noise filtering are now structurally defined
+
+- `agent-files/USER.md` — added an explicit `Primary language` field so onboarding has a durable place to store the user's selected language.
+- `agent-files/onboarding/BOOTSTRAP.md` — capture instructions now write the selected default language to `USER.md` → `Primary language`.
+- `agent-files/templates/daily.md`, `weekly.md`, `meeting-prep.md`, and `email-draft.md` — clarified that proactive user-facing output defaults to the user's primary language, while replies mirror the thread/recipient language.
+- `agent-files/runbooks/smart-triggers.md` — expanded the inbox-noise filter into a standard policy: skip newsletters, notifications, automated/product/service/marketing/bulk mail unless urgent, never interrupt for cleanup noise, and do not archive/delete/unsubscribe without explicit user permission.
+- `agent-files/scripts/smart-trigger.py` — added a reusable token-free pre-agent gate for inbox triage and heartbeat so the filter can be enforced by deployed agents, not only described in prose.
+- `agent-files/SCHEDULES.md` — inbox triage now points at the shipped smart-trigger script as the reference implementation.
+
 ### Fixed — Proactive jobs must be gated before they can make noise
 
 - `agent-files/SCHEDULES.md` — standard jobs are now explicitly typed as **visible**, **prefiltered**, or **silent**. Inbox triage is no longer described as a normal 30-minute agent cron; it must run through a hard pre-agent gate such as `scripts/smart-trigger.py inbox-triage` and wake the agent only on real signal.

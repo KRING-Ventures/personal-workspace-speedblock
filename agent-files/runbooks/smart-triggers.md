@@ -24,12 +24,29 @@ Runs every 30 minutes.
 
 The gate may wake the agent only when at least one unread inbox thread is likely to need drafting or a same-day decision.
 
+The default noise filter is deliberately conservative: it helps clean the inbox without creating a second inbox of agent notifications.
+
 Gate checks:
 
 1. Gmail unread inbox, excluding spam/trash and already-flagged/no-reply labels.
 2. Skip threads that already have a draft.
-3. Skip obvious newsletters, automated notices, product updates, and service announcements unless they match an urgent condition.
+3. Skip obvious newsletters, social notifications, automated notices, product updates, marketing, bulk/list mail, and service announcements unless they match an urgent condition.
 4. Wake the agent with `INBOX_TRIAGE_FIRE` only when there is real work.
+
+Urgent conditions that bypass the noise filter:
+
+- a real person needs a same-day decision
+- deadline within 24 hours
+- account lockout, security compromise, payment failure, or billing cutoff
+- meeting invite/change affecting today's calendar
+- legal/finance/admin item that clearly needs action
+
+Default handling:
+
+- **Draft when possible:** human email that can be safely answered.
+- **Leave for the brief:** non-urgent items that may be useful but do not need interruption.
+- **Stay silent:** newsletters, notifications, automated updates, and service noise.
+- **Do not archive/delete by default:** only archive, delete, unsubscribe, or create mail rules when the user has granted that automation explicitly.
 
 No signal means:
 
@@ -70,3 +87,7 @@ Log internally:
 - errors that need operator attention
 
 Do not log empty "nothing happened" summaries to the user channel.
+
+## Reference implementation
+
+If the runtime supports local scripts, use `scripts/smart-trigger.py inbox-triage` as the default pre-agent gate. Keep custom implementations behaviorally equivalent to the contract above.

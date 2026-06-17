@@ -8,6 +8,7 @@
 
 - **Full name:** {{FROM_BOOTSTRAP}}
 - **Preferred name / how to address:** {{FROM_BOOTSTRAP}}
+- **Primary language:** {{FROM_BOOTSTRAP}}
 - **Primary email:** {{FROM_BOOTSTRAP}}
 - **Aliases:** {{FROM_BOOTSTRAP}}
 - **Timezone:** {{FROM_BOOTSTRAP}}

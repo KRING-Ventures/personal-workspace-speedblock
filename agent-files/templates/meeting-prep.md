@@ -31,5 +31,5 @@ Rules:
 - **Name external attendees.** If someone outside the venture is on it, flag it — tone and prep differ.
 - **One prep per meeting.** Log the event ID in today's `memory/YYYY-MM-DD.md` so the 15-min job doesn't re-send.
 - **Morning-pass version is shorter.** In the daily brief, collapse this to a single line per meeting: `HH:MM — [title] ([who]) — [the one thing to know]`.
-- Use the user's primary language (from `USER.md`) where sensible.
+- Use the user's primary language (from `USER.md`) for user-facing prep text. Keep meeting titles, names, and source quotes in their original language when that is clearer.
 - Never send a reply, accept/decline, or move the meeting from a prep — that's the calendar's job and follows the `## Action rules` permission model.
