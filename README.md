@@ -52,7 +52,7 @@ Semver: `MAJOR.MINOR.PATCH`. Pre-`1.0.0` is the beta phase.
 
 ## Current version
 
-**`1.0.2`** — shipped 2026-06-16. Boot-budget + KISS pass on the agent files (lean `AGENTS.md`, procedures → plain habits, `KRING.md` read on demand) so the per-session context budget stops dropping `MEMORY.md`. See [`CHANGELOG.md`](./CHANGELOG.md) and [`MIGRATIONS/1.0.1-to-1.0.2.md`](./agent-files/onboarding/MIGRATIONS/1.0.1-to-1.0.2.md).
+**`1.0.3`** — shipped 2026-06-22. Adds weekly agent-file hygiene, stronger smart-trigger/noise gates, primary-language defaults, and clearer no-action email silence. No per-user migration required. See [`CHANGELOG.md`](./CHANGELOG.md).
 
 **Next:** `1.1.0` — activation/onboarding split, expanded tech stack, and an Obsidian-based agent brain/filesystem. Cosmica-native agent access is in the pipeline.
 
