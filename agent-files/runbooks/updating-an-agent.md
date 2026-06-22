@@ -28,7 +28,7 @@ Send this to an existing agent (or let it run at boot). It's the consistent vers
 
 > You're running an older version of the Personal Workspace framework. Pull the latest from `KRING-Ventures/personal-workspace-speedblock`, read your own `STATE_VERSION` against the framework's `agent-files/onboarding/STATE_VERSION`, and run the catch-up loop in `agent-files/AGENTS.md` for every version in between.
 >
-> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **actually register the jobs — don't just confirm you've read about them.** Create or update the seven scheduled jobs with the trigger type shown in `SCHEDULES.md`: visible jobs as normal agent cron jobs, prefiltered jobs behind their hard gate, and silent jobs with no user-facing output unless broken. Reading the changelog is not the same as the job existing — verify the real trigger, not just the file.
+> Bring yourself fully current: read the `CHANGELOG.md` entries from your version onward, apply what's relevant to this user, and **actually register the jobs — don't just confirm you've read about them.** Create or update the standard scheduled jobs with the trigger type shown in `SCHEDULES.md`: visible jobs as normal agent cron jobs, prefiltered jobs behind their hard gate, and silent/silent-unless-action-needed jobs with no user-facing output unless broken or a user decision is needed. Reading the changelog is not the same as the job existing — verify the real trigger, not just the file.
 >
 > **Preserve everything personal** — memory, `USER.md`, automations, our history. This is an upgrade, not a reset.
 >
@@ -40,7 +40,7 @@ On the update session, the agent:
 
 1. **Pulls** the latest framework.
 2. **Runs catch-up** per `agent-files/AGENTS.md` → *How catch-up works*: reads `CHANGELOG.md` from its version onward, applies what fits this user, ignores cosmetic-only changes.
-3. **Verifies core capabilities are active, not just described.** Checks its seven scheduled jobs/triggers exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that prefiltered jobs are still gated. A capability the framework documents but the runtime never scheduled is not a real capability.
+3. **Verifies core capabilities are active, not just described.** Checks its standard scheduled jobs/triggers exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that prefiltered jobs are still gated. A capability the framework documents but the runtime never scheduled is not a real capability.
 4. **Preserves per-user state.** No re-interviewing, no clean-sheet intro, no duplicate jobs.
 5. **Sets `STATE_VERSION`** to current and logs the catch-up in today's `memory/YYYY-MM-DD.md`.
 6. **Tells the user what's new** — a short, feature-level "here's what I can now do" message, in the continuity tone from `repurposing-an-existing-agent.md` Part B. Cosmetic/wording updates stay silent; capability-level updates get one short message. *(This Part-C flow is the operator-triggered push — KRING already chose to ship it, so the agent applies and explains. The **weekly automatic check** instead asks before applying — see "The weekly update check" below.)* Required by the *"what's new" rule* in `agent-files/AGENTS.md` → *Staying current*.
@@ -51,7 +51,7 @@ On the update session, the agent:
 After an update session, confirm:
 
 - [ ] Agent's `STATE_VERSION` == framework `STATE_VERSION`.
-- [ ] Seven scheduled jobs/triggers present **in the runtime's actual schedule layer** (not just mentioned) and logged in `automations/AUTOMATIONS.md`.
+- [ ] Standard scheduled jobs/triggers present **in the runtime's actual schedule layer** (not just mentioned) and logged in `automations/AUTOMATIONS.md`.
 - [ ] Prefiltered jobs are gated, not direct agent crons.
 - [ ] Agent reported that list back as proof — job names + schedules + types — rather than a bare "done".
 - [ ] Heartbeat protocol active.

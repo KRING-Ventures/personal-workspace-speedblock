@@ -8,6 +8,7 @@ Index of automations built for {{USER_FIRST_NAME}}. One entry per automation. Bu
 - **Every automation has a rollback.** Reversibility before ship.
 - **Every automation logs to MEMORY.md when built and when meaningfully changed.** Invisible automations that break silently are worse than no automation.
 - **No automation sends messages to other humans without per-send confirmation** unless {{USER_FIRST_NAME}} explicitly grants standing permission and it's logged in `TOOLS.md` → Standing permissions.
+- **Maintenance automations explain recommendations.** If a cleanup or hygiene job needs {{USER_FIRST_NAME}} to choose, it should include the recommended action and the best-practice reason. Do not assume the user knows agent-file conventions.
 
 ## Automation index
 

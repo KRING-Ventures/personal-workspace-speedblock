@@ -17,12 +17,13 @@ There are three job types. This distinction is load-bearing:
 | Job (`id`) | Type | When — cron, user-local | What it runs | Surface |
 |---|---|---|---|---|
 | **Daily brief** (`daily-brief`) | Visible | `0 8 * * 1-5` (weekdays 08:00) | Morning inbox sweep (see *Inbox triage*), then build + send the brief from `templates/daily.md` — today's calendar, focus, commitments, and what was drafted / left for {{USER_FIRST_NAME}}. | Slack |
-| **Inbox triage** (`inbox-triage`) | Prefiltered | smart trigger every 30 min | Token-free gate checks Gmail first (see `runbooks/smart-triggers.md` and `scripts/smart-trigger.py`). Only wake the agent when there is unhandled unread inbox mail that may need drafting or a same-day human decision. If woken, run `templates/email-draft.md`: draft ~95% into Gmail Drafts, mark **only drafted** emails read, leave the rest flagged. | Slack only if input is needed now |
+| **Inbox triage** (`inbox-triage`) | Prefiltered | smart trigger every 30 min | Token-free gate checks Gmail first (see `runbooks/smart-triggers.md` and `scripts/smart-trigger.py`). Only wake the agent when there is unhandled unread inbox mail that may need drafting or a same-day human decision. If woken, run `templates/email-draft.md`: draft ~95% into Gmail Drafts, mark **only drafted** emails read, leave the rest flagged. | Slack only if the user needs to act now |
 | **Weekly review** (`weekly-review`) | Visible | `0 8 * * 1` (Mon 08:00) | Build + send from `templates/weekly.md` — open commitments, what closed last week, the week's milestones, direction. **No email.** | Slack |
 | **Meeting prep** (`meeting-prep`) | Visible | `*/15 8-17 * * *` (every 15 min, 08:00–18:00) | For any meeting starting in **~15 min** with other attendees (skip solo/focus blocks), send a prep from `templates/meeting-prep.md` **once** — attendees, recent context, what {{USER_FIRST_NAME}} wants from it. Track prepped meetings so it never double-fires. | Slack |
 | **Heartbeat check** (`heartbeat`) | Prefiltered | `0 8-18 * * *` (hourly 08:00–18:00) | Run a cheap signal check first (see `runbooks/smart-triggers.md`), then the `HEARTBEAT.md` protocol only when needed. Covers commitment slips, deadlines, and calendar-load. General email and meeting prep have their own jobs. | Slack only if useful now |
 | **Memory distill** (`memory-distill`) | Silent | `0 18 * * *` (daily ~18:00) | Distill today's `memory/YYYY-MM-DD.md` into `MEMORY.md`. | none |
 | **Update check** (`update-check`) | Silent unless action needed | `0 9 * * 1` (Mon ~09:00) | Pull the framework, compare `STATE_VERSION`; if it's ahead, tell {{USER_FIRST_NAME}} what's new in plain language and **ask before applying**. Also run `openclaw doctor`; if a boot file is truncated, move detail to `runbooks/` (see `AGENTS.md` → *Keep the boot bundle lean*) — never let `MEMORY.md` be the file that drops. | Slack only when there's a new version or a budget action |
+| **Agent hygiene** (`agent-hygiene`) | Silent unless action needed | `30 9 * * 1` (Mon ~09:30) | Run `runbooks/agent-hygiene.md`: check boot budget, root clutter, oversized files, and memory bloat; compact/archive obvious bloat; explain recommendations when a decision is needed. | Slack only when the user needs to decide |
 
 ### Creating them correctly
 - **Use the `id` as the job name** when you create or self-heal a job — that's how the boot check finds an existing one and avoids stacking duplicates.
@@ -37,6 +38,7 @@ A few things the table doesn't make obvious:
 - **Brief + triage are one rhythm.** Triage prefilter runs every 30 min round the clock, every day, so the 08:00 brief already reflects everything that landed. The brief itself goes out on weekdays. The weekly review is the only Monday-only job, and the only one that leaves email out.
 - **Meeting prep is its own job, not a heartbeat check** — the heartbeat's "skip routine standups" filter used to swallow it. The daily brief covers the morning's meetings in one line each; this job fires the fuller ~30-min-before prep.
 - **Update check notifies and asks before applying** — at most one message a week, only when there's a new version, so no one is moved onto a version they didn't choose.
+- **Agent hygiene explains best practice when it needs a choice** — most users do not know which agent files should be compacted, archived, or left alone. Silent cleanup is fine for obvious generated clutter; judgment calls get a recommendation plus the reason.
 
 ## How they get set up
 
