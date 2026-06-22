@@ -10,6 +10,15 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Added — Weekly agent hygiene keeps agent files from bloating
+
+- `agent-files/SCHEDULES.md` — added a weekly silent-unless-action-needed `agent-hygiene` job after the Monday update check. It checks boot budget, root clutter, oversized files, and memory bloat, and only messages the user when a decision is needed.
+- `agent-files/runbooks/agent-hygiene.md` — new runbook with the standard cleanup loop: run `openclaw doctor`, check largest files, keep boot files essential-only, curate `MEMORY.md`, move generated files out of root, archive instead of deleting, and log meaningful cleanup.
+- `agent-files/AGENTS.md` — scheduled-job list now includes agent hygiene, and file-hygiene guidance now tells agents to explain the best-practice reason when recommending cleanup because users are not expected to know agent-file conventions.
+- `agent-files/automations/AUTOMATIONS.md` — maintenance automations now explicitly explain recommendations before asking the user to choose.
+- `agent-files/onboarding/BOOTSTRAP.md`, `agent-files/runbooks/updating-an-agent.md`, and `agent-files/runbooks/repurposing-an-existing-agent.md` — standard schedule setup now includes the hygiene job and avoids stale fixed job counts.
+- `agent-files/README.md` — runbook/layout wording updated so the hygiene runbook is part of the standard agent-file set.
+
 ### Fixed — Primary language and inbox-noise filtering are now structurally defined
 
 - `agent-files/USER.md` — added an explicit `Primary language` field so onboarding has a durable place to store the user's selected language.
