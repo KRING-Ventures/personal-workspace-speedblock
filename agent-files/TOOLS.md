@@ -7,9 +7,9 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | Tool | Status | Notes |
 |---|---|---|
 | Slack (primary surface) | ✅ Connected | Pre-wired at runtime. |
-| Gmail | ❌ Not connected | |
-| Google Calendar | ❌ Not connected | |
-| Google Drive / Docs | ❌ Not connected | |
+| Gmail | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
+| Google Calendar | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
+| Google Drive / Docs | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
 | Notion | ❌ Not connected | |
 | GitHub | ❌ Not connected | Wireable with the user's permission for reading and working in their repos. |
 | Web search | ✅ Available | Via OpenClaw harness. |
@@ -39,8 +39,8 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
 
 ## Google Workspace
 
-- **Account:** [email address]
-- **Access:** OAuth via [skill / harness]
+- **Account:** [email address] — set at provisioning.
+- **Access:** `gog` skill — per-user OAuth, pre-wired at provisioning (live before these files land).
 - **Surfaces:** Gmail · Calendar · Drive / Docs
 - **Rules:**
   - Read freely.
