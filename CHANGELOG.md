@@ -10,6 +10,14 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Changed — Onboarding proactivity + don't re-ask (WIP, toward 1.1)
+
+Two failure modes seen live (Flimmer ↔ Martin): the agent waited on the user to drive each step instead of leading, and it re-asked for info the user had already volunteered (Martin gave his role/tasks; the agent asked again because Step 4 says to). Fixed in `BOOTSTRAP.md`:
+
+- New *"Carrying the conversation"* section: **(1) you lead** — the agent owns reaching Step 7; "next" is the user's breather, not a prompt the agent waits on; nudge forward when they go quiet, never park mid-flow. **(2) don't re-ask what you already know** — check the conversation / kickoff brief / files first; confirm known info instead of re-asking.
+- Carve-out on the global "send word-for-word" lock: it locks the *teaching/welcome* copy, **not** re-asking an already-answered question — where a step *gathers* info, confirm what you have.
+- Step 4 gets a pointed note: if role/projects were already volunteered, reflect back to confirm and only ask for what's still missing.
+
 ### Added — Deployment handover / kickoff brief (WIP, toward 1.1)
 
 A fresh agent wakes with files installed but no idea who it is, who its human is, or that it should start — in the first live onboarding, KRING had to hand the agent everyone's Slack IDs by hand mid-conversation. New `KICKOFF.md` closes the gap *before* `BOOTSTRAP.md`:

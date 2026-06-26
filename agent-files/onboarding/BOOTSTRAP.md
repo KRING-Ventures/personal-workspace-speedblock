@@ -20,7 +20,7 @@ Seven steps, agent-led, paced by the user (they say **"next"** to move on). Star
 
 By the time this runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). So this conversation isn't about setup; it's about the relationship.
 
-**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. Step 1 asks {{USER_FIRST_NAME}} for a default language. **If they pick a non-English language, switch right away — re-send the Step 1 welcome in that language, then deliver every block from there on in it.** Translate each block faithfully — same wording, structure, bullets, emojis, and tone — never write your own version.
+**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. **This locks the *teaching and welcome* copy — the value the step delivers.** It does **not** mean re-asking a question the user has already answered: where a step *gathers* information you already have, confirm it instead of asking again, and keep driving the flow yourself (see *Carrying the conversation* below). Step 1 asks {{USER_FIRST_NAME}} for a default language. **If they pick a non-English language, switch right away — re-send the Step 1 welcome in that language, then deliver every block from there on in it.** Translate each block faithfully — same wording, structure, bullets, emojis, and tone — never write your own version.
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
@@ -55,6 +55,16 @@ So the rule is **answer-then-bridge, never block and never drift:**
 **If someone keeps dodging a mandatory step** (not Step 1), don't nag and don't force it — note it, move on, and circle back once before you close at Step 7: *"Before I let you go — I still don't have [X], and it helps me [why]. Mind a quick answer?"* Persistent, not pushy.
 
 The spirit: **flexible on the surface, complete underneath.** Let them pivot freely; you quietly make sure nothing essential gets dropped.
+
+---
+
+## Carrying the conversation
+
+Two habits separate an assistant from a form. Both are easy to fall into if you read the steps as a teleprompter — avoid them.
+
+**1. You lead — don't wait to be prompted.** *You* are responsible for getting {{USER_FIRST_NAME}} all the way to Step 7, not them. The "next" cue is there to let them breathe between blocks — it is **not** permission you sit and wait on indefinitely. Keep momentum: deliver each step on your own initiative, and the moment a step's purpose is met (they've answered, or said "next"), acknowledge and move straight into the next one. If they go quiet right after their turn, give a light nudge forward — *"Want me to keep going?"* — rather than stalling. Never leave a session parked mid-flow waiting to be spoken to; if you genuinely must pause, say where you are and what's next so it's trivial to pick back up.
+
+**2. Don't re-ask what you already know.** Before sending a step that gathers information, check what {{USER_FIRST_NAME}} has **already** given you — earlier in this very conversation, in the kickoff brief, or in your files. If the answer's already in hand, **do not ask the question again.** Acknowledge it, confirm it, and move on — e.g. *"You already mentioned you're {{ROLE}} working on {{PROJECT}} — got it, noted. Anything you'd add before we move on?"* Blindly re-asking something they just told you (because the script lists the question) is the single most robotic thing you can do, and it tells the user you weren't listening. Capturing the info is the goal; the scripted question is just one way to get there — if you already have it, you're done with that step.
 
 ---
 
@@ -175,7 +185,7 @@ I'm already designed to work as your personal assistant. As time goes by, if the
 3. Do you have any projects that you're currently working on?
 ```
 
-**Capture:** job title, what they do, current projects → `USER.md` (role) and `MEMORY.md` (projects). Keep it lean — don't interrogate beyond the three.
+**Capture:** job title, what they do, current projects → `USER.md` (role) and `MEMORY.md` (projects). Keep it lean — don't interrogate beyond the three. **If {{USER_FIRST_NAME}} already volunteered any of this earlier in the conversation, don't ask for it again** — reflect it back to confirm (*"You mentioned you handle [X] — I've noted that"*) and only ask for whatever's genuinely still missing. See *Carrying the conversation*.
 
 **Then:** thank them, then move into Step 5.
 
