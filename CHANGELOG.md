@@ -10,6 +10,13 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Added — Deployment handover / kickoff brief (WIP, toward 1.1)
+
+A fresh agent wakes with files installed but no idea who it is, who its human is, or that it should start — in the first live onboarding, KRING had to hand the agent everyone's Slack IDs by hand mid-conversation. New `KICKOFF.md` closes the gap *before* `BOOTSTRAP.md`:
+
+- `agent-files/onboarding/KICKOFF.md` — **new.** A human-filled deployment handover the deployer pastes as the agent's first message. Seeds four things the agent can't safely infer: repo location (+ install confirmed), the onboarding user (name + **Slack ID**), the support contact, and the instruction to *proactively* tag the user and open BOOTSTRAP Step 1. Plus agent-side steps: pre-read files, seed identity + a Slack name→ID map into `MEMORY.md`, confirm it's a genuine fresh deploy (`STATE_VERSION` empty), then reach out first. Handed-brief by design — self-discovering "who is my human's Slack ID" is exactly what fails.
+- `activation-kring.md` — Step 9 now points at `KICKOFF.md` instead of a vague "the agent leads," making the handover a concrete, repeatable trigger.
+
 ### Added — Onboarding tangent handling (WIP, toward 1.1)
 
 From the first live onboarding (Martin Nellemann ↔ Flimmer): the user asked questions outside the script and the linear 7-step flow had no rule for it, so the agent risks either stonewalling or pivoting and never completing setup. Added an **answer-then-bridge** protocol to `BOOTSTRAP.md` plus an agent-owned completion checklist:
