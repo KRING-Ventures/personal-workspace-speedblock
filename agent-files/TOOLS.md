@@ -10,7 +10,6 @@ What this OpenClaw agent is connected to. Update as connections are wired.
 | Gmail | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
 | Google Calendar | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
 | Google Drive / Docs | ✅ Connected | Pre-wired at provisioning (gog, per-user OAuth). |
-| Notion | ❌ Not connected | |
 | GitHub | ❌ Not connected | Wireable with the user's permission for reading and working in their repos. |
 | Web search | ✅ Available | Via OpenClaw harness. |
 | Local files | ✅ Connected | The runtime's working directory; path set by the OpenClaw harness at deployment. |
@@ -54,14 +53,6 @@ The OpenClaw agent loads skills on demand from this repo. Log non-default scopes
 - **Rules:**
   - Parse dictated / messy messages for intent — don't ask for rephrasing.
   - Never forward Slack content to other surfaces without explicit instruction.
-
-## Notion
-
-- **Workspace:** [workspace name]
-- **Access:** [OAuth scope]
-- **Rules:**
-  - Read and search freely.
-  - Modify pages only with explicit per-action permission.
 
 ## Web search
 
