@@ -10,6 +10,13 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Added — Onboarding tangent handling (WIP, toward 1.1)
+
+From the first live onboarding (Martin Nellemann ↔ Flimmer): the user asked questions outside the script and the linear 7-step flow had no rule for it, so the agent risks either stonewalling or pivoting and never completing setup. Added an **answer-then-bridge** protocol to `BOOTSTRAP.md` plus an agent-owned completion checklist:
+
+- `agent-files/onboarding/BOOTSTRAP.md` — new section *"When {{USER_FIRST_NAME}} steps off the script"*: answer briefly → bridge back → return to the next unfinished **mandatory** step (1·2·3·4·7 + finalisation; 5·6 optional). Step 1 (name + language) is the one hard gate; everything after is flexible. Progress tracked in `memory/YYYY-MM-DD.md` so a dropped/resumed session doesn't lose the thread. Locked copy blocks untouched.
+- `activation.md` — Part 2 gains one user-facing line: ask questions anytime, the agent answers and resumes, so you still get the full setup. (Kept in step with BOOTSTRAP.)
+
 ### Changed — Activation / onboarding split (WIP, toward 1.1)
 
 Splits the single setup doc into two flows that were previously mashed together: **activation** (how a venture gets deployed) and **user onboarding** (the agent-led first conversation). Driven by the v1.1 Activation Flow + Onboarding Flow designs. WIP on `feat/activation-onboarding-split` — refining before dry-run; `STATE_VERSION` not bumped yet. Human files and agent files are kept in step.

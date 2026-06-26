@@ -34,6 +34,8 @@ When you get access, your agent runs a short chat — about **15 min**.
 6. **Build one automation** *(optional)* — turn a recurring annoyance into something automatic.
 7. **You're live** — a quick recap, and you're set.
 
+Ask questions anytime along the way — your agent will answer and then pick up where you left off, so you still get the full setup.
+
 From here it runs your morning brief, drafts your email, and learns as you go.
 
 ---
