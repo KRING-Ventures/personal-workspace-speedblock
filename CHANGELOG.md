@@ -41,6 +41,14 @@ The repurpose path (`runbooks/repurposing-an-existing-agent.md` Part B) was loos
 
 `STATE_VERSION` not bumped — runbook/wording change, no per-user state shape change.
 
+### Added — BOOTSTRAP installs the framework into itself (WIP, toward 1.1)
+
+Root cause behind the Flimmer drift: "pull the latest framework from GitHub" was prose, not an action — nothing in `agent-files/` actually fetched anything (no clone/pull/curl), so the agent fell back to memory and paraphrased locked copy. `BOOTSTRAP.md` now opens with a concrete **Step 0**:
+
+- A literal `git clone --depth 1` of this (public) repo into a temp dir, `cp -r agent-files .` into the workspace (refreshes the framework; leaves per-user state at the workspace root untouched), then an `ls` that must find `AGENTS.md` + `BOOTSTRAP.md`.
+- **Hard stop on failure:** if the clone fails or the files aren't there, the agent says so and stops — it must *never* continue onboarding from training/memory.
+- **Files beat memory:** once on disk, the pulled files are the source of truth; locked copy is read from the file and pasted, never reconstructed. Closes the gap that let Flimmer onboard from recollection.
+
 ### Changed — Cold start is self-serve; KICKOFF brief removed (WIP, toward 1.1)
 
 The `KICKOFF.md` fill-in brief was over-built: four of its five fields were already known (agent name in `IDENTITY.md`, repo in `AGENTS.md`, support/Moss in `BOOTSTRAP.md`, user first name seeded at provisioning). Only the user's Slack ID was genuinely missing — and the agent can resolve that itself. Replaced the manual handover with zero-touch cold-start behaviour:
