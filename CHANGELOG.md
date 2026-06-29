@@ -10,6 +10,37 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Added — Feedback ledger: capture real-use corrections, harvest them upstream (WIP, toward 1.1)
+
+Fixes surfaced in real use (a user says *"why didn't you run my inbox triage?"*, the agent fixes it) used to die in the chat — the next agent shipped with the same gap. New **agent → repo** channel so a fix found once becomes a framework fix for all:
+
+- `agent-files/feedback/IMPROVEMENTS.md` — **new.** A per-user, local, **write-mostly** ledger (lives with `memory/`, `automations/`; survives updates untouched). The agent appends a classified entry on each correction: trigger / root cause / fix applied / **type** (`personal` vs `framework`) / maps-to template file / status. Explicitly **not loaded at boot** — written on correction, read only at harvest, so it costs no context budget.
+- `agent-files/AGENTS.md` — small trigger added (the only boot-loaded part): *Capturing fixes* — when the user corrects how you operate, fix it now **and** log a classified entry; `feedback/` added to the per-user state list with the write-mostly/not-at-boot note. Kept tight to protect the boot bundle.
+- `agent-files/runbooks/harvesting-improvements.md` — **new.** KRING operator loop: collect ledgers across agents → cluster by what they touch → promote `framework` entries into the templates (+ CHANGELOG/STATE_VERSION via `updating-an-agent.md` Part A) → mark `promoted`. `personal` is the firewall and is never promoted. Optional: `agent-hygiene` can flag "ready to harvest" so ledgers don't rot.
+
+### Fixed — Calendar invites awaiting a response are now surfaced proactively (WIP, toward 1.1)
+
+Live gap (August): incoming calendar invites were never surfaced with an accept/decline offer. The heartbeat's Calendar section only watched the *shape* of the day (conflicts, overload, focus blocks), and every "urgent invite" rule across the framework was scoped to invites *affecting today's calendar* — so a normal future invite sitting in `needsAction` fell through every proactive path and, at best, appeared as a silent line in the daily brief. Fixed by adding pending invites as a first-class heartbeat signal:
+
+- `agent-files/HEARTBEAT.md` — new *Calendar invites awaiting a response* check: detect any event where the user's own `responseStatus` is `needsAction`, surface it with decision context (title/when/organiser/attendees). Anchored on the **calendar event status, not the invite email**, so it fires even when the Gmail invite is auto-filed or never arrives. **On a clash it offers real orchestration choices** — decline and keep what's booked; accept and rearrange the conflict (move a *solo* block freely; rescheduling a meeting *with others* needs the OK and proposes new times to them only on confirm); or propose an alternative time to the organiser. All Ask-first — options laid out, nothing sent/moved on the user's behalf. Added a reach-out example; de-dupe via the existing "don't re-flag across heartbeats" rule.
+- `agent-files/runbooks/smart-triggers.md` — heartbeat gate gains a wake condition for an unseen `needsAction` invite (with a cooldown so the same invite doesn't re-fire hourly). Without this the prefiltered gate would never wake the agent for the new signal.
+- `agent-files/SCHEDULES.md` — heartbeat row coverage now lists invites awaiting a response.
+- `agent-files/scripts/smart-trigger.py` — **the real root cause at code level.** The reference heartbeat gate's `calendar_conflict_signal` only looked for double-bookings in the next 8h; a pending invite produced no signal, so the gate never woke the agent and the doc rule could never fire. Added `calendar_invite_signal` — scans the next 30 days for an event where the user's own `responseStatus` is `needsAction` (skips cancelled) — and `signal_for("heartbeat")` now returns conflict **or** pending-invite. The existing 240-min unchanged-signal cooldown keys on the event id, so the same invite won't re-nag hourly.
+
+No new job and no `STATE_VERSION` bump — folds into the existing hourly heartbeat; behaviour + gate-script change only.
+
+### Changed — Repurpose onboarding hardened into a scripted, transition-aware flow (WIP, toward 1.1)
+
+The repurpose path (`runbooks/repurposing-an-existing-agent.md` Part B) was loose prose while `BOOTSTRAP.md` had become fully scripted, locked copy — so repurposed/returning users got a less reliable onboarding than new ones. Brought Part B up to BOOTSTRAP's standard and synced it to the current framework (self-serve cold start, answer-then-bridge, completion checklist, `STATE_VERSION` 1.0.3):
+
+- **Part B is now an agent-followed script** with the same block shape as BOOTSTRAP (Goal / Send this exactly / Capture / Then) and an at-a-glance flow table. New **locked copy** for the three transition-specific moments — **R1 Welcome back & what's changing**, **R4 Confirm migrated basics**, **R7 Live** — while the shared teaching steps (2 core features, 3 best practices) and optional demos (5, 6) are delivered from BOOTSTRAP's locked blocks verbatim, so there's one source of truth for that copy and no drift.
+- **The opening now names the transition** — R1 tells the user *what the agent is becoming* (their Personal Workspace assistant), *what's new* (the built-in features/ways of working), and *what stays* (memory, history, automations, personality). The prior cold "hi, I'm your new assistant" framing is gone; identity is confirmed (R4), never re-collected.
+- **Wording rules carried over:** locked copy sent word-for-word, faithful translation into the user's *already-known* language (no language gate — that was BOOTSTRAP's only gate and it's already satisfied), answer-then-bridge and the mandatory-step completion checklist.
+- **Notion de-listed as a "PW-standard" tool.** Both the Part A `TOOLS.md` reconcile and the old Part B "offer the gaps" step called Notion (and GitHub) standard tools the agent should offer/wire. They're **Recommended/self-serve** now (`playbook.md` → Recommended stack) — the user wires them. Reconcile guidance fixed to never mark them connected by default; the "extras" offer now covers the real opt-in (Syncthing local mirror) and points recommended tools back to self-serve.
+- **One script, both paths.** `updating-an-agent.md` → Part C already reaches for this continuity-aware flow when an agent was updated/repurposed before onboarding existed — so hardening Part B hardens the update path too. Cross-references aligned in both directions.
+
+`STATE_VERSION` not bumped — runbook/wording change, no per-user state shape change.
+
 ### Added — BOOTSTRAP installs the framework into itself (WIP, toward 1.1)
 
 Root cause behind the Flimmer drift: "pull the latest framework from GitHub" was prose, not an action — nothing in `agent-files/` actually fetched anything (no clone/pull/curl), so the agent fell back to memory and paraphrased locked copy. `BOOTSTRAP.md` now opens with a concrete **Step 0**:

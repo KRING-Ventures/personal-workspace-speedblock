@@ -64,6 +64,7 @@ The gate may wake the agent only for:
 
 - commitment/deadline signal that needs attention now
 - calendar-load issue such as conflict or heavy day with no focus/lunch
+- a calendar invite awaiting the user's response — an event whose own `responseStatus` is `needsAction` that the gate hasn't already surfaced (apply a cooldown so the same invite doesn't re-fire every hour)
 - email only if immediate and high-consequence: same-day human decision, deadline within 24 hours, account lockout/security compromise, payment failure, or today's calendar impact
 
 Heartbeat must not wake for general unread email. General email belongs to inbox triage and the daily brief.
