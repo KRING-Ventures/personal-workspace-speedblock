@@ -10,6 +10,18 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Changed — Repurpose onboarding hardened into a scripted, transition-aware flow (WIP, toward 1.1)
+
+The repurpose path (`runbooks/repurposing-an-existing-agent.md` Part B) was loose prose while `BOOTSTRAP.md` had become fully scripted, locked copy — so repurposed/returning users got a less reliable onboarding than new ones. Brought Part B up to BOOTSTRAP's standard and synced it to the current framework (self-serve cold start, answer-then-bridge, completion checklist, `STATE_VERSION` 1.0.3):
+
+- **Part B is now an agent-followed script** with the same block shape as BOOTSTRAP (Goal / Send this exactly / Capture / Then) and an at-a-glance flow table. New **locked copy** for the three transition-specific moments — **R1 Welcome back & what's changing**, **R4 Confirm migrated basics**, **R7 Live** — while the shared teaching steps (2 core features, 3 best practices) and optional demos (5, 6) are delivered from BOOTSTRAP's locked blocks verbatim, so there's one source of truth for that copy and no drift.
+- **The opening now names the transition** — R1 tells the user *what the agent is becoming* (their Personal Workspace assistant), *what's new* (the built-in features/ways of working), and *what stays* (memory, history, automations, personality). The prior cold "hi, I'm your new assistant" framing is gone; identity is confirmed (R4), never re-collected.
+- **Wording rules carried over:** locked copy sent word-for-word, faithful translation into the user's *already-known* language (no language gate — that was BOOTSTRAP's only gate and it's already satisfied), answer-then-bridge and the mandatory-step completion checklist.
+- **Notion de-listed as a "PW-standard" tool.** Both the Part A `TOOLS.md` reconcile and the old Part B "offer the gaps" step called Notion (and GitHub) standard tools the agent should offer/wire. They're **Recommended/self-serve** now (`playbook.md` → Recommended stack) — the user wires them. Reconcile guidance fixed to never mark them connected by default; the "extras" offer now covers the real opt-in (Syncthing local mirror) and points recommended tools back to self-serve.
+- **One script, both paths.** `updating-an-agent.md` → Part C already reaches for this continuity-aware flow when an agent was updated/repurposed before onboarding existed — so hardening Part B hardens the update path too. Cross-references aligned in both directions.
+
+`STATE_VERSION` not bumped — runbook/wording change, no per-user state shape change.
+
 ### Changed — Cold start is self-serve; KICKOFF brief removed (WIP, toward 1.1)
 
 The `KICKOFF.md` fill-in brief was over-built: four of its five fields were already known (agent name in `IDENTITY.md`, repo in `AGENTS.md`, support/Moss in `BOOTSTRAP.md`, user first name seeded at provisioning). Only the user's Slack ID was genuinely missing — and the agent can resolve that itself. Replaced the manual handover with zero-touch cold-start behaviour:
