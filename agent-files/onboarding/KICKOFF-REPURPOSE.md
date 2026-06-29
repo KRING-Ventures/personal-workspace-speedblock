@@ -41,4 +41,4 @@ Keep the brief to these facts. Everything else is already in your reconciled fil
 
 4. **Don't re-run BOOTSTRAP from the top.** BOOTSTRAP's clean-sheet intro re-asks things you already know. Part B is the continuity-aware version — use it. Preserve every existing memory, automation, and schedule (reconcile, don't duplicate).
 
-<!-- Maintenance: keep in step with runbooks/repurposing-an-existing-agent.md (Parts A/B) and AGENTS.md → First session: onboarded or not?. Fresh deploys are zero-touch (no paste brief) — the agent cold-starts itself; see activation-kring.md → Stage 3 Step 9. This repurpose brief exists because a filled USER.md means the agent won't auto-start. -->
+<!-- Maintenance: keep in step with runbooks/repurposing-an-existing-agent.md (Parts A/B) and AGENTS.md → First session: onboarded or not?. New deploys use the sibling KICKOFF.md (bare agent → pull repo + onboard). This repurpose brief is separate because the agent already has its files and a filled USER.md, so it won't auto-start — it needs Part A first, then this manual trigger. -->

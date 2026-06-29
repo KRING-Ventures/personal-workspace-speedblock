@@ -17,8 +17,8 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 - `agent-files/AGENTS.md` — the old *Staying current* tangle split into two clean sections: **First session: onboarded or not?** (placeholder check + the one wrong-person guard) and **Staying current** (version catch-up only).
 - `agent-files/onboarding/BOOTSTRAP.md` — trigger reworded to placeholder `USER.md` (was "before `STATE_VERSION` exists").
 - `runbooks/repurposing-an-existing-agent.md`, `resetting-an-agent.md`, `updating-an-agent.md` — load-bearing rules and "which path" tables repointed off `STATE_VERSION` onto placeholder-vs-filled `USER.md`. Repurpose is explicitly **operator-triggered, not boot-detected** (a filled `USER.md` means the agent won't auto-start).
-- **New-deploy cold start stays zero-touch** — the previously-removed `KICKOFF.md` fill-in brief was *not* reinstated (4 of its 5 fields are already known; the agent self-resolves the 5th). The earlier "KICKOFF removed / nothing to paste" decision stands.
-- `agent-files/onboarding/KICKOFF-REPURPOSE.md` — **new.** The one paste brief that *is* needed: the operator-pasted trigger for the repurpose continuity flow (Part B), since a filled `USER.md` won't auto-start the agent.
+- **Two paste briefs, one per deploy path.** A freshly-deployed agent starts as a bare runtime — no framework files, no knowledge of this repo — so a paste is unavoidable to bootstrap it. `agent-files/onboarding/KICKOFF.md` is that brief (KRING fills 6 facts → agent self-installs via `BOOTSTRAP.md` Step 0 → onboards). What collapsed to one signal is the *file-state logic*, not the initial paste — the paste is the one thing that genuinely can't be inferred. `activation-kring.md` Stage 3 Step 9 paste-and-go restored.
+- `agent-files/onboarding/KICKOFF-REPURPOSE.md` — **new.** The sibling brief for the repurpose path: the operator-pasted trigger for the continuity flow (Part B), since an already-installed agent with a filled `USER.md` won't auto-start.
 - **Last memory-log inference removed** — `updating-an-agent.md` Step 7 now checks a single deterministic marker (`Onboarding delivered: <date>` in `MEMORY.md`, written by BOOTSTRAP and repurpose Part B) instead of scanning daily logs for "any sign onboarding ran."
 
 ### Fixed — Reset path: an agent handed to a new user no longer inherits the old user's identity (WIP, toward 1.1)
@@ -70,15 +70,13 @@ Root cause behind the Flimmer drift: "pull the latest framework from GitHub" was
 - **Hard stop on failure:** if the clone fails or the files aren't there, the agent says so and stops — it must *never* continue onboarding from training/memory.
 - **Files beat memory:** once on disk, the pulled files are the source of truth; locked copy is read from the file and pasted, never reconstructed. Closes the gap that let Flimmer onboard from recollection.
 
-### Changed — Cold start is self-serve; KICKOFF brief removed (WIP, toward 1.1)
+### Changed — Cold-start self-identification (the agent resolves its own user) (WIP, toward 1.1)
 
-The `KICKOFF.md` fill-in brief was over-built: four of its five fields were already known (agent name in `IDENTITY.md`, repo in `AGENTS.md`, support/Moss in `BOOTSTRAP.md`, user first name seeded at provisioning). Only the user's Slack ID was genuinely missing — and the agent can resolve that itself. Replaced the manual handover with zero-touch cold-start behaviour:
+The `KICKOFF.md` paste bootstraps a bare agent, but the agent shouldn't *depend* on it for anything it can work out itself. Hardened the first-session logic so the agent leads the cold start and resolves its user rather than sitting idle:
 
-- `agent-files/onboarding/KICKOFF.md` — **removed.** No brief to fill or paste.
 - `agent-files/AGENTS.md` — first-session logic now *is* the cold start: identify the user from your 1:1 Slack channel, save a name→ID map to `MEMORY.md`, reach out yourself, run BOOTSTRAP. Fallback: ask once if the channel has multiple humans; use a seeded `Slack member ID` if present.
 - `agent-files/onboarding/BOOTSTRAP.md` — *Before you start* now opens with the cold-start "you reach out first / identify the user" instruction; fixed the last passive "user sets the pace" line.
-- `agent-files/USER.md` — new `Slack member ID` Basics field (resolved on first boot, or optionally seeded at provisioning).
-- `activation-kring.md` — Step 9 now says "nothing to paste — the agent cold-starts itself," with optional Slack-ID seed.
+- `agent-files/USER.md` — new `Slack member ID` Basics field (carried in the KICKOFF brief, resolved on first boot, or optionally seeded at provisioning).
 
 ### Changed — Onboarding proactivity + don't re-ask (WIP, toward 1.1)
 
