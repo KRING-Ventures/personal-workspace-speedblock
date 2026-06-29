@@ -10,6 +10,17 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Changed — Onboarding collapsed to one signal: `USER.md` placeholders (WIP, toward 1.1)
+
+"Is this agent onboarded, and whose is it?" was answered by three scattered signals — `STATE_VERSION` presence (boot logic), `USER.md` filled-vs-placeholders, and memory-log inference — which could disagree, so every path was reconciliation logic. Collapsed to **one honest signal**: `USER.md` is placeholders (`{{FROM_BOOTSTRAP}}`) → run BOOTSTRAP; filled → already live. `STATE_VERSION` is now **version-only** (am I on the latest framework), never an onboarding trigger.
+
+- `agent-files/AGENTS.md` — the old *Staying current* tangle split into two clean sections: **First session: onboarded or not?** (placeholder check + the one wrong-person guard) and **Staying current** (version catch-up only).
+- `agent-files/onboarding/BOOTSTRAP.md` — trigger reworded to placeholder `USER.md` (was "before `STATE_VERSION` exists").
+- `runbooks/repurposing-an-existing-agent.md`, `resetting-an-agent.md`, `updating-an-agent.md` — load-bearing rules and "which path" tables repointed off `STATE_VERSION` onto placeholder-vs-filled `USER.md`. Repurpose is explicitly **operator-triggered, not boot-detected** (a filled `USER.md` means the agent won't auto-start).
+- **New-deploy cold start stays zero-touch** — the previously-removed `KICKOFF.md` fill-in brief was *not* reinstated (4 of its 5 fields are already known; the agent self-resolves the 5th). The earlier "KICKOFF removed / nothing to paste" decision stands.
+- `agent-files/onboarding/KICKOFF-REPURPOSE.md` — **new.** The one paste brief that *is* needed: the operator-pasted trigger for the repurpose continuity flow (Part B), since a filled `USER.md` won't auto-start the agent.
+- **Last memory-log inference removed** — `updating-an-agent.md` Step 7 now checks a single deterministic marker (`Onboarding delivered: <date>` in `MEMORY.md`, written by BOOTSTRAP and repurpose Part B) instead of scanning daily logs for "any sign onboarding ran."
+
 ### Fixed — Reset path: an agent handed to a new user no longer inherits the old user's identity (WIP, toward 1.1)
 
 Live failure (Flimmer): an agent that had been Martin's was being handed to a new person. KRING deleted `STATE_VERSION` expecting a cold start — but the per-user files still described Martin, so on boot the agent read "real state + no `STATE_VERSION`", classified it as a **repurpose**, greeted the new human as Martin, and confirmed details instead of onboarding. There was **no documented reset path at all**, and the boot logic inferred cold-start-vs-repurpose purely from *whether files were populated* — which is exactly wrong when the populated files belong to the *previous* user. Fixed by making the decision turn on **identity, not file-presence**, and adding the missing fourth path:

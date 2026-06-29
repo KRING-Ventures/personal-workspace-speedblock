@@ -24,7 +24,7 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
-**This is a cold start — you open the conversation.** The user doesn't have to message you first; you introduce yourself. Before you say anything, work out who they are: you share a 1:1 Slack channel with one human — that's {{USER_FIRST_NAME}} — so identify them and save a name → Slack-ID map to `MEMORY.md` (so `<@ID>` mentions resolve from message one). `USER.md` may already carry a seeded `Slack member ID`; use it if present. Then reach out and begin Step 1. (See `AGENTS.md` → first-session cold start.)
+**This is a cold start — you open the conversation.** The user doesn't have to message you first; you introduce yourself. Before you say anything, work out who they are: you share a 1:1 Slack channel with one human — that's {{USER_FIRST_NAME}} — so identify them and save a name → Slack-ID map to `MEMORY.md` (so `<@ID>` mentions resolve from message one). `USER.md` may already carry a seeded `Slack member ID`; use it if present. Then reach out and begin Step 1. (See `AGENTS.md` → *First session: onboarded or not?*)
 
 **Step 0 — install the framework into yourself, before anything else.** You can't run what you haven't got. Before you read or send a single thing, pull the framework into your own workspace. This is a public repo — no auth, no token:
 
@@ -309,7 +309,7 @@ For day-to-day, you (their own agent) are the first line of support — they jus
 ## After the conversation
 
 1. **Finalise `USER.md`** — name, primary language, role from Step 4. Keep it lean.
-2. **Seed `MEMORY.md`** — current projects, the automation built (if any), comms-style signals, early personalization notes.
+2. **Seed `MEMORY.md`** — current projects, the automation built (if any), comms-style signals, early personalization notes. Add a one-line marker `Onboarding delivered: <today's date>` so a future update never re-delivers it (`updating-an-agent.md` → Part C, Step 7 checks for this one line).
 3. **Start today's memory file** — `memory/YYYY-MM-DD.md` with a session log.
 4. **Confirm `TOOLS.md`** reflects the wired state.
 5. **Confirm the schedule is registered** — all standard jobs/triggers present with the correct type and logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.

@@ -86,9 +86,9 @@ Give each user access to their agent:
 
 ### Step 9 — Hand off to the agent
 
-**Paste one brief.** Open `agent-files/onboarding/KICKOFF.md`, fill in the `{{…}}` blanks (agent name, repo URL, the user's full name + Slack ID + role, venture, support contact), and paste the whole handover block into the agent's Slack channel as its first message. That single paste gives the agent its bearings and tells it to begin — from there it self-installs (`BOOTSTRAP.md` → Step 0), gets the user's Slack ID right from message one, and proactively runs the onboarding. KRING's job is done.
+Nothing to paste — the agent cold-starts itself. Once it's invited to the user's 1:1 Slack channel and its runtime is up, on its first session it sees its `USER.md` is still placeholders, identifies the user from the channel, introduces itself, and runs `agent-files/onboarding/BOOTSTRAP.md` (see `agent-files/AGENTS.md` → *First session: onboarded or not?*). KRING's job is done. *(Optional: if your provisioning tooling already has the user's Slack member ID, seed it into `USER.md` Basics — the agent uses it instead of resolving from the channel.)*
 
-*(Repurposing an existing agent for this same user instead of deploying fresh? Don't use this brief — run `runbooks/repurposing-an-existing-agent.md` Part A, then paste `agent-files/onboarding/KICKOFF-REPURPOSE.md`.)*
+*(Repurposing an existing agent for this same user instead of deploying fresh? That one is **not** zero-touch — a filled `USER.md` means the agent won't auto-start. Run `runbooks/repurposing-an-existing-agent.md` Part A, then paste `agent-files/onboarding/KICKOFF-REPURPOSE.md` to trigger it.)*
 
 Monitor: the agent should finalize `USER.md` (placeholders → real facts) and set its `STATE_VERSION` by the end of that first session. If something breaks, the user will surface it via Slack.
 

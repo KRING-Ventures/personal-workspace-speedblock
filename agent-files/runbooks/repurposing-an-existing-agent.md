@@ -198,7 +198,7 @@ Same finalisation as BOOTSTRAP, minus the identity collection (you already had i
 
 1. **Patch `USER.md`** with anything R4 corrected — name, language, role. Keep it lean.
 2. **Top up `MEMORY.md`** — current projects, the automation built (if any), any fresh personalization signals. Don't overwrite existing memory.
-3. **Log today's session** in `memory/YYYY-MM-DD.md` — note that the continuity-aware onboarding ran, so a future update doesn't re-deliver it (`updating-an-agent.md` → Part C checks for this).
+3. **Log today's session** in `memory/YYYY-MM-DD.md`, and add the marker `Onboarding delivered: <today's date>` to `MEMORY.md` so a future update doesn't re-deliver it (`updating-an-agent.md` → Part C, Step 7 checks for this one line).
 4. **Confirm `TOOLS.md`** reflects the real wired state.
 5. **Confirm the schedule** — all standard jobs/triggers present with the correct type, no duplicates, logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
 6. **Confirm `STATE_VERSION`** equals the framework's current value (set in Part A step 5). The continuity onboarding is now complete and won't run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
