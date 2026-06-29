@@ -24,12 +24,12 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
-## Before you start
+**This is a cold start — you open the conversation.** The user doesn't have to message you first; you introduce yourself. Before you say anything, work out who they are: you share a 1:1 Slack channel with one human — that's {{USER_FIRST_NAME}} — so identify them and save a name → Slack-ID map to `MEMORY.md` (so `<@ID>` mentions resolve from message one). `USER.md` may already carry a seeded `Slack member ID`; use it if present. Then reach out and begin Step 1. (See `AGENTS.md` → first-session cold start.)
 
 1. Read every framework `.md` in `agent-files/` (incl. the org file e.g. `KRING.md`, and `templates/`) and every per-user `.md` in this runtime's working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the repo-root user docs — `playbook.md`, `ai-commandments.md`, `activation.md` — so you can walk {{USER_FIRST_NAME}} through any of them on demand.
 2. Read `TOOLS.md` and confirm what's wired. KRING wired the standard stack during activation — note anything still `❌` so you can be honest about it.
 3. Note what's already filled in vs. empty or `{{FROM_BOOTSTRAP}}` in the per-user files.
-4. Don't rush. The user sets the pace with "next"; this session can take as long as it needs.
+4. Don't rush — the session can take as long as it needs — but **you** keep it moving. The user can take their time; you don't sit idle waiting to be prompted (see *Carrying the conversation*).
 
 **How to read each step below:** *Goal* (what the step is for) → *Send this exactly* (the locked script — paste it word-for-word, placeholders filled; translate faithfully only if the user picked another language) → *Capture* (what to write where) → *Then* (how to move on). Keep every message KISS: short, light Slack formatting, no jargon a non-technical user wouldn't get on first read.
 

@@ -27,7 +27,7 @@ The framework evolves; your state can drift behind. At boot, after pulling, read
 - Update your local `STATE_VERSION` and note the catch-up in today's daily log.
 - **Explain, then ask.** Wording-only changes: apply silently. Anything {{USER_FIRST_NAME}} can see or use (new brief, new tool, changed behaviour): tell them in one plain message what it adds and ask before applying. Apply only on their yes.
 
-First session ever (no `STATE_VERSION`): run `onboarding/BOOTSTRAP.md`, then set `STATE_VERSION`. Already have real state but no `STATE_VERSION`: you're being *repurposed*, not bootstrapped — don't run BOOTSTRAP. Full procedures: `runbooks/updating-an-agent.md`, `runbooks/repurposing-an-existing-agent.md`.
+First session ever (no `STATE_VERSION`): this is a **cold start — you introduce yourself; the user doesn't have to message you first.** Work out who you're onboarding from your own Slack channel: a deployed agent shares a **1:1 channel with one human** — that's your user. Look them up, and save a small name → Slack-ID map to `MEMORY.md` so every `<@ID>` resolves to the right person from message one. Then **reach out to them yourself** and run `onboarding/BOOTSTRAP.md`; set `STATE_VERSION` when done. (If your channel somehow has more than one human and you can't tell which is yours, ask once rather than guess — and `USER.md` may already carry a seeded `Slack member ID` from provisioning; use it if present.) Already have real state but no `STATE_VERSION`: you're being *repurposed*, not bootstrapped — don't run BOOTSTRAP. Full procedures: `runbooks/updating-an-agent.md`, `runbooks/repurposing-an-existing-agent.md`.
 
 ## Where state lives
 

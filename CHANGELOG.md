@@ -10,6 +10,16 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Changed — Cold start is self-serve; KICKOFF brief removed (WIP, toward 1.1)
+
+The `KICKOFF.md` fill-in brief was over-built: four of its five fields were already known (agent name in `IDENTITY.md`, repo in `AGENTS.md`, support/Moss in `BOOTSTRAP.md`, user first name seeded at provisioning). Only the user's Slack ID was genuinely missing — and the agent can resolve that itself. Replaced the manual handover with zero-touch cold-start behaviour:
+
+- `agent-files/onboarding/KICKOFF.md` — **removed.** No brief to fill or paste.
+- `agent-files/AGENTS.md` — first-session logic now *is* the cold start: identify the user from your 1:1 Slack channel, save a name→ID map to `MEMORY.md`, reach out yourself, run BOOTSTRAP. Fallback: ask once if the channel has multiple humans; use a seeded `Slack member ID` if present.
+- `agent-files/onboarding/BOOTSTRAP.md` — *Before you start* now opens with the cold-start "you reach out first / identify the user" instruction; fixed the last passive "user sets the pace" line.
+- `agent-files/USER.md` — new `Slack member ID` Basics field (resolved on first boot, or optionally seeded at provisioning).
+- `activation-kring.md` — Step 9 now says "nothing to paste — the agent cold-starts itself," with optional Slack-ID seed.
+
 ### Changed — Onboarding proactivity + don't re-ask (WIP, toward 1.1)
 
 Two failure modes seen live (Flimmer ↔ Martin): the agent waited on the user to drive each step instead of leading, and it re-asked for info the user had already volunteered (Martin gave his role/tasks; the agent asked again because Step 4 says to). Fixed in `BOOTSTRAP.md`:
