@@ -5,8 +5,8 @@ The standard way to bring an **existing Personal Workspace agent** up to the cur
 ## Which path am I on?
 
 - **Update (this file)** — an agent that is *already* Personal Workspace, on an older version, catching up to current. It has a PW `STATE_VERSION`; you're moving it forward.
-- **First boot** — no `STATE_VERSION` at all → run `agent-files/onboarding/BOOTSTRAP.md`.
-- **Repurpose** — real state for *this same user* but never was PW (no `STATE_VERSION`) → run `repurposing-an-existing-agent.md`.
+- **First boot** — `USER.md` still placeholders → run `agent-files/onboarding/BOOTSTRAP.md`.
+- **Repurpose** — real state for *this same user* but never was PW; `USER.md` is filled, so boot won't auto-bootstrap → operator runs `repurposing-an-existing-agent.md` and prompts the agent into it.
 - **Reset** — real state belonging to a *different* (previous) user, being handed to a new one → run `resetting-an-agent.md`. A reset changes who the user is; an update never does.
 
 ## The load-bearing rule
@@ -40,7 +40,7 @@ Send this to an existing agent (or let it run at boot). It's the consistent vers
 On the update session, the agent:
 
 1. **Pulls** the latest framework.
-2. **Runs catch-up** per `agent-files/AGENTS.md` → *How catch-up works*: reads `CHANGELOG.md` from its version onward, applies what fits this user, ignores cosmetic-only changes.
+2. **Runs catch-up** per `agent-files/AGENTS.md` → *Staying current*: reads `CHANGELOG.md` from its version onward, applies what fits this user, ignores cosmetic-only changes.
 3. **Verifies core capabilities are active, not just described.** Checks its standard scheduled jobs/triggers exist (self-heals missing ones per `AGENTS.md` → *Scheduled jobs*) and that prefiltered jobs are still gated. A capability the framework documents but the runtime never scheduled is not a real capability.
 4. **Preserves per-user state.** No re-interviewing, no clean-sheet intro, no duplicate jobs.
 5. **Sets `STATE_VERSION`** to current and logs the catch-up in today's `memory/YYYY-MM-DD.md`.
