@@ -10,6 +10,28 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Changed — Onboarding proactivity + don't re-ask (WIP, toward 1.1)
+
+Two failure modes seen live (Flimmer ↔ Martin): the agent waited on the user to drive each step instead of leading, and it re-asked for info the user had already volunteered (Martin gave his role/tasks; the agent asked again because Step 4 says to). Fixed in `BOOTSTRAP.md`:
+
+- New *"Carrying the conversation"* section: **(1) you lead** — the agent owns reaching Step 7; "next" is the user's breather, not a prompt the agent waits on; nudge forward when they go quiet, never park mid-flow. **(2) don't re-ask what you already know** — check the conversation / kickoff brief / files first; confirm known info instead of re-asking.
+- Carve-out on the global "send word-for-word" lock: it locks the *teaching/welcome* copy, **not** re-asking an already-answered question — where a step *gathers* info, confirm what you have.
+- Step 4 gets a pointed note: if role/projects were already volunteered, reflect back to confirm and only ask for what's still missing.
+
+### Added — Deployment handover / kickoff brief (WIP, toward 1.1)
+
+A fresh agent wakes with files installed but no idea who it is, who its human is, or that it should start — in the first live onboarding, KRING had to hand the agent everyone's Slack IDs by hand mid-conversation. New `KICKOFF.md` closes the gap *before* `BOOTSTRAP.md`:
+
+- `agent-files/onboarding/KICKOFF.md` — **new.** A human-filled deployment handover the deployer pastes as the agent's first message. Seeds four things the agent can't safely infer: repo location (+ install confirmed), the onboarding user (name + **Slack ID**), the support contact, and the instruction to *proactively* tag the user and open BOOTSTRAP Step 1. Plus agent-side steps: pre-read files, seed identity + a Slack name→ID map into `MEMORY.md`, confirm it's a genuine fresh deploy (`STATE_VERSION` empty), then reach out first. Handed-brief by design — self-discovering "who is my human's Slack ID" is exactly what fails.
+- `activation-kring.md` — Step 9 now points at `KICKOFF.md` instead of a vague "the agent leads," making the handover a concrete, repeatable trigger.
+
+### Added — Onboarding tangent handling (WIP, toward 1.1)
+
+From the first live onboarding (Martin Nellemann ↔ Flimmer): the user asked questions outside the script and the linear 7-step flow had no rule for it, so the agent risks either stonewalling or pivoting and never completing setup. Added an **answer-then-bridge** protocol to `BOOTSTRAP.md` plus an agent-owned completion checklist:
+
+- `agent-files/onboarding/BOOTSTRAP.md` — new section *"When {{USER_FIRST_NAME}} steps off the script"*: answer briefly → bridge back → return to the next unfinished **mandatory** step (1·2·3·4·7 + finalisation; 5·6 optional). Step 1 (name + language) is the one hard gate; everything after is flexible. Progress tracked in `memory/YYYY-MM-DD.md` so a dropped/resumed session doesn't lose the thread. Locked copy blocks untouched.
+- `activation.md` — Part 2 gains one user-facing line: ask questions anytime, the agent answers and resumes, so you still get the full setup. (Kept in step with BOOTSTRAP.)
+
 ### Changed — Activation / onboarding split (WIP, toward 1.1)
 
 Splits the single setup doc into two flows that were previously mashed together: **activation** (how a venture gets deployed) and **user onboarding** (the agent-led first conversation). Driven by the v1.1 Activation Flow + Onboarding Flow designs. WIP on `feat/activation-onboarding-split` — refining before dry-run; `STATE_VERSION` not bumped yet. Human files and agent files are kept in step.

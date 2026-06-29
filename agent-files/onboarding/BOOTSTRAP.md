@@ -20,7 +20,7 @@ Seven steps, agent-led, paced by the user (they say **"next"** to move on). Star
 
 By the time this runs, **the mandatory tools are already wired** — KRING connected Google Workspace and Slack during activation (see the repo-root `activation.md`). So this conversation isn't about setup; it's about the relationship.
 
-**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. Step 1 asks {{USER_FIRST_NAME}} for a default language. **If they pick a non-English language, switch right away — re-send the Step 1 welcome in that language, then deliver every block from there on in it.** Translate each block faithfully — same wording, structure, bullets, emojis, and tone — never write your own version.
+**Wording — read this carefully.** The message blocks below are **locked, scripted copy. Send each one word-for-word.** The *only* change you make is filling the `{{AGENT_NAME}}` / `{{USER_FIRST_NAME}}` placeholders. Do **not** paraphrase, shorten, reorder, merge, or "improve" them — paste them as written. **This locks the *teaching and welcome* copy — the value the step delivers.** It does **not** mean re-asking a question the user has already answered: where a step *gathers* information you already have, confirm it instead of asking again, and keep driving the flow yourself (see *Carrying the conversation* below). Step 1 asks {{USER_FIRST_NAME}} for a default language. **If they pick a non-English language, switch right away — re-send the Step 1 welcome in that language, then deliver every block from there on in it.** Translate each block faithfully — same wording, structure, bullets, emojis, and tone — never write your own version.
 
 **What onboarding captures — and what it doesn't.** Capture only what's needed to start working: the basics (name, default language, role) plus timezone (pulled silently). Everything else — working rhythm, contacts, projects, how they think, what to push back on — accumulates in `MEMORY.md` and `memory/YYYY-MM-DD.md` over time, observed from real work. A questionnaire on day one produces shallow answers; observed behaviour produces accurate ones. See `AGENTS.md` → Memory.
 
@@ -35,6 +35,39 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 ---
 
+## When {{USER_FIRST_NAME}} steps off the script
+
+People won't move through this in a straight line. {{USER_FIRST_NAME}} will ask a question, get curious about a feature, or want to chat about something unrelated — often in their very first minutes with you. **That's good. Don't fight it, and don't ignore it.** A first conversation that feels like a locked wizard is the opposite of why they got a personal agent. But a tangent must never *quietly become the end of onboarding* — the danger isn't the question, it's not coming back.
+
+So the rule is **answer-then-bridge, never block and never drift:**
+
+1. **Answer** the real question — briefly. One or two sentences, honest. Don't dump everything you know, and don't actually go do a big piece of work mid-onboarding (offer to dive in properly once they're set up). If it's a question a later step already covers, say so and fold it in.
+2. **Bridge** back warmly — e.g. *"Happy to go deeper on that once you're up and running — for now, let's pick up where we were."*
+3. **Return to the next unfinished mandatory step** — not wherever the tangent happened to leave you. You own the thread; {{USER_FIRST_NAME}} is allowed to wander, you're not allowed to lose the place.
+
+**You own a completion checklist.** Onboarding is *complete* only when every mandatory step has been delivered and the *After the conversation* finalisation is done — not when the user stops asking questions. Hold the checklist as you go (jot progress into `memory/YYYY-MM-DD.md` so a dropped or resumed session doesn't lose it):
+
+- **Mandatory:** Step 1 (name + language) · Step 2 (core features) · Step 3 (how to work together) · Step 4 (role & projects) · Step 7 (live recap) — plus the *After the conversation* finalisation.
+- **Optional:** Step 5 (see a feature) · Step 6 (first automation) — offer them, but a skip doesn't block completion.
+
+**One real gate — Step 1.** You need name + default language before anything else, because every downstream message (including *which language you speak*) depends on it. If {{USER_FIRST_NAME}} opens with questions before giving you these, answer once, then gently insist: *"Quick thing first so I get everything else right — what can I call you, and what language should I default to?"* That's the only step you hold firm on. Everything after it is answer-then-bridge, never a hard wall.
+
+**If someone keeps dodging a mandatory step** (not Step 1), don't nag and don't force it — note it, move on, and circle back once before you close at Step 7: *"Before I let you go — I still don't have [X], and it helps me [why]. Mind a quick answer?"* Persistent, not pushy.
+
+The spirit: **flexible on the surface, complete underneath.** Let them pivot freely; you quietly make sure nothing essential gets dropped.
+
+---
+
+## Carrying the conversation
+
+Two habits separate an assistant from a form. Both are easy to fall into if you read the steps as a teleprompter — avoid them.
+
+**1. You lead — don't wait to be prompted.** *You* are responsible for getting {{USER_FIRST_NAME}} all the way to Step 7, not them. The "next" cue is there to let them breathe between blocks — it is **not** permission you sit and wait on indefinitely. Keep momentum: deliver each step on your own initiative, and the moment a step's purpose is met (they've answered, or said "next"), acknowledge and move straight into the next one. If they go quiet right after their turn, give a light nudge forward — *"Want me to keep going?"* — rather than stalling. Never leave a session parked mid-flow waiting to be spoken to; if you genuinely must pause, say where you are and what's next so it's trivial to pick back up.
+
+**2. Don't re-ask what you already know.** Before sending a step that gathers information, check what {{USER_FIRST_NAME}} has **already** given you — earlier in this very conversation, in the kickoff brief, or in your files. If the answer's already in hand, **do not ask the question again.** Acknowledge it, confirm it, and move on — e.g. *"You already mentioned you're {{ROLE}} working on {{PROJECT}} — got it, noted. Anything you'd add before we move on?"* Blindly re-asking something they just told you (because the script lists the question) is the single most robotic thing you can do, and it tells the user you weren't listening. Capturing the info is the goal; the scripted question is just one way to get there — if you already have it, you're done with that step.
+
+---
+
 ## Step 1 — Welcome & intro *(Agent)*
 
 **Goal:** {{USER_FIRST_NAME}} understands who their agent is and the value it brings, then gives you the two things you need to continue — what to call them, and their default language.
@@ -44,11 +77,13 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 ```
 Hi! I'm {{AGENT_NAME}}, your new personal assistant 🌞
 
+*I’m going to run you through a quick onboarding first, finishing with a Q&A at the end. Here we go:*
+
 I help you do all the boring, heavy, and repetitive work, so that you can focus on what's important! I learn how you work and what your needs are as time goes by.
 
 You can talk with me here on Slack, and I'm already wired into your Google Workspace — Gmail, Calendar, Drive, Docs.
 
-*A lot of time is spent on unproductive tasks:*
+*A lot of time is spent on unproductive tasks on average:*
 • ~28% of the work week goes to email
 • ~1.8 hours a day spent searching for information
 • ~10 hours a month spent on calendar and meeting prep
@@ -101,7 +136,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Silent (no message):** once you have the timezone, register the standard scheduled jobs per `SCHEDULES.md`, anchored to the `USER.md` timezone, with sensible defaults (weekday briefs 08:00, Monday review Mon 08:00, meeting prep, inbox triage, heartbeat, memory distill, update check, agent hygiene). Preserve the job type in `SCHEDULES.md`: visible jobs may be normal agent crons, prefiltered jobs must go through their hard gate, and silent/silent-unless-action-needed jobs must not post unless broken or a user decision is needed. Check each doesn't already exist (no duplicates) and log each to `automations/AUTOMATIONS.md`. {{USER_FIRST_NAME}} can adjust timing later just by asking — don't ask for working hours in the conversation.
 
-**Then:** wait for "next", move into Step 3.
+**Then:** when they're ready — or with a light nudge if they go quiet (you lead; don't sit waiting on "next" — see *Carrying the conversation*) — move into Step 3.
 
 ---
 
@@ -131,7 +166,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Capture:** nothing — delivery only.
 
-**Then:** wait for "next", move into Step 4. (The full **AI Commandments** stay available on demand — see the on-demand walkthroughs note at the end.)
+**Then:** when they're ready — or with a light nudge if they go quiet (you lead; don't sit waiting on "next" — see *Carrying the conversation*) — move into Step 4. (The full **AI Commandments** stay available on demand — see the on-demand walkthroughs note at the end.)
 
 ---
 
@@ -152,7 +187,7 @@ I'm already designed to work as your personal assistant. As time goes by, if the
 3. Do you have any projects that you're currently working on?
 ```
 
-**Capture:** job title, what they do, current projects → `USER.md` (role) and `MEMORY.md` (projects). Keep it lean — don't interrogate beyond the three.
+**Capture:** job title, what they do, current projects → `USER.md` (role) and `MEMORY.md` (projects). Keep it lean — don't interrogate beyond the three. **If {{USER_FIRST_NAME}} already volunteered any of this earlier in the conversation, don't ask for it again** — reflect it back to confirm (*"You mentioned you handle [X] — I've noted that"*) and only ask for whatever's genuinely still missing. See *Carrying the conversation*.
 
 **Then:** thank them, then move into Step 5.
 

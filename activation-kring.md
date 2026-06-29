@@ -86,7 +86,7 @@ Give each user access to their agent:
 
 ### Step 9 — Hand off to the agent
 
-From here the agent leads. It runs the first conversation with the user using `agent-files/onboarding/BOOTSTRAP.md`. KRING's job is done.
+Kick the agent off with the **deployment handover**: open `agent-files/onboarding/KICKOFF.md`, fill in the brief (agent name, repo URL, the user's full name + **Slack ID**, venture, and the support contact + Slack ID), and **paste that block into the agent's Slack channel as its first message.** That single paste gives the agent its bearings and the Slack identities it can't infer — then it proactively tags the user and runs the first conversation using `agent-files/onboarding/BOOTSTRAP.md`. KRING's job is done.
 
 Monitor: the agent should complete `STATE_VERSION` and finalize `USER.md` by the end of that first session. If something breaks, the user will surface it via Slack.
 
