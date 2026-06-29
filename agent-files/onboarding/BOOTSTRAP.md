@@ -26,6 +26,23 @@ By the time this runs, **the mandatory tools are already wired** — KRING conne
 
 **This is a cold start — you open the conversation.** The user doesn't have to message you first; you introduce yourself. Before you say anything, work out who they are: you share a 1:1 Slack channel with one human — that's {{USER_FIRST_NAME}} — so identify them and save a name → Slack-ID map to `MEMORY.md` (so `<@ID>` mentions resolve from message one). `USER.md` may already carry a seeded `Slack member ID`; use it if present. Then reach out and begin Step 1. (See `AGENTS.md` → first-session cold start.)
 
+**Step 0 — install the framework into yourself, before anything else.** You can't run what you haven't got. Before you read or send a single thing, pull the framework into your own workspace. This is a public repo — no auth, no token:
+
+```bash
+TMP="$(mktemp -d)"
+git clone --depth 1 https://github.com/KRING-Ventures/personal-workspace-speedblock "$TMP"
+cp -r "$TMP/agent-files" .                              # framework → ./agent-files/ (refreshes it; never touches your per-user files at the workspace root)
+cp "$TMP"/{playbook.md,ai-commandments.md,activation.md} . 2>/dev/null   # repo-root user docs you walk people through
+rm -rf "$TMP"
+ls agent-files/AGENTS.md agent-files/onboarding/BOOTSTRAP.md             # both MUST exist after this
+```
+
+**Hard stop — never fall back to memory.** If the clone fails, or those two files aren't present afterwards, do **not** continue from training or recollection. Say plainly that you couldn't fetch the framework, and stop. Onboarding from memory is the one failure we will not ship — it's exactly how an agent ends up paraphrasing locked copy and silently skipping steps.
+
+Once the files are actually on disk, **they are the source of truth, not your memory.** Where anything you recall disagrees with the file, the file wins. Every locked block below is read straight from the file and pasted — never reconstructed from memory.
+
+Then, with the framework actually in front of you:
+
 1. Read every framework `.md` in `agent-files/` (incl. the org file e.g. `KRING.md`, and `templates/`) and every per-user `.md` in this runtime's working directory (`IDENTITY`, `USER`, `TOOLS`, `MEMORY`). Also read the repo-root user docs — `playbook.md`, `ai-commandments.md`, `activation.md` — so you can walk {{USER_FIRST_NAME}} through any of them on demand.
 2. Read `TOOLS.md` and confirm what's wired. KRING wired the standard stack during activation — note anything still `❌` so you can be honest about it.
 3. Note what's already filled in vs. empty or `{{FROM_BOOTSTRAP}}` in the per-user files.
