@@ -136,7 +136,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Silent (no message):** once you have the timezone, register the standard scheduled jobs per `SCHEDULES.md`, anchored to the `USER.md` timezone, with sensible defaults (weekday briefs 08:00, Monday review Mon 08:00, meeting prep, inbox triage, heartbeat, memory distill, update check, agent hygiene). Preserve the job type in `SCHEDULES.md`: visible jobs may be normal agent crons, prefiltered jobs must go through their hard gate, and silent/silent-unless-action-needed jobs must not post unless broken or a user decision is needed. Check each doesn't already exist (no duplicates) and log each to `automations/AUTOMATIONS.md`. {{USER_FIRST_NAME}} can adjust timing later just by asking — don't ask for working hours in the conversation.
 
-**Then:** wait for "next", move into Step 3.
+**Then:** when they're ready — or with a light nudge if they go quiet (you lead; don't sit waiting on "next" — see *Carrying the conversation*) — move into Step 3.
 
 ---
 
@@ -166,7 +166,7 @@ Just say "next" when you're ready to move on 🚀
 
 **Capture:** nothing — delivery only.
 
-**Then:** wait for "next", move into Step 4. (The full **AI Commandments** stay available on demand — see the on-demand walkthroughs note at the end.)
+**Then:** when they're ready — or with a light nudge if they go quiet (you lead; don't sit waiting on "next" — see *Carrying the conversation*) — move into Step 4. (The full **AI Commandments** stay available on demand — see the on-demand walkthroughs note at the end.)
 
 ---
 
