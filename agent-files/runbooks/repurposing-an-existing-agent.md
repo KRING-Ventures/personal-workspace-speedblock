@@ -51,7 +51,7 @@ This is the script the agent runs on the first main session after repurposing �
 | # | Step | Source | Optional |
 |---|------|--------|----------|
 | R1 | Welcome back & what's changing | this file (new copy) | — |
-| 2 | Core features | BOOTSTRAP Step 2 (verbatim, one-line swap) | — |
+| 2 | Core features | BOOTSTRAP Step 2 (verbatim, two greeting-line swaps) | — |
 | 3 | How to work with me | BOOTSTRAP Step 3 (verbatim) | — |
 | R4 | Confirm migrated basics | this file (new copy) | — |
 | 5 | See a feature in action | BOOTSTRAP Step 5 (verbatim) | optional |
@@ -88,13 +88,21 @@ Let me give you the quick tour so you know what's now possible. Just say "next" 
 
 **Goal:** the user sees what comes built in, and that it's extendable to their own needs.
 
-**Send BOOTSTRAP Step 2 verbatim**, with **one swap** so it doesn't read as if the agent was just born: change the opening line `I'm already born with core features:` to:
+**Send BOOTSTRAP Step 2 verbatim, with exactly two line swaps** so it doesn't read as if you'd never met this user. BOOTSTRAP Step 2 opens with a *first-introduction* greeting and a *just-born* framing — both contradict R1 ("same me, nothing's lost"). Swap only these two lines; change nothing else:
+
+1. The greeting line `Great to meet you, {{USER_FIRST_NAME}}! 🫶🏼` → becomes:
+
+```
+Here's the quick tour, {{USER_FIRST_NAME}} 🫶🏼
+```
+
+2. The core-features header line `*I'm already born with core features:*` → becomes:
 
 ```
 *Here are the core features I now run for you:*
 ```
 
-Everything else in the BOOTSTRAP Step 2 block (the feature bullets, the "you can personalize me…" paragraph, and the closing *"next"* line) is sent **unchanged**.
+Everything else in the BOOTSTRAP Step 2 block — the feature bullets, the "you can personalize me…" paragraph, and the closing *"next"* line — is sent **unchanged, word-for-word**.
 
 **Capture:** nothing — delivery only.
 
