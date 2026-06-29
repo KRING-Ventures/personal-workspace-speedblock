@@ -14,6 +14,7 @@
 - **Timezone:** {{FROM_BOOTSTRAP}}
 - **Job title / work area:** {{FROM_BOOTSTRAP}}
 - **Primary surface for talking to {{AGENT_NAME}}:** Slack (default) · {{FROM_BOOTSTRAP}}
+- **Slack member ID:** {{FROM_BOOTSTRAP}}  *(resolved on first boot from your channel, or seeded at provisioning — used so `<@ID>` mentions always resolve)*
 
 ## Comms style (initial)
 
