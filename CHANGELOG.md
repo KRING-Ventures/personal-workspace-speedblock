@@ -17,8 +17,9 @@ Live gap (August): incoming calendar invites were never surfaced with an accept/
 - `agent-files/HEARTBEAT.md` — new *Calendar invites awaiting a response* check: detect any event where the user's own `responseStatus` is `needsAction`, surface it with decision context (title/when/organiser/attendees/clash) and **offer to accept or decline** (Ask-first — never respond on their behalf; proposing an alternative time is offered too). Anchored on the **calendar event status, not the invite email**, so it fires even when the Gmail invite is auto-filed or never arrives. Added a reach-out example; de-dupe via the existing "don't re-flag across heartbeats" rule.
 - `agent-files/runbooks/smart-triggers.md` — heartbeat gate gains a wake condition for an unseen `needsAction` invite (with a cooldown so the same invite doesn't re-fire hourly). Without this the prefiltered gate would never wake the agent for the new signal.
 - `agent-files/SCHEDULES.md` — heartbeat row coverage now lists invites awaiting a response.
+- `agent-files/scripts/smart-trigger.py` — **the real root cause at code level.** The reference heartbeat gate's `calendar_conflict_signal` only looked for double-bookings in the next 8h; a pending invite produced no signal, so the gate never woke the agent and the doc rule could never fire. Added `calendar_invite_signal` — scans the next 30 days for an event where the user's own `responseStatus` is `needsAction` (skips cancelled) — and `signal_for("heartbeat")` now returns conflict **or** pending-invite. The existing 240-min unchanged-signal cooldown keys on the event id, so the same invite won't re-nag hourly.
 
-No new job and no `STATE_VERSION` bump — folds into the existing hourly heartbeat; behaviour/wording change only.
+No new job and no `STATE_VERSION` bump — folds into the existing hourly heartbeat; behaviour + gate-script change only.
 
 ### Changed — Repurpose onboarding hardened into a scripted, transition-aware flow (WIP, toward 1.1)
 

@@ -267,11 +267,34 @@ def calendar_conflict_signal(token: str) -> str | None:
     return None
 
 
+def calendar_invite_signal(token: str) -> str | None:
+    """An upcoming event awaiting the user's response (responseStatus needsAction).
+
+    Anchored on the calendar event, not the Gmail invite — so it fires even when
+    the invite email is auto-filed or never lands in the inbox.
+    """
+    now = datetime.now(timezone.utc)
+    time_max = now + timedelta(days=30)
+    url = (
+        "https://www.googleapis.com/calendar/v3/calendars/primary/events"
+        f"?timeMin={urllib.parse.quote(now.isoformat())}"
+        f"&timeMax={urllib.parse.quote(time_max.isoformat())}"
+        "&singleEvents=true&orderBy=startTime&maxResults=50"
+    )
+    for event in api_get(url, token).get("items", []):
+        if event.get("status") == "cancelled":
+            continue
+        for attendee in event.get("attendees", []):
+            if attendee.get("self") and attendee.get("responseStatus") == "needsAction":
+                return f"calendar-invite:{event.get('id') or event.get('summary') or 'event'}"
+    return None
+
+
 def signal_for(mode: str, token: str) -> str | None:
     if mode == "inbox-triage":
         return inbox_signal(token)
     if mode == "heartbeat":
-        return calendar_conflict_signal(token)
+        return calendar_conflict_signal(token) or calendar_invite_signal(token)
     return None
 
 
