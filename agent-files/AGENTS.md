@@ -19,21 +19,22 @@ Read **on demand**, not at boot: `KRING.md` (org context — read it when a KRIN
 
 Don't narrate routine boot — just do it. Exception: if catch-up finds a user-visible change, explain it and ask before applying (see *Staying current*).
 
+## First session: onboarded or not?
+
+**One check, one signal: is `USER.md` still placeholders (`{{FROM_BOOTSTRAP}}`)?**
+
+- **Yes — blank slate.** You've never been set up. Don't wait for a message: identify the human in your 1:1 channel, then open the conversation and run `onboarding/BOOTSTRAP.md` end to end. That is your whole job this session. (Save a name → Slack-ID map to `MEMORY.md` so `<@ID>` mentions resolve from message one; use the seeded `Slack member ID` in `USER.md` if present.)
+- **No — already set up.** Skip onboarding entirely. Work normally.
+
+**One guard, for the rare case.** If `USER.md` is filled but the human in your channel clearly isn't that person, don't greet them as the old user and don't run anything — stop, name the mismatch, confirm intent first (*"I still have {old user}'s setup on disk, but you look new here — start fresh, or pick up where they left off?"*). On a confirmed yes, follow `runbooks/resetting-an-agent.md`. Don't let this edge case complicate the common one.
+
 ## Staying current
 
-The framework evolves; your state can drift behind. At boot, after pulling, read `agent-files/onboarding/STATE_VERSION`. If it's ahead of your local `STATE_VERSION`:
+A *separate* question from onboarding — *am I on the latest framework?* At boot, after pulling, compare your local `STATE_VERSION` with `onboarding/STATE_VERSION`. If you're behind:
 
-- Read `CHANGELOG.md` from your version onward, plus any notes in `onboarding/MIGRATIONS/`. Treat these as guidance, not a script — apply what's relevant to your user, skip what isn't, ask if ambiguous.
+- Read `CHANGELOG.md` from your version onward, plus any notes in `onboarding/MIGRATIONS/`. Guidance, not a script — apply what's relevant, skip what isn't, ask if ambiguous.
 - Update your local `STATE_VERSION` and note the catch-up in today's daily log.
 - **Explain, then ask.** Wording-only changes: apply silently. Anything {{USER_FIRST_NAME}} can see or use (new brief, new tool, changed behaviour): tell them in one plain message what it adds and ask before applying. Apply only on their yes.
-
-**No `STATE_VERSION`?** That alone means "never finished PW onboarding" — it does **not** by itself tell you whether to run a clean intro or a continuity flow. Before you choose, **identify the human in your 1:1 channel** (look them up; save a name → Slack-ID map to `MEMORY.md` so every `<@ID>` resolves from message one — `USER.md` may already carry a seeded `Slack member ID`, use it if present). Then read the per-user files and decide from **whose state is on disk vs. who you're actually talking to** — never from file-presence alone:
-
-- **Empty / template-only state** → genuine **cold start**. Introduce yourself; the user doesn't have to message first. Reach out yourself and run `onboarding/BOOTSTRAP.md`; set `STATE_VERSION` when done.
-- **Real state that belongs to the *same* person you're talking to** → **repurpose** (an existing non-PW agent for this user). Keep everything; don't run BOOTSTRAP. See `runbooks/repurposing-an-existing-agent.md`.
-- **Real state that belongs to a *different* person** (the channel human doesn't match `USER.md` / `IDENTITY.md`) → you're being **re-provisioned to a new user.** Do **not** greet them as the old user, and do **not** silently run either flow — populated files for the *wrong* person are the signal for a reset, not a repurpose. **Stop, name the mismatch, and confirm intent** before touching anything (e.g. *"Heads up — I still have {old user}'s setup on disk, but you look new here. Should I start fresh for you, or am I picking up where {old user} left off?"*). On a confirmed reset, follow `runbooks/resetting-an-agent.md` (archive the prior user's state, clear to template, then clean BOOTSTRAP).
-
-If the channel has more than one human and you can't tell which is yours, ask once rather than guess. Full procedures: `runbooks/updating-an-agent.md`, `runbooks/repurposing-an-existing-agent.md`, `runbooks/resetting-an-agent.md`.
 
 ## Where state lives
 

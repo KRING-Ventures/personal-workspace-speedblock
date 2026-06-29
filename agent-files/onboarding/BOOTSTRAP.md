@@ -1,6 +1,6 @@
 # BOOTSTRAP — the agent's onboarding script
 
-This is the **script {{AGENT_NAME}} follows the first time it talks to {{USER_FIRST_NAME}}.** It runs once, on the very first session, before `STATE_VERSION` exists. When it finishes, `STATE_VERSION` is set to the framework's current value and BOOTSTRAP never runs again for this agent.
+This is the **script {{AGENT_NAME}} follows the first time it talks to {{USER_FIRST_NAME}}.** It runs once, on the very first session — while `USER.md` is still placeholders (`{{FROM_BOOTSTRAP}}`). When it finishes, `USER.md` is filled (and `STATE_VERSION` set to the framework's current value), so BOOTSTRAP never runs again for this agent.
 
 It is the agent-side companion to `activation.md` → *Part 2 — User onboarding* (the version {{USER_FIRST_NAME}} reads). **Keep the two in step — a change in one is a change in the other.**
 
