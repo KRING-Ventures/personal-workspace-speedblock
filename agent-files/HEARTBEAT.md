@@ -49,7 +49,13 @@ Per-meeting **prep** is handled by the dedicated *Meeting prep* job, not here �
 ### Calendar invites awaiting a response (if connected)
 A new invite is a decision waiting on {{USER_FIRST_NAME}} — surface it, don't let it sit unanswered in the calendar. The reliable signal is the **calendar event itself, not the invite email**: any event where {{USER_FIRST_NAME}}'s own `responseStatus` is **`needsAction`** (not yet accepted, declined, or tentative) and that you haven't already surfaced. Anchoring on the event status — not the Gmail invite — is what makes this fire even when the invite email is auto-filed or never lands in the inbox.
 
-Give the decision context in one place — title, when, organiser, other attendees, and any clash with what's already on the calendar — then **offer to accept or decline**. Accepting/declining is an *Ask-first* action (`AGENTS.md` → Action rules): you offer and wait for {{USER_FIRST_NAME}}'s go-ahead; you never respond on their behalf. Proposing an alternative time is fine to offer too (drafting times is free; sending the counter-proposal still needs the OK).
+Give the decision context in one place — title, when, organiser, other attendees — then offer the decision. **If it clashes with something already booked, that's the case that matters: say so explicitly and lay out the real choices** — don't just ask "accept or decline?" in a vacuum:
+
+- **Decline** the new invite and keep what's already booked.
+- **Accept and rearrange the conflict.** If the clashing event is {{USER_FIRST_NAME}}'s own solo block (focus time, a personal hold), offer to move it to the next free slot — that's their own time, free to manage. If the clashing event is a meeting **with other people**, accepting means rescheduling *them*: offer it, but it needs {{USER_FIRST_NAME}}'s OK first, and you only propose new times to the other attendees once they confirm — never silently move other people's meetings.
+- **Propose an alternative time** for the new invite back to the organiser instead.
+
+No clash? Then just offer accept / decline / propose-another-time. Either way, accepting, declining, moving a meeting that has other attendees, or sending a counter-proposal are all **Ask-first** (`AGENTS.md` → Action rules): you lay out the options and wait for {{USER_FIRST_NAME}}'s pick — you never respond or move anything on their behalf. Drafting the proposed times is free; sending them isn't.
 
 **Flag when:** an event is sitting in `needsAction` — especially if it clashes with an existing event or lands on an already-heavy day.
 **Stay quiet when:** {{USER_FIRST_NAME}} already responded, you already surfaced this invite (don't re-flag across heartbeats — see *Don'ts*), or it's auto-added/non-decision noise (a subscribed calendar, a holiday, a birthday).
@@ -103,7 +109,7 @@ Examples:
 > Want me to hold 90 min in the morning for deep work before it fills up?
 
 > **Calendar** — new invite needs your response: "Q3 planning", Thu 14:00, from Dana (+4)
-> Clashes with your 14:00 focus block. Accept, decline, or want me to propose another time? I'll only respond once you say.
+> Clashes with your 14:00 "Board prep" (you + 2 others). Want me to (a) decline and keep Board prep, (b) accept and propose moving Board prep — I'll suggest times to the other two once you OK it, or (c) propose another time for Q3 planning to Dana? Nothing sent until you pick.
 
 > **Commitments** — [Thing] hasn't moved since Monday
 > Blocker, deprioritised, or should I help unblock?
