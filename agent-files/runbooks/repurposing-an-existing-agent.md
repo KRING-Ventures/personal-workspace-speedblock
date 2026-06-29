@@ -8,7 +8,8 @@ Three different things, don't confuse them:
 
 - **Clean-sheet deploy** — brand-new agent, no prior state. Runs `BOOTSTRAP.md` (the full first-conversation). See `activation.md` → Part 2.
 - **Version update** — an agent already on Personal Workspace catching up to a newer framework version. Automatic at boot via the catch-up loop. See `agent-files/AGENTS.md` → *Staying current* and `runbooks/updating-an-agent.md`. Nothing to do here.
-- **Repurpose (this file)** — an existing agent that was *something else* (or a generic assistant) becoming a Personal Workspace agent. It has real data you must preserve, but no PW `STATE_VERSION`, so it would wrongly trigger `BOOTSTRAP` (the clean-sheet intro) if you just dropped the files in. This runbook is how you avoid that.
+- **Repurpose (this file)** — an existing agent that was *something else* (or a generic assistant) becoming a Personal Workspace agent **for the same human**. It has real data you must preserve, but no PW `STATE_VERSION`, so it would wrongly trigger `BOOTSTRAP` (the clean-sheet intro) if you just dropped the files in. This runbook is how you avoid that.
+- **Reset / re-provision** — an agent whose state belongs to a *different* person, being handed to a **new** user. That is **not** a repurpose: the old user's data is archived, not inherited, and the new user gets a clean onboarding. See `runbooks/resetting-an-agent.md`. The tell: a repurpose keeps the same human; a reset changes who the user is.
 
 ## The load-bearing rule
 

@@ -6,7 +6,8 @@ The standard way to bring an **existing Personal Workspace agent** up to the cur
 
 - **Update (this file)** — an agent that is *already* Personal Workspace, on an older version, catching up to current. It has a PW `STATE_VERSION`; you're moving it forward.
 - **First boot** — no `STATE_VERSION` at all → run `agent-files/onboarding/BOOTSTRAP.md`.
-- **Repurpose** — real state but *never* was PW (no `STATE_VERSION`) → run `repurposing-an-existing-agent.md`.
+- **Repurpose** — real state for *this same user* but never was PW (no `STATE_VERSION`) → run `repurposing-an-existing-agent.md`.
+- **Reset** — real state belonging to a *different* (previous) user, being handed to a new one → run `resetting-an-agent.md`. A reset changes who the user is; an update never does.
 
 ## The load-bearing rule
 

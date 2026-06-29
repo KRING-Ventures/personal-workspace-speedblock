@@ -10,6 +10,16 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Fixed — Reset path: an agent handed to a new user no longer inherits the old user's identity (WIP, toward 1.1)
+
+Live failure (Flimmer): an agent that had been Martin's was being handed to a new person. KRING deleted `STATE_VERSION` expecting a cold start — but the per-user files still described Martin, so on boot the agent read "real state + no `STATE_VERSION`", classified it as a **repurpose**, greeted the new human as Martin, and confirmed details instead of onboarding. There was **no documented reset path at all**, and the boot logic inferred cold-start-vs-repurpose purely from *whether files were populated* — which is exactly wrong when the populated files belong to the *previous* user. Fixed by making the decision turn on **identity, not file-presence**, and adding the missing fourth path:
+
+- `agent-files/AGENTS.md` — *Staying current* rewritten. A missing `STATE_VERSION` no longer implies a flow on its own; the agent first **identifies the human in its 1:1 channel and compares to `USER.md`/`IDENTITY.md`**, then branches three ways: empty/template state → cold-start BOOTSTRAP; real state for the **same** person → repurpose; real state for a **different** person → **re-provision**. The wrong-person case is now an explicit **stop-and-confirm** ("I still have {old user}'s setup, but you look new here — start fresh, or pick up where they left off?") instead of a silent repurpose. Kept tight to protect the boot bundle; detail lives in the new runbook.
+- `agent-files/runbooks/resetting-an-agent.md` — **new.** The deliberate operator procedure (snapshot → **archive** the previous user's per-user state out of the workspace, don't delete → reset files to template → de-register the old user's jobs → clear `STATE_VERSION` → clean BOOTSTRAP) plus the agent-side guard and a confirmation-gated "agent archives it itself" path for when there's no operator on the shell. Reversible by design: prior-user state is archived, never hard-deleted.
+- `agent-files/runbooks/repurposing-an-existing-agent.md` + `updating-an-agent.md` — "Which path am I on?" updated in both to name the reset path and the one-line tell: **a repurpose/update keeps the same human; a reset changes who the user is.**
+
+Boot-logic + docs change only — no per-user state shape change, so no `MIGRATIONS/` file.
+
 ### Added — Feedback ledger: capture real-use corrections, harvest them upstream (WIP, toward 1.1)
 
 Fixes surfaced in real use (a user says *"why didn't you run my inbox triage?"*, the agent fixes it) used to die in the chat — the next agent shipped with the same gap. New **agent → repo** channel so a fix found once becomes a framework fix for all:
