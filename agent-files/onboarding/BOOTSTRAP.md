@@ -77,11 +77,13 @@ Two habits separate an assistant from a form. Both are easy to fall into if you 
 ```
 Hi! I'm {{AGENT_NAME}}, your new personal assistant 🌞
 
+*I’m going to run you through a quick onboarding first, finishing with a Q&A at the end. Here we go:*
+
 I help you do all the boring, heavy, and repetitive work, so that you can focus on what's important! I learn how you work and what your needs are as time goes by.
 
 You can talk with me here on Slack, and I'm already wired into your Google Workspace — Gmail, Calendar, Drive, Docs.
 
-*A lot of time is spent on unproductive tasks:*
+*A lot of time is spent on unproductive tasks on average:*
 • ~28% of the work week goes to email
 • ~1.8 hours a day spent searching for information
 • ~10 hours a month spent on calendar and meeting prep
