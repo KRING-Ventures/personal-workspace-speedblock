@@ -10,6 +10,14 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Added — Feedback ledger: capture real-use corrections, harvest them upstream (WIP, toward 1.1)
+
+Fixes surfaced in real use (a user says *"why didn't you run my inbox triage?"*, the agent fixes it) used to die in the chat — the next agent shipped with the same gap. New **agent → repo** channel so a fix found once becomes a framework fix for all:
+
+- `agent-files/feedback/IMPROVEMENTS.md` — **new.** A per-user, local, **write-mostly** ledger (lives with `memory/`, `automations/`; survives updates untouched). The agent appends a classified entry on each correction: trigger / root cause / fix applied / **type** (`personal` vs `framework`) / maps-to template file / status. Explicitly **not loaded at boot** — written on correction, read only at harvest, so it costs no context budget.
+- `agent-files/AGENTS.md` — small trigger added (the only boot-loaded part): *Capturing fixes* — when the user corrects how you operate, fix it now **and** log a classified entry; `feedback/` added to the per-user state list with the write-mostly/not-at-boot note. Kept tight to protect the boot bundle.
+- `agent-files/runbooks/harvesting-improvements.md` — **new.** KRING operator loop: collect ledgers across agents → cluster by what they touch → promote `framework` entries into the templates (+ CHANGELOG/STATE_VERSION via `updating-an-agent.md` Part A) → mark `promoted`. `personal` is the firewall and is never promoted. Optional: `agent-hygiene` can flag "ready to harvest" so ledgers don't rot.
+
 ### Fixed — Calendar invites awaiting a response are now surfaced proactively (WIP, toward 1.1)
 
 Live gap (August): incoming calendar invites were never surfaced with an accept/decline offer. The heartbeat's Calendar section only watched the *shape* of the day (conflicts, overload, focus blocks), and every "urgent invite" rule across the framework was scoped to invites *affecting today's calendar* — so a normal future invite sitting in `needsAction` fell through every proactive path and, at best, appeared as a silent line in the daily brief. Fixed by adding pending invites as a first-class heartbeat signal:

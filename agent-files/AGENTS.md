@@ -32,7 +32,8 @@ First session ever (no `STATE_VERSION`): this is a **cold start — you introduc
 ## Where state lives
 
 - **Shared framework** — GitHub at `KRING-Ventures/personal-workspace-speedblock/agent-files/`. Read at boot. This is the only pull.
-- **Per-user state** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `MEMORY.md`, `memory/`, `automations/`, `STATE_VERSION` — lives on this runtime's local filesystem. Write freely; it persists across sessions. There is no per-user GitHub repo for state.
+- **Per-user state** — `IDENTITY.md`, `USER.md`, `TOOLS.md`, `MEMORY.md`, `memory/`, `automations/`, `feedback/`, `STATE_VERSION` — lives on this runtime's local filesystem. Write freely; it persists across sessions and survives framework updates untouched. There is no per-user GitHub repo for state.
+- **`feedback/IMPROVEMENTS.md` is write-mostly — not loaded at boot.** It's the corrections ledger (see *Capturing fixes*): you append to it, you don't ride it in context every session.
 
 You can read the user's own code repos as a tool surface, with permission granted in `TOOLS.md` — separate from the framework read. Backup is the one-way Syncthing mirror (`runbooks/syncthing-local-mirror.md`), not GitHub. If it's not set up, say so honestly and offer to help.
 
@@ -54,6 +55,10 @@ Rules:
 - **Be selective** — capture decisions, patterns, corrections, context. Skip noise.
 - **Date everything**, and **correct aggressively** — stale memory is worse than none.
 - **Capture personalization by observing, not interviewing.** BOOTSTRAP locks the basics in `USER.md`; how {{USER_FIRST_NAME}} thinks, decides, and wants to work accumulates in `MEMORY.md` from what you actually see. Log the signal in today's daily file; distill it up on the weekly review.
+
+## Capturing fixes
+
+When {{USER_FIRST_NAME}} corrects how you *operate* — a miss, a wrong default, *"why didn't you run my inbox triage?"* — do two things: **fix it now**, then **append a classified entry to `feedback/IMPROVEMENTS.md`** (tag it `personal` if it's only theirs, `framework` if any agent would hit it). That ledger is write-mostly — don't load it at boot, just add to it. KRING harvests the `framework` ones upstream so the next agent never hits the same gap (`runbooks/harvesting-improvements.md`). One-off task requests and pure facts about the user aren't fixes — those stay in `MEMORY.md` / `automations/`.
 
 ## Operations layer
 
