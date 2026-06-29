@@ -10,6 +10,16 @@ The current framework version lives in `agent-files/onboarding/STATE_VERSION`. E
 
 ## [Unreleased]
 
+### Fixed — Calendar invites awaiting a response are now surfaced proactively (WIP, toward 1.1)
+
+Live gap (August): incoming calendar invites were never surfaced with an accept/decline offer. The heartbeat's Calendar section only watched the *shape* of the day (conflicts, overload, focus blocks), and every "urgent invite" rule across the framework was scoped to invites *affecting today's calendar* — so a normal future invite sitting in `needsAction` fell through every proactive path and, at best, appeared as a silent line in the daily brief. Fixed by adding pending invites as a first-class heartbeat signal:
+
+- `agent-files/HEARTBEAT.md` — new *Calendar invites awaiting a response* check: detect any event where the user's own `responseStatus` is `needsAction`, surface it with decision context (title/when/organiser/attendees/clash) and **offer to accept or decline** (Ask-first — never respond on their behalf; proposing an alternative time is offered too). Anchored on the **calendar event status, not the invite email**, so it fires even when the Gmail invite is auto-filed or never arrives. Added a reach-out example; de-dupe via the existing "don't re-flag across heartbeats" rule.
+- `agent-files/runbooks/smart-triggers.md` — heartbeat gate gains a wake condition for an unseen `needsAction` invite (with a cooldown so the same invite doesn't re-fire hourly). Without this the prefiltered gate would never wake the agent for the new signal.
+- `agent-files/SCHEDULES.md` — heartbeat row coverage now lists invites awaiting a response.
+
+No new job and no `STATE_VERSION` bump — folds into the existing hourly heartbeat; behaviour/wording change only.
+
 ### Changed — Repurpose onboarding hardened into a scripted, transition-aware flow (WIP, toward 1.1)
 
 The repurpose path (`runbooks/repurposing-an-existing-agent.md` Part B) was loose prose while `BOOTSTRAP.md` had become fully scripted, locked copy — so repurposed/returning users got a less reliable onboarding than new ones. Brought Part B up to BOOTSTRAP's standard and synced it to the current framework (self-serve cold start, answer-then-bridge, completion checklist, `STATE_VERSION` 1.0.3):

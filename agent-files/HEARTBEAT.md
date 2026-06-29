@@ -46,6 +46,14 @@ Per-meeting **prep** is handled by the dedicated *Meeting prep* job, not here �
 **Flag when:** conflict, an overloaded day with no breathing room, no deep-work block on a heavy day — and offer to block focus time (own calendar, no permission needed).
 **Stay quiet when:** normal schedule, nothing unusual.
 
+### Calendar invites awaiting a response (if connected)
+A new invite is a decision waiting on {{USER_FIRST_NAME}} — surface it, don't let it sit unanswered in the calendar. The reliable signal is the **calendar event itself, not the invite email**: any event where {{USER_FIRST_NAME}}'s own `responseStatus` is **`needsAction`** (not yet accepted, declined, or tentative) and that you haven't already surfaced. Anchoring on the event status — not the Gmail invite — is what makes this fire even when the invite email is auto-filed or never lands in the inbox.
+
+Give the decision context in one place — title, when, organiser, other attendees, and any clash with what's already on the calendar — then **offer to accept or decline**. Accepting/declining is an *Ask-first* action (`AGENTS.md` → Action rules): you offer and wait for {{USER_FIRST_NAME}}'s go-ahead; you never respond on their behalf. Proposing an alternative time is fine to offer too (drafting times is free; sending the counter-proposal still needs the OK).
+
+**Flag when:** an event is sitting in `needsAction` — especially if it clashes with an existing event or lands on an already-heavy day.
+**Stay quiet when:** {{USER_FIRST_NAME}} already responded, you already surfaced this invite (don't re-flag across heartbeats — see *Don'ts*), or it's auto-added/non-decision noise (a subscribed calendar, a holiday, a birthday).
+
 ### Notion (if connected)
 - Changes on Speedblocks {{USER_FIRST_NAME}} owns.
 - PM Tasks assigned to {{USER_FIRST_NAME}} moving to a status that wants their input.
@@ -93,6 +101,9 @@ Examples:
 
 > **Calendar** — tomorrow is 6 meetings back-to-back, no lunch, no focus block
 > Want me to hold 90 min in the morning for deep work before it fills up?
+
+> **Calendar** — new invite needs your response: "Q3 planning", Thu 14:00, from Dana (+4)
+> Clashes with your 14:00 focus block. Accept, decline, or want me to propose another time? I'll only respond once you say.
 
 > **Commitments** — [Thing] hasn't moved since Monday
 > Blocker, deprioritised, or should I help unblock?
