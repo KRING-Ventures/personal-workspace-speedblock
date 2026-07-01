@@ -8,12 +8,12 @@ Three different things, don't confuse them:
 
 - **Clean-sheet deploy** — brand-new agent, no prior state. Runs `BOOTSTRAP.md` (the full first-conversation). See `activation.md` → Part 2.
 - **Version update** — an agent already on Personal Workspace catching up to a newer framework version. Automatic at boot via the catch-up loop. See `agent-files/AGENTS.md` → *Staying current* and `runbooks/updating-an-agent.md`. Nothing to do here.
-- **Repurpose (this file)** — an existing agent that was *something else* (or a generic assistant) becoming a Personal Workspace agent **for the same human**. It has real data you must preserve, but no PW `STATE_VERSION`, so it would wrongly trigger `BOOTSTRAP` (the clean-sheet intro) if you just dropped the files in. This runbook is how you avoid that.
+- **Repurpose (this file)** — an existing agent that was *something else* (or a generic assistant) becoming a Personal Workspace agent **for the same human**. It has real data you must preserve. As long as its `USER.md` carries that real data (no `{{FROM_BOOTSTRAP}}` placeholders), boot will **not** run `BOOTSTRAP` — a filled `USER.md` is the "not a blank slate" signal. The only way to trip the clean-sheet intro is to drop in template files and leave the placeholders. **This path is operator-triggered, not boot-detected** — the agent doesn't sniff it out on its own. KRING runs Part A, then prompts the agent to run Part B. This runbook is how.
 - **Reset / re-provision** — an agent whose state belongs to a *different* person, being handed to a **new** user. That is **not** a repurpose: the old user's data is archived, not inherited, and the new user gets a clean onboarding. See `runbooks/resetting-an-agent.md`. The tell: a repurpose keeps the same human; a reset changes who the user is.
 
 ## The load-bearing rule
 
-> Set the agent's local `STATE_VERSION` to the framework's current value **before** its next session. That one step tells the framework "this agent is not new" — it skips `BOOTSTRAP` and goes straight to the catch-up loop, so the agent never re-runs the clean-sheet first-conversation over a user it already knows.
+> Make sure `USER.md` carries the user's real facts — **no `{{FROM_BOOTSTRAP}}` placeholders left** — before the agent's next session. A filled `USER.md` is what tells the framework "this agent is not a blank slate," so it skips `BOOTSTRAP` and never re-runs the clean-sheet first-conversation over a user it already knows. (Also set `STATE_VERSION` to current so the agent doesn't needlessly run version catch-up — but that's housekeeping, not what suppresses `BOOTSTRAP`.)
 
 Everything else is reconciliation around that.
 
@@ -30,7 +30,7 @@ Prerequisite: shell access to the agent's runtime.
    - `TOOLS.md` — align to the PW standard table. The mandatory stack (Slack, Gmail, Calendar, Drive/Docs) is pre-wired at activation — mark it ✅. Web search and local files are ✅ by default. Carry any extra tools the agent already had into the *User-specific tools* table, marked with their real state. The recommended self-serve tools (GitHub, Notion, etc.) are **not** part of the standard set — leave them ❌/self-serve unless the agent genuinely already has them; the user wires those in their own time, so never mark them connected just because the template lists them. The local mirror stays ❌ until set up.
    - `MEMORY.md` + `memory/*.md` — **content untouched.** These are the user's memory. Adjust only headers/section names if the PW layout needs it; never rewrite the substance.
    - `automations/AUTOMATIONS.md` — preserve every existing entry. Don't delete or duplicate automations.
-5. **Set `STATE_VERSION`** at the root of the working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value. (This is the load-bearing rule above — it suppresses `BOOTSTRAP`.)
+5. **Set `STATE_VERSION`** at the root of the working directory to the framework's current `agent-files/onboarding/STATE_VERSION` value — so the agent isn't flagged as behind on the framework. (`BOOTSTRAP` is already suppressed by the filled `USER.md` from step 4 — that's the load-bearing rule above.)
 6. **Reconcile schedules, don't stack them.** On the next main session the boot self-heal will add any of the standard jobs/triggers (see `SCHEDULES.md`) that are missing — *check existing schedules first so you don't end up with two morning briefs*. Preserve job type: visible jobs may be normal agent crons, prefiltered jobs must keep their hard gate, and silent/silent-unless-action-needed jobs must not post unless broken or a user decision is needed. If the agent already had its own brief/heartbeat-type jobs, fold them into the PW ones rather than running both.
 
 Success signal: the agent boots, does **not** start a clean-sheet intro, keeps all prior memory and automations, and reports it's on the current `STATE_VERSION`.
@@ -198,7 +198,7 @@ Same finalisation as BOOTSTRAP, minus the identity collection (you already had i
 
 1. **Patch `USER.md`** with anything R4 corrected — name, language, role. Keep it lean.
 2. **Top up `MEMORY.md`** — current projects, the automation built (if any), any fresh personalization signals. Don't overwrite existing memory.
-3. **Log today's session** in `memory/YYYY-MM-DD.md` — note that the continuity-aware onboarding ran, so a future update doesn't re-deliver it (`updating-an-agent.md` → Part C checks for this).
+3. **Log today's session** in `memory/YYYY-MM-DD.md`, and add the marker `Onboarding delivered: <today's date>` to `MEMORY.md` so a future update doesn't re-deliver it (`updating-an-agent.md` → Part C, Step 7 checks for this one line).
 4. **Confirm `TOOLS.md`** reflects the real wired state.
 5. **Confirm the schedule** — all standard jobs/triggers present with the correct type, no duplicates, logged in `automations/AUTOMATIONS.md`. This is the one piece that, if missing, silently kills all proactivity.
 6. **Confirm `STATE_VERSION`** equals the framework's current value (set in Part A step 5). The continuity onboarding is now complete and won't run again — future sessions go straight to the catch-up loop in `AGENTS.md`.
